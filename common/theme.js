@@ -1,7 +1,19 @@
 /* eslint-disable sort-keys-fix/sort-keys-fix */
 
 export default {
+  appearance: {
+    borderRadius: {
+      small: '0.25rem',
+      medium: '0.25rem',
+      large: '0.375rem',
+    },
+  },
   color: {
+    body: {
+      background: '#f7f9fc',
+      light: '#6c757d',
+    },
+
     primary: {
       default: '#3f80ea',
       active: '#366dc7',
@@ -28,15 +40,21 @@ export default {
     },
   },
   padding: {
-    layout: {
-      small: '0.5rem',
-      medium: '1rem',
-      large: '2rem',
-    },
-    element: {
+    button: {
       small: '0.375rem 0.75rem',
       medium: '0.5rem 1rem',
       large: '0.75rem 1.5rem',
+    },
+    input: {
+      small: '0.375rem',
+      medium: '0.5rem',
+      large: '0.75rem',
+    },
+    layout: {
+      tiny: '0.25rem',
+      small: '0.5rem',
+      medium: '1rem',
+      large: '2rem',
     },
   },
   typography: {
@@ -48,9 +66,9 @@ export default {
       },
     },
     size: {
-      small: '87.5%',
-      medium: '100%',
-      large: '125%',
+      small: 0.875,
+      medium: 1,
+      large: 1.25,
     },
   },
 }
