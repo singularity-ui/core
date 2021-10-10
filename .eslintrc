@@ -1,0 +1,36 @@
+{
+  "extends": "@ivangabriele/eslint-config-react",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": false
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", { "peerDependencies": true }],
+
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": ["error", { "ignore": ["children"] }]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.stories.jsx"],
+      "rules": {
+        "sort-keys-fix/sort-keys-fix": "off"
+      }
+    },
+    {
+      "files": ["./scripts/**/*.js"],
+      "env": {
+        "browser": false,
+        "node": true
+      },
+      "rules": {
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+      }
+    }
+  ]
+}
