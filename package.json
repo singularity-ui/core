@@ -1,35 +1,51 @@
 {
-  "name": "singularity",
+  "name": "singularity-ui",
   "description": "Yet another React UI.",
   "version": "0.0.0",
-  "main": "index.js",
   "license": "MIT",
+  "private": true,
   "scripts": {
+    "build": "rollup -c && sh ./scripts/build/copyPublicFiles.sh && node ./scripts/build/generatePackageJson.js",
     "dev": "start-storybook -p 6006",
     "prepare": "husky install",
     "test": "yarn test:lint",
-    "test:lint": "eslint ."
+    "test:lint": "eslint .",
+    "preversion": "yarn test && yarn build",
+    "version": "node ./scripts/release/prepareVersionBump.js",
+    "postversion": "git push origin HEAD --tags"
   },
   "dependencies": {
+    "@babel/runtime": "^7.15.4",
     "@fontsource/poppins": "^4.5.0",
+    "lodash.merge": "^4.6.2",
     "prop-types": "^15.7.2",
     "react-select": "^5.1.0",
     "styled-components": "^5.3.1"
   },
   "devDependencies": {
     "@babel/core": "7.15.8",
+    "@babel/plugin-transform-runtime": "7.15.8",
+    "@babel/preset-react": "7.14.5",
     "@ivangabriele/eslint-config-react": "1.5.0",
     "@ivangabriele/prettier-config": "1.1.0",
+    "@rollup/plugin-babel": "5.3.0",
+    "@rollup/plugin-node-resolve": "13.0.5",
     "@storybook/addon-actions": "6.3.10",
     "@storybook/addon-essentials": "6.3.10",
     "@storybook/addon-links": "6.3.10",
     "@storybook/react": "6.3.10",
     "babel-loader": "8.2.2",
+    "del": "6.0.0",
     "eslint-plugin-prettier": "4.0.0",
     "gh-pages": "3.2.3",
+    "glob": "7.2.0",
     "husky": "7.0.2",
+    "ramda": "0.27.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "rollup": "2.58.0",
+    "rollup-plugin-sizes": "1.0.4",
+    "shelljs": "0.8.4"
   },
   "peerDependencies": {
     "react": "^17.0.2",
@@ -37,8 +53,8 @@
   },
   "prettier": "@ivangabriele/prettier-config",
   "eslintIgnore": [
+    "/dist",
     "/storybook-static",
     "!/.storybook"
-  ],
-  "homepage": "http://ivangabriele.github.io/singularity"
+  ]
 }

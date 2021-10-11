@@ -1,5 +1,7 @@
 /* eslint-disable sort-keys-fix/sort-keys-fix */
 
+import PropTypes from 'prop-types'
+
 export default {
   appearance: {
     borderRadius: {
@@ -72,3 +74,57 @@ export default {
     },
   },
 }
+
+const ThemeColorShape = PropTypes.shape({
+  default: PropTypes.string,
+  active: PropTypes.string,
+})
+
+const ThemeSizeShape = PropTypes.shape({
+  small: PropTypes.string,
+  medium: PropTypes.string,
+  large: PropTypes.string,
+})
+
+export const ThemeShape = PropTypes.shape({
+  appearance: {
+    borderRadius: ThemeSizeShape,
+  },
+  color: {
+    body: {
+      background: PropTypes.string,
+      light: PropTypes.string,
+    },
+
+    primary: ThemeColorShape,
+    secondary: ThemeColorShape,
+    success: ThemeColorShape,
+    danger: ThemeColorShape,
+    warning: ThemeColorShape,
+    info: ThemeColorShape,
+  },
+  padding: {
+    button: ThemeSizeShape,
+    input: ThemeSizeShape,
+    layout: {
+      tiny: PropTypes.string,
+      small: PropTypes.string,
+      medium: PropTypes.string,
+      large: PropTypes.string,
+    },
+  },
+  typography: {
+    font: {
+      default: {
+        family: PropTypes.string,
+        size: PropTypes.string,
+        weight: PropTypes.number,
+      },
+    },
+    size: {
+      small: PropTypes.number,
+      medium: PropTypes.number,
+      large: PropTypes.number,
+    },
+  },
+})
