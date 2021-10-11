@@ -18,3 +18,14 @@ export const SIZE = {
 }
 
 export const SIZES = Object.values(SIZE)
+
+export const TYPE = {
+  ACTION: 'ACTION',
+  ID: 'ID',
+  NUMBER: 'NUMBER',
+  SINCE: 'SINCE',
+  STRING: 'STRING',
+  TAGS: 'TAGS',
+}
+
+export const TYPES = Object.values(TYPE)

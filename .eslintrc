@@ -10,6 +10,8 @@
     "node": false
   },
   "rules": {
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+
     "import/no-extraneous-dependencies": ["error", { "peerDependencies": true }],
 
     "react/jsx-props-no-spreading": "off",

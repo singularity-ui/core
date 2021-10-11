@@ -16,6 +16,11 @@ export default {
       light: '#6c757d',
     },
 
+    list: {
+      even: '#ffffff',
+      odd: '#f4f7f9',
+    },
+
     primary: {
       default: '#3f80ea',
       active: '#366dc7',
@@ -63,7 +68,7 @@ export default {
     font: {
       default: {
         family: `'Poppins', sans-serif`,
-        size: '16px',
+        size: '100%',
         weight: 300,
       },
     },

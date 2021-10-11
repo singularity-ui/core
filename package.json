@@ -20,6 +20,7 @@
     "lodash.merge": "^4.6.2",
     "prop-types": "^15.7.2",
     "react-select": "^5.1.0",
+    "react-table": "^7.7.0",
     "styled-components": "^5.3.1"
   },
   "devDependencies": {
@@ -28,6 +29,8 @@
     "@babel/preset-react": "7.14.5",
     "@ivangabriele/eslint-config-react": "1.5.0",
     "@ivangabriele/prettier-config": "1.1.0",
+    "@mui/icons-material": "5.0.3",
+    "@mui/material": "5.0.3",
     "@rollup/plugin-babel": "5.3.0",
     "@rollup/plugin-node-resolve": "13.0.5",
     "@storybook/addon-actions": "6.3.10",
