@@ -15,6 +15,12 @@ const StyledTd = styled.td`
   white-space: nowrap;
 `
 
+const StyledTdId = styled(StyledTd)`
+  font-family: monospace;
+  font-size: 1rem;
+  max-width: 2rem;
+`
+
 const StyledTdAction = styled(StyledTd)`
   cursor: pointer;
   line-height: 0;
@@ -38,7 +44,7 @@ const StyledIcon = styled.div`
 `
 
 const Cell = ({ column, data }) => {
-  const { accent, action, Icon, key, label } = column
+  const { accent, action, Icon, key, label, type } = column
 
   if (label === undefined) {
     console.error(ERROR_PATH, `Each column must have a {label} property.`)
@@ -46,7 +52,7 @@ const Cell = ({ column, data }) => {
     return <StyledTd />
   }
 
-  if (column.type === TYPE.ACTION) {
+  if (type === TYPE.ACTION) {
     if (data.id === undefined) {
       console.error(
         ERROR_PATH,
@@ -79,6 +85,10 @@ const Cell = ({ column, data }) => {
         <StyledIcon as={Icon} />
       </StyledTdAction>
     )
+  }
+
+  if (type === TYPE.ID) {
+    return <StyledTdId>{data[key]}</StyledTdId>
   }
 
   // return <StyledTd />
