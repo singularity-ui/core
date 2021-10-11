@@ -13,6 +13,7 @@ const getConfig = (format, input, outputFilePath) => ({
     'lodash.merge',
     'prop-types',
     'react',
+    'react-paginate',
     'react-select',
     'styled-components',
   ],
