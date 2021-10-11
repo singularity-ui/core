@@ -2,6 +2,7 @@
 
 [![License][img-license]][lnk-license]
 [![CI Status][img-github]][lnk-github]
+[![NPM Version][img-npm]][lnk-npm]
 
 Yet another React UI.
 
@@ -32,6 +33,8 @@ hell lot of time customizing their look and feel. And as a developper, I have be
 [img-github]:
   https://img.shields.io/github/workflow/status/ivangabriele/singularity/Test%20&%20Publish/main?style=flat-square
 [img-license]: https://img.shields.io/github/license/ivangabriele/singularity?style=flat-square
+[img-npm]: https://img.shields.io/npm/v/@ivangabriele/singularity?style=flat-square
 
 [lnk-github]: https://github.com/ivangabriele/singularity/actions?query=branch%3Amain++
 [lnk-license]: https://github.com/ivangabriele/singularity/blob/main/LICENSE
+[lnk-npm]: https://www.npmjs.com/package/@ivangabriele/singularity
