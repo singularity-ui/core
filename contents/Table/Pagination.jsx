@@ -7,7 +7,7 @@ const Box = styled.div`
   padding-top: ${p => p.theme.padding.layout.medium};
   user-select: none;
 
-  .Container {
+  .Ul {
     display: flex;
     justify-content: flex-end;
     list-style: none;
@@ -42,6 +42,14 @@ const Box = styled.div`
   .Link:hover {
     background-color: ${p => p.theme.color.secondary.active};
   }
+  .Ul > .Li:first-child > .Link {
+    border-bottom-left-radius: ${p => p.theme.appearance.borderRadius.medium};
+    border-top-left-radius: ${p => p.theme.appearance.borderRadius.medium};
+  }
+  .Ul > .Li:last-child > .Link {
+    border-bottom-right-radius: ${p => p.theme.appearance.borderRadius.medium};
+    border-top-right-radius: ${p => p.theme.appearance.borderRadius.medium};
+  }
 
   .disabled {
     opacity: 0.65;
@@ -55,8 +63,6 @@ const Box = styled.div`
     background-color: ${p => p.theme.color.secondary.active};
     cursor: default;
   }
-  .selected > .Link:hover {
-  }
 `
 
 const Pagination = props => (
@@ -64,7 +70,7 @@ const Pagination = props => (
     <ReactPaginate
       breakClassName="Li"
       breakLinkClassName="Link"
-      containerClassName="Container"
+      containerClassName="Ul"
       nextClassName="Li"
       nextLabel="►"
       nextLinkClassName="Link"
