@@ -21,6 +21,10 @@ const Box = styled.div`
   table > tbody > tr:nth-child(odd) {
     background-color: ${p => p.theme.color.list.odd};
   }
+
+  table > tbody > tr:last-child > td {
+    border-bottom: solid 2px ${p => p.theme.color.body.light};
+  }
 `
 
 const Table = React.forwardRef(({ columns, data, isLoading, perPage, ...props }, ref) => {
