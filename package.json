@@ -11,7 +11,7 @@
     "test": "yarn test:lint",
     "test:lint": "eslint .",
     "preversion": "yarn test && yarn build",
-    "version": "node ./scripts/release/prepareVersionBump.js",
+    "version": "cross-env git checkout -B $npm_package_version",
     "postversion": "git push origin HEAD --tags"
   },
   "dependencies": {
@@ -35,6 +35,7 @@
     "@storybook/addon-links": "6.3.10",
     "@storybook/react": "6.3.10",
     "babel-loader": "8.2.2",
+    "cross-env": "7.0.3",
     "del": "6.0.0",
     "eslint-plugin-prettier": "4.0.0",
     "gh-pages": "3.2.3",
