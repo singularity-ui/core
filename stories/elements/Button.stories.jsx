@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { ACCENT, ACCENTS, SIZE, SIZES } from '../common/constants'
-import SingularityButton from '../elements/Button'
+import { ACCENT, ACCENTS, SIZE, SIZES } from '../../common/constants'
+import SingularityButton from '../../elements/Button'
 
 export default {
   title: 'Elements/Button',

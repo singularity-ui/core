@@ -44,7 +44,7 @@ const Error = styled.p`
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
-const TextInput = React.forwardRef(({ children, className, error, helper, label, size, ...props }, ref) => {
+const TextInput = React.forwardRef(({ className, error, helper, label, size, ...props }, ref) => {
   const hasError = error !== null
 
   return (
@@ -55,9 +55,7 @@ const TextInput = React.forwardRef(({ children, className, error, helper, label,
         </Label>
       )}
 
-      <StyledInput ref={ref} className="TextInput" hasError={hasError} size={size} {...props}>
-        {children}
-      </StyledInput>
+      <StyledInput ref={ref} className="TextInput" hasError={hasError} size={size} {...props} />
 
       {!error && helper && (
         <Helper className="Helper" size={size}>
