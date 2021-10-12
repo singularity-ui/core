@@ -16,7 +16,6 @@ const StyledSelect = styled(ReactSelect)`
   .Select__control {
     border: solid 1px ${p => (p.hasError ? p.theme.color.danger.default : p.theme.color.secondary.default)};
     border-radius: ${p => p.theme.appearance.borderRadius[p.size]};
-    cursor: text;
     font-family: inherit;
     font-size: ${p => Math.round(p.theme.typography.size[p.size] * 100)}%;
     font-weight: 400;
@@ -35,6 +34,7 @@ const StyledSelect = styled(ReactSelect)`
   }
 
   .Select__value-container {
+    cursor: text;
     padding: ${p => p.theme.padding.input[p.size]};
   }
 

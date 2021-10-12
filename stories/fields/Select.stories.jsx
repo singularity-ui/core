@@ -1,7 +1,12 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../../common/constants'
 import SingularitySelect from '../../fields/Select'
+
+const StyledSelect = styled(SingularitySelect)`
+  width: 20rem;
+`
 
 export default {
   title: 'Fields/Select',
@@ -16,12 +21,14 @@ export default {
 
   args: {
     options: [
-      { value: 'option1', label: 'Option 1' },
-      { value: 'option2', label: 'Option 2' },
-      { value: 'option3', label: 'Option 3' },
+      { value: 'bfd7ea', label: 'Beau Blue' },
+      { value: 'c81d25', label: 'Lava' },
+      { value: '087e8b', label: 'Metallic Seaweed' },
+      { value: '0b3954', label: 'Prussian Blue' },
+      { value: 'ff5a5f', label: 'Sizzling Red' },
     ],
     size: SIZE.MEDIUM,
   },
 }
 
-export const Select = props => <SingularitySelect {...props} />
+export const Select = props => <StyledSelect placeholder="Color" {...props} />

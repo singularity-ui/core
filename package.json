@@ -17,6 +17,7 @@
   "dependencies": {
     "@babel/runtime": "^7.15.4",
     "@fontsource/poppins": "^4.5.0",
+    "classnames": "^2.3.1",
     "lodash.merge": "^4.6.2",
     "prop-types": "^15.7.2",
     "react-paginate": "^7.1.3",

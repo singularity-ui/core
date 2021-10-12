@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { TYPE } from '../../common/constants'
 import { ColumnShape } from './shapes'
 
-const ERROR_PATH = '🌌 @singularity/core/Table:'
+const ERROR_SCOPE = '🌌 @singularity/core/Table:'
 
 const StyledTd = styled.td`
   overflow: hidden;
@@ -47,7 +47,7 @@ const Cell = ({ column, data }) => {
   const { accent, action, Icon, key, label, type } = column
 
   if (label === undefined) {
-    console.error(ERROR_PATH, `Each column must have a {label} property.`)
+    console.error(ERROR_SCOPE, `Each column must have a {label} property.`)
 
     return <StyledTd />
   }
@@ -55,7 +55,7 @@ const Cell = ({ column, data }) => {
   if (type === TYPE.ACTION) {
     if (data.id === undefined) {
       console.error(
-        ERROR_PATH,
+        ERROR_SCOPE,
         `You must have an "id" property in your {data} collection in order to use {action} in columns.`,
       )
 
@@ -64,7 +64,7 @@ const Cell = ({ column, data }) => {
 
     if (Icon === undefined) {
       console.error(
-        ERROR_PATH,
+        ERROR_SCOPE,
         `You must set the {accent} property in "${label}" column to use an {action} in this column.`,
       )
 
@@ -73,7 +73,7 @@ const Cell = ({ column, data }) => {
 
     if (Icon === undefined) {
       console.error(
-        ERROR_PATH,
+        ERROR_SCOPE,
         `You must set the {Icon} property in "${label}" column to use an {action} in this column.`,
       )
 

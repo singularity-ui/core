@@ -1,7 +1,12 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../../common/constants'
 import SingularityTextInput from '../../fields/TextInput'
+
+const StyledTextInput = styled(SingularityTextInput)`
+  width: 20rem;
+`
 
 export default {
   title: 'Fields/Text Input',
@@ -17,18 +22,6 @@ export default {
   args: {
     size: SIZE.MEDIUM,
   },
-
-  // parameters: {
-  //   docs: {
-  //     source: {
-  //       code: `
-  //         import TextInput from '@singularity/core/TextInput
-
-  //         <TextInput placeholder=Text Input" />
-  //       `,
-  //     },
-  //   },
-  // },
 }
 
-export const TextInput = props => <SingularityTextInput {...props} placeholder="Text Input" />
+export const TextInput = props => <StyledTextInput {...props} placeholder="Text Input" />

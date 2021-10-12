@@ -22,6 +22,7 @@ const StyledInput = styled.input`
   transition-duration: 0.15s, 0.15s, 0.15s, 0.15s;
   transition-property: color, background-color, border-color, box-shadow;
   transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+  width: 100%;
 
   :disabled {
     opacity: 0.65;
