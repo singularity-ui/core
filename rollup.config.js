@@ -4,7 +4,7 @@ import del from 'del'
 import glob from 'glob'
 import sizes from 'rollup-plugin-sizes'
 
-const FILE_PATHS = [...glob.sync('./+(elements|fields)/*.jsx'), './GlobalStyle.jsx', './ThemeProvider.jsx']
+const FILE_PATHS = [...glob.sync('./+(contents|elements|fields)/*.jsx'), './GlobalStyle.jsx', './ThemeProvider.jsx']
 
 const getConfig = (format, input, outputFilePath) => ({
   external: [

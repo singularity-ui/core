@@ -24,7 +24,7 @@ const distPackageExtraProps = {
 ;(async () => {
   const distFilePaths = glob
     .sync('./dist/*.js')
-    .map(filePath => filePath.replace('./dist/', './'))
+    .map(filePath => filePath.replace('./dist/', ''))
     .sort()
 
   const distPackage = R.pipe(
