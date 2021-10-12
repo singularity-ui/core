@@ -15,7 +15,7 @@ const StyledInput = styled.input`
   border: solid 1px ${p => (p.hasError ? p.theme.color.danger.default : p.theme.color.secondary.default)};
   border-radius: ${p => p.theme.appearance.borderRadius[p.size]};
   font-family: inherit;
-  font-size: ${p => Math.round(p.theme.typography.size[p.size] * 100)}%;
+  font-size: ${p => p.theme.typography.size[p.size] * 100}%;
   font-weight: 400;
   padding: ${p => p.theme.padding.input[p.size]};
   transition-delay: 0s, 0s, 0s, 0s;

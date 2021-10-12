@@ -7,7 +7,7 @@ import { SIZE, SIZES } from '../common/constants'
 
 const Label = styled.label`
   display: block;
-  font-size: ${p => Math.round(p.theme.typography.size[p.size] * 80)}%;
+  font-size: ${p => p.theme.typography.size[p.size] * 80}%;
   font-weight: 500;
   padding: 0 0 ${p => p.theme.padding.layout.tiny} 0;
 `
@@ -17,8 +17,9 @@ const StyledSelect = styled(ReactSelect)`
     border: solid 1px ${p => (p.hasError ? p.theme.color.danger.default : p.theme.color.secondary.default)};
     border-radius: ${p => p.theme.appearance.borderRadius[p.size]};
     font-family: inherit;
-    font-size: ${p => Math.round(p.theme.typography.size[p.size] * 100)}%;
+    font-size: ${p => p.theme.typography.size[p.size] * 100}%;
     font-weight: 400;
+    min-height: auto;
     transition-delay: 0s, 0s, 0s, 0s;
     transition-duration: 0.15s, 0.15s, 0.15s, 0.15s;
     transition-property: color, background-color, border-color, box-shadow;
@@ -30,6 +31,10 @@ const StyledSelect = styled(ReactSelect)`
 
     :hover {
       border: solid 1px ${p => (p.hasError ? p.theme.color.danger.active : p.theme.color.secondary.active)};
+    }
+
+    &--is-focused {
+      box-shadow: 0 0 0 1px #000;
     }
   }
 
@@ -46,6 +51,20 @@ const StyledSelect = styled(ReactSelect)`
   .Select__input-container {
     margin: 0;
     padding: 0;
+  }
+
+  .Select__indicator-separator {
+    margin: ${p => p.theme.padding.input[p.size]} 0;
+  }
+
+  .Select__indicator {
+    padding: ${p => p.theme.padding.input[p.size]};
+  }
+
+  .Select__indicator > svg {
+    color: ${p => p.theme.color.body.light};
+    height: calc(1.5rem * ${p => p.theme.typography.size[p.size]});
+    width: calc(1.5rem * ${p => p.theme.typography.size[p.size]});
   }
 `
 
