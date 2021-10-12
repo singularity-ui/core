@@ -92,14 +92,14 @@ const ThemeSizeShape = PropTypes.shape({
 })
 
 export const ThemeShape = PropTypes.shape({
-  appearance: {
+  appearance: PropTypes.shape({
     borderRadius: ThemeSizeShape,
-  },
-  color: {
-    body: {
+  }),
+  color: PropTypes.shape({
+    body: PropTypes.shape({
       background: PropTypes.string,
       light: PropTypes.string,
-    },
+    }),
 
     primary: ThemeColorShape,
     secondary: ThemeColorShape,
@@ -107,29 +107,29 @@ export const ThemeShape = PropTypes.shape({
     danger: ThemeColorShape,
     warning: ThemeColorShape,
     info: ThemeColorShape,
-  },
-  padding: {
+  }),
+  padding: PropTypes.shape({
     button: ThemeSizeShape,
     input: ThemeSizeShape,
-    layout: {
+    layout: PropTypes.shape({
       tiny: PropTypes.string,
       small: PropTypes.string,
       medium: PropTypes.string,
       large: PropTypes.string,
-    },
-  },
-  typography: {
-    font: {
-      default: {
+    }),
+  }),
+  typography: PropTypes.shape({
+    font: PropTypes.shape({
+      default: PropTypes.shape({
         family: PropTypes.string,
         size: PropTypes.string,
         weight: PropTypes.number,
-      },
-    },
-    size: {
+      }),
+    }),
+    size: PropTypes.shape({
       small: PropTypes.number,
       medium: PropTypes.number,
       large: PropTypes.number,
-    },
-  },
+    }),
+  }),
 })
