@@ -2,6 +2,7 @@ import babel from '@rollup/plugin-babel'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import del from 'del'
 import glob from 'glob'
+import css from 'rollup-plugin-import-css'
 import sizes from 'rollup-plugin-sizes'
 
 const FILE_PATHS = [...glob.sync('./+(contents|elements|fields)/*.jsx'), './GlobalStyle.jsx', './ThemeProvider.jsx']
@@ -9,7 +10,6 @@ const FILE_PATHS = [...glob.sync('./+(contents|elements|fields)/*.jsx'), './Glob
 const getConfig = (format, input, outputFilePath) => ({
   external: [
     /@babel\/runtime/,
-    /@fontsource/,
     'lodash.merge',
     'prop-types',
     'react',
@@ -31,8 +31,10 @@ const getConfig = (format, input, outputFilePath) => ({
   plugins: [
     // Resolve JSX imports:
     nodeResolve({
-      extensions: ['.js', '.jsx'],
+      extensions: ['css', '.js', '.jsx'],
     }),
+    // Import CSS into JS:
+    css(),
     // Transpile JSX to JS:
     babel({
       babelHelpers: 'runtime',
