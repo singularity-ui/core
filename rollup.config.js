@@ -5,7 +5,8 @@ import glob from 'glob'
 import css from 'rollup-plugin-import-css'
 import sizes from 'rollup-plugin-sizes'
 
-const FILE_PATHS = [...glob.sync('./+(contents|elements|fields)/*.jsx'), './GlobalStyle.jsx', './ThemeProvider.jsx']
+const DIRECT_FILE_PATHS = [...glob.sync('./+(elements|fields)/*.jsx'), './GlobalStyle.jsx', './ThemeProvider.jsx']
+const NESTED_FILE_PATHS = [...glob.sync('./contents/*/index.jsx')]
 
 const getConfig = (format, input, outputFilePath) => ({
   external: [
@@ -50,8 +51,13 @@ const getConfig = (format, input, outputFilePath) => ({
 
 const configs = [
   getConfig('cjs', './index.js', './dist/index.js'),
-  ...FILE_PATHS.map(filePath => {
+  ...DIRECT_FILE_PATHS.map(filePath => {
     const fileName = /\/([^/]*).jsx$/.exec(filePath)[1]
+
+    return getConfig('esm', filePath, `./dist/${fileName}.js`)
+  }),
+  ...NESTED_FILE_PATHS.map(filePath => {
+    const fileName = /\/([^/]*)\/index.jsx$/.exec(filePath)[1]
 
     return getConfig('esm', filePath, `./dist/${fileName}.js`)
   }),
