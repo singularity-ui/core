@@ -4,7 +4,6 @@ import ReactPaginate from 'react-paginate'
 import styled from 'styled-components'
 
 const Box = styled.div`
-  padding-top: ${p => p.theme.padding.layout.medium};
   user-select: none;
 
   .Ul {
@@ -41,14 +40,6 @@ const Box = styled.div`
   }
   .Link:hover {
     background-color: ${p => p.theme.color.secondary.active};
-  }
-  .Ul > .Li:first-child > .Link {
-    border-bottom-left-radius: ${p => p.theme.appearance.borderRadius.medium};
-    border-top-left-radius: ${p => p.theme.appearance.borderRadius.medium};
-  }
-  .Ul > .Li:last-child > .Link {
-    border-bottom-right-radius: ${p => p.theme.appearance.borderRadius.medium};
-    border-top-right-radius: ${p => p.theme.appearance.borderRadius.medium};
   }
 
   .disabled {
