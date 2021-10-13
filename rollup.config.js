@@ -14,8 +14,10 @@ const getConfig = (format, input, outputFilePath) => ({
     'lodash.merge',
     'prop-types',
     'react',
+    'react-feather',
     'react-paginate',
     'react-select',
+    'react-select/async',
     'styled-components',
   ],
 
