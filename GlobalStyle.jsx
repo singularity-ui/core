@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${p => p.theme.typography.font.default.size};
     font-weigth: ${p => p.theme.typography.font.default.weigth};
     margin: 0;
+    color: ${p => p.theme.color.body.main};
   }
 
   * {

@@ -14,6 +14,7 @@ export default {
     body: {
       background: '#f7f9fc',
       light: '#6c757d',
+      main: '#495057',
     },
 
     list: {
