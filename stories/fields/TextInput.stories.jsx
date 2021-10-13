@@ -13,6 +13,7 @@ export default {
   component: SingularityTextInput,
 
   argTypes: {
+    placeholder: 'Text Input',
     size: {
       options: SIZES,
       control: { type: 'inline-radio' },
@@ -24,4 +25,4 @@ export default {
   },
 }
 
-export const TextInput = props => <StyledTextInput {...props} placeholder="Text Input" />
+export const TextInput = props => <StyledTextInput {...props} />

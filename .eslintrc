@@ -15,7 +15,7 @@
     "import/no-extraneous-dependencies": ["error", { "peerDependencies": true }],
 
     "react/jsx-props-no-spreading": "off",
-    "react/prop-types": ["error", { "ignore": ["children", "className"] }]
+    "react/prop-types": ["error", { "ignore": ["checked", "children", "className", "defaultChecked", "onChange"] }]
   },
   "overrides": [
     {

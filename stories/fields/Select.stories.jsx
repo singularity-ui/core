@@ -27,8 +27,9 @@ export default {
       { value: '0b3954', label: 'Prussian Blue' },
       { value: 'ff5a5f', label: 'Sizzling Red' },
     ],
+    placeholder: 'Color',
     size: SIZE.MEDIUM,
   },
 }
 
-export const Select = props => <StyledSelect placeholder="Color" {...props} />
+export const Select = props => <StyledSelect {...props} />
