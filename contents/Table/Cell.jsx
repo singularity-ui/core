@@ -32,15 +32,12 @@ const StyledTdAction = styled(StyledTd)`
 
   svg {
     color: ${p => p.theme.color[p.accent].default};
+    height: 1.5rem !important;
+    max-width: 1.5rem !important;
   }
   :hover svg {
     color: white;
   }
-`
-
-const StyledIcon = styled.div`
-  height: 1.5rem !important;
-  max-width: 1.5rem !important;
 `
 
 const Cell = ({ column, data }) => {
@@ -82,7 +79,7 @@ const Cell = ({ column, data }) => {
 
     return (
       <StyledTdAction accent={accent} onClick={() => action(data.id)}>
-        <StyledIcon as={Icon} />
+        <Icon />
       </StyledTdAction>
     )
   }
