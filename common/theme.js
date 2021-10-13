@@ -17,6 +17,10 @@ export default {
       main: '#495057',
     },
 
+    card: {
+      background: '#ffffff',
+    },
+
     list: {
       even: '#ffffff',
       odd: '#f4f7f9',
@@ -65,6 +69,11 @@ export default {
       large: '2rem',
     },
   },
+  shadow: {
+    small: '0 0 0.5rem 0 rgba(0, 0, 0, 0.05)',
+    medium: '0 0 1rem 0 rgba(0, 0, 0, 0.05)',
+    large: '0 0 2rem 0 rgba(0, 0, 0, 0.05)',
+  },
   typography: {
     font: {
       default: {
@@ -100,6 +109,11 @@ export const ThemeShape = PropTypes.shape({
     body: PropTypes.shape({
       background: PropTypes.string,
       light: PropTypes.string,
+      main: PropTypes.string,
+    }),
+
+    card: PropTypes.shape({
+      background: PropTypes.string,
     }),
 
     primary: ThemeColorShape,
@@ -119,6 +133,7 @@ export const ThemeShape = PropTypes.shape({
       large: PropTypes.string,
     }),
   }),
+  shadow: ThemeSizeShape,
   typography: PropTypes.shape({
     font: PropTypes.shape({
       default: PropTypes.shape({

@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const Box = styled.div`
   background-color: white;
   border-radius: ${p => p.theme.appearance.borderRadius.medium};
-  box-shadow: 0 0 0.875rem 0 rgb(41 48 66 / 5%);
+  box-shadow: ${p => p.theme.shadow.small};
   padding: ${p => p.theme.padding.layout.small} ${p => p.theme.padding.layout.medium};
 `
 
