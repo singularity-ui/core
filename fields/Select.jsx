@@ -81,7 +81,7 @@ const Error = styled.p`
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
-const Select = React.forwardRef(({ className, error, helper, isAsync, label, options, size, ...props }, ref) => {
+const Select = React.forwardRef(({ className, error, helper, isAsync, label, size, ...props }, ref) => {
   const hasError = error !== null
 
   return (
@@ -98,7 +98,6 @@ const Select = React.forwardRef(({ className, error, helper, isAsync, label, opt
         className="Select"
         classNamePrefix="Select"
         hasError={hasError}
-        options={options}
         size={size}
         {...props}
       />
@@ -125,7 +124,6 @@ Select.defaultProps = {
   helper: null,
   isAsync: false,
   label: null,
-  options: null,
   size: SIZE.MEDIUM,
 }
 
@@ -134,12 +132,6 @@ Select.propTypes = {
   helper: PropTypes.string,
   isAsync: PropTypes.bool,
   label: PropTypes.string,
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      value: PropTypes.string.isRequired,
-    }),
-  ),
   size: PropTypes.oneOf(SIZES),
 }
 
