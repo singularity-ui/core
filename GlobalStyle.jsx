@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${p => p.theme.typography.font.default.family};
     font-size: ${p => p.theme.typography.font.default.size};
     font-weigth: ${p => p.theme.typography.font.default.weigth};
+    margin: 0;
   }
 
   * {
