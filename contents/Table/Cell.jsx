@@ -9,6 +9,7 @@ import { ColumnShape } from './shapes'
 const ERROR_SCOPE = '🌌 @singularity/core/Table:'
 
 const StyledTd = styled.td`
+  max-width: 0;
   overflow: hidden;
   padding: ${p => p.theme.padding.layout.medium};
   text-align: left;
@@ -19,11 +20,12 @@ const StyledTd = styled.td`
 const StyledTdId = styled(StyledTd)`
   font-family: monospace;
   font-size: 1rem;
-  max-width: 2rem;
+  width: 2rem;
 `
 
 const StyledTdBoolean = styled(StyledTd)`
   line-height: 0;
+  max-width: none;
   width: 3.5rem;
 
   svg {
