@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import { CheckCircle, XCircle } from 'react-feather'
 import styled from 'styled-components'
 
 import { TYPE } from '../../common/constants'
@@ -21,10 +22,19 @@ const StyledTdId = styled(StyledTd)`
   max-width: 2rem;
 `
 
-const StyledTdAction = styled(StyledTd)`
-  cursor: pointer;
+const StyledTdBoolean = styled(StyledTd)`
   line-height: 0;
   width: 3.5rem;
+
+  svg {
+    color: ${p => p.theme.color[p.value ? 'success' : 'danger'].active};
+    height: 1.5rem !important;
+    max-width: 1.5rem !important;
+  }
+`
+
+const StyledTdAction = styled(StyledTdBoolean)`
+  cursor: pointer;
 
   :hover {
     background-color: ${p => p.theme.color[p.accent].active};
@@ -32,8 +42,6 @@ const StyledTdAction = styled(StyledTd)`
 
   svg {
     color: ${p => p.theme.color[p.accent].default};
-    height: 1.5rem !important;
-    max-width: 1.5rem !important;
   }
   :hover svg {
     color: white;
@@ -82,6 +90,12 @@ const Cell = ({ column, data }) => {
         <Icon />
       </StyledTdAction>
     )
+  }
+
+  if (type === TYPE.BOOLEAN) {
+    const value = data[key]
+
+    return <StyledTdBoolean value={value}>{value ? <CheckCircle /> : <XCircle />}</StyledTdBoolean>
   }
 
   if (type === TYPE.ID) {

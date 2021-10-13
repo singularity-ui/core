@@ -1,6 +1,6 @@
-import { Delete, Edit } from '@mui/icons-material'
 import Jabber from 'jabber'
 import React from 'react'
+import { Edit, Trash } from 'react-feather'
 import styled from 'styled-components'
 
 import { ACCENT, TYPE } from '../../common/constants'
@@ -10,8 +10,8 @@ const jabber = new Jabber()
 
 const DATA = new Array(50).fill(null).map((_, index) => ({
   id: index,
-  name: jabber.createFullName(),
   email: jabber.createEmail(),
+  isActive: Math.random() < 0.5,
 }))
 
 const StyledTable = styled(SingularityTable)`
@@ -32,12 +32,13 @@ export default {
         key: 'id',
       },
       {
-        label: 'Name',
-        key: 'name',
-      },
-      {
         label: 'Email',
         key: 'email',
+      },
+      {
+        label: '',
+        type: TYPE.BOOLEAN,
+        key: 'isActive',
       },
       {
         label: 'Edit user',
@@ -53,7 +54,7 @@ export default {
         // eslint-disable-next-line no-alert
         action: id => window.alert(`Delete ${id}`),
         accent: ACCENT.DANGER,
-        Icon: Delete,
+        Icon: Trash,
       },
     ],
     data: DATA,

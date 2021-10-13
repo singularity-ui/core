@@ -21,6 +21,7 @@ export const SIZES = Object.values(SIZE)
 
 export const TYPE = {
   ACTION: 'action',
+  BOOLEAN: 'boolean',
   ID: 'id',
   NUMBER: 'number',
   SINCE: 'since',
