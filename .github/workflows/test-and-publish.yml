@@ -15,9 +15,27 @@ jobs:
       - run: yarn
       - run: yarn test:lint
 
+  publish:
+    name: Publish
+    needs: lint
+    if: ${{ contains(github.ref, 'refs/tags/') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+          registry-url: "https://registry.npmjs.org"
+          cache: "yarn"
+      - run: yarn
+      - run: yarn build
+      - run: npm publish ./dist --access=public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
   deploy:
     name: Deploy
-    needs: lint
+    needs: publish
     if: ${{ contains(github.ref, 'refs/tags/') }}
     runs-on: ubuntu-latest
     steps:
@@ -33,21 +51,3 @@ jobs:
           npx gh-pages -d storybook-static -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  publish:
-    name: Publish
-    needs: deploy
-    if: ${{ contains(github.ref, 'refs/tags/') }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "16"
-          registry-url: "https://registry.npmjs.org"
-          cache: "yarn"
-      - run: yarn
-      - run: yarn build
-      - run: npm publish ./dist --access=public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
