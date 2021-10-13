@@ -20,12 +20,12 @@ export const SIZE = {
 export const SIZES = Object.values(SIZE)
 
 export const TYPE = {
-  ACTION: 'ACTION',
-  ID: 'ID',
-  NUMBER: 'NUMBER',
-  SINCE: 'SINCE',
-  STRING: 'STRING',
-  TAGS: 'TAGS',
+  ACTION: 'action',
+  ID: 'id',
+  NUMBER: 'number',
+  SINCE: 'since',
+  STRING: 'string',
+  TAGS: 'tags',
 }
 
 export const TYPES = Object.values(TYPE)
