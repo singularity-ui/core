@@ -18,6 +18,7 @@ jobs:
   deploy:
     name: Deploy
     needs: lint
+    if: ${{ contains(github.ref, 'refs/tags/') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -35,7 +36,7 @@ jobs:
 
   publish:
     name: Publish
-    needs: lint
+    needs: deploy
     if: ${{ contains(github.ref, 'refs/tags/') }}
     runs-on: ubuntu-latest
     steps:
