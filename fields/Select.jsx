@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import ReactSelect from 'react-select'
+import ReactSelectAsync from 'react-select/async'
 import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../common/constants'
@@ -80,7 +81,7 @@ const Error = styled.p`
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
-const Select = React.forwardRef(({ className, error, helper, label, options, size, ...props }, ref) => {
+const Select = React.forwardRef(({ className, error, helper, isAsync, label, options, size, ...props }, ref) => {
   const hasError = error !== null
 
   return (
@@ -93,6 +94,7 @@ const Select = React.forwardRef(({ className, error, helper, label, options, siz
 
       <StyledSelect
         ref={ref}
+        as={isAsync ? ReactSelectAsync : null}
         className="Select"
         classNamePrefix="Select"
         hasError={hasError}
@@ -121,20 +123,23 @@ Select.displayName = 'Select'
 Select.defaultProps = {
   error: null,
   helper: null,
+  isAsync: false,
   label: null,
+  options: null,
   size: SIZE.MEDIUM,
 }
 
 Select.propTypes = {
   error: PropTypes.string,
   helper: PropTypes.string,
+  isAsync: PropTypes.bool,
   label: PropTypes.string,
   options: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,
       value: PropTypes.string.isRequired,
     }),
-  ).isRequired,
+  ),
   size: PropTypes.oneOf(SIZES),
 }
 
