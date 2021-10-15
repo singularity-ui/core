@@ -43,10 +43,30 @@ const StyledSelect = styled(ReactSelect)`
     cursor: text;
     padding: ${p => p.theme.padding.input[p.size]};
   }
-
   .Select__placeholder {
     color: ${p => p.theme.color.body.light};
     margin: 0;
+  }
+
+  .Select__multi-value {
+    background-color: ${p => p.theme.color.primary.background};
+    border-radius: ${p => p.theme.appearance.borderRadius[p.size]};
+    margin: 0;
+  }
+  .Select__multi-value__label {
+    font-size: 75%;
+    font-weight: 500;
+    line-height: 1.5;
+    padding-left: 0.5rem;
+  }
+  .Select__multi-value__remove {
+    border-radius: 0 ${p => p.theme.appearance.borderRadius[p.size]} ${p => p.theme.appearance.borderRadius[p.size]} 0;
+    cursor: pointer;
+
+    :hover {
+      background-color: ${p => p.theme.color.primary.active};
+      color: ${p => p.theme.color.body.white};
+    }
   }
 
   .Select__input-container {
@@ -54,22 +74,15 @@ const StyledSelect = styled(ReactSelect)`
     padding: 0;
   }
 
-  .Select__multi-value__remove {
-    cursor: pointer;
-  }
-
   .Select__indicators {
     cursor: pointer;
   }
-
   .Select__indicator-separator {
     margin: ${p => p.theme.padding.input[p.size]} 0;
   }
-
   .Select__indicator {
     padding: ${p => p.theme.padding.input[p.size]};
   }
-
   .Select__indicator > svg {
     color: ${p => p.theme.color.body.light};
     height: calc(1.5rem * ${p => p.theme.typography.size[p.size]});

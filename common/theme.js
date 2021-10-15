@@ -36,26 +36,32 @@ export default {
     primary: {
       default: '#3f80ea',
       active: '#366dc7',
+      background: '#d9e6fb',
     },
     secondary: {
       default: '#7f838e',
       active: '#6c6f79',
+      background: '#dbdcdd',
     },
     success: {
       default: '#4bbf73',
       active: '#40a262',
+      background: '#dbf2e3',
     },
     danger: {
       default: '#d9534f',
       active: '#b84743',
+      background: '#f7dddc',
     },
     warning: {
       default: '#cc8b37',
       active: '#ad762f',
+      background: '#faeddb',
     },
     info: {
       default: '#1f9bcf',
       active: '#1a84b0',
+      background: '#d2ebf5',
     },
   },
   padding: {
@@ -100,6 +106,7 @@ export default {
 const ThemeColorShape = PropTypes.shape({
   default: PropTypes.string,
   active: PropTypes.string,
+  background: PropTypes.string,
 })
 
 const ThemeSizeShape = PropTypes.shape({
