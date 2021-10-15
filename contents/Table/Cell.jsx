@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import * as R from 'ramda'
 import React from 'react'
 import { CheckCircle, XCircle } from 'react-feather'
 import styled from 'styled-components'
@@ -50,6 +51,8 @@ const StyledTdAction = styled(StyledTdBoolean)`
   }
 `
 
+const path = (key, obj) => R.path(key.split('.'), obj)
+
 const Cell = ({ column, data }) => {
   const { accent, action, Icon, key, label, type } = column
 
@@ -94,18 +97,18 @@ const Cell = ({ column, data }) => {
     )
   }
 
-  if (type === TYPE.BOOLEAN) {
-    const value = data[key]
+  const value = path(key, data)
 
+  if (type === TYPE.BOOLEAN) {
     return <StyledTdBoolean value={value}>{value ? <CheckCircle /> : <XCircle />}</StyledTdBoolean>
   }
 
   if (type === TYPE.ID) {
-    return <StyledTdId>{data[key]}</StyledTdId>
+    return <StyledTdId>{value}</StyledTdId>
   }
 
   // return <StyledTd />
-  return <StyledTd>{data[key]}</StyledTd>
+  return <StyledTd>{value}</StyledTd>
 }
 
 Cell.propTypes = {

@@ -12,6 +12,9 @@ const DATA = new Array(50).fill(null).map((_, index) => ({
   id: index,
   email: jabber.createEmail(),
   isActive: Math.random() < 0.5,
+  organization: {
+    name: `${jabber.createWord(6, true)} Inc.`,
+  },
 }))
 
 const StyledTable = styled(SingularityTable)`
@@ -30,6 +33,10 @@ export default {
         label: 'ID',
         type: TYPE.ID,
         key: 'id',
+      },
+      {
+        label: 'Organization',
+        key: 'organization.name',
       },
       {
         label: 'Email',
