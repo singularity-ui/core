@@ -23,7 +23,7 @@ const distPackageExtraProps = {
 // eslint-disable-next-line import/newline-after-import
 ;(async () => {
   const distFilePaths = glob
-    .sync('./dist/*.js')
+    .sync('./dist/**/*.js')
     .map(filePath => filePath.replace('./dist/', ''))
     .sort()
 

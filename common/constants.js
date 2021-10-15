@@ -19,6 +19,13 @@ export const SIZE = {
 
 export const SIZES = Object.values(SIZE)
 
+export const SORT_ORDER = {
+  ASC: 'asc',
+  DESC: 'desc',
+}
+
+export const SORT_ORDERS = Object.values(SORT_ORDER)
+
 export const TYPE = {
   ACTION: 'action',
   BOOLEAN: 'boolean',

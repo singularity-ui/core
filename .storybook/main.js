@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+/* eslint-env node */
 
 module.exports = {
   addons: ['@storybook/addon-links', '@storybook/addon-essentials'],

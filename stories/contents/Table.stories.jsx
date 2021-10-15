@@ -1,4 +1,5 @@
 import Jabber from 'jabber'
+import * as R from 'ramda'
 import React from 'react'
 import { CheckCircle, XCircle, Edit, Trash } from 'react-feather'
 import styled from 'styled-components'
@@ -8,14 +9,14 @@ import SingularityTable from '../../contents/Table'
 
 const jabber = new Jabber()
 
-const DATA = new Array(50).fill(null).map((_, index) => ({
+const DATA = R.addIndex(R.map)((_, index) => ({
   id: index,
   email: jabber.createEmail(),
   isActive: Math.random() < 0.5,
   organization: {
     name: `${jabber.createWord(6, true)} Inc.`,
   },
-}))
+}))(new Array(50).fill(null))
 
 const StyledTable = styled(SingularityTable)`
   width: 100%;
@@ -25,7 +26,15 @@ export default {
   title: 'Contents/Table',
   component: SingularityTable,
 
-  argTypes: {},
+  argTypes: {
+    defaultSortedKey: {
+      options: ['email', 'organization.name'],
+      control: { type: 'inline-radio' },
+    },
+    defaultSortedKeyIsDesc: {
+      control: { type: 'boolean' },
+    },
+  },
 
   args: {
     columns: [
@@ -35,12 +44,14 @@ export default {
         type: TYPE.ID,
       },
       {
-        label: 'Organization',
-        key: 'organization.name',
-      },
-      {
         label: 'Email',
         key: 'email',
+        isSortable: true,
+      },
+      {
+        label: 'Organization',
+        key: 'organization.name',
+        isSortable: true,
       },
       {
         labelOff: 'Activate user account',
@@ -75,6 +86,8 @@ export default {
       },
     ],
     data: DATA,
+    defaultSortedKey: 'email',
+    defaultSortedKeyIsDesc: false,
     isLoading: false,
     perPage: 10,
   },

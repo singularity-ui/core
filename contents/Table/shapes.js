@@ -6,10 +6,10 @@ import { ACCENTS, TYPE, TYPES } from '../../common/constants'
 
 export const ColumnShape = PropTypes.oneOfType([
   PropTypes.shape({
+    isSortable: PropTypes.bool,
     key: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     type: PropTypes.oneOf(TYPES),
-    withTooltip: PropTypes.bool,
   }),
   PropTypes.shape({
     accent: PropTypes.oneOf(ACCENTS).isRequired,

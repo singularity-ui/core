@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types'
+import * as R from 'ramda'
 import React from 'react'
 import styled from 'styled-components'
 
+import { SORT_ORDER } from '../../common/constants'
+import generateKeyFromValue from '../../helpers/generateKeyFromValue'
 import Head from './Head'
 import LoadingCell from './LoadingCell'
 import NoDataCell from './NoDataCell'
@@ -27,60 +30,93 @@ const Box = styled.div`
   }
 `
 
-const Table = React.forwardRef(({ columns, data, isLoading, perPage, ...props }, ref) => {
-  const [pageIndex, setPageIndex] = React.useState(0)
+const getSortOrder = isDesc => (isDesc ? SORT_ORDER.DESC : SORT_ORDER.ASC)
+const dottedPath = key => R.path(key.split('.'))
+const sort = (data, keyDottedPath, isDesc) => {
+  if (keyDottedPath === null) {
+    return data
+  }
 
-  const isEmpty = data.length === 0
-  const pageCount = Math.ceil(data.length / perPage)
-  const isSinglePaged = pageCount <= 1
+  const sortingComparator = isDesc ? R.descend(dottedPath(keyDottedPath)) : R.ascend(dottedPath(keyDottedPath))
 
-  const startIndex = pageIndex * perPage
-  const enIndex = startIndex + perPage
-  const visibleData = isLoading || isEmpty ? [] : data.slice(startIndex, enIndex)
+  return R.sort(sortingComparator)(data)
+}
 
-  return (
-    <Box>
-      <table ref={ref} {...props}>
-        <thead>
-          <tr>{columns.map(Head)}</tr>
-        </thead>
-        <tbody>
-          {isLoading && (
+const Table = React.forwardRef(
+  ({ columns, data, defaultSortedKey, defaultSortedKeyIsDesc, isLoading, perPage, ...props }, ref) => {
+    const [pageIndex, setPageIndex] = React.useState(0)
+    const [sortedData, setSortedData] = React.useState(sort(data, defaultSortedKey, defaultSortedKeyIsDesc))
+    const [sortedKey, setSortedKey] = React.useState(defaultSortedKey)
+    const [sortedKeyOrder, setSortedKeyOrder] = React.useState(getSortOrder(defaultSortedKeyIsDesc))
+
+    const isEmpty = data.length === 0
+    const pageCount = Math.ceil(data.length / perPage)
+    const isSinglePaged = pageCount <= 1
+
+    const startIndex = pageIndex * perPage
+    const enIndex = startIndex + perPage
+    const visibleData = isLoading || isEmpty ? [] : sortedData.slice(startIndex, enIndex)
+
+    const sortDataByKey = (key, isDesc) => {
+      setSortedKey(key)
+      setSortedKeyOrder(getSortOrder(isDesc))
+      setSortedData(sort(data, key, isDesc))
+    }
+
+    return (
+      <Box>
+        <table ref={ref} {...props}>
+          <thead>
             <tr>
-              <LoadingCell colSpan={columns.length}>Loading…</LoadingCell>
+              {columns.map(({ key: dataKey, ...columnProps }, index) => (
+                <Head
+                  key={String(index)}
+                  dataKey={dataKey}
+                  onSort={sortDataByKey}
+                  sortOrder={dataKey === sortedKey ? sortedKeyOrder : null}
+                  {...columnProps}
+                />
+              ))}
             </tr>
-          )}
+          </thead>
+          <tbody>
+            {isLoading && (
+              <tr>
+                <LoadingCell colSpan={columns.length}>Loading…</LoadingCell>
+              </tr>
+            )}
 
-          {!isLoading && isEmpty && (
-            <tr>
-              <NoDataCell colSpan={columns.length}>No data.</NoDataCell>
-            </tr>
-          )}
+            {!isLoading && isEmpty && (
+              <tr>
+                <NoDataCell colSpan={columns.length}>No data.</NoDataCell>
+              </tr>
+            )}
 
-          {!isLoading &&
-            !isEmpty &&
-            visibleData.map((dataRow, rowIndex) => (
-              <Row key={String(dataRow.id || rowIndex)} columns={columns} data={dataRow} />
-            ))}
-        </tbody>
-      </table>
+            {!isLoading &&
+              !isEmpty &&
+              visibleData.map(dataRow => <Row key={generateKeyFromValue(dataRow)} columns={columns} data={dataRow} />)}
+          </tbody>
+        </table>
 
-      {!isSinglePaged && (
-        <Pagination
-          initialPage={pageIndex}
-          onPageChange={({ selected }) => setPageIndex(selected)}
-          pageCount={pageCount}
-          pageRangeDisplayed={3}
-        />
-      )}
-    </Box>
-  )
-})
+        {!isSinglePaged && (
+          <Pagination
+            initialPage={pageIndex}
+            onPageChange={({ selected }) => setPageIndex(selected)}
+            pageCount={pageCount}
+            pageRangeDisplayed={3}
+          />
+        )}
+      </Box>
+    )
+  },
+)
 
 Table.displayName = 'Table'
 
 Table.defaultProps = {
   data: [],
+  defaultSortedKey: null,
+  defaultSortedKeyIsDesc: false,
   isLoading: false,
   perPage: 10,
 }
@@ -88,6 +124,8 @@ Table.defaultProps = {
 Table.propTypes = {
   columns: PropTypes.arrayOf(ColumnShape).isRequired,
   data: PropTypes.arrayOf(PropTypes.object),
+  defaultSortedKey: PropTypes.string,
+  defaultSortedKeyIsDesc: PropTypes.bool,
   isLoading: PropTypes.bool,
   perPage: PropTypes.number,
 }
