@@ -9,6 +9,7 @@ export const ColumnShape = PropTypes.oneOfType([
     key: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     type: PropTypes.oneOf(TYPES),
+    withTooltip: PropTypes.bool,
   }),
   PropTypes.shape({
     accent: PropTypes.oneOf(ACCENTS).isRequired,
@@ -16,6 +17,7 @@ export const ColumnShape = PropTypes.oneOfType([
     Icon: PropTypes.elementType.isRequired,
     label: PropTypes.string.isRequired,
     type: PropTypes.oneOf([TYPE.ACTION]),
+    withTooltip: PropTypes.bool,
   }),
   PropTypes.shape({
     action: PropTypes.func.isRequired,
@@ -24,5 +26,6 @@ export const ColumnShape = PropTypes.oneOfType([
     labelOff: PropTypes.string.isRequired,
     labelOn: PropTypes.string.isRequired,
     type: PropTypes.oneOf([TYPE.TOGGLE]),
+    withTooltip: PropTypes.bool,
   }),
 ])

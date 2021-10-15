@@ -11,14 +11,18 @@ const ERROR_SCOPE = '🌌 @singularity/core/Table:'
 
 const StyledTd = styled.td`
   max-width: 0;
-  overflow: hidden;
   padding: ${p => p.theme.padding.layout.medium};
+  position: relative;
   text-align: left;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 
   :focus-visible {
     background-color: ${p => p.theme.color.a11n.focus.background} !important;
+  }
+
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 `
 
@@ -28,19 +32,56 @@ const StyledTdId = styled(StyledTd)`
   width: 2rem;
 `
 
-const StyledTdBoolean = styled(StyledTd)`
+const StyledTdIcon = styled(StyledTd)`
   line-height: 0;
   max-width: none;
   width: 3.5rem;
 
   svg {
-    color: ${p => p.theme.color[p.value ? 'success' : 'danger'].active};
     height: 1.5rem !important;
     max-width: 1.5rem !important;
   }
+
+  span {
+    background-color: ${p => p.theme.color.body.light};
+    box-shadow: ${p => p.theme.shadow.small};
+    font-size: 80%;
+    font-weight: 500;
+    white-space: nowrap;
+    color: ${p => p.theme.color.body.white};
+    left: 50%;
+    opacity: 0;
+    padding: ${p => p.theme.padding.input.large};
+    pointer-events: none;
+    position: absolute;
+    bottom: -1.25rem;
+    transition: all 0.5s;
+    transform: translateX(-50%);
+    user-select: none;
+    z-index: 99999;
+  }
+  span:before {
+    content: '';
+    border-left: 0.375rem solid transparent;
+    border-right: 0.375rem solid transparent;
+    border-bottom: 0.375rem solid ${p => p.theme.color.body.light};
+    left: 50%;
+    position: absolute;
+    top: -0.375rem;
+    transform: translateX(-50%);
+  }
+  :hover > span {
+    opacity: 1;
+  }
 `
 
-const StyledTdAction = styled(StyledTdBoolean)`
+const StyledTdBoolean = styled(StyledTdIcon)`
+  svg {
+    color: ${p => p.theme.color[p.value ? 'success' : 'danger'].active};
+  }
+`
+
+const StyledTdAction = styled(StyledTdIcon)`
   cursor: pointer;
 
   :hover {
@@ -55,7 +96,7 @@ const StyledTdAction = styled(StyledTdBoolean)`
   }
 `
 
-const StyledTdToggle = styled(StyledTdBoolean)`
+const StyledTdToggle = styled(StyledTdIcon)`
   cursor: pointer;
 `
 
@@ -63,6 +104,7 @@ const path = (key, obj) => R.path(key.split('.'), obj)
 
 const Cell = ({ column, data }) => {
   const { accent, action, Icon, IconOff, IconOn, key, label, labelOff, labelOn, type } = column
+  const withTooltip = Boolean(column.withTooltip)
 
   if (label === undefined && (labelOff === undefined || labelOn === undefined)) {
     console.error(ERROR_SCOPE, `Each column must have a {label} property.`)
@@ -91,6 +133,8 @@ const Cell = ({ column, data }) => {
 
     return (
       <StyledTdAction accent={accent} aria-label={label} onClick={() => action(data.id)} role="button" tabIndex="0">
+        {withTooltip && <span>{label}</span>}
+
         <Icon />
       </StyledTdAction>
     )
@@ -117,20 +161,25 @@ const Cell = ({ column, data }) => {
       return <StyledTd />
     }
 
+    const toggleLabel = value ? labelOn : labelOff
+
     return (
-      <StyledTdToggle
-        aria-label={value ? labelOn : labelOff}
-        onClick={() => action(data.id, !value)}
-        role="button"
-        tabIndex="0"
-      >
+      <StyledTdToggle aria-label={toggleLabel} onClick={() => action(data.id, !value)} role="button" tabIndex="0">
+        {withTooltip && <span>{toggleLabel}</span>}
+
         {value ? <IconOn /> : <IconOff />}
       </StyledTdToggle>
     )
   }
 
   if (type === TYPE.BOOLEAN) {
-    return <StyledTdBoolean value={value}>{value ? <CheckCircle /> : <XCircle />}</StyledTdBoolean>
+    return (
+      <StyledTdBoolean value={value}>
+        {withTooltip && <span>{label}</span>}
+
+        {value ? <CheckCircle /> : <XCircle />}
+      </StyledTdBoolean>
+    )
   }
 
   if (type === TYPE.ID) {
@@ -138,7 +187,11 @@ const Cell = ({ column, data }) => {
   }
 
   // return <StyledTd />
-  return <StyledTd>{value}</StyledTd>
+  return (
+    <StyledTd>
+      <p>{value}</p>
+    </StyledTd>
+  )
 }
 
 Cell.propTypes = {

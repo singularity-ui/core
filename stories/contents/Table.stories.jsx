@@ -31,8 +31,8 @@ export default {
     columns: [
       {
         label: 'ID',
-        type: TYPE.ID,
         key: 'id',
+        type: TYPE.ID,
       },
       {
         label: 'Organization',
@@ -43,10 +43,9 @@ export default {
         key: 'email',
       },
       {
-        IconOff: XCircle,
-        IconOn: CheckCircle,
         labelOff: 'Activate user account',
         labelOn: 'Disable user account',
+        key: 'isActive',
         type: TYPE.TOGGLE,
         action: (id, isOn) =>
           isOn
@@ -54,7 +53,9 @@ export default {
               window.alert(`Activate user account with id=${id}.`)
             : // eslint-disable-next-line no-alert
               window.alert(`Disable user account with id=${id}.`),
-        key: 'isActive',
+        IconOff: XCircle,
+        IconOn: CheckCircle,
+        withTooltip: true,
       },
       {
         label: 'Edit user',

@@ -21,6 +21,7 @@ export default {
       background: '#f7f9fc',
       light: '#6c757d',
       main: '#495057',
+      white: '#ffffff',
     },
 
     card: {
@@ -123,6 +124,7 @@ export const ThemeShape = PropTypes.shape({
       background: PropTypes.string,
       light: PropTypes.string,
       main: PropTypes.string,
+      white: PropTypes.string,
     }),
 
     card: PropTypes.shape({
