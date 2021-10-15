@@ -63,6 +63,22 @@ const Table = React.forwardRef(
       setSortedData(sort(data, key, isDesc))
     }
 
+    React.useEffect(() => {
+      if (sortedKey === null) {
+        return
+      }
+
+      setSortedData(sort(data, sortedKey, sortedKeyOrder === SORT_ORDER.DESC))
+    }, [data])
+
+    React.useEffect(() => {
+      if (defaultSortedKey === null) {
+        return
+      }
+
+      sortDataByKey(defaultSortedKey, defaultSortedKeyIsDesc)
+    }, [defaultSortedKey, defaultSortedKeyIsDesc])
+
     return (
       <Box>
         <table ref={ref} {...props}>
