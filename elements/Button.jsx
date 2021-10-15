@@ -23,6 +23,10 @@ const StyledButton = styled.button`
     opacity: 0.65;
   }
 
+  :focus-visible {
+    background-color: ${p => p.theme.color.a11n.focus.background} !important;
+  }
+
   :hover {
     background-color: ${p => p.theme.color[p.accent].active};
   }

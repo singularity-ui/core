@@ -1,6 +1,6 @@
 import Jabber from 'jabber'
 import React from 'react'
-import { Edit, Trash } from 'react-feather'
+import { CheckCircle, XCircle, Edit, Trash } from 'react-feather'
 import styled from 'styled-components'
 
 import { ACCENT, TYPE } from '../../common/constants'
@@ -43,15 +43,24 @@ export default {
         key: 'email',
       },
       {
-        label: '',
-        type: TYPE.BOOLEAN,
+        IconOff: XCircle,
+        IconOn: CheckCircle,
+        labelOff: 'Activate user account',
+        labelOn: 'Disable user account',
+        type: TYPE.TOGGLE,
+        action: (id, isOn) =>
+          isOn
+            ? // eslint-disable-next-line no-alert
+              window.alert(`Activate user account with id=${id}.`)
+            : // eslint-disable-next-line no-alert
+              window.alert(`Disable user account with id=${id}.`),
         key: 'isActive',
       },
       {
         label: 'Edit user',
         type: TYPE.ACTION,
         // eslint-disable-next-line no-alert
-        action: id => window.alert(`Edit ${id}`),
+        action: id => window.alert(`Edit user account with id=${id}.`),
         accent: ACCENT.SECONDARY,
         Icon: Edit,
       },
@@ -59,7 +68,7 @@ export default {
         label: 'Delete user',
         type: TYPE.ACTION,
         // eslint-disable-next-line no-alert
-        action: id => window.alert(`Delete ${id}`),
+        action: id => window.alert(`Delete user account with id=${id}.`),
         accent: ACCENT.DANGER,
         Icon: Trash,
       },

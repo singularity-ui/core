@@ -38,6 +38,10 @@ const Box = styled.div`
     transition-property: color, background-color, border-color, box-shadow;
     transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
   }
+  .Link:focus-visible {
+    background-color: ${p => p.theme.color.a11n.focus.background} !important;
+    border: solid 1px ${p => p.theme.color.a11n.focus.background} !important;
+  }
   .Link:hover {
     background-color: ${p => p.theme.color.secondary.active};
   }

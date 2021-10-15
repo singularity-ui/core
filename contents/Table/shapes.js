@@ -2,7 +2,7 @@
 
 import PropTypes from 'prop-types'
 
-import { ACCENTS, TYPES } from '../../common/constants'
+import { ACCENTS, TYPE, TYPES } from '../../common/constants'
 
 export const ColumnShape = PropTypes.oneOfType([
   PropTypes.shape({
@@ -15,6 +15,14 @@ export const ColumnShape = PropTypes.oneOfType([
     action: PropTypes.func.isRequired,
     Icon: PropTypes.elementType.isRequired,
     label: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(TYPES),
+    type: PropTypes.oneOf([TYPE.ACTION]),
+  }),
+  PropTypes.shape({
+    action: PropTypes.func.isRequired,
+    IconOff: PropTypes.elementType.isRequired,
+    IconOn: PropTypes.elementType.isRequired,
+    labelOff: PropTypes.string.isRequired,
+    labelOn: PropTypes.string.isRequired,
+    type: PropTypes.oneOf([TYPE.TOGGLE]),
   }),
 ])

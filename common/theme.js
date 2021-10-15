@@ -11,6 +11,12 @@ export default {
     },
   },
   color: {
+    a11n: {
+      focus: {
+        background: '#000000',
+      },
+    },
+
     body: {
       background: '#f7f9fc',
       light: '#6c757d',
@@ -105,7 +111,14 @@ export const ThemeShape = PropTypes.shape({
   appearance: PropTypes.shape({
     borderRadius: ThemeSizeShape,
   }),
+
   color: PropTypes.shape({
+    a11n: PropTypes.shape({
+      focus: PropTypes.shape({
+        background: PropTypes.string,
+      }),
+    }),
+
     body: PropTypes.shape({
       background: PropTypes.string,
       light: PropTypes.string,
@@ -123,6 +136,7 @@ export const ThemeShape = PropTypes.shape({
     warning: ThemeColorShape,
     info: ThemeColorShape,
   }),
+
   padding: PropTypes.shape({
     button: ThemeSizeShape,
     input: ThemeSizeShape,
@@ -133,7 +147,9 @@ export const ThemeShape = PropTypes.shape({
       large: PropTypes.string,
     }),
   }),
+
   shadow: ThemeSizeShape,
+
   typography: PropTypes.shape({
     font: PropTypes.shape({
       default: PropTypes.shape({
@@ -142,6 +158,7 @@ export const ThemeShape = PropTypes.shape({
         weight: PropTypes.number,
       }),
     }),
+
     size: PropTypes.shape({
       small: PropTypes.number,
       medium: PropTypes.number,

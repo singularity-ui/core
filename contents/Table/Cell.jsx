@@ -16,6 +16,10 @@ const StyledTd = styled.td`
   text-align: left;
   text-overflow: ellipsis;
   white-space: nowrap;
+
+  :focus-visible {
+    background-color: ${p => p.theme.color.a11n.focus.background} !important;
+  }
 `
 
 const StyledTdId = styled(StyledTd)`
@@ -51,12 +55,16 @@ const StyledTdAction = styled(StyledTdBoolean)`
   }
 `
 
+const StyledTdToggle = styled(StyledTdBoolean)`
+  cursor: pointer;
+`
+
 const path = (key, obj) => R.path(key.split('.'), obj)
 
 const Cell = ({ column, data }) => {
-  const { accent, action, Icon, key, label, type } = column
+  const { accent, action, Icon, IconOff, IconOn, key, label, labelOff, labelOn, type } = column
 
-  if (label === undefined) {
+  if (label === undefined && (labelOff === undefined || labelOn === undefined)) {
     console.error(ERROR_SCOPE, `Each column must have a {label} property.`)
 
     return <StyledTd />
@@ -64,40 +72,62 @@ const Cell = ({ column, data }) => {
 
   if (type === TYPE.ACTION) {
     if (data.id === undefined) {
-      console.error(
-        ERROR_SCOPE,
-        `You must have an "id" property in your {data} collection in order to use {action} in columns.`,
-      )
+      console.error(ERROR_SCOPE, `You must have an "id" property in your {data} collection to use a {type}="action".`)
+
+      return <StyledTd />
+    }
+
+    if (accent === undefined) {
+      console.error(ERROR_SCOPE, `You must set the {accent} property in "${label}" column to use a {type}="action".`)
 
       return <StyledTd />
     }
 
     if (Icon === undefined) {
-      console.error(
-        ERROR_SCOPE,
-        `You must set the {accent} property in "${label}" column to use an {action} in this column.`,
-      )
-
-      return <StyledTd />
-    }
-
-    if (Icon === undefined) {
-      console.error(
-        ERROR_SCOPE,
-        `You must set the {Icon} property in "${label}" column to use an {action} in this column.`,
-      )
+      console.error(ERROR_SCOPE, `You must set the {Icon} property in "${label}" column to use a {type}="action".`)
 
       return <StyledTd />
     }
 
     return (
-      <StyledTdAction accent={accent} onClick={() => action(data.id)}>
+      <StyledTdAction accent={accent} aria-label={label} onClick={() => action(data.id)} role="button" tabIndex="0">
         <Icon />
       </StyledTdAction>
     )
   }
 
   const value = path(key, data)
+
+  if (type === TYPE.TOGGLE) {
+    if (data.id === undefined) {
+      console.error(ERROR_SCOPE, `You must have an "id" property in your {data} collection to use a {type}="toggle".`)
+
+      return <StyledTd />
+    }
+
+    if (IconOff === undefined) {
+      console.error(ERROR_SCOPE, `You must set the {IconOff} property in "${label}" column to use a {type}="action".`)
+
+      return <StyledTd />
+    }
+
+    if (IconOn === undefined) {
+      console.error(ERROR_SCOPE, `You must set the {IconOff} property in "${label}" column to use a {type}="action".`)
+
+      return <StyledTd />
+    }
+
+    return (
+      <StyledTdToggle
+        aria-label={value ? labelOn : labelOff}
+        onClick={() => action(data.id, !value)}
+        role="button"
+        tabIndex="0"
+      >
+        {value ? <IconOn /> : <IconOff />}
+      </StyledTdToggle>
+    )
+  }
 
   if (type === TYPE.BOOLEAN) {
     return <StyledTdBoolean value={value}>{value ? <CheckCircle /> : <XCircle />}</StyledTdBoolean>

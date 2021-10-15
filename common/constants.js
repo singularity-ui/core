@@ -27,6 +27,7 @@ export const TYPE = {
   SINCE: 'since',
   STRING: 'string',
   TAGS: 'tags',
+  TOGGLE: 'toggle',
 }
 
 export const TYPES = Object.values(TYPE)
