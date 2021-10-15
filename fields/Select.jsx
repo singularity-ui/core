@@ -54,6 +54,14 @@ const StyledSelect = styled(ReactSelect)`
     padding: 0;
   }
 
+  .Select__multi-value__remove {
+    cursor: pointer;
+  }
+
+  .Select__indicators {
+    cursor: pointer;
+  }
+
   .Select__indicator-separator {
     margin: ${p => p.theme.padding.input[p.size]} 0;
   }
@@ -98,6 +106,7 @@ const Select = React.forwardRef(({ className, error, helper, isAsync, label, siz
         className="Select"
         classNamePrefix="Select"
         hasError={hasError}
+        isMulti
         size={size}
         {...props}
       />
