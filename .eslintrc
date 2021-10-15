@@ -33,6 +33,17 @@
       "rules": {
         "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
       }
+    },
+    {
+      "files": ["./e2e/**/*.jsx"],
+      "env": {
+        "browser": true,
+        "node": true
+      },
+      "rules": {
+        "react/prop-types": "off",
+        "react/react-in-jsx-scope": "off"
+      }
     }
   ]
 }
