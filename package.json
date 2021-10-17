@@ -59,10 +59,6 @@
     "react-dom": "^17.0.2",
     "styled-components": "^5.3.1"
   },
-  "workspaces": [
-    "demo",
-    "dist"
-  ],
   "prettier": "@ivangabriele/prettier-config",
   "eslintIgnore": [
     "/dist",
