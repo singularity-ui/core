@@ -12,6 +12,7 @@ jobs:
         with:
           cache: yarn
           node-version: 16
+      - run: node ./scripts/ci/setup.js
       - run: yarn
       - run: yarn test:lint
 
@@ -27,6 +28,7 @@ jobs:
           node-version: "16"
           registry-url: "https://registry.npmjs.org"
           cache: "yarn"
+      - run: node ./scripts/ci/setup.js
       - run: yarn
       - run: yarn build
       - run: npm publish ./dist --access=public
@@ -44,6 +46,7 @@ jobs:
         with:
           cache: yarn
           node-version: 16
+      - run: node ./scripts/ci/setup.js
       - run: yarn
       - run: yarn build-storybook
       - run: |
