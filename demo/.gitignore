@@ -123,3 +123,8 @@ dist
 ### Node Patch ###
 # Serverless Webpack directories
 .webpack/
+
+################################################################################
+# Custom
+
+/.build
