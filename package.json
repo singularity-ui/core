@@ -4,6 +4,10 @@
   "version": "0.13.0",
   "license": "MIT",
   "private": true,
+  "workspaces": [
+    "demo",
+    "dist"
+  ],
   "scripts": {
     "build": "rollup -c && sh ./scripts/build/copyPublicFiles.sh && node ./scripts/build/generatePackageJson.js",
     "dev": "start-storybook -p 6006",
