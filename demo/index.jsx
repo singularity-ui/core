@@ -1,5 +1,4 @@
-import GlobalStyle from '@ivangabriele/singularity/GlobalStyle'
-import ThemeProvider from '@ivangabriele/singularity/ThemeProvider'
+import { GlobalStyle, ThemeProvider } from '@ivangabriele/singularity'
 import React from 'react'
 import ReactDom from 'react-dom'
 import { createGlobalStyle } from 'styled-components'

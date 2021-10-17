@@ -1,6 +1,4 @@
-import Card from '@ivangabriele/singularity/Card'
-import * as SING from '@ivangabriele/singularity/SING'
-import Table from '@ivangabriele/singularity/Table'
+import { Card, SING, Table } from '@ivangabriele/singularity'
 import React from 'react'
 import { CheckCircle, Edit, Trash, XCircle } from 'react-feather'
 
