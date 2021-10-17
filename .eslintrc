@@ -1,6 +1,7 @@
 {
   "extends": "@ivangabriele/eslint-config-react",
   "parserOptions": {
+    "ecmaVersion": 2021,
     "ecmaFeatures": {
       "jsx": true
     }
@@ -37,14 +38,13 @@
       }
     },
     {
-      "files": ["./e2e/**/*.jsx"],
+      "files": ["./demo/**/*.js", "./demo/**/*.jsx"],
       "env": {
         "browser": true,
         "node": true
       },
       "rules": {
-        "react/prop-types": "off",
-        "react/react-in-jsx-scope": "off"
+        "react/prop-types": "off"
       }
     }
   ]
