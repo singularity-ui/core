@@ -10,9 +10,6 @@
     "prepare": "husky install",
     "test": "yarn test:lint",
     "test:lint": "eslint .",
-    "preversion": "yarn test && yarn build",
-    "version": "cross-var git checkout -B $npm_package_version",
-    "postversion": "git push origin HEAD --tags",
     "watch": "yarn build && rollup -cw"
   },
   "dependencies": {
@@ -33,12 +30,14 @@
     "@rollup/plugin-babel": "5.3.0",
     "@rollup/plugin-commonjs": "21.0.0",
     "@rollup/plugin-node-resolve": "13.0.5",
+    "@semantic-release/changelog": "6.0.0",
+    "@semantic-release/exec": "6.0.1",
+    "@semantic-release/git": "10.0.0",
     "@storybook/addon-actions": "6.3.10",
     "@storybook/addon-essentials": "6.3.10",
     "@storybook/addon-links": "6.3.10",
     "@storybook/react": "6.3.10",
     "babel-loader": "8.2.2",
-    "cross-var": "1.1.0",
     "del": "6.0.0",
     "eslint-plugin-prettier": "4.0.0",
     "gh-pages": "3.2.3",
@@ -51,6 +50,7 @@
     "rollup": "2.58.0",
     "rollup-plugin-import-css": "3.0.2",
     "rollup-plugin-sizes": "1.0.4",
+    "semantic-release": "18.0.0",
     "shelljs": "0.8.4",
     "styled-components": "5.3.1"
   },
@@ -68,5 +68,29 @@
     "/dist",
     "/storybook-static",
     "!/.storybook"
-  ]
+  ],
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "./dist"
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md",
+            "package.json",
+            "yarn.lock"
+          ],
+          "message": "ci(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ]
+    ]
+  }
 }

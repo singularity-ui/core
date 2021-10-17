@@ -31,7 +31,7 @@ hell lot of time customizing their look and feel. And as a developper, I have be
 ---
 
 [img-github]:
-  https://img.shields.io/github/workflow/status/ivangabriele/singularity/Test%20&%20Publish/main?style=flat-square
+  https://img.shields.io/github/workflow/status/ivangabriele/singularity/Test/main?style=flat-square
 [img-license]: https://img.shields.io/github/license/ivangabriele/singularity?style=flat-square
 [img-npm]: https://img.shields.io/npm/v/@ivangabriele/singularity?style=flat-square
 

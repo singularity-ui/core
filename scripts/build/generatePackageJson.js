@@ -24,6 +24,9 @@ const distPackageExtraProps = {
   homepage: 'http://ivangabriele.github.io/singularity',
   main: './cjs/index.js',
   name: '@ivangabriele/singularity',
+  publishConfig: {
+    access: 'public',
+  },
   repository: {
     type: 'git',
     url: 'git+https://github.com/ivangabriele/singularity.git',
@@ -34,7 +37,7 @@ const distPackageExtraProps = {
 // eslint-disable-next-line import/newline-after-import
 ;(async () => {
   const distPackage = R.pipe(
-    R.omit(['devDependencies', 'eslintIgnore', 'prettier', 'private', 'scripts', 'workspaces']),
+    R.omit(['devDependencies', 'eslintIgnore', 'prettier', 'private', 'release', 'scripts', 'workspaces']),
     R.mergeLeft(distPackageExtraProps),
   )(rootPackage)
   const distPackageJson = JSON.stringify(distPackage, null, 2)
