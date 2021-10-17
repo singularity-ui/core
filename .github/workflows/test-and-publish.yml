@@ -14,7 +14,7 @@ jobs:
           node-version: 16
       - run: node ./scripts/ci/setup.js
       - run: yarn
-      - run: yarn test:lint
+      - run: yarn test:lint --ignore-pattern '/demo/'
 
   publish:
     name: Publish
