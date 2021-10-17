@@ -17,9 +17,7 @@ jobs:
           cache: yarn
           node-version: 16
       - name: Install
-        run: |
-          node ./scripts/ci/setup.js
-          yarn install --frozen-lockfile
+        run: yarn install --frozen-lockfile
       - name: Build
         run: yarn build
       - name: Release
@@ -42,9 +40,7 @@ jobs:
           cache: yarn
           node-version: 16
       - name: Install
-        run: |
-          node ./scripts/ci/setup.js
-          yarn install --frozen-lockfile
+        run: yarn install --frozen-lockfile
       - name: Build
         run: yarn build-storybook
       - name: Deploy
