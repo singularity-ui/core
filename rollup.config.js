@@ -59,8 +59,9 @@ const getConfig = (format, input, outputFilePath, exports = 'default') => ({
 })
 
 const configs = [
-  getConfig('cjs', './index.js', './dist/cjs/index.js'),
+  getConfig('cjs', './index.js', './dist/cjs/index.js', 'named'),
 
+  getConfig('esm', './index.js', './dist/index.js', 'named'),
   getConfig('esm', './common/constants.js', './dist/SING.js', 'named'),
   getConfig('esm', './common/theme.js', './dist/theme.js'),
   ...DIRECT_FILE_PATHS.map(filePath => {

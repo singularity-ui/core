@@ -12,7 +12,7 @@ import GlobalStyle from './GlobalStyle'
 import icon from './icons'
 import ThemeProvider from './ThemeProvider'
 
-export default {
+export {
   Button,
   Card,
   Checkbox,
