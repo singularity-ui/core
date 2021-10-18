@@ -1,8 +1,6 @@
 const { promises: fs } = require('fs')
 const R = require('ramda')
 
-const rootPackage = require('../../package.json')
-
 const distPackageExtraProps = {
   author: {
     email: 'ivan.gabriele@gmail.com',
@@ -12,17 +10,9 @@ const distPackageExtraProps = {
   bugs: {
     url: 'https://github.com/ivangabriele/singularity/issues',
   },
-  engines: {
-    node: '^12.20.0 || ^14.13.1 || >=16.0.0',
-  },
-  exports: {
-    '.': './index.js',
-    './*': './*.js',
-    './icons/*': './icons/*.js',
-    './package.json': './package.json',
-  },
+  files: ['singularity.cjs.js'],
   homepage: 'http://ivangabriele.github.io/singularity',
-  main: './cjs/index.js',
+  main: './singularity.cjs.js',
   name: '@ivangabriele/singularity',
   publishConfig: {
     access: 'public',
@@ -31,11 +21,12 @@ const distPackageExtraProps = {
     type: 'git',
     url: 'git+https://github.com/ivangabriele/singularity.git',
   },
-  type: 'module',
 }
 
 // eslint-disable-next-line import/newline-after-import
 ;(async () => {
+  const rootPackageJson = await fs.readFile('./package.json', 'utf-8')
+  const rootPackage = JSON.parse(rootPackageJson)
   const distPackage = R.pipe(
     R.omit(['devDependencies', 'eslintIgnore', 'prettier', 'private', 'release', 'scripts', 'workspaces']),
     R.mergeLeft(distPackageExtraProps),

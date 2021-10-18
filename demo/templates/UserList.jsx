@@ -1,4 +1,4 @@
-import { Card, SING, Table } from '@ivangabriele/singularity'
+import { Button, Card, SING, Table } from '@ivangabriele/singularity'
 import React from 'react'
 import { CheckCircle, Edit, Trash, XCircle } from 'react-feather'
 
@@ -69,6 +69,7 @@ export default function UserList() {
   return (
     <>
       <Card>
+        <Button>fdsfds</Button>
         <h2>Users</h2>
 
         <Table columns={columns} data={data.users} defaultSortedKey="email" isLoading={isLoading} />
