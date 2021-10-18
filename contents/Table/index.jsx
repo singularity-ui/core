@@ -65,10 +65,12 @@ const Table = React.forwardRef(
 
     React.useEffect(() => {
       if (sortedKey === null) {
+        setSortedData(data)
+
         return
       }
 
-      setSortedData(sort(data, sortedKey, sortedKeyOrder === SORT_ORDER.DESC))
+      setSortedData(sort(data, defaultSortedKey, sortedKeyOrder === SORT_ORDER.DESC))
     }, [data])
 
     React.useEffect(() => {
