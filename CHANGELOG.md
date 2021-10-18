@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/ivangabriele/singularity/compare/v1.0.0...v1.0.1) (2021-10-18)
+
+
+### Bug Fixes
+
+* **build:** rollback to full CJS ([add55e5](https://github.com/ivangabriele/singularity/commit/add55e5cacfdeb33b058f467cee3f39eb52484d7))
+
 # 1.0.0 (2021-10-17)
 
 
