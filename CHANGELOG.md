@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/ivangabriele/singularity/compare/v1.0.2...v1.0.3) (2021-10-18)
+
+
+### Bug Fixes
+
+* **contents:** handle Table data props update for null sortedKey case ([20bd67b](https://github.com/ivangabriele/singularity/commit/20bd67ba3d46afe138517ffef277c27a010c5ed7))
+
 ## [1.0.2](https://github.com/ivangabriele/singularity/compare/v1.0.1...v1.0.2) (2021-10-18)
 
 
