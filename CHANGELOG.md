@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/ivangabriele/singularity/compare/v1.0.1...v1.0.2) (2021-10-18)
+
+
+### Bug Fixes
+
+* **build:** move react-paginate to deps ([4df4205](https://github.com/ivangabriele/singularity/commit/4df4205e5ebfa1a3a3e6a95a8576c72eb4e27ae9))
+
 ## [1.0.1](https://github.com/ivangabriele/singularity/compare/v1.0.0...v1.0.1) (2021-10-18)
 
 
