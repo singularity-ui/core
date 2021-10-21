@@ -1374,7 +1374,7 @@
   resolved "https://registry.yarnpkg.com/@ivangabriele/prettier-config/-/prettier-config-1.1.0.tgz#0b669220b64ebcb7eb0909d967084f864d30cc9b"
   integrity sha512-cPazyD5+Yw3+n5W8BJK0gIIR+DZkJZvcXwyhCN3zvk61tllj4sqNyQzQptZylJYss6U1PIJPmg+xCZEus77xMQ==
 
-"@ivangabriele/singularity@link:dist":
+"@singularity-ui/core@link:dist":
   version "0.0.0"
 
 "@jest/transform@^26.6.2":

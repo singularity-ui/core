@@ -31,10 +31,10 @@ hell lot of time customizing their look and feel. And as a developper, I have be
 ---
 
 [img-github]:
-  https://img.shields.io/github/workflow/status/ivangabriele/singularity/Test/main?style=flat-square
-[img-license]: https://img.shields.io/github/license/ivangabriele/singularity?style=flat-square
+  https://img.shields.io/github/workflow/status/singularity-ui/core/Test/main?style=flat-square
+[img-license]: https://img.shields.io/github/license/singularity-ui/core?style=flat-square
 [img-npm]: https://img.shields.io/npm/v/@singularity-ui/core?style=flat-square
 
-[lnk-github]: https://github.com/ivangabriele/singularity/actions?query=branch%3Amain++
-[lnk-license]: https://github.com/ivangabriele/singularity/blob/main/LICENSE
+[lnk-github]: https://github.com/singularity-ui/core/actions?query=branch%3Amain++
+[lnk-license]: https://github.com/singularity-ui/core/blob/main/LICENSE
 [lnk-npm]: https://www.npmjs.com/package/@singularity-ui/core

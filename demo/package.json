@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@fontsource/poppins": "4.5.0",
-    "@ivangabriele/singularity": "link:../dist",
+    "@singularity-ui/core": "link:../dist",
     "jabber": "1.2.2",
     "lowdb": "3.0.0",
     "ramda": "0.27.1",

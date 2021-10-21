@@ -8,7 +8,7 @@ const distPackageExtraProps = {
     url: 'https://www.ivangabriele.com',
   },
   bugs: {
-    url: 'https://github.com/ivangabriele/singularity/issues',
+    url: 'https://github.com/singularity-ui/core/issues',
   },
   files: ['singularity.cjs.js'],
   homepage: 'http://ivangabriele.github.io/singularity',
@@ -19,7 +19,7 @@ const distPackageExtraProps = {
   },
   repository: {
     type: 'git',
-    url: 'git+https://github.com/ivangabriele/singularity.git',
+    url: 'git+https://github.com/singularity-ui/core.git',
   },
 }
 

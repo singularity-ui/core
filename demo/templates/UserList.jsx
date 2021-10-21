@@ -1,4 +1,4 @@
-import { Button, Card, SING, Table } from '@ivangabriele/singularity'
+import { Button, Card, SING, Table } from '@singularity-ui/core'
 import React from 'react'
 import { CheckCircle, Edit, Trash, XCircle } from 'react-feather'
 

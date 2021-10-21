@@ -1,4 +1,4 @@
-import { GlobalStyle, ThemeProvider } from '@ivangabriele/singularity'
+import { GlobalStyle, ThemeProvider } from '@singularity-ui/core'
 import React from 'react'
 import ReactDom from 'react-dom'
 import { createGlobalStyle } from 'styled-components'
