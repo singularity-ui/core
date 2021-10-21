@@ -11,7 +11,7 @@ const distPackageExtraProps = {
     url: 'https://github.com/singularity-ui/core/issues',
   },
   files: ['singularity.cjs.js'],
-  homepage: 'http://ivangabriele.github.io/singularity',
+  homepage: 'https://singularity-ui.github.io/core/',
   main: './singularity.cjs.js',
   name: '@singularity-ui/core',
   publishConfig: {
