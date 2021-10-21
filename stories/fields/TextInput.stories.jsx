@@ -5,7 +5,7 @@ import { SIZE, SIZES } from '../../common/constants'
 import SingularityTextInput from '../../fields/TextInput'
 
 const StyledTextInput = styled(SingularityTextInput)`
-  width: 20rem;
+  width: 30rem;
 `
 
 export default {

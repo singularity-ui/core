@@ -5,7 +5,7 @@ import { SIZE, SIZES } from '../../common/constants'
 import SingularitySelect from '../../fields/Select'
 
 const StyledSelect = styled(SingularitySelect)`
-  width: 20rem;
+  width: 30rem;
 `
 
 export default {

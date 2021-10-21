@@ -5,7 +5,7 @@ import { SIZE, SIZES } from '../../common/constants'
 import SingularityCheckbox from '../../fields/Checkbox'
 
 const StyledCheckbox = styled(SingularityCheckbox)`
-  width: 20rem;
+  width: 30rem;
 `
 
 export default {

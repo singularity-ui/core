@@ -51,7 +51,7 @@ const StyledSelect = styled(ReactSelect)`
   .Select__multi-value {
     background-color: ${p => p.theme.color.primary.background};
     border-radius: ${p => p.theme.appearance.borderRadius[p.size]};
-    margin: 0;
+    margin: 0 ${p => p.theme.padding.input[p.size]} 0 0;
   }
   .Select__multi-value__label {
     font-size: 75%;
