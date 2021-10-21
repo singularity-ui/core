@@ -33,8 +33,8 @@ hell lot of time customizing their look and feel. And as a developper, I have be
 [img-github]:
   https://img.shields.io/github/workflow/status/ivangabriele/singularity/Test/main?style=flat-square
 [img-license]: https://img.shields.io/github/license/ivangabriele/singularity?style=flat-square
-[img-npm]: https://img.shields.io/npm/v/@ivangabriele/singularity?style=flat-square
+[img-npm]: https://img.shields.io/npm/v/@singularity-ui/core?style=flat-square
 
 [lnk-github]: https://github.com/ivangabriele/singularity/actions?query=branch%3Amain++
 [lnk-license]: https://github.com/ivangabriele/singularity/blob/main/LICENSE
-[lnk-npm]: https://www.npmjs.com/package/@ivangabriele/singularity
+[lnk-npm]: https://www.npmjs.com/package/@singularity-ui/core

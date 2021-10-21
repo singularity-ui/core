@@ -13,7 +13,7 @@ const distPackageExtraProps = {
   files: ['singularity.cjs.js'],
   homepage: 'http://ivangabriele.github.io/singularity',
   main: './singularity.cjs.js',
-  name: '@ivangabriele/singularity',
+  name: '@singularity-ui/core',
   publishConfig: {
     access: 'public',
   },
