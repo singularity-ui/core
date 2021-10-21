@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/singularity-ui/core/compare/v1.0.3...v1.0.4) (2021-10-21)
+
+
+### Bug Fixes
+
+* **fields:** add right margin to Select tags ([e1ed45a](https://github.com/singularity-ui/core/commit/e1ed45a7b18532f16c5c1e37159ce054a5aeafc2))
+
 ## [1.0.3](https://github.com/singularity-ui/core/compare/v1.0.2...v1.0.3) (2021-10-18)
 
 
