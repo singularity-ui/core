@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/singularity-ui/core/compare/v1.1.0...v1.2.0) (2021-10-23)
+
+
+### Bug Fixes
+
+* **fields:** remove extraneous isMulti prop from Select ([98f8b39](https://github.com/singularity-ui/core/commit/98f8b39a595110ccc325a6d329eb59168e952192))
+
+
+### Features
+
+* **fields:** add label text ref to Checkbox ([b666708](https://github.com/singularity-ui/core/commit/b6667080c7f838848ddcd738d8dcf0d43f3a4de4))
+
 # [1.1.0](https://github.com/singularity-ui/core/compare/v1.0.4...v1.1.0) (2021-10-23)
 
 
