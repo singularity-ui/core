@@ -2,15 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../../common/constants'
-import SingularityChoice from '../../fields/Choice'
+import SingularityRadio from '../../fields/Radio'
 
-const StyledChoice = styled(SingularityChoice)`
+const StyledRadio = styled(SingularityRadio)`
   // width: 30rem;
 `
 
 export default {
-  title: 'Fields/Choice',
-  component: SingularityChoice,
+  title: 'Fields/Radio',
+  component: SingularityRadio,
 
   argTypes: {
     defaultChecked: {
@@ -23,7 +23,7 @@ export default {
   },
 
   args: {
-    defaultChecked: true,
+    defaultChecked: false,
     disabled: false,
     label: 'Choice A',
     letter: 'A',
@@ -31,4 +31,4 @@ export default {
   },
 }
 
-export const Choice = props => <StyledChoice {...props} />
+export const Radio = props => <StyledRadio {...props} />

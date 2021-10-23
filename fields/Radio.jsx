@@ -58,26 +58,14 @@ const Error = styled.p`
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
-const Choice = React.forwardRef(
+const Radio = React.forwardRef(
   ({ className, error, helper, label, labelTextProps, letter, onChange, size, ...props }, ref) => {
-    const [isChecked, setIsChecked] = React.useState(props.checked === true || props.defaultChecked === true)
     const $input = React.useRef(null)
     const $labelText = React.useRef(null)
+    const [isChecked, setIsChecked] = React.useState(props.checked === true || props.defaultChecked === true)
 
     const isDisabled = Boolean(props.disabled)
     const hasError = error !== null
-
-    const handleOnChange = event => {
-      if (props.disabled) {
-        return
-      }
-
-      setIsChecked(event.target.checked)
-
-      if (onChange) {
-        onChange(event)
-      }
-    }
 
     React.useImperativeHandle(ref, () => ({
       get input() {
@@ -93,6 +81,18 @@ const Choice = React.forwardRef(
 
       setIsChecked(_isChecked)
     }, [props.checked === true, props.defaultChecked])
+
+    const handleOnChange = event => {
+      if (props.disabled) {
+        return
+      }
+
+      setIsChecked(event.target.checked)
+
+      if (onChange) {
+        onChange(event)
+      }
+    }
 
     return (
       <div className={className}>
@@ -126,9 +126,9 @@ const Choice = React.forwardRef(
   },
 )
 
-Choice.displayName = 'Choice'
+Radio.displayName = 'Radio'
 
-Choice.defaultProps = {
+Radio.defaultProps = {
   error: null,
   helper: null,
   labelTextProps: {},
@@ -136,14 +136,13 @@ Choice.defaultProps = {
   size: SIZE.MEDIUM,
 }
 
-Choice.propTypes = {
+Radio.propTypes = {
   error: PropTypes.string,
   helper: PropTypes.string,
   label: PropTypes.string.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
   labelTextProps: PropTypes.object,
   letter: PropTypes.string,
   size: PropTypes.oneOf(SIZES),
 }
 
-export default Choice
+export default Radio
