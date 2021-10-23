@@ -103,7 +103,7 @@ const Error = styled.p`
 `
 
 const Select = React.forwardRef(({ className, error, helper, isAsync, label, size, ...props }, ref) => {
-  const hasError = error !== null
+  const hasError = typeof error === 'string' && error.length > 0
 
   return (
     <div className={className}>
