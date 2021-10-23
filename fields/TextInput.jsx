@@ -28,6 +28,10 @@ const StyledInput = styled.input`
     opacity: 0.65;
   }
 
+  :focus {
+    box-shadow: 0 0 0 1px ${p => (p.hasError ? p.theme.color.danger.active : p.theme.color.secondary.active)};
+  }
+
   :hover {
     border: solid 1px ${p => (p.hasError ? p.theme.color.danger.active : p.theme.color.secondary.active)};
   }
