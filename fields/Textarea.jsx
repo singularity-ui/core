@@ -46,7 +46,7 @@ const Error = styled.p`
 `
 
 const Textarea = React.forwardRef(({ className, error, helper, label, size, ...props }, ref) => {
-  const hasError = error !== null
+  const hasError = typeof error === 'string' && error.length > 0
 
   return (
     <div className={className}>
