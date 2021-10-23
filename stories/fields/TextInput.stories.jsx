@@ -13,7 +13,6 @@ export default {
   component: SingularityTextInput,
 
   argTypes: {
-    placeholder: 'Text Input',
     size: {
       options: SIZES,
       control: { type: 'inline-radio' },
@@ -21,6 +20,10 @@ export default {
   },
 
   args: {
+    error: '',
+    helper: '',
+    label: '',
+    placeholder: 'A simple text input',
     size: SIZE.MEDIUM,
   },
 }

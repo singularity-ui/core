@@ -20,6 +20,9 @@ export default {
   },
 
   args: {
+    error: '',
+    helper: '',
+    label: '',
     options: [
       { value: 'bfd7ea', label: 'Beau Blue' },
       { value: 'c81d25', label: 'Lava' },

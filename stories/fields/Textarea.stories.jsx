@@ -16,7 +16,6 @@ export default {
   component: SingularityTextarea,
 
   argTypes: {
-    placeholder: 'Textarea',
     size: {
       options: SIZES,
       control: { type: 'inline-radio' },
@@ -24,6 +23,10 @@ export default {
   },
 
   args: {
+    error: '',
+    helper: '',
+    label: '',
+    placeholder: 'A simple textarea',
     size: SIZE.MEDIUM,
   },
 }
