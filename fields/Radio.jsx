@@ -65,7 +65,7 @@ const Radio = React.forwardRef(
     const [isChecked, setIsChecked] = React.useState(props.checked === true || props.defaultChecked === true)
 
     const isDisabled = Boolean(props.disabled)
-    const hasError = error !== null
+    const hasError = typeof error === 'string' && error.length > 0
 
     React.useImperativeHandle(ref, () => ({
       get input() {
