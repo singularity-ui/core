@@ -1,3 +1,22 @@
+# [1.3.0](https://github.com/singularity-ui/core/compare/v1.2.0...v1.3.0) (2021-10-23)
+
+
+### Bug Fixes
+
+* **fields:** handle Checkbox empty string error ([e746a1d](https://github.com/singularity-ui/core/commit/e746a1d6c6ef0d04aa93a43acaf71f9b4eca9a59))
+* **fields:** handle Radio empty string error ([e1d2f22](https://github.com/singularity-ui/core/commit/e1d2f22653610f6a59b40e658b16eac458c54c2b))
+* **fields:** handle Select empty string error ([bb2ee64](https://github.com/singularity-ui/core/commit/bb2ee64609d21d3a6cba88f3f05cea098b9e52fc))
+* **fields:** handle Textarea empty string error ([aab5466](https://github.com/singularity-ui/core/commit/aab54665f3f2060d5ec5b8f850533bef7604e99c))
+* **fields:** handle TextInput empty string error ([2668372](https://github.com/singularity-ui/core/commit/26683728ba70795fdeebfc74e7705888b2127469))
+
+
+### Features
+
+* **contents:** add Table a11n focus foreground color ([f37e27c](https://github.com/singularity-ui/core/commit/f37e27c489646320b81118f3964c700e04c36355))
+* **fields:** add Select focus color ([b313bfb](https://github.com/singularity-ui/core/commit/b313bfbd9144328ed6ad5bd6288a97f5feb73682))
+* **fields:** add Textarea focus box shadow ([c37d636](https://github.com/singularity-ui/core/commit/c37d6369fda37c10d0b88a85d473610da4641740))
+* **fields:** add TextInput focus box shadow ([eb0441f](https://github.com/singularity-ui/core/commit/eb0441fac693395ef3fd0b9ef0063e709d5707fa))
+
 # [1.2.0](https://github.com/singularity-ui/core/compare/v1.1.0...v1.2.0) (2021-10-23)
 
 
