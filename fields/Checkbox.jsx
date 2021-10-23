@@ -64,7 +64,7 @@ const Checkbox = React.forwardRef(
     const $labelText = React.useRef(null)
     const [isChecked, setIsChecked] = React.useState(props.checked === true || props.defaultChecked === true)
 
-    const hasError = error !== null
+    const hasError = typeof error === 'string' && error.length > 0
 
     React.useImperativeHandle(ref, () => ({
       get input() {
