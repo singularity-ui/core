@@ -35,7 +35,7 @@ const StyledSelect = styled(ReactSelect)`
     }
 
     &--is-focused {
-      box-shadow: 0 0 0 1px #000;
+      box-shadow: 0 0 0 1px ${p => (p.hasError ? p.theme.color.danger.active : p.theme.color.secondary.active)};
     }
   }
 
