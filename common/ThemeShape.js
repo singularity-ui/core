@@ -48,6 +48,8 @@ const ThemeShape = PropTypes.shape({
   padding: PropTypes.shape({
     button: ThemeSizeShape,
     input: ThemeSizeShape,
+    inputBox: ThemeSizeShape,
+
     layout: PropTypes.shape({
       tiny: PropTypes.string,
       small: PropTypes.string,

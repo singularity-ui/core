@@ -73,6 +73,11 @@ export default {
       medium: '0.5rem',
       large: '0.75rem',
     },
+    inputBox: {
+      small: '0.1875rem 0.375rem',
+      medium: '0.25rem 0.5rem',
+      large: '0.375rem 0.75rem',
+    },
     layout: {
       tiny: '0.25rem',
       small: '0.5rem',

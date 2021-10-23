@@ -12,11 +12,15 @@
   },
   "rules": {
     "no-console": ["error", { "allow": ["warn", "error"] }],
+    "no-underscore-dangle": "off",
 
     "import/no-extraneous-dependencies": ["error", { "peerDependencies": true }],
 
     "react/jsx-props-no-spreading": "off",
-    "react/prop-types": ["error", { "ignore": ["checked", "children", "className", "defaultChecked", "onChange"] }],
+    "react/prop-types": [
+      "error",
+      { "ignore": ["checked", "children", "className", "disabled", "defaultChecked", "onChange"] }
+    ],
 
     "react-hooks/exhaustive-deps": "off"
   },
