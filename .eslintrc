@@ -16,6 +16,7 @@
 
     "import/no-extraneous-dependencies": ["error", { "peerDependencies": true }],
 
+    "react/forbid-prop-types": "off",
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": [
       "error",

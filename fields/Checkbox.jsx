@@ -42,6 +42,10 @@ const StyledLabel = styled.label`
   }
 `
 
+const LabelText = styled.span`
+  font-weight: ${p => (p.isChecked ? 500 : 400)};
+`
+
 const Helper = styled.p`
   margin: 0;
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
@@ -55,10 +59,27 @@ const Error = styled.p`
 `
 
 const Checkbox = React.forwardRef(
-  ({ checked, className, defaultChecked, error, helper, label, onChange, size, ...props }, ref) => {
-    const [isChecked, setIsChecked] = React.useState(defaultChecked === true || checked === true)
+  ({ className, error, helper, label, labelTextProps, onChange, size, ...props }, ref) => {
+    const $input = React.useRef(null)
+    const $labelText = React.useRef(null)
+    const [isChecked, setIsChecked] = React.useState(props.checked === true || props.defaultChecked === true)
 
     const hasError = error !== null
+
+    React.useImperativeHandle(ref, () => ({
+      get input() {
+        return $input.current
+      },
+      get labelText() {
+        return $labelText.current
+      },
+    }))
+
+    React.useEffect(() => {
+      const _isChecked = props.checked === true || props.defaultChecked === true
+
+      setIsChecked(_isChecked)
+    }, [props.checked, props.defaultChecked])
 
     const handleOnChange = event => {
       setIsChecked(event.target.checked)
@@ -72,17 +93,12 @@ const Checkbox = React.forwardRef(
       <div className={className}>
         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
         <StyledLabel className="Checkbox" hasError={hasError} size={size}>
-          <input
-            ref={ref}
-            checked={checked}
-            defaultChecked={defaultChecked}
-            onChange={handleOnChange}
-            type="checkbox"
-            {...props}
-          />
+          <input ref={$input} onChange={handleOnChange} type="checkbox" {...props} />
 
           {isChecked ? <CheckSquare /> : <Square />}
-          {label}
+          <LabelText ref={$labelText} isChecked={isChecked} {...labelTextProps}>
+            {label}
+          </LabelText>
         </StyledLabel>
 
         {!error && helper && (
@@ -106,6 +122,7 @@ Checkbox.displayName = 'Checkbox'
 Checkbox.defaultProps = {
   error: null,
   helper: null,
+  labelTextProps: {},
   size: SIZE.MEDIUM,
 }
 
@@ -113,6 +130,7 @@ Checkbox.propTypes = {
   error: PropTypes.string,
   helper: PropTypes.string,
   label: PropTypes.string.isRequired,
+  labelTextProps: PropTypes.object,
   size: PropTypes.oneOf(SIZES),
 }
 

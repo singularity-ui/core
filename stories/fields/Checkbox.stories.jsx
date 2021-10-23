@@ -23,7 +23,8 @@ export default {
   },
 
   args: {
-    defaultChecked: true,
+    defaultChecked: false,
+    disabled: false,
     label: 'Check it!',
     size: SIZE.MEDIUM,
   },
