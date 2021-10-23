@@ -12,6 +12,7 @@ export default {
     a11n: {
       focus: {
         background: '#000000',
+        foreground: '#ffffff',
       },
     },
 

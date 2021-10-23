@@ -23,6 +23,7 @@ const ThemeShape = PropTypes.shape({
     a11n: PropTypes.shape({
       focus: PropTypes.shape({
         background: PropTypes.string,
+        foreground: PropTypes.string,
       }),
     }),
 

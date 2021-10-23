@@ -18,6 +18,9 @@ const StyledTd = styled.td`
   :focus-visible {
     background-color: ${p => p.theme.color.a11n.focus.background} !important;
   }
+  :focus-visible svg {
+    color: ${p => p.theme.color.a11n.focus.foreground} !important;
+  }
 
   p {
     overflow: hidden;

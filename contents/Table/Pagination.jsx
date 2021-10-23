@@ -41,6 +41,7 @@ const Box = styled.div`
   .Link:focus-visible {
     background-color: ${p => p.theme.color.a11n.focus.background} !important;
     border: solid 1px ${p => p.theme.color.a11n.focus.background} !important;
+    color: ${p => p.theme.color.a11n.focus.foreground} !important;
   }
   .Link:hover {
     background-color: ${p => p.theme.color.secondary.active};
