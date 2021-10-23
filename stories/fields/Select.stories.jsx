@@ -22,6 +22,8 @@ export default {
   args: {
     error: '',
     helper: '',
+    isAsync: false,
+    isMulti: true,
     label: '',
     options: [
       { value: 'bfd7ea', label: 'Beau Blue' },
@@ -30,7 +32,7 @@ export default {
       { value: '0b3954', label: 'Prussian Blue' },
       { value: 'ff5a5f', label: 'Sizzling Red' },
     ],
-    placeholder: 'Color',
+    placeholder: 'Pick your colors',
     size: SIZE.MEDIUM,
   },
 }

@@ -119,7 +119,6 @@ const Select = React.forwardRef(({ className, error, helper, isAsync, label, siz
         className="Select"
         classNamePrefix="Select"
         hasError={hasError}
-        isMulti
         size={size}
         {...props}
       />
