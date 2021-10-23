@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/singularity-ui/core/compare/v1.0.4...v1.1.0) (2021-10-23)
+
+
+### Features
+
+* **fields:** add Choice ([988d906](https://github.com/singularity-ui/core/commit/988d9068040bae982a80cf951795a0c8541429cf))
+
 ## [1.0.4](https://github.com/singularity-ui/core/compare/v1.0.3...v1.0.4) (2021-10-21)
 
 
