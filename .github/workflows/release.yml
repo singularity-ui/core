@@ -29,7 +29,6 @@ jobs:
   deploy:
     name: Deploy
     needs: release
-    if: ${{ contains(github.ref, 'refs/tags/') }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
