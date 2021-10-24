@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/singularity-ui/core/compare/v1.5.0...v1.5.1) (2021-10-24)
+
+
+### Bug Fixes
+
+* add missing styled-components ServerStyleSheet exposition ([ddc2668](https://github.com/singularity-ui/core/commit/ddc2668d4f5999bb8e7d06a6decd2bebb8d82b01))
+
 # [1.5.0](https://github.com/singularity-ui/core/compare/v1.4.1...v1.5.0) (2021-10-24)
 
 
