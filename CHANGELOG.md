@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/singularity-ui/core/compare/v1.4.0...v1.4.1) (2021-10-24)
+
+
+### Bug Fixes
+
+* **contents:** fix isId() check in Table cell ([3edec42](https://github.com/singularity-ui/core/commit/3edec4225a74ce59c681c7d096a6731cd72111ef))
+
 # [1.4.0](https://github.com/singularity-ui/core/compare/v1.3.0...v1.4.0) (2021-10-24)
 
 
