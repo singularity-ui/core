@@ -103,10 +103,23 @@ const StyledTdToggle = styled(StyledTdIcon)`
   cursor: pointer;
 `
 
+const isId = R.or(R.is(Number), R.is(String))
+const isMongoObjectId = R.pathEq(['constructor', 'name'], 'ObjectId')
 const path = (key, obj) => R.path(key.split('.'), obj)
+
+const getId = data => {
+  const maybeId = data.id || data._id
+
+  if (isMongoObjectId(maybeId)) {
+    return maybeId.toString()
+  }
+
+  return maybeId
+}
 
 const Cell = ({ column, data }) => {
   const { accent, action, Icon, IconOff, IconOn, key, label, labelOff, labelOn, type } = column
+  const maybeId = getId(data)
   const withTooltip = Boolean(column.withTooltip)
 
   if (label === undefined && (labelOff === undefined || labelOn === undefined)) {
@@ -116,8 +129,11 @@ const Cell = ({ column, data }) => {
   }
 
   if (type === TYPE.ACTION) {
-    if (data.id === undefined) {
-      console.error(ERROR_SCOPE, `You must have an "id" property in your {data} collection to use a {type}="action".`)
+    if (!isId(maybeId)) {
+      console.error(
+        ERROR_SCOPE,
+        `You must have an "id" or "_id" property in your {data} collection to use a {type}="action".`,
+      )
 
       return <StyledTd />
     }
@@ -135,7 +151,7 @@ const Cell = ({ column, data }) => {
     }
 
     return (
-      <StyledTdAction accent={accent} aria-label={label} onClick={() => action(data.id)} role="button" tabIndex="0">
+      <StyledTdAction accent={accent} aria-label={label} onClick={() => action(maybeId)} role="button" tabIndex="0">
         {withTooltip && <span>{label}</span>}
 
         <Icon />
@@ -146,8 +162,11 @@ const Cell = ({ column, data }) => {
   const value = path(key, data)
 
   if (type === TYPE.TOGGLE) {
-    if (data.id === undefined) {
-      console.error(ERROR_SCOPE, `You must have an "id" property in your {data} collection to use a {type}="toggle".`)
+    if (!isId(maybeId)) {
+      console.error(
+        ERROR_SCOPE,
+        `You must have an "id" or "_id" property in your {data} collection to use a {type}="toggle".`,
+      )
 
       return <StyledTd />
     }
@@ -167,7 +186,7 @@ const Cell = ({ column, data }) => {
     const toggleLabel = value ? labelOn : labelOff
 
     return (
-      <StyledTdToggle aria-label={toggleLabel} onClick={() => action(data.id, !value)} role="button" tabIndex="0">
+      <StyledTdToggle aria-label={toggleLabel} onClick={() => action(maybeId, !value)} role="button" tabIndex="0">
         {withTooltip && <span>{toggleLabel}</span>}
 
         {value ? <IconOn /> : <IconOff />}
