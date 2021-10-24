@@ -103,7 +103,7 @@ const StyledTdToggle = styled(StyledTdIcon)`
   cursor: pointer;
 `
 
-const isId = R.or(R.is(Number), R.is(String))
+const isId = maybeId => ['number', 'string'].includes(typeof maybeId)
 const isMongoObjectId = R.pathEq(['constructor', 'name'], 'ObjectId')
 const path = (key, obj) => R.path(key.split('.'), obj)
 
