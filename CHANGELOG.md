@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/singularity-ui/core/compare/v1.3.0...v1.4.0) (2021-10-24)
+
+
+### Features
+
+* **contents:** handle Mongo _id in Table ([3a831a0](https://github.com/singularity-ui/core/commit/3a831a02d2d5f75600a4f3b6dde7183857b820e6))
+
 # [1.3.0](https://github.com/singularity-ui/core/compare/v1.2.0...v1.3.0) (2021-10-23)
 
 
