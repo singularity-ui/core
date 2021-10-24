@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/singularity-ui/core/compare/v1.4.1...v1.5.0) (2021-10-24)
+
+
+### Bug Fixes
+
+* **fields:** add missing Radio index ([c0e8deb](https://github.com/singularity-ui/core/commit/c0e8deb494f37f0ad28710d82f3a028dab3f2e52))
+
+
+### Features
+
+* expose styled-components API ([0b62422](https://github.com/singularity-ui/core/commit/0b624228e5a04ad58904723c70998f6b16505259))
+
 ## [1.4.1](https://github.com/singularity-ui/core/compare/v1.4.0...v1.4.1) (2021-10-24)
 
 
