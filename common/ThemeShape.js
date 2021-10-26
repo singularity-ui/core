@@ -19,6 +19,13 @@ const ThemeShape = PropTypes.shape({
     borderRadius: ThemeSizeShape,
   }),
 
+  breakpoint: PropTypes.shape({
+    sm: PropTypes.string,
+    md: PropTypes.string,
+    lg: PropTypes.string,
+    xl: PropTypes.string,
+  }),
+
   color: PropTypes.shape({
     a11n: PropTypes.shape({
       focus: PropTypes.shape({
@@ -56,6 +63,7 @@ const ThemeShape = PropTypes.shape({
       small: PropTypes.string,
       medium: PropTypes.string,
       large: PropTypes.string,
+      giant: PropTypes.string,
     }),
   }),
 

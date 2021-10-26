@@ -4,10 +4,18 @@ export default {
   appearance: {
     borderRadius: {
       small: '0.25rem',
-      medium: '0.25rem',
-      large: '0.375rem',
+      medium: '0.33rem',
+      large: '0.5rem',
     },
   },
+
+  breakpoint: {
+    sm: '640px',
+    md: '768px',
+    lg: '1024px',
+    xl: '1200px',
+  },
+
   color: {
     a11n: {
       focus: {
@@ -63,34 +71,41 @@ export default {
       background: '#d2ebf5',
     },
   },
+
   padding: {
     button: {
       small: '0.375rem 0.75rem',
       medium: '0.5rem 1rem',
-      large: '0.75rem 1.5rem',
+      large: '0.625rem 1.25rem',
     },
+
     input: {
       small: '0.375rem',
       medium: '0.5rem',
       large: '0.75rem',
     },
+
     inputBox: {
       small: '0.1875rem 0.375rem',
       medium: '0.25rem 0.5rem',
       large: '0.375rem 0.75rem',
     },
+
     layout: {
       tiny: '0.25rem',
       small: '0.5rem',
       medium: '1rem',
       large: '2rem',
+      giant: '4rem',
     },
   },
+
   shadow: {
     small: '0 0 0.5rem 0 rgba(0, 0, 0, 0.05)',
     medium: '0 0 1rem 0 rgba(0, 0, 0, 0.05)',
     large: '0 0 2rem 0 rgba(0, 0, 0, 0.05)',
   },
+
   typography: {
     font: {
       default: {
@@ -99,6 +114,7 @@ export default {
         weight: 300,
       },
     },
+
     size: {
       small: 0.875,
       medium: 1,

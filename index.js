@@ -11,6 +11,7 @@ import styled, {
 
 import * as SING from './common/constants'
 import theme from './common/theme'
+import Dialog from './components/Dialog'
 import Table from './contents/Table'
 import Tasker from './contents/Tasker'
 import Button from './elements/Button'
@@ -30,6 +31,7 @@ export default {
   Checkbox,
   createGlobalStyle,
   css,
+  Dialog,
   GlobalStyle,
   icon,
   isStyledComponent,
