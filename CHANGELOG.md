@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/singularity-ui/core/compare/v1.5.1...v1.6.0) (2021-10-26)
+
+
+### Features
+
+* **components:** add Dialog ([6ae1c51](https://github.com/singularity-ui/core/commit/6ae1c510cf071e6e92c839c8278738e9b8a770ca))
+
 ## [1.5.1](https://github.com/singularity-ui/core/compare/v1.5.0...v1.5.1) (2021-10-24)
 
 
