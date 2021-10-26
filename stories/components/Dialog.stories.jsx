@@ -2,6 +2,7 @@ import React from 'react'
 
 import SingularityDialog from '../../components/Dialog'
 import Button from '../../elements/Button'
+import Card from '../../elements/Card'
 
 export default {
   title: 'Components/Dialog',
@@ -12,11 +13,34 @@ export default {
   args: {},
 }
 
-export const Dialog = () => (
-  <SingularityDialog>
-    <SingularityDialog.Overlay />
+export const Dialog = () => {
+  const [isOpen, setIsOpen] = React.useState(true)
 
-    <SingularityDialog.Window>
+  if (!isOpen) {
+    return (
+      <Card style={{ maxWidth: '32rem' }}>
+        <p>Unlike a Modal, a Dialog forces the user to pick an action.</p>
+        <p>
+          It{' '}
+          <a
+            href="https://www.quora.com/Whats-the-difference-between-a-modal-and-dialog"
+            rel="noreferrer"
+            target="_blank"
+          >
+            can’t be cancelled
+          </a>{' '}
+          by clicking outside.
+        </p>
+
+        <Button accent="primary" onClick={() => setIsOpen(true)} style={{ marginTop: '1rem' }}>
+          Open dialog
+        </Button>
+      </Card>
+    )
+  }
+
+  return (
+    <SingularityDialog>
       <SingularityDialog.Body>
         <SingularityDialog.Title>Deletion Confirmation</SingularityDialog.Title>
         <p>Are you sure you want to deactivate your account?</p>
@@ -24,9 +48,11 @@ export const Dialog = () => (
       </SingularityDialog.Body>
 
       <SingularityDialog.Action>
-        <Button accent="secondary">Cancel</Button>
+        <Button accent="secondary" onClick={() => setIsOpen(false)}>
+          Cancel
+        </Button>
         <Button accent="danger">Delete</Button>
       </SingularityDialog.Action>
-    </SingularityDialog.Window>
-  </SingularityDialog>
-)
+    </SingularityDialog>
+  )
+}

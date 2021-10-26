@@ -19,6 +19,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  :focus-visible {
+    outline: none;
+  }
+
   ::placeholder {
     color: ${p => p.theme.color.body.light};
   }
@@ -27,9 +31,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
-  :focus-visible {
-    outline: none;
-  }
 `
 
 export default GlobalStyle

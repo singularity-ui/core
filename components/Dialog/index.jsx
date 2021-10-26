@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+import React from 'react'
 import styled from 'styled-components'
 
 import Action from './Action'
@@ -6,7 +8,7 @@ import Overlay from './Overlay'
 import Title from './Title'
 import Window from './Window'
 
-const Dialog = styled.div`
+const StyledDialog = styled.div`
   align-items: center;
   bottom: 0;
   display: flex;
@@ -18,10 +20,20 @@ const Dialog = styled.div`
   top: 0;
 `
 
+const Dialog = ({ children, ...props }) => (
+  <StyledDialog {...props}>
+    <Overlay />
+
+    <Window>{children}</Window>
+  </StyledDialog>
+)
+
+Dialog.propTypes = {
+  onCancel: PropTypes.func.isRequired,
+}
+
 export default Object.assign(Dialog, {
   Action,
   Body,
-  Overlay,
   Title,
-  Window,
 })
