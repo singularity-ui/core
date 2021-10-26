@@ -6,10 +6,19 @@ const Body = styled.div`
   border-top-right-radius: ${p => p.theme.appearance.borderRadius.large};
   display: flex;
   flex-direction: column;
-  padding: ${p => p.theme.padding.layout.large};
+  padding: ${p => p.theme.padding.layout.large} ${p => p.theme.padding.layout.medium}
+    ${p => p.theme.padding.layout.medium};
+  text-align: center;
 
   > p {
-    padding-top: ${p => p.theme.padding.layout.small};
+    color: ${p => p.theme.color.body.light};
+    padding-top: ${p => p.theme.padding.layout.tiny};
+  }
+
+  @media (min-width: ${p => p.theme.breakpoint.sm}) {
+    padding: ${p => p.theme.padding.layout.large} ${p => p.theme.padding.layout.large}
+      ${p => p.theme.padding.layout.medium};
+    text-align: left;
   }
 `
 
