@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/singularity-ui/core/compare/v1.6.0...v1.7.0) (2021-10-26)
+
+
+### Features
+
+* **components:** integrate overlay and window in Dialog ([a34af4b](https://github.com/singularity-ui/core/commit/a34af4ba7a4e43676c58ebac379d12cf2ab66666))
+
 # [1.6.0](https://github.com/singularity-ui/core/compare/v1.5.1...v1.6.0) (2021-10-26)
 
 
