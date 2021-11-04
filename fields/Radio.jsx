@@ -6,6 +6,7 @@ import { SIZE, SIZES } from '../common/constants'
 
 const StyledLabel = styled.label`
   align-items: center;
+  background-color: ${p => p.theme.color.body.white};
   border: solid 1px ${p => (p.isChecked ? p.theme.color.primary.active : p.theme.color.secondary.default)};
   border-radius: ${p => p.theme.appearance.borderRadius[p.size]};
   cursor: ${p => (p.isDisabled ? 'auto' : 'pointer')};

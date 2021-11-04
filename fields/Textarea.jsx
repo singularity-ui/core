@@ -12,6 +12,7 @@ const Label = styled.label`
 `
 
 const StyledTextarea = styled.textarea`
+  background-color: ${p => p.theme.color.body.white};
   border: solid 1px ${p => (p.hasError ? p.theme.color.danger.default : p.theme.color.secondary.default)};
   border-radius: ${p => p.theme.appearance.borderRadius[p.size]};
   font-family: inherit;
