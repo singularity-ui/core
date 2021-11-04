@@ -7,11 +7,14 @@ import { SIZE, SIZES } from '../common/constants'
 
 const StyledLabel = styled.label`
   align-items: center;
+  border-bottom: solid 1px transparent;
+  border-top: solid 1px transparent;
   cursor: pointer;
   display: flex;
   font-family: inherit;
   font-size: ${p => p.theme.typography.size[p.size] * 100}%;
   font-weight: 400;
+  padding: ${p => p.theme.padding.layout.tiny} 0;
   user-select: none;
   width: 100%;
 
