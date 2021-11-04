@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/singularity-ui/core/compare/v1.8.0...v1.9.0) (2021-11-04)
+
+
+### Features
+
+* **fields:** harmonize Checkbox screen height with Radio one ([1be9fcf](https://github.com/singularity-ui/core/commit/1be9fcf01acbec5ddda156a5bccdb54bb3569a27))
+
 # [1.8.0](https://github.com/singularity-ui/core/compare/v1.7.0...v1.8.0) (2021-11-04)
 
 
