@@ -1,3 +1,15 @@
+# [1.8.0](https://github.com/singularity-ui/core/compare/v1.7.0...v1.8.0) (2021-11-04)
+
+
+### Bug Fixes
+
+* **components:** remove useless onCancel Dialog prop ([5ec51a8](https://github.com/singularity-ui/core/commit/5ec51a84a0d6fc1a6b0d99b20f7843cda3e5b679))
+
+
+### Features
+
+* **fields:** set background color ([440ba08](https://github.com/singularity-ui/core/commit/440ba08d2a175f54e861cfbf8b82a3bcd4f035d7))
+
 # [1.7.0](https://github.com/singularity-ui/core/compare/v1.6.0...v1.7.0) (2021-10-26)
 
 
