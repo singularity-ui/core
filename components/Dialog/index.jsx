@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -27,10 +26,6 @@ const Dialog = ({ children, ...props }) => (
     <Window>{children}</Window>
   </StyledDialog>
 )
-
-Dialog.propTypes = {
-  onCancel: PropTypes.func.isRequired,
-}
 
 export default Object.assign(Dialog, {
   Action,
