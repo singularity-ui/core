@@ -5,10 +5,6 @@
   "license": "MIT",
   "private": true,
   "main": "./index.js",
-  "workspaces": [
-    "demo",
-    "dist"
-  ],
   "scripts": {
     "build": "rm -Rf ./dist && rollup -c && yarn build:icons && yarn build:complete",
     "build:complete": "sh ./scripts/build/copyPublicFiles.sh && node ./scripts/build/generatePackageJson.js",
