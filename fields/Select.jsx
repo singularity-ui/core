@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import ReactSelect from 'react-select'
-import ReactSelectAsync from 'react-select/async'
+// Hack to make this non-ESM module compatible:
+// eslint-disable-next-line import/extensions
+import ReactSelectAsync from 'react-select/dist/react-select.cjs.js'
 import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../common/constants'
