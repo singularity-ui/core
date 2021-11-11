@@ -4,8 +4,7 @@ import React from 'react'
 import { CheckCircle, XCircle, Edit, Trash } from 'react-feather'
 import styled from 'styled-components'
 
-import { ACCENT, TYPE } from '../../common/constants'
-import SingularityTable from '../../contents/Table'
+import { SUI, Table as SuiTable } from '../..'
 
 const jabber = new Jabber()
 
@@ -18,13 +17,13 @@ const DATA = R.addIndex(R.map)((_, index) => ({
   },
 }))(new Array(50).fill(null))
 
-const StyledTable = styled(SingularityTable)`
+const StyledTable = styled(SuiTable)`
   width: 100%;
 `
 
 export default {
   title: 'Contents/Table',
-  component: SingularityTable,
+  component: SuiTable,
 
   argTypes: {
     defaultSortedKey: {
@@ -41,7 +40,7 @@ export default {
       {
         label: 'ID',
         key: 'id',
-        type: TYPE.ID,
+        type: SUI.TYPE.ID,
       },
       {
         label: 'Email',
@@ -57,7 +56,7 @@ export default {
         labelOff: 'Activate user account',
         labelOn: 'Disable user account',
         key: 'isActive',
-        type: TYPE.TOGGLE,
+        type: SUI.TYPE.TOGGLE,
         action: (id, isOn) =>
           isOn
             ? // eslint-disable-next-line no-alert
@@ -70,18 +69,18 @@ export default {
       },
       {
         label: 'Edit user',
-        type: TYPE.ACTION,
+        type: SUI.TYPE.ACTION,
         // eslint-disable-next-line no-alert
         action: id => window.alert(`Edit user account with id=${id}.`),
-        accent: ACCENT.SECONDARY,
+        accent: SUI.ACCENT.SECONDARY,
         Icon: Edit,
       },
       {
         label: 'Delete user',
-        type: TYPE.ACTION,
+        type: SUI.TYPE.ACTION,
         // eslint-disable-next-line no-alert
         action: id => window.alert(`Delete user account with id=${id}.`),
-        accent: ACCENT.DANGER,
+        accent: SUI.ACCENT.DANGER,
         Icon: Trash,
       },
     ],

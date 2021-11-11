@@ -5,11 +5,11 @@ import styled from 'styled-components'
 
 import { SORT_ORDER } from '../../common/constants'
 import generateKeyFromValue from '../../helpers/generateKeyFromValue'
-import Head from './Head'
-import LoadingCell from './LoadingCell'
-import NoDataCell from './NoDataCell'
-import Pagination from './Pagination'
-import Row from './Row'
+import { Head } from './Head'
+import { LoadingCell } from './LoadingCell'
+import { NoDataCell } from './NoDataCell'
+import { Pagination } from './Pagination'
+import { Row } from './Row'
 import { ColumnShape } from './shapes'
 
 const Box = styled.div`
@@ -42,7 +42,7 @@ const sort = (data, keyDottedPath, isDesc) => {
   return R.sort(sortingComparator)(data)
 }
 
-const Table = React.forwardRef(
+export const Table = React.forwardRef(
   ({ columns, data, defaultSortedKey, defaultSortedKeyIsDesc, isLoading, perPage, ...props }, ref) => {
     const [pageIndex, setPageIndex] = React.useState(0)
     const [sortedData, setSortedData] = React.useState(sort(data, defaultSortedKey, defaultSortedKeyIsDesc))
@@ -147,5 +147,3 @@ Table.propTypes = {
   isLoading: PropTypes.bool,
   perPage: PropTypes.number,
 }
-
-export default Table

@@ -1,20 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { SIZE, SIZES } from '../../common/constants'
-import SingularityTextInput from '../../fields/TextInput'
+import { TextInput as SuiTextInput, SUI } from '../..'
 
-const StyledTextInput = styled(SingularityTextInput)`
+const StyledTextInput = styled(SuiTextInput)`
   width: 30rem;
 `
 
 export default {
   title: 'Fields/Text Input',
-  component: SingularityTextInput,
+  component: SuiTextInput,
 
   argTypes: {
     size: {
-      options: SIZES,
+      options: SUI.SIZES,
       control: { type: 'inline-radio' },
     },
   },
@@ -24,7 +23,7 @@ export default {
     helper: '',
     label: '',
     placeholder: 'A simple text input',
-    size: SIZE.MEDIUM,
+    size: SUI.SIZE.MEDIUM,
   },
 }
 

@@ -59,7 +59,7 @@ const Error = styled.p`
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
-const Radio = React.forwardRef(
+export const Radio = React.forwardRef(
   ({ className, error, helper, label, labelTextProps, letter, onChange, size, ...props }, ref) => {
     const $input = React.useRef(null)
     const $labelText = React.useRef(null)
@@ -145,5 +145,3 @@ Radio.propTypes = {
   letter: PropTypes.string,
   size: PropTypes.oneOf(SIZES),
 }
-
-export default Radio

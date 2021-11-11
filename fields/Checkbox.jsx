@@ -61,7 +61,7 @@ const Error = styled.p`
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
-const Checkbox = React.forwardRef(
+export const Checkbox = React.forwardRef(
   ({ className, error, helper, label, labelTextProps, onChange, size, ...props }, ref) => {
     const $input = React.useRef(null)
     const $labelText = React.useRef(null)
@@ -136,5 +136,3 @@ Checkbox.propTypes = {
   labelTextProps: PropTypes.object,
   size: PropTypes.oneOf(SIZES),
 }
-
-export default Checkbox

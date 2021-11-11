@@ -117,7 +117,7 @@ const getId = data => {
   return maybeId
 }
 
-const Cell = ({ column, data }) => {
+export const Cell = ({ column, data }) => {
   const { accent, action, Icon, IconOff, IconOn, key, label, labelOff, labelOn, type } = column
   const maybeId = getId(data)
   const withTooltip = Boolean(column.withTooltip)
@@ -221,5 +221,3 @@ Cell.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.any.isRequired,
 }
-
-export default Cell

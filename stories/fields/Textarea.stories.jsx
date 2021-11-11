@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { SIZE, SIZES } from '../../common/constants'
-import SingularityTextarea from '../../fields/Textarea'
+import { Textarea as SuiTextarea, SUI } from '../..'
 
-const StyledTextarea = styled(SingularityTextarea)`
+const StyledTextarea = styled(SuiTextarea)`
   .Textarea {
     height: 10rem;
     width: 30rem;
@@ -13,11 +12,11 @@ const StyledTextarea = styled(SingularityTextarea)`
 
 export default {
   title: 'Fields/Textarea',
-  component: SingularityTextarea,
+  component: SuiTextarea,
 
   argTypes: {
     size: {
-      options: SIZES,
+      options: SUI.SIZES,
       control: { type: 'inline-radio' },
     },
   },
@@ -27,7 +26,7 @@ export default {
     helper: '',
     label: '',
     placeholder: 'A simple textarea',
-    size: SIZE.MEDIUM,
+    size: SUI.SIZE.MEDIUM,
   },
 }
 

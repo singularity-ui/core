@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Action from './Action'
-import Body from './Body'
-import Overlay from './Overlay'
-import Title from './Title'
-import Window from './Window'
+import { Action } from './Action'
+import { Body } from './Body'
+import { Overlay } from './Overlay'
+import { Title } from './Title'
+import { Window } from './Window'
 
 const StyledDialog = styled.div`
   align-items: center;
@@ -19,16 +19,17 @@ const StyledDialog = styled.div`
   top: 0;
 `
 
-const Dialog = ({ children, ...props }) => (
-  <StyledDialog {...props}>
-    <Overlay />
+export const Dialog = Object.assign(
+  ({ children, ...props }) => (
+    <StyledDialog {...props}>
+      <Overlay />
 
-    <Window>{children}</Window>
-  </StyledDialog>
+      <Window>{children}</Window>
+    </StyledDialog>
+  ),
+  {
+    Action,
+    Body,
+    Title,
+  },
 )
-
-export default Object.assign(Dialog, {
-  Action,
-  Body,
-  Title,
-})

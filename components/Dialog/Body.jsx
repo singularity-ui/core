@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Body = styled.div`
+export const Body = styled.div`
   background-color: ${p => p.theme.color.body.white};
   border-top-left-radius: ${p => p.theme.appearance.borderRadius.large};
   border-top-right-radius: ${p => p.theme.appearance.borderRadius.large};
@@ -21,5 +21,3 @@ const Body = styled.div`
     text-align: left;
   }
 `
-
-export default Body

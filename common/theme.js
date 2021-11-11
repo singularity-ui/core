@@ -1,6 +1,6 @@
 /* eslint-disable sort-keys-fix/sort-keys-fix */
 
-export default {
+export const theme = {
   appearance: {
     borderRadius: {
       small: '0.25rem',

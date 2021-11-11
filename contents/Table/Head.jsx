@@ -38,7 +38,7 @@ const SortAscOff = styled(StyledSortAsc)`
   }
 `
 
-const Head = ({ dataKey, isSortable, label, onSort, sortOrder, type }) => {
+export const Head = ({ dataKey, isSortable, label, onSort, sortOrder, type }) => {
   const [isHovered, setIsHovered] = React.useState(false)
 
   if (type === TYPE.ACTION) {
@@ -96,5 +96,3 @@ Head.propTypes = {
   sortOrder: PropTypes.oneOf(SORT_ORDERS),
   type: PropTypes.oneOf(TYPES),
 }
-
-export default Head

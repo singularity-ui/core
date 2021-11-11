@@ -2,23 +2,19 @@ import babel from '@rollup/plugin-babel'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import glob from 'glob'
 
-function getLibPath(svgIconPath) {
-  return /([^/]+\/[^/]+)$/.exec(svgIconPath)[1]
-}
+const ICON_PATHS = glob.sync('./icons/**/*.{js,jsx}')
 
-const ICON_LIB_PATHS = glob.sync('./icons/*/*.jsx').map(getLibPath)
-
-export default ICON_LIB_PATHS.map(iconLibPath => ({
+export default ICON_PATHS.map(iconPath => ({
   external: [/@babel\/runtime/, 'prop-types', 'react', 'styled-components'],
 
-  input: `./icons/${iconLibPath}`,
+  input: iconPath,
 
   output: [
     {
-      exports: 'default',
-      file: `./dist/icons/${iconLibPath.replace(/.jsx$/, '.js')}`,
+      dir: `./dist`,
       format: 'esm',
-      sourcemap: false,
+      preserveModules: true,
+      sourcemap: true,
     },
   ],
 

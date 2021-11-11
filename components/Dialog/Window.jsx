@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Window = styled.div`
+export const Window = styled.div`
   border-radius: ${p => p.theme.appearance.borderRadius.large};
   bottom: ${p => p.theme.padding.layout.giant};
   box-shadow: ${p => p.theme.shadow.large};
@@ -12,5 +12,3 @@ const Window = styled.div`
     bottom: auto;
   }
 `
-
-export default Window

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Overlay = styled.div`
+export const Overlay = styled.div`
   background-color: ${p => p.theme.color.body.light};
   bottom: 0;
   left: 0;
@@ -9,5 +9,3 @@ const Overlay = styled.div`
   right: 0;
   top: 0;
 `
-
-export default Overlay

@@ -32,7 +32,7 @@ const StyledButton = styled.button`
   }
 `
 
-const Button = React.forwardRef(({ accent, children, size, type, ...props }, ref) => (
+export const Button = React.forwardRef(({ accent, children, size, type, ...props }, ref) => (
   <StyledButton ref={ref} accent={accent} size={size} type={type} {...props}>
     {children}
   </StyledButton>
@@ -51,5 +51,3 @@ Button.propTypes = {
   size: PropTypes.oneOf(SIZES),
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
 }
-
-export default Button

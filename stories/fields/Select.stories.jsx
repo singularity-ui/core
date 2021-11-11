@@ -1,20 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { SIZE, SIZES } from '../../common/constants'
-import SingularitySelect from '../../fields/Select'
+import { Select as SuiSelect, SUI } from '../..'
 
-const StyledSelect = styled(SingularitySelect)`
+const StyledSelect = styled(SuiSelect)`
   width: 30rem;
 `
 
 export default {
   title: 'Fields/Select',
-  component: SingularitySelect,
+  component: SuiSelect,
 
   argTypes: {
     size: {
-      options: SIZES,
+      options: SUI.SIZES,
       control: { type: 'inline-radio' },
     },
   },
@@ -33,7 +32,7 @@ export default {
       { value: 'ff5a5f', label: 'Sizzling Red' },
     ],
     placeholder: 'Pick your colors',
-    size: SIZE.MEDIUM,
+    size: SUI.SIZE.MEDIUM,
   },
 }
 

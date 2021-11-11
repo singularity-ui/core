@@ -1,23 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { SIZE, SIZES } from '../../common/constants'
-import SingularityRadio from '../../fields/Radio'
+import { Radio as SuiRadio, SUI } from '../..'
 
-const StyledRadio = styled(SingularityRadio)`
+const StyledRadio = styled(SuiRadio)`
   // width: 30rem;
 `
 
 export default {
   title: 'Fields/Radio',
-  component: SingularityRadio,
+  component: SuiRadio,
 
   argTypes: {
     defaultChecked: {
       control: { type: 'boolean' },
     },
     size: {
-      options: SIZES,
+      options: SUI.SIZES,
       control: { type: 'inline-radio' },
     },
   },
@@ -27,7 +26,7 @@ export default {
     disabled: false,
     label: 'Choice A',
     letter: 'A',
-    size: SIZE.MEDIUM,
+    size: SUI.SIZE.MEDIUM,
   },
 }
 

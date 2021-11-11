@@ -1,12 +1,10 @@
 import React from 'react'
 
-import SingularityDialog from '../../components/Dialog'
-import Button from '../../elements/Button'
-import Card from '../../elements/Card'
+import { Dialog as SuiDialog, Button, Card } from '../..'
 
 export default {
   title: 'Components/Dialog',
-  component: SingularityDialog,
+  component: SuiDialog,
 
   argTypes: {},
 
@@ -40,19 +38,19 @@ export const Dialog = () => {
   }
 
   return (
-    <SingularityDialog>
-      <SingularityDialog.Body>
-        <SingularityDialog.Title>Deletion Confirmation</SingularityDialog.Title>
+    <SuiDialog>
+      <SuiDialog.Body>
+        <SuiDialog.Title>Deletion Confirmation</SuiDialog.Title>
         <p>Are you sure you want to deactivate your account?</p>
         <p>All of your data will be permanently removed.</p>
-      </SingularityDialog.Body>
+      </SuiDialog.Body>
 
-      <SingularityDialog.Action>
+      <SuiDialog.Action>
         <Button accent="secondary" onClick={() => setIsOpen(false)}>
           Cancel
         </Button>
         <Button accent="danger">Delete</Button>
-      </SingularityDialog.Action>
-    </SingularityDialog>
+      </SuiDialog.Action>
+    </SuiDialog>
   )
 }

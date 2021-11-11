@@ -1,23 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { SIZE, SIZES } from '../../common/constants'
-import SingularityCheckbox from '../../fields/Checkbox'
+import { Checkbox as SuiCheckbox, SUI } from '../..'
 
-const StyledCheckbox = styled(SingularityCheckbox)`
+const StyledCheckbox = styled(SuiCheckbox)`
   width: 30rem;
 `
 
 export default {
   title: 'Fields/Checkbox',
-  component: SingularityCheckbox,
+  component: SuiCheckbox,
 
   argTypes: {
     defaultChecked: {
       control: { type: 'boolean' },
     },
     size: {
-      options: SIZES,
+      options: SUI.SIZES,
       control: { type: 'inline-radio' },
     },
   },
@@ -26,7 +25,7 @@ export default {
     defaultChecked: false,
     disabled: false,
     label: 'Check it!',
-    size: SIZE.MEDIUM,
+    size: SUI.SIZE.MEDIUM,
   },
 }
 

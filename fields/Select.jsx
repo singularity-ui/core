@@ -103,7 +103,7 @@ const Error = styled.p`
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
-const Select = React.forwardRef(({ className, error, helper, isAsync, label, size, ...props }, ref) => {
+export const Select = React.forwardRef(({ className, error, helper, isAsync, label, size, ...props }, ref) => {
   const hasError = typeof error === 'string' && error.length > 0
 
   return (
@@ -156,5 +156,3 @@ Select.propTypes = {
   label: PropTypes.string,
   size: PropTypes.oneOf(SIZES),
 }
-
-export default Select

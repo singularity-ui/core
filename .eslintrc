@@ -28,6 +28,21 @@
   },
   "overrides": [
     {
+      "files": [
+        "common/**/*.js",
+        "components/**/*.jsx",
+        "contents/**/*.jsx",
+        "elements/**/*.jsx",
+        "fields/**/*.jsx",
+        "GlobalStyle.jsx",
+        "ThemeProvider.jsx"
+      ],
+      "rules": {
+        "import/no-default-export": "error",
+        "import/prefer-default-export": "off"
+      }
+    },
+    {
       "files": ["icons/**/*.jsx"],
       "rules": {
         "react/jsx-sort-props": "off"

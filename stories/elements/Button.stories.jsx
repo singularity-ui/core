@@ -1,19 +1,18 @@
 import React from 'react'
 
-import { ACCENT, ACCENTS, SIZE, SIZES } from '../../common/constants'
-import SingularityButton from '../../elements/Button'
+import { Button as SuiButton, SUI } from '../..'
 
 export default {
   title: 'Elements/Button',
-  component: SingularityButton,
+  component: SuiButton,
 
   argTypes: {
     accent: {
-      options: ACCENTS,
+      options: SUI.ACCENTS,
       control: { type: 'inline-radio' },
     },
     size: {
-      options: SIZES,
+      options: SUI.SIZES,
       control: { type: 'inline-radio' },
     },
     type: {
@@ -22,10 +21,10 @@ export default {
   },
 
   args: {
-    accent: ACCENT.PRIMARY,
-    size: SIZE.MEDIUM,
+    accent: SUI.ACCENT.PRIMARY,
+    size: SUI.SIZE.MEDIUM,
     type: 'button',
   },
 }
 
-export const Button = props => <SingularityButton {...props}>Button</SingularityButton>
+export const Button = props => <SuiButton {...props}>Button</SuiButton>

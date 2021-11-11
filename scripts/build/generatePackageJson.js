@@ -13,7 +13,6 @@ const distPackageExtraProps = {
   exports: './index.js',
   funding: 'https://github.com/singularity-ui/core?sponsor=1',
   homepage: 'https://singularity-ui.github.io/core/',
-  main: './index.js',
   name: '@singularity-ui/core',
   publishConfig: {
     access: 'public',

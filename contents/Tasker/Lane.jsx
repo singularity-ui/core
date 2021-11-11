@@ -14,7 +14,7 @@ const Label = styled.h3`
   margin-bottom: ${p => p.theme.padding.layout.small};
 `
 
-const Lane = ({ label, tasks }) => (
+export const Lane = ({ label, tasks }) => (
   <Box>
     <Label>{label}</Label>
     {tasks.map((Task, index) => (
@@ -27,5 +27,3 @@ Lane.propTypes = {
   label: PropTypes.string.isRequired,
   tasks: PropTypes.arrayOf(PropTypes.elementType).isRequired,
 }
-
-export default Lane

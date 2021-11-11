@@ -61,7 +61,7 @@ const Box = styled.div`
   }
 `
 
-const Pagination = props => (
+export const Pagination = props => (
   <Box>
     <ReactPaginate
       breakClassName="Li"
@@ -86,5 +86,3 @@ Pagination.propTypes = {
   onPageChange: PropTypes.func.isRequired,
   pageCount: PropTypes.number.isRequired,
 }
-
-export default Pagination

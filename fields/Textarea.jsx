@@ -50,7 +50,7 @@ const Error = styled.p`
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
-const Textarea = React.forwardRef(({ className, error, helper, label, size, ...props }, ref) => {
+export const Textarea = React.forwardRef(({ className, error, helper, label, size, ...props }, ref) => {
   const hasError = typeof error === 'string' && error.length > 0
 
   return (
@@ -93,5 +93,3 @@ Textarea.propTypes = {
   label: PropTypes.string,
   size: PropTypes.oneOf(SIZES),
 }
-
-export default Textarea

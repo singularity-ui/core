@@ -14,7 +14,7 @@ const ThemeSizeShape = PropTypes.shape({
   large: PropTypes.string,
 })
 
-const ThemeShape = PropTypes.shape({
+export const ThemeShape = PropTypes.shape({
   appearance: PropTypes.shape({
     borderRadius: ThemeSizeShape,
   }),
@@ -85,5 +85,3 @@ const ThemeShape = PropTypes.shape({
     }),
   }),
 })
-
-export default ThemeShape

@@ -1,16 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import SingularityCard from '../../elements/Card'
+import { Card as SuiCard } from '../..'
 
-const StyledCard = styled(SingularityCard)`
+const StyledCard = styled(SuiCard)`
   height: 20rem;
   width: 15rem;
 `
 
 export default {
   title: 'Elements/Card',
-  component: SingularityCard,
+  component: SuiCard,
 }
 
 export const Card = props => <StyledCard {...props}>This is just a card.</StyledCard>

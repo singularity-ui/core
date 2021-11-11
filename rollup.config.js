@@ -1,5 +1,5 @@
 import babel from '@rollup/plugin-babel'
-// import commonjs from '@rollup/plugin-commonjs'
+import commonjs from '@rollup/plugin-commonjs'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import css from 'rollup-plugin-import-css'
 import sizes from 'rollup-plugin-sizes'
@@ -23,10 +23,11 @@ export default {
 
   output: [
     {
-      exports: 'default',
-      file: './dist/index.js',
+      // exports: 'default',
+      dir: './dist',
       format: 'esm',
-      sourcemap: false,
+      preserveModules: true,
+      sourcemap: true,
     },
   ],
 
@@ -36,7 +37,7 @@ export default {
       extensions: ['css', '.js', '.jsx'],
     }),
     // Convert CommonJS to ES6:
-    // commonjs(),
+    commonjs(),
     // Import CSS into JS:
     css(),
     // Transpile JSX to JS:

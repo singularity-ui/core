@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Action = styled.div`
+export const Action = styled.div`
   background-color: ${p => p.theme.color.body.background};
   border-bottom-left-radius: ${p => p.theme.appearance.borderRadius.large};
   border-bottom-right-radius: ${p => p.theme.appearance.borderRadius.large};
@@ -25,5 +25,3 @@ const Action = styled.div`
     }
   }
 `
-
-export default Action
