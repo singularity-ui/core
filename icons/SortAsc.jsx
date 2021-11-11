@@ -17,7 +17,9 @@ const SortAscSvg = props => (
 )
 
 const SortAsc = props => <Icon as={SortAscSvg} {...props} />
+
 SortAsc.defaultProps = { ...Icon.defaultProps }
+
 SortAsc.propTypes = { ...Icon.propTypes }
 
 export default SortAsc

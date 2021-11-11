@@ -26,7 +26,7 @@ export default {
       exports: 'default',
       file: './dist/singularity.cjs.js',
       format: 'cjs',
-      sourcemap: true,
+      sourcemap: false,
     },
   ],
 

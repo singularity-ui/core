@@ -10,6 +10,7 @@
     "browser": true,
     "node": false
   },
+  "ignorePatterns": ["/dist/", "/icons/material/", "/storybook-static/", "/submodules/"],
   "rules": {
     "no-console": ["error", { "allow": ["warn", "error"] }],
     "no-underscore-dangle": "off",
@@ -27,13 +28,19 @@
   },
   "overrides": [
     {
+      "files": ["icons/**/*.jsx"],
+      "rules": {
+        "react/jsx-sort-props": "off"
+      }
+    },
+    {
       "files": ["**/*.stories.jsx"],
       "rules": {
         "sort-keys-fix/sort-keys-fix": "off"
       }
     },
     {
-      "files": ["./scripts/**/*.js"],
+      "files": ["./scripts/**/*.js", "./scripts/**/*.mjs"],
       "env": {
         "browser": false,
         "node": true

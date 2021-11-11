@@ -12,7 +12,9 @@ const SortDescSvg = props => (
 )
 
 const SortDesc = props => <Icon as={SortDescSvg} {...props} />
+
 SortDesc.defaultProps = { ...Icon.defaultProps }
+
 SortDesc.propTypes = { ...Icon.propTypes }
 
 export default SortDesc

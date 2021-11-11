@@ -1,0 +1,29 @@
+import React from 'react'
+
+import Icon from '../Icon'
+
+const MaterialHeadphonesRoundedSvg = props => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    enable-background="new 0 0 24 24"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    {...props}
+  >
+    <g>
+      <rect fill="none" height="24" width="24" />
+    </g>
+    <g>
+      <path d="M3,12v7c0,1.1,0.9,2,2,2h2c1.1,0,2-0.9,2-2v-4c0-1.1-0.9-2-2-2H5v-1c0-3.87,3.13-7,7-7s7,3.13,7,7v1h-2c-1.1,0-2,0.9-2,2v4 c0,1.1,0.9,2,2,2h2c1.1,0,2-0.9,2-2v-7c0-4.97-4.03-9-9-9S3,7.03,3,12z" />
+    </g>
+  </svg>
+)
+
+const MaterialHeadphonesRounded = props => <Icon as={MaterialHeadphonesRoundedSvg} {...props} />
+
+MaterialHeadphonesRounded.defaultProps = { ...Icon.defaultProps }
+
+MaterialHeadphonesRounded.propTypes = { ...Icon.propTypes }
+
+export default MaterialHeadphonesRounded
