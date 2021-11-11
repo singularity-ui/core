@@ -1,3 +1,10 @@
+# [2.0.0-alpha.5](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.4...v2.0.0-alpha.5) (2021-11-11)
+
+
+### Bug Fixes
+
+* **icons:** add missing js ext for externalized import in Icon ([adfb0d1](https://github.com/singularity-ui/core/commit/adfb0d12d4785beb09cb755b10ea53b07a08cc0f))
+
 # [2.0.0-alpha.4](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.3...v2.0.0-alpha.4) (2021-11-11)
 
 
