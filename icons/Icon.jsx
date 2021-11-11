@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { ACCENT, ACCENTS, SIZE, SIZES } from '../common/constants'
+// eslint-disable-next-line import/extensions
+import { ACCENT, ACCENTS, SIZE, SIZES } from '../common/constants.js'
 
 const Icon = styled.svg`
   height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
