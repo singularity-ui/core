@@ -14,7 +14,7 @@ export default {
     'react-feather',
     'react-paginate',
     'react-select',
-    'react-select/async',
+    'react-select/dist/react-select.cjs.js',
     'sha1',
     'styled-components',
   ],
