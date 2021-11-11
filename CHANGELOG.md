@@ -1,3 +1,14 @@
+# [2.0.0-alpha.1](https://github.com/singularity-ui/core/compare/v1.10.0...v2.0.0-alpha.1) (2021-11-11)
+
+
+* build(rollup)!: migrate to ESM ([d85ad95](https://github.com/singularity-ui/core/commit/d85ad95b1537b724c00a3bf0c73f8386302024c9))
+
+
+### BREAKING CHANGES
+
+* This package will only be distributed as a JavaScript
+module starting from version 3.0.0 and greater.
+
 # [1.10.0](https://github.com/singularity-ui/core/compare/v1.9.0...v1.10.0) (2021-11-11)
 
 
