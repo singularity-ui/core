@@ -1,3 +1,11 @@
+# [2.0.0-alpha.3](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.2...v2.0.0-alpha.3) (2021-11-11)
+
+
+### Bug Fixes
+
+* **fields:** hack react-select/async import to make it ESM-compatible ([0657c0d](https://github.com/singularity-ui/core/commit/0657c0d85a31623bfcbde9ae50f459dee3f12227))
+* **rollup:** exclude common/constants while building icons ([e356152](https://github.com/singularity-ui/core/commit/e3561526fc7679dbfb917fa8d7b2e21555963f49))
+
 # [2.0.0-alpha.2](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2021-11-11)
 
 
