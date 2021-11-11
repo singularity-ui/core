@@ -1,3 +1,15 @@
+# [1.10.0](https://github.com/singularity-ui/core/compare/v1.9.0...v1.10.0) (2021-11-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-paginate to v8 ([f432e57](https://github.com/singularity-ui/core/commit/f432e5701e45f367c8b7ebc3b64315042c22982c))
+
+
+### Features
+
+* **icons:** add material icons ([c78903c](https://github.com/singularity-ui/core/commit/c78903cd4f8a0861ab5df98413d174a265a8df02))
+
 # [1.9.0](https://github.com/singularity-ui/core/compare/v1.8.0...v1.9.0) (2021-11-04)
 
 
