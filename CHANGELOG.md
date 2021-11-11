@@ -1,3 +1,10 @@
+# [2.0.0-alpha.2](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2021-11-11)
+
+
+### Bug Fixes
+
+* **build:** switch to named exports with preserved modules ([588fb3c](https://github.com/singularity-ui/core/commit/588fb3cc261f4939746018cbfa75f10f80d105c9))
+
 # [2.0.0-alpha.1](https://github.com/singularity-ui/core/compare/v1.10.0...v2.0.0-alpha.1) (2021-11-11)
 
 
