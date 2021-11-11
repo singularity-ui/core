@@ -1,3 +1,10 @@
+# [2.0.0-alpha.4](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.3...v2.0.0-alpha.4) (2021-11-11)
+
+
+### Bug Fixes
+
+* **rollup:** nake react-select/dist/react-select.cjs.js external ([d77fff5](https://github.com/singularity-ui/core/commit/d77fff5d634c77a0fab785adfd5f86daf872074c))
+
 # [2.0.0-alpha.3](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.2...v2.0.0-alpha.3) (2021-11-11)
 
 
