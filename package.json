@@ -96,13 +96,6 @@
       "@semantic-release/release-notes-generator",
       "@semantic-release/changelog",
       [
-        "@semantic-release/npm",
-        {
-          "pkgRoot": "./dist"
-        }
-      ],
-      "@semantic-release/github",
-      [
         "@semantic-release/git",
         {
           "assets": [
@@ -111,6 +104,13 @@
             "yarn.lock"
           ],
           "message": "ci(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ],
+      "@semantic-release/github",
+      [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "./dist"
         }
       ]
     ]
