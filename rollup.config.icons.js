@@ -5,13 +5,13 @@ import glob from 'glob'
 const ICON_PATHS = glob.sync('./icons/**/*.{js,jsx}')
 
 export default ICON_PATHS.map(iconPath => ({
-  external: [/@babel\/runtime/, 'prop-types', 'react', 'styled-components'],
+  external: [/\.\.\/common\/constants/, /@babel\/runtime/, 'prop-types', 'react', 'styled-components'],
 
   input: iconPath,
 
   output: [
     {
-      dir: `./dist`,
+      dir: `./dist/icons`,
       format: 'esm',
       preserveModules: true,
       sourcemap: true,

@@ -23,7 +23,6 @@ export default {
 
   output: [
     {
-      // exports: 'default',
       dir: './dist',
       format: 'esm',
       preserveModules: true,
