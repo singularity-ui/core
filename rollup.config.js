@@ -24,8 +24,8 @@ export default {
   output: [
     {
       exports: 'default',
-      file: './dist/singularity.cjs.js',
-      format: 'cjs',
+      file: './dist/index.js',
+      format: 'esm',
       sourcemap: false,
     },
   ],

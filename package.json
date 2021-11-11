@@ -1,7 +1,7 @@
 {
   "name": "@singularity-ui/root",
   "description": "Yet another React UI.",
-  "version": "0.13.0",
+  "version": "0.0.0",
   "license": "MIT",
   "private": true,
   "workspaces": [
@@ -80,7 +80,15 @@
   ],
   "release": {
     "branches": [
-      "main"
+      "main",
+      {
+        "name": "beta",
+        "prerelease": true
+      },
+      {
+        "name": "alpha",
+        "prerelease": true
+      }
     ],
     "plugins": [
       "@semantic-release/commit-analyzer",

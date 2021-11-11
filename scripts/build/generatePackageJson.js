@@ -10,9 +10,9 @@ const distPackageExtraProps = {
   bugs: {
     url: 'https://github.com/singularity-ui/core/issues',
   },
-  files: ['singularity.cjs.js', 'icons/material/*.cjs.js'],
+  exports: './index.js',
   homepage: 'https://singularity-ui.github.io/core/',
-  main: './singularity.cjs.js',
+  main: './index.js',
   name: '@singularity-ui/core',
   publishConfig: {
     access: 'public',
@@ -21,6 +21,8 @@ const distPackageExtraProps = {
     type: 'git',
     url: 'git+https://github.com/singularity-ui/core.git',
   },
+  sideEffects: false,
+  type: 'module',
 }
 
 // eslint-disable-next-line import/newline-after-import

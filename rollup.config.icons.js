@@ -16,8 +16,8 @@ export default ICON_LIB_PATHS.map(iconLibPath => ({
   output: [
     {
       exports: 'default',
-      file: `./dist/icons/${iconLibPath.replace(/.jsx$/, '.cjs.js')}`,
-      format: 'cjs',
+      file: `./dist/icons/${iconLibPath.replace(/.jsx$/, '.js')}`,
+      format: 'esm',
       sourcemap: false,
     },
   ],
