@@ -1,3 +1,10 @@
+# [2.0.0-alpha.6](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.5...v2.0.0-alpha.6) (2021-11-12)
+
+
+### Features
+
+* migrate to typescript with dist declarations ([205807f](https://github.com/singularity-ui/core/commit/205807fcbc7410f6cd80bce82b633788015c35f7))
+
 # [2.0.0-alpha.5](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.4...v2.0.0-alpha.5) (2021-11-11)
 
 
