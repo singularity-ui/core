@@ -1,3 +1,10 @@
+# [2.0.0-alpha.7](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2021-11-12)
+
+
+### Bug Fixes
+
+* **build:** fix styled-components imports to make them compatible with Next.js ([a5efe1f](https://github.com/singularity-ui/core/commit/a5efe1f5db89b5df15a92947fea5b7ed38edfbbc))
+
 # [2.0.0-alpha.6](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.5...v2.0.0-alpha.6) (2021-11-12)
 
 
