@@ -1,45 +1,39 @@
 import commonjs from '@rollup/plugin-commonjs'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
+import replace from '@rollup/plugin-replace'
 import typescript from '@rollup/plugin-typescript'
-import css from 'rollup-plugin-import-css'
-import sizes from 'rollup-plugin-sizes'
+import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+import styles from 'rollup-plugin-styles'
 
 export default {
-  external: [
-    'prop-types',
-    'ramda',
-    'react',
-    'react-dom',
-    'react-feather',
-    'react-paginate',
-    'react-select',
-    'react-select/dist/react-select.cjs.js',
-    'sha1',
-    'styled-components',
-  ],
-
+  external: ['prop-types', 'ramda', 'react-feather', 'react-paginate', 'sha1', 'tslib'],
   input: './index.ts',
 
   output: [
     {
       dir: './dist',
       format: 'esm',
-      preserveModules: true,
       sourcemap: true,
     },
   ],
 
   plugins: [
+    peerDepsExternal(),
     nodeResolve({
-      extensions: ['css', '.js', '.jsx', '.ts', '.tsx'],
+      extensions: ['css', '.js', 'json', '.jsx', '.ts', '.tson', '.tsx'],
     }),
+    // Inject CSS & fonts into JS:
+    styles(),
     // Convert CommonJS to ES6:
     commonjs(),
-    // Import CSS into JS:
-    css(),
     // Transpile TS & TSX to JS:
     typescript(),
-    // Output bundle dependencies sizes:
-    sizes(),
+    // Hack to make styled-component compatible with Next.js inability to fully support ESM:
+    replace({
+      '= styled(': '= (styled.default || styled)(',
+      '= styled.': '= (styled.default || styled).',
+      delimiters: ['', ''],
+      preventAssignment: false,
+    }),
   ],
 }

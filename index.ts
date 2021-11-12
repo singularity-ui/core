@@ -1,15 +1,3 @@
-export {
-  css,
-  createGlobalStyle,
-  default as styled,
-  isStyledComponent,
-  keyframes,
-  ServerStyleSheet,
-  StyleSheetManager,
-  ThemeConsumer,
-  withTheme,
-} from 'styled-components'
-
 export * as SUI from './common/constants'
 export { theme } from './common/theme'
 export { Dialog } from './components/Dialog'

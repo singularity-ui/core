@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "declaration": true,
     "declarationDir": "./dist",
     "forceConsistentCasingInFileNames": true,
@@ -10,12 +10,12 @@
     "lib": ["dom", "dom.iterable", "ES2021"],
     "module": "esnext",
     "moduleResolution": "node",
-    "noEmit": true,
+    "outDir": "./dist",
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": false,
     "strictNullChecks": true,
-    "target": "ES2018"
+    "target": "ES6"
   },
   "include": ["**/*.js", "**/*.jsx", "**/*.mjs", "**/*.ts", "**/*.tsx", ".storybook/main.js", ".storybook/preview.jsx"],
   "exclude": ["dist/*", "icons/material/*", "node_modules/*", "storybook-static/*", "submodules/*"]
