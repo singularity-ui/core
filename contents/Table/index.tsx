@@ -42,7 +42,7 @@ const sort = (data, keyDottedPath, isDesc) => {
   return R.sort(sortingComparator)(data)
 }
 
-export const Table = React.forwardRef(
+export const Table = React.forwardRef<any, any>(
   ({ columns, data, defaultSortedKey, defaultSortedKeyIsDesc, isLoading, perPage, ...props }, ref) => {
     const [pageIndex, setPageIndex] = React.useState(0)
     const [sortedData, setSortedData] = React.useState(sort(data, defaultSortedKey, defaultSortedKeyIsDesc))

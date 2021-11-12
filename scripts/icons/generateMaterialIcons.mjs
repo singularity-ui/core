@@ -1,4 +1,4 @@
-/* eslint-disable no-use-before-define, prefer-template */
+/* eslint-disable prefer-template, @typescript-eslint/no-use-before-define */
 
 import glob from 'glob'
 import fs from 'graceful-fs'
@@ -13,7 +13,7 @@ function getFileName(svgIconPath) {
   return /([^/]+)$/.exec(svgIconPath)[1]
 }
 
-function convertPathToJsxIconName(svgIconPath) {
+function convertPathToTsxIconName(svgIconPath) {
   return (
     'Material' +
     /([^/]+)_24px\.svg$/
@@ -64,40 +64,40 @@ function readMaterialIcon({ count, index, spinner, svgIconPaths }) {
   }
 
   const svgFileName = getFileName(svgIconPath)
-  const jsxIconName = convertPathToJsxIconName(svgIconPath)
+  const tsxIconName = convertPathToTsxIconName(svgIconPath)
   // eslint-disable-next-line no-param-reassign
-  spinner.text = `Generating Material icons: [${index}/${count}] Converting ${svgFileName} to ${jsxIconName}.jsx…`
+  spinner.text = `Generating Material icons: [${index}/${count}] Converting ${svgFileName} to ${tsxIconName}.tsx…`
 
   fs.readFile(svgIconPath, 'utf-8', (err, svgIconSource) => {
     writeMaterialIcon({
       count,
       index,
-      jsxIconName,
       spinner,
       svgIconPaths,
       svgIconSource,
+      tsxIconName,
     })
   })
 }
 
-function writeMaterialIcon({ count, index, jsxIconName, spinner, svgIconPaths, svgIconSource }) {
-  const jsxIconSource = prettier.format(
+function writeMaterialIcon({ count, index, spinner, svgIconPaths, svgIconSource, tsxIconName }) {
+  const tsxIconSource = prettier.format(
     `
     import React from 'react'
 
     import Icon from '../Icon'
 
-    const ${jsxIconName}Svg = props => (
+    const ${tsxIconName}Svg = props => (
       ${svgIconSource.replace(/>/, ` {...props}>`)}
     )
 
-    const ${jsxIconName} = props => <Icon as={${jsxIconName}Svg} {...props} />
+    const ${tsxIconName} = props => <Icon as={${tsxIconName}Svg} {...props} />
 
-    ${jsxIconName}.defaultProps = { ...Icon.defaultProps }
+    ${tsxIconName}.defaultProps = { ...Icon.defaultProps }
 
-    ${jsxIconName}.propTypes = { ...Icon.propTypes }
+    ${tsxIconName}.propTypes = { ...Icon.propTypes }
 
-    export default ${jsxIconName}
+    export default ${tsxIconName}
   `,
     {
       parser: 'babel',
@@ -105,7 +105,7 @@ function writeMaterialIcon({ count, index, jsxIconName, spinner, svgIconPaths, s
     },
   )
 
-  fs.writeFile(`./icons/material/${jsxIconName}.jsx`, jsxIconSource, 'utf-8', () => {
+  fs.writeFile(`./icons/material/${tsxIconName}.tsx`, tsxIconSource, 'utf-8', () => {
     if (index === count - 1) {
       spinner.succeed('Material icons generated.')
 

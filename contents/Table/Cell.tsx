@@ -78,13 +78,17 @@ const StyledTdIcon = styled(StyledTd)`
   }
 `
 
-const StyledTdBoolean = styled(StyledTdIcon)`
+const StyledTdBoolean = styled(StyledTdIcon)<{
+  value: any
+}>`
   svg {
     color: ${p => p.theme.color[p.value ? 'success' : 'danger'].active};
   }
 `
 
-const StyledTdAction = styled(StyledTdIcon)`
+const StyledTdAction = styled(StyledTdIcon)<{
+  accent: 'danger' | 'info' | 'primary' | 'secondary' | 'success' | 'warning'
+}>`
   cursor: pointer;
 
   :hover {
@@ -151,7 +155,7 @@ export const Cell = ({ column, data }) => {
     }
 
     return (
-      <StyledTdAction accent={accent} aria-label={label} onClick={() => action(maybeId)} role="button" tabIndex="0">
+      <StyledTdAction accent={accent} aria-label={label} onClick={() => action(maybeId)} role="button" tabIndex={0}>
         {withTooltip && <span>{label}</span>}
 
         <Icon />
@@ -186,7 +190,7 @@ export const Cell = ({ column, data }) => {
     const toggleLabel = value ? labelOn : labelOff
 
     return (
-      <StyledTdToggle aria-label={toggleLabel} onClick={() => action(maybeId, !value)} role="button" tabIndex="0">
+      <StyledTdToggle aria-label={toggleLabel} onClick={() => action(maybeId, !value)} role="button" tabIndex={0}>
         {withTooltip && <span>{toggleLabel}</span>}
 
         {value ? <IconOn /> : <IconOff />}

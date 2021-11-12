@@ -1,14 +1,13 @@
 {
-  "extends": "@ivangabriele/eslint-config-react",
-  "parserOptions": {
-    "ecmaVersion": 2021,
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
+  "extends": "@ivangabriele/eslint-config-typescript-react",
   "env": {
     "browser": true,
     "node": false
+  },
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "extraFileExtensions": [".mjs"],
+    "project": "./tsconfig.json"
   },
   "ignorePatterns": ["/dist/", "/icons/material/", "/storybook-static/", "/submodules/"],
   "rules": {
@@ -18,6 +17,7 @@
     "import/no-extraneous-dependencies": ["error", { "peerDependencies": true }],
 
     "react/forbid-prop-types": "off",
+    "react/function-component-definition": "off",
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": [
       "error",
@@ -29,13 +29,13 @@
   "overrides": [
     {
       "files": [
-        "common/**/*.js",
-        "components/**/*.jsx",
-        "contents/**/*.jsx",
-        "elements/**/*.jsx",
-        "fields/**/*.jsx",
-        "GlobalStyle.jsx",
-        "ThemeProvider.jsx"
+        "common/**/*.ts",
+        "components/**/*.tsx",
+        "contents/**/*.tsx",
+        "elements/**/*.tsx",
+        "fields/**/*.tsx",
+        "GlobalStyle.tsx",
+        "ThemeProvider.tsx"
       ],
       "rules": {
         "import/no-default-export": "error",
@@ -43,13 +43,13 @@
       }
     },
     {
-      "files": ["icons/**/*.jsx"],
+      "files": ["icons/**/*.tsx"],
       "rules": {
         "react/jsx-sort-props": "off"
       }
     },
     {
-      "files": ["**/*.stories.jsx"],
+      "files": ["**/*.stories.tsx"],
       "rules": {
         "sort-keys-fix/sort-keys-fix": "off"
       }
@@ -62,16 +62,6 @@
       },
       "rules": {
         "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
-      }
-    },
-    {
-      "files": ["./demo/**/*.js", "./demo/**/*.jsx"],
-      "env": {
-        "browser": true,
-        "node": true
-      },
-      "rules": {
-        "react/prop-types": "off"
       }
     }
   ]

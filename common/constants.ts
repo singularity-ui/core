@@ -9,7 +9,9 @@ export const ACCENT = {
   INFO: 'info',
 }
 
-export const ACCENTS = Object.values(ACCENT)
+export const ACCENTS = Object.values(ACCENT) as Array<
+  'danger' | 'info' | 'primary' | 'secondary' | 'success' | 'warning'
+>
 
 export const SIZE = {
   SMALL: 'small',
@@ -17,7 +19,7 @@ export const SIZE = {
   LARGE: 'large',
 }
 
-export const SIZES = Object.values(SIZE)
+export const SIZES = Object.values(SIZE) as Array<'medium' | 'large' | 'small'>
 
 export const SORT_ORDER = {
   ASC: 'asc',

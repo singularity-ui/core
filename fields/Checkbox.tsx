@@ -5,7 +5,10 @@ import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../common/constants'
 
-const StyledLabel = styled.label`
+const StyledLabel = styled.label<{
+  hasError: boolean
+  size: 'large' | 'medium' | 'small'
+}>`
   align-items: center;
   border-bottom: solid 1px transparent;
   border-top: solid 1px transparent;
@@ -45,7 +48,9 @@ const StyledLabel = styled.label`
   }
 `
 
-const LabelText = styled.span`
+const LabelText = styled.span<{
+  isChecked: boolean
+}>`
   font-weight: ${p => (p.isChecked ? 500 : 400)};
 `
 
@@ -61,7 +66,7 @@ const Error = styled.p`
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
-export const Checkbox = React.forwardRef(
+export const Checkbox = React.forwardRef<any, any>(
   ({ className, error, helper, label, labelTextProps, onChange, size, ...props }, ref) => {
     const $input = React.useRef(null)
     const $labelText = React.useRef(null)
@@ -79,9 +84,7 @@ export const Checkbox = React.forwardRef(
     }))
 
     React.useEffect(() => {
-      const _isChecked = props.checked === true || props.defaultChecked === true
-
-      setIsChecked(_isChecked)
+      setIsChecked(props.checked === true || props.defaultChecked === true)
     }, [props.checked, props.defaultChecked])
 
     const handleOnChange = event => {
@@ -104,17 +107,9 @@ export const Checkbox = React.forwardRef(
           </LabelText>
         </StyledLabel>
 
-        {!error && helper && (
-          <Helper className="Helper" size={size}>
-            {helper}
-          </Helper>
-        )}
+        {!error && helper && <Helper className="Helper">{helper}</Helper>}
 
-        {error && (
-          <Error className="Error" size={size}>
-            {error}
-          </Error>
-        )}
+        {error && <Error className="Error">{error}</Error>}
       </div>
     )
   },

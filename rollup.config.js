@@ -1,12 +1,11 @@
-import babel from '@rollup/plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
+import typescript from '@rollup/plugin-typescript'
 import css from 'rollup-plugin-import-css'
 import sizes from 'rollup-plugin-sizes'
 
 export default {
   external: [
-    /@babel\/runtime/,
     'prop-types',
     'ramda',
     'react',
@@ -19,7 +18,7 @@ export default {
     'styled-components',
   ],
 
-  input: './index.js',
+  input: './index.ts',
 
   output: [
     {
@@ -31,22 +30,15 @@ export default {
   ],
 
   plugins: [
-    // Resolve JSX imports:
     nodeResolve({
-      extensions: ['css', '.js', '.jsx'],
+      extensions: ['css', '.js', '.jsx', '.ts', '.tsx'],
     }),
     // Convert CommonJS to ES6:
     commonjs(),
     // Import CSS into JS:
     css(),
-    // Transpile JSX to JS:
-    babel({
-      babelHelpers: 'runtime',
-      exclude: [/node_modules/],
-      extensions: ['js', 'jsx'],
-      plugins: ['@babel/plugin-transform-runtime'],
-      presets: ['@babel/preset-react'],
-    }),
+    // Transpile TS & TSX to JS:
+    typescript(),
     // Output bundle dependencies sizes:
     sizes(),
   ],

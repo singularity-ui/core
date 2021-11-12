@@ -4,7 +4,10 @@ import styled from 'styled-components'
 
 import { ACCENT, ACCENTS, SIZE, SIZES } from '../common/constants'
 
-const StyledButton = styled.button`
+const StyledButton = styled.button<{
+  accent: 'danger' | 'info' | 'primary' | 'secondary' | 'success' | 'warning'
+  size: 'large' | 'medium' | 'small'
+}>`
   background-color: ${p => p.theme.color[p.accent].default};
   border: solid 1px ${p => p.theme.color[p.accent].default};
   border-radius: ${p => p.theme.appearance.borderRadius[p.size]};
@@ -32,7 +35,7 @@ const StyledButton = styled.button`
   }
 `
 
-export const Button = React.forwardRef(({ accent, children, size, type, ...props }, ref) => (
+export const Button = React.forwardRef<any, any>(({ accent, children, size, type, ...props }, ref) => (
   <StyledButton ref={ref} accent={accent} size={size} type={type} {...props}>
     {children}
   </StyledButton>

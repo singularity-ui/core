@@ -5,7 +5,12 @@ import '@fontsource/poppins/400.css'
 import '@fontsource/poppins/500.css'
 import '@fontsource/poppins/700.css'
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle<{
+  theme: {
+    color: any
+    typography: any
+  }
+}>`
   body {
     background-color: ${p => p.theme.color.body.background};
     font-family: ${p => p.theme.typography.font.default.family};

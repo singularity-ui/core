@@ -23,6 +23,7 @@ const distPackageExtraProps = {
   },
   sideEffects: false,
   type: 'module',
+  types: 'index.d.ts',
 }
 
 // eslint-disable-next-line import/newline-after-import

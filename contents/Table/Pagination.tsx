@@ -72,7 +72,6 @@ export const Pagination = props => (
       nextLinkClassName="Link"
       pageClassName="Li"
       pageLinkClassName="Link"
-      pageRangeDisplayed={3}
       previousClassName="Li"
       previousLabel="◄"
       previousLinkClassName="Link"
@@ -85,4 +84,5 @@ Pagination.propTypes = {
   initialPage: PropTypes.number.isRequired,
   onPageChange: PropTypes.func.isRequired,
   pageCount: PropTypes.number.isRequired,
+  pageRangeDisplayed: PropTypes.number.isRequired,
 }

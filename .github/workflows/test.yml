@@ -3,8 +3,8 @@ name: Test
 on: push
 
 jobs:
-  lint:
-    name: Lint
+  test:
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -17,4 +17,6 @@ jobs:
       - name: Install
         run: yarn install --frozen-lockfile
       - name: Lint
-        run: yarn test:lint --ignore-pattern '/demo/'
+        run: yarn test:lint
+      - name: Type
+        run: yarn test:type

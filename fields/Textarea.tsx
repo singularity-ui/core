@@ -4,14 +4,19 @@ import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../common/constants'
 
-const Label = styled.label`
+const Label = styled.label<{
+  size: 'large' | 'medium' | 'small'
+}>`
   display: block;
   font-size: ${p => Math.round(p.theme.typography.size[p.size] * 80)}%;
   font-weight: 500;
   padding: 0 0 ${p => p.theme.padding.layout.tiny} 0;
 `
 
-const StyledTextarea = styled.textarea`
+const StyledTextarea = styled.textarea<{
+  hasError: boolean
+  size: 'large' | 'medium' | 'small'
+}>`
   background-color: ${p => p.theme.color.body.white};
   border: solid 1px ${p => (p.hasError ? p.theme.color.danger.default : p.theme.color.secondary.default)};
   border-radius: ${p => p.theme.appearance.borderRadius[p.size]};
@@ -50,7 +55,7 @@ const Error = styled.p`
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
-export const Textarea = React.forwardRef(({ className, error, helper, label, size, ...props }, ref) => {
+export const Textarea = React.forwardRef<any, any>(({ className, error, helper, label, size, ...props }, ref) => {
   const hasError = typeof error === 'string' && error.length > 0
 
   return (
@@ -63,17 +68,9 @@ export const Textarea = React.forwardRef(({ className, error, helper, label, siz
 
       <StyledTextarea ref={ref} className="Textarea" hasError={hasError} size={size} {...props} />
 
-      {!error && helper && (
-        <Helper className="Helper" size={size}>
-          {helper}
-        </Helper>
-      )}
+      {!error && helper && <Helper className="Helper">{helper}</Helper>}
 
-      {error && (
-        <Error className="Error" size={size}>
-          {error}
-        </Error>
-      )}
+      {error && <Error className="Error">{error}</Error>}
     </div>
   )
 })

@@ -4,7 +4,11 @@ import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../common/constants'
 
-const StyledLabel = styled.label`
+const StyledLabel = styled.label<{
+  isChecked: boolean
+  isDisabled: boolean
+  size: 'large' | 'medium' | 'small'
+}>`
   align-items: center;
   background-color: ${p => p.theme.color.body.white};
   border: solid 1px ${p => (p.isChecked ? p.theme.color.primary.active : p.theme.color.secondary.default)};
@@ -28,7 +32,10 @@ const StyledLabel = styled.label`
   }
 `
 
-const Letter = styled.span`
+const Letter = styled.span<{
+  isChecked: boolean
+  size: 'large' | 'medium' | 'small'
+}>`
   align-items: center;
   background-color: ${p => (p.isChecked ? p.theme.color.primary.active : p.theme.color.secondary.default)};
   border-radius: 0.25rem;
@@ -43,7 +50,9 @@ const Letter = styled.span`
   width: 1.125rem;
 `
 
-const LabelText = styled.span`
+const LabelText = styled.span<{
+  isChecked: boolean
+}>`
   font-weight: ${p => (p.isChecked ? 500 : 400)};
 `
 
@@ -59,14 +68,13 @@ const Error = styled.p`
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
-export const Radio = React.forwardRef(
+export const Radio = React.forwardRef<any, any>(
   ({ className, error, helper, label, labelTextProps, letter, onChange, size, ...props }, ref) => {
     const $input = React.useRef(null)
     const $labelText = React.useRef(null)
     const [isChecked, setIsChecked] = React.useState(props.checked === true || props.defaultChecked === true)
 
     const isDisabled = Boolean(props.disabled)
-    const hasError = typeof error === 'string' && error.length > 0
 
     React.useImperativeHandle(ref, () => ({
       get input() {
@@ -78,10 +86,8 @@ export const Radio = React.forwardRef(
     }))
 
     React.useEffect(() => {
-      const _isChecked = props.checked === true || props.defaultChecked === true
-
-      setIsChecked(_isChecked)
-    }, [props.checked === true, props.defaultChecked])
+      setIsChecked(props.checked === true || props.defaultChecked === true)
+    }, [props.checked, props.defaultChecked])
 
     const handleOnChange = event => {
       if (props.disabled) {
@@ -98,7 +104,7 @@ export const Radio = React.forwardRef(
     return (
       <div className={className}>
         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-        <StyledLabel className="Choice" hasError={hasError} isChecked={isChecked} isDisabled={isDisabled} size={size}>
+        <StyledLabel className="Choice" isChecked={isChecked} isDisabled={isDisabled} size={size}>
           <input ref={$input} onChange={handleOnChange} type="radio" {...props} />
 
           {letter && (
@@ -111,17 +117,9 @@ export const Radio = React.forwardRef(
           </LabelText>
         </StyledLabel>
 
-        {!error && helper && (
-          <Helper className="Helper" size={size}>
-            {helper}
-          </Helper>
-        )}
+        {!error && helper && <Helper className="Helper">{helper}</Helper>}
 
-        {error && (
-          <Error className="Error" size={size}>
-            {error}
-          </Error>
-        )}
+        {error && <Error className="Error">{error}</Error>}
       </div>
     )
   },

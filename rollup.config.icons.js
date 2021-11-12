@@ -1,11 +1,11 @@
-import babel from '@rollup/plugin-babel'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
+import typescript from '@rollup/plugin-typescript'
 import glob from 'glob'
 
-const ICON_PATHS = glob.sync('./icons/**/*.{js,jsx}')
+const ICON_PATHS = glob.sync('./icons/**/*.{ts,tsx}')
 
 export default ICON_PATHS.map(iconPath => ({
-  external: ['../common/constants.js', /@babel\/runtime/, 'prop-types', 'react', 'styled-components'],
+  external: ['prop-types', 'react', 'styled-components'],
 
   input: iconPath,
 
@@ -19,17 +19,10 @@ export default ICON_PATHS.map(iconPath => ({
   ],
 
   plugins: [
-    // Resolve JSX imports:
     nodeResolve({
-      extensions: ['.js', '.jsx'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
     }),
-    // Transpile JSX to JS:
-    babel({
-      babelHelpers: 'runtime',
-      exclude: [/node_modules/],
-      extensions: ['js', 'jsx'],
-      plugins: ['@babel/plugin-transform-runtime'],
-      presets: ['@babel/preset-react'],
-    }),
+    // Transpile TS & TSX to JS:
+    typescript(),
   ],
 }))

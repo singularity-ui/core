@@ -8,14 +8,19 @@ import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../common/constants'
 
-const Label = styled.label`
+const Label = styled.label<{
+  size: 'large' | 'medium' | 'small'
+}>`
   display: block;
   font-size: ${p => p.theme.typography.size[p.size] * 80}%;
   font-weight: 500;
   padding: 0 0 ${p => p.theme.padding.layout.tiny} 0;
 `
 
-const StyledSelect = styled(ReactSelect)`
+const StyledSelect = styled(ReactSelect)<{
+  hasError: boolean
+  size: 'large' | 'medium' | 'small'
+}>`
   .Select__control {
     background-color: ${p => p.theme.color.body.white};
     border: solid 1px ${p => (p.hasError ? p.theme.color.danger.default : p.theme.color.secondary.default)};
@@ -105,41 +110,35 @@ const Error = styled.p`
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
-export const Select = React.forwardRef(({ className, error, helper, isAsync, label, size, ...props }, ref) => {
-  const hasError = typeof error === 'string' && error.length > 0
+export const Select = React.forwardRef<any, any>(
+  ({ className, error, helper, isAsync, label, size, ...props }, ref) => {
+    const hasError = typeof error === 'string' && error.length > 0
 
-  return (
-    <div className={className}>
-      {label && (
-        <Label className="Label" size={size}>
-          {label}
-        </Label>
-      )}
+    return (
+      <div className={className}>
+        {label && (
+          <Label className="Label" size={size}>
+            {label}
+          </Label>
+        )}
 
-      <StyledSelect
-        ref={ref}
-        as={isAsync ? ReactSelectAsync : null}
-        className="Select"
-        classNamePrefix="Select"
-        hasError={hasError}
-        size={size}
-        {...props}
-      />
+        <StyledSelect
+          ref={ref}
+          as={isAsync ? ReactSelectAsync : null}
+          className="Select"
+          classNamePrefix="Select"
+          hasError={hasError}
+          size={size}
+          {...props}
+        />
 
-      {!error && helper && (
-        <Helper className="Helper" size={size}>
-          {helper}
-        </Helper>
-      )}
+        {!error && helper && <Helper className="Helper">{helper}</Helper>}
 
-      {error && (
-        <Error className="Error" size={size}>
-          {error}
-        </Error>
-      )}
-    </div>
-  )
-})
+        {error && <Error className="Error">{error}</Error>}
+      </div>
+    )
+  },
+)
 
 Select.displayName = 'Select'
 
