@@ -116,14 +116,7 @@ export const Table = React.forwardRef<any, any>(
           </tbody>
         </table>
 
-        {!isSinglePaged && (
-          <Pagination
-            initialPage={pageIndex}
-            onPageChange={({ selected }) => setPageIndex(selected)}
-            pageCount={pageCount}
-            pageRangeDisplayed={3}
-          />
-        )}
+        {!isSinglePaged && <Pagination onChange={setPageIndex} pageCount={pageCount} pageIndex={pageIndex} />}
       </Box>
     )
   },

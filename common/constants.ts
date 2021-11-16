@@ -7,6 +7,8 @@ export const ACCENT = {
   DANGER: 'danger',
   WARNING: 'warning',
   INFO: 'info',
+} as {
+  [key: string]: 'danger' | 'info' | 'primary' | 'secondary' | 'success' | 'warning'
 }
 
 export const ACCENTS = Object.values(ACCENT) as Array<
@@ -17,6 +19,8 @@ export const SIZE = {
   SMALL: 'small',
   MEDIUM: 'medium',
   LARGE: 'large',
+} as {
+  [key: string]: 'medium' | 'large' | 'small'
 }
 
 export const SIZES = Object.values(SIZE) as Array<'medium' | 'large' | 'small'>

@@ -1,5 +1,7 @@
+/* eslint-disable react/require-default-props */
+
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { ButtonHTMLAttributes, ForwardRefExoticComponent, FunctionComponent } from 'react'
 import styled from 'styled-components'
 
 import { ACCENT, ACCENTS, SIZE, SIZES } from '../common/constants'
@@ -35,19 +37,30 @@ const StyledButton = styled.button<{
   }
 `
 
-export const Button = React.forwardRef<any, any>(({ accent, children, size, type, ...props }, ref) => (
+type ButtonProps = ButtonHTMLAttributes<any> & {
+  accent?: 'danger' | 'info' | 'primary' | 'secondary' | 'success' | 'warning'
+  children: any
+  size?: 'large' | 'medium' | 'small'
+  type?: 'button' | 'submit' | 'reset'
+}
+export const ButtonWithoutRef: FunctionComponent<ButtonProps> = (
+  { accent = ACCENT.PRIMARY, children, size = SIZE.MEDIUM, type = 'button', ...props }: ButtonProps,
+  ref,
+) => (
   <StyledButton ref={ref} accent={accent} size={size} type={type} {...props}>
     {children}
   </StyledButton>
-))
+)
+
+ButtonWithoutRef.propTypes = {
+  accent: PropTypes.oneOf(ACCENTS),
+  size: PropTypes.oneOf(SIZES),
+  type: PropTypes.oneOf(['button', 'submit', 'reset']),
+}
+
+export const Button: ForwardRefExoticComponent<ButtonProps> = React.forwardRef(ButtonWithoutRef as any)
 
 Button.displayName = 'Button'
-
-Button.defaultProps = {
-  accent: ACCENT.PRIMARY,
-  size: SIZE.MEDIUM,
-  type: 'button',
-}
 
 Button.propTypes = {
   accent: PropTypes.oneOf(ACCENTS),

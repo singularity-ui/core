@@ -6,7 +6,7 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import styles from 'rollup-plugin-styles'
 
 export default {
-  external: ['prop-types', 'ramda', 'react-feather', 'react-paginate', 'sha1', 'tslib'],
+  external: ['prop-types', 'ramda', 'react-feather', 'sha1', 'tslib'],
   input: './index.ts',
 
   output: [
