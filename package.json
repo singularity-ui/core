@@ -91,6 +91,13 @@
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "./dist"
+        }
+      ],
+      "@semantic-release/github",
       "@semantic-release/changelog",
       [
         "@semantic-release/git",
@@ -101,13 +108,6 @@
             "yarn.lock"
           ],
           "message": "ci(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-        }
-      ],
-      "@semantic-release/github",
-      [
-        "@semantic-release/npm",
-        {
-          "pkgRoot": "./dist"
         }
       ]
     ]
