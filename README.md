@@ -1,4 +1,4 @@
-# Singularity UI
+# Singularity
 
 [![License][img-license]][lnk-license]
 [![CI Status][img-github]][lnk-github]
