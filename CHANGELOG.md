@@ -1,3 +1,10 @@
+# [2.0.0-alpha.10](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.9...v2.0.0-alpha.10) (2021-11-16)
+
+
+### Bug Fixes
+
+* **contents:** replace react-pagination by internal one in Table ([0f8e4ad](https://github.com/singularity-ui/core/commit/0f8e4adeb58090ad688eff0a84f23ebc126c6bc4))
+
 # [2.0.0-alpha.9](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2021-11-16)
 
 
