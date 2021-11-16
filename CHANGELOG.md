@@ -1,3 +1,10 @@
+# [2.0.0-alpha.9](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2021-11-16)
+
+
+### Bug Fixes
+
+* **contents:** downgrade react-paginate to v7 for Table ([17a0d14](https://github.com/singularity-ui/core/commit/17a0d142aa2e3f8011eeb4bbda8345b8399837a8))
+
 # [2.0.0-alpha.8](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2021-11-16)
 
 
