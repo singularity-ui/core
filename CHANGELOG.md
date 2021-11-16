@@ -1,3 +1,10 @@
+# [2.0.0-alpha.8](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2021-11-16)
+
+
+### Bug Fixes
+
+* **contents:** internalize react-paginate for Table ([7512ce0](https://github.com/singularity-ui/core/commit/7512ce0218eb8fe71f0d6cb97d43d0ac75bae247))
+
 # [2.0.0-alpha.7](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2021-11-12)
 
 
