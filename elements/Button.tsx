@@ -52,12 +52,12 @@ export const ButtonWithoutRef: FunctionComponent<ButtonProps> = (
   </StyledButton>
 )
 
-ButtonWithoutRef.propTypes = {
+export const Button: ForwardRefExoticComponent<ButtonProps> = React.forwardRef(ButtonWithoutRef as any)
+
+Button.displayName = 'Button'
+
+Button.propTypes = {
   accent: PropTypes.oneOf(ACCENTS),
   size: PropTypes.oneOf(SIZES),
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
 }
-
-export const Button: ForwardRefExoticComponent<ButtonProps> = React.forwardRef(ButtonWithoutRef as any)
-
-Button.displayName = 'Button'
