@@ -1,3 +1,10 @@
+# [2.0.0-alpha.15](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.14...v2.0.0-alpha.15) (2021-11-17)
+
+
+### Features
+
+* **icons:** integrate Material icons in build ([b315ccb2](https://github.com/singularity-ui/core/commit/b315ccb2544653d853ff1fb1954e40a77b2de993))
+
 # [2.0.0-alpha.14](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.13...v2.0.0-alpha.14) (2021-11-17)
 
 
