@@ -1,3 +1,15 @@
+# [2.0.0-alpha.12](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.11...v2.0.0-alpha.12) (2021-11-17)
+
+
+### Bug Fixes
+
+* **build:** remove CSS imports from GlobalStyle declaration ([1cf7324](https://github.com/singularity-ui/core/commit/1cf7324f36123bd7a875300a06eeb7bf5df6e091))
+
+
+### Features
+
+* set body & html height in GlobalStyle ([40c3449](https://github.com/singularity-ui/core/commit/40c34496c1172bb480b6677ca74d6f912ce40ab3))
+
 # [2.0.0-alpha.11](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.10...v2.0.0-alpha.11) (2021-11-17)
 
 
