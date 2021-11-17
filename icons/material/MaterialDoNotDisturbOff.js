@@ -34,12 +34,9 @@ const MaterialDoNotDisturbOff = (styled.default || styled)(MaterialDoNotDisturbO
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM
 }))`
+  fill: ${p => p.theme.color[p.accent].active};
   height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
   max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-
-  > path {
-    fill: ${p => p.theme.color[p.accent].active};
-  }
 `;
 MaterialDoNotDisturbOff.propTypes = {
   accent: PropTypes.oneOf(ACCENTS),
