@@ -17,6 +17,16 @@
     "strictNullChecks": true,
     "target": "ES6"
   },
-  "include": ["**/*.js", "**/*.jsx", "**/*.mjs", "**/*.ts", "**/*.tsx", ".storybook/main.js", ".storybook/preview.jsx"],
-  "exclude": ["dist/*", "icons/material/*", "node_modules/*", "storybook-static/*", "submodules/*"]
+  "include": ["**/*.js", "**/*.jsx", "**/*.mjs", "**/*.ts", "**/*.tsx"],
+  "exclude": [
+    ".storybook/*",
+    "dist/*",
+    "icons/material/*",
+    "node_modules/*",
+    "scripts/*",
+    "storybook-static/*",
+    "submodules/*",
+    "rollup.config.icons.js",
+    "rollup.config.js"
+  ]
 }
