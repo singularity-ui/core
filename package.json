@@ -99,6 +99,12 @@
         }
       ],
       "@semantic-release/github",
+      [
+        "@semantic-release/exec",
+        {
+          "prepareCmd": "./scripts/release/bump.sh ${nextRelease.version}"
+        }
+      ],
       "@semantic-release/changelog",
       [
         "@semantic-release/git",
