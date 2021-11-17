@@ -1,3 +1,11 @@
+# [2.0.0-alpha.18](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.17...v2.0.0-alpha.18) (2021-11-17)
+
+
+### Bug Fixes
+
+* **elements:** remove fowarded ref prop types in Button ([51392c76](https://github.com/singularity-ui/core/commit/51392c7610e5636185716bdba16b558ecf0ea049))
+* **icons:** fill svg instead of path color in Material icons ([ecda54b6](https://github.com/singularity-ui/core/commit/ecda54b6b1635eca0936b10e2aaad1b09bb58e1d))
+
 # [2.0.0-alpha.17](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.16...v2.0.0-alpha.17) (2021-11-17)
 
 
