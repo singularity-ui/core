@@ -1,3 +1,10 @@
+# [2.0.0-alpha.14](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.13...v2.0.0-alpha.14) (2021-11-17)
+
+
+### Bug Fixes
+
+* **build:** disable rollup modules preservation ([4f35bcb](https://github.com/singularity-ui/core/commit/4f35bcbfa25e0bebd81383acb4d71ba83c6e5bd9))
+
 # [2.0.0-alpha.13](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.12...v2.0.0-alpha.13) (2021-11-17)
 
 
