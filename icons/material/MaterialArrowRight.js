@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialArrowRightSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialArrowRightSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialArrowRightSvg = /*#__PURE__*/React.createElement("svg", {
   d: "M0 24V0h24v24H0z",
   fill: "none"
 }));
+
 const MaterialArrowRight = (styled.default || styled)(MaterialArrowRightSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

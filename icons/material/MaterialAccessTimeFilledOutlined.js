@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialAccessTimeFilledOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialAccessTimeFilledOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -28,6 +29,7 @@ const MaterialAccessTimeFilledOutlinedSvg = /*#__PURE__*/React.createElement("sv
 })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
   d: "M11.99,2C6.47,2,2,6.48,2,12s4.47,10,9.99,10C17.52,22,22,17.52,22,12S17.52,2,11.99,2z M15.29,16.71L11,12.41V7h2v4.59 l3.71,3.71L15.29,16.71z"
 })));
+
 const MaterialAccessTimeFilledOutlined = (styled.default || styled)(MaterialAccessTimeFilledOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSplitscreenTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSplitscreenTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -42,6 +43,7 @@ const MaterialSplitscreenTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M18,13H6c-1.1,0-2,0.9-2,2v5c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-5C20,13.9,19.1,13,18,13z M18,20H6v-5h12V20z"
 }))));
+
 const MaterialSplitscreenTwoTone = (styled.default || styled)(MaterialSplitscreenTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

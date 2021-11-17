@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialElectricCarRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialElectricCarRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -35,6 +36,7 @@ const MaterialElectricCarRoundedSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("polygon", {
   points: "7,20 11,20 11,18 17,21 13,21 13,23"
 })));
+
 const MaterialElectricCarRounded = (styled.default || styled)(MaterialElectricCarRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialDirectionsOffRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialDirectionsOffRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -35,6 +36,7 @@ const MaterialDirectionsOffRoundedSvg = /*#__PURE__*/React.createElement("svg", 
 })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
   d: "M6.79,6.79L3.51,3.51c-0.39-0.39-1.02-0.39-1.41,0l0,0c-0.39,0.39-0.39,1.02,0,1.41l3.28,3.28l-3.09,3.09 c-0.39,0.39-0.39,1.02,0,1.41l9,9c0.39,0.39,1.02,0.39,1.41,0l3.09-3.09l3.28,3.28c0.39,0.39,1.02,0.39,1.41,0l0,0 c0.39-0.39,0.39-1.02,0-1.41L6.79,6.79z M9.99,14c0,0.55-0.45,1-1,1c-0.55,0-1-0.45-1-1v-3c0-0.05,0.02-0.1,0.03-0.15l1.97,1.97 V14z"
 })))));
+
 const MaterialDirectionsOffRounded = (styled.default || styled)(MaterialDirectionsOffRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

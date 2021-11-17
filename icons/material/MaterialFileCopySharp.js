@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialFileCopySharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialFileCopySharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialFileCopySharpSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"
 }));
+
 const MaterialFileCopySharp = (styled.default || styled)(MaterialFileCopySharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

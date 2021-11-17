@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialGppBadTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialGppBadTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -31,6 +32,7 @@ const MaterialGppBadTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
   d: "M6,6.39v4.7c0,4,2.55,7.7,6,8.83c3.45-1.13,6-4.82,6-8.83v-4.7l-6-2.25L6,6.39z M15.5,9.91L13.42,12 l2.08,2.09l-1.41,1.41L12,13.42L9.91,15.5L8.5,14.09L10.59,12L8.5,9.91L9.91,8.5L12,10.59l2.09-2.09L15.5,9.91z",
   opacity: ".3"
 }))));
+
 const MaterialGppBadTwoTone = (styled.default || styled)(MaterialGppBadTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

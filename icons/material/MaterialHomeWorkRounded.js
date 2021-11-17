@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialHomeWorkRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialHomeWorkRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -35,6 +36,7 @@ const MaterialHomeWorkRoundedSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M15,20v-7.65c0-0.28-0.12-0.55-0.33-0.74l-5-4.5C9.48,6.93,9.24,6.85,9,6.85c-0.24,0-0.48,0.09-0.67,0.26l-5,4.5 C3.12,11.79,3,12.06,3,12.35V20c0,0.55,0.45,1,1,1h2c0.55,0,1-0.45,1-1v-4h4v4c0,0.55,0.45,1,1,1h2C14.55,21,15,20.55,15,20z"
 }))));
+
 const MaterialHomeWorkRounded = (styled.default || styled)(MaterialHomeWorkRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

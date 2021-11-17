@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialAirlineSeatLegroomNormalSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialAirlineSeatLegroomNormalSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialAirlineSeatLegroomNormalSharpSvg = /*#__PURE__*/React.createElemen
 }), /*#__PURE__*/React.createElement("path", {
   d: "M5 15V3H3v14h11v-2H5zm17 3h-3v-7c0-1.1-.9-2-2-2h-5V3H6v11h10v7h6v-3z"
 }));
+
 const MaterialAirlineSeatLegroomNormalSharp = (styled.default || styled)(MaterialAirlineSeatLegroomNormalSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

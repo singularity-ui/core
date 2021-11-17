@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialNavigateNextTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialNavigateNextTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialNavigateNextTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M10.02 18l6-6-6-6-1.41 1.41L13.19 12l-4.58 4.59z"
 }));
+
 const MaterialNavigateNextTwoTone = (styled.default || styled)(MaterialNavigateNextTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

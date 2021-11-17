@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialHvacSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialHvacSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -37,6 +38,7 @@ const MaterialHvacSharpSvg = /*#__PURE__*/React.createElement("svg", {
 })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
   d: "M3,3v18h18V3H3z M12,18c-3.31,0-6-2.69-6-6s2.69-6,6-6s6,2.69,6,6S15.31,18,12,18z"
 })))));
+
 const MaterialHvacSharp = (styled.default || styled)(MaterialHvacSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

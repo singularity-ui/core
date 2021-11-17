@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialAddBusinessSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialAddBusinessSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -36,6 +37,7 @@ const MaterialAddBusinessSharpSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("polygon", {
   points: "20,18 20,15 18,15 18,18 15,18 15,20 18,20 18,23 20,23 20,20 23,20 23,18"
 }))));
+
 const MaterialAddBusinessSharp = (styled.default || styled)(MaterialAddBusinessSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

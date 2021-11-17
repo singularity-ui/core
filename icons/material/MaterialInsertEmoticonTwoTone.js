@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialInsertEmoticonTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialInsertEmoticonTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -40,6 +41,7 @@ const MaterialInsertEmoticonTwoToneSvg = /*#__PURE__*/React.createElement("svg",
 }), /*#__PURE__*/React.createElement("path", {
   d: "M12 17.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"
 }));
+
 const MaterialInsertEmoticonTwoTone = (styled.default || styled)(MaterialInsertEmoticonTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

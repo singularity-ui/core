@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialHorizontalSplitTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialHorizontalSplitTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -30,6 +31,7 @@ const MaterialHorizontalSplitTwoToneSvg = /*#__PURE__*/React.createElement("svg"
   d: "M5 15h14v2H5z",
   opacity: ".3"
 }));
+
 const MaterialHorizontalSplitTwoTone = (styled.default || styled)(MaterialHorizontalSplitTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

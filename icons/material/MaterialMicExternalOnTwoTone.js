@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialMicExternalOnTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialMicExternalOnTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -34,6 +35,7 @@ const MaterialMicExternalOnTwoToneSvg = /*#__PURE__*/React.createElement("svg", 
 }), /*#__PURE__*/React.createElement("path", {
   d: "M16,2c-2.21,0-4,1.79-4,4v12c0,1.1-0.9,2-2,2s-2-0.9-2-2h1l1-10H4l1,10h1c0,2.21,1.79,4,4,4s4-1.79,4-4V6c0-1.1,0.9-2,2-2 s2,0.9,2,2v16h2V6C20,3.79,18.21,2,16,2z M7.19,16H6.81l-0.6-6h1.58L7.19,16z"
 }))));
+
 const MaterialMicExternalOnTwoTone = (styled.default || styled)(MaterialMicExternalOnTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

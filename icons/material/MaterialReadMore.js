@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialReadMoreSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialReadMoreSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -44,6 +45,7 @@ const MaterialReadMoreSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("polygon", {
   points: "13,12 8,7 8,11 2,11 2,13 8,13 8,17"
 }))));
+
 const MaterialReadMore = (styled.default || styled)(MaterialReadMoreSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

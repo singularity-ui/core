@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialBookmarkAddedTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialBookmarkAddedTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -32,6 +33,7 @@ const MaterialBookmarkAddedTwoToneSvg = /*#__PURE__*/React.createElement("svg", 
 }), /*#__PURE__*/React.createElement("path", {
   d: "M17.83,9L15,6.17l1.41-1.41l1.41,1.41l3.54-3.54l1.41,1.41L17.83,9z M17,17.97l-5-2.14l-5,2.14V5l6.1,0 c0.15-0.74,0.46-1.42,0.9-2L7,3C5.9,3,5,3.9,5,5v16l7-3l7,3l0-10.1c-0.32,0.07-0.66,0.1-1,0.1c-0.34,0-0.68-0.03-1-0.1L17,17.97z"
 }));
+
 const MaterialBookmarkAddedTwoTone = (styled.default || styled)(MaterialBookmarkAddedTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

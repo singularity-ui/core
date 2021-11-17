@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialBrowserNotSupportedRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialBrowserNotSupportedRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -35,6 +36,7 @@ const MaterialBrowserNotSupportedRoundedSvg = /*#__PURE__*/React.createElement("
 }), /*#__PURE__*/React.createElement("path", {
   d: "M3.86,3.95c-0.35-0.35-0.92-0.35-1.27,0c-0.35,0.35-0.35,0.92,0,1.27L3,5.64L3,18c0,1.1,0.9,2,2,2h12.36l1.42,1.42 c0.35,0.35,0.92,0.35,1.27,0c0.35-0.35,0.35-0.92,0-1.27L3.86,3.95z M5,18V7.64L15.36,18H5z"
 }))));
+
 const MaterialBrowserNotSupportedRounded = (styled.default || styled)(MaterialBrowserNotSupportedRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

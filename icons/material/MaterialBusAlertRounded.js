@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialBusAlertRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialBusAlertRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -32,6 +33,7 @@ const MaterialBusAlertRoundedSvg = /*#__PURE__*/React.createElement("svg", {
 })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
   d: "M18,1c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5S20.76,1,18,1z M18.5,6.5C18.5,6.78,18.28,7,18,7s-0.5-0.22-0.5-0.5v-3 C17.5,3.22,17.72,3,18,3s0.5,0.22,0.5,0.5V6.5z M18.5,8.5C18.5,8.78,18.28,9,18,9s-0.5-0.22-0.5-0.5S17.72,8,18,8 S18.5,8.22,18.5,8.5z"
 })))));
+
 const MaterialBusAlertRounded = (styled.default || styled)(MaterialBusAlertRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

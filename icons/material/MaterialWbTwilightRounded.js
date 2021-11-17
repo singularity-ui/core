@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialWbTwilightRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialWbTwilightRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -37,6 +38,7 @@ const MaterialWbTwilightRoundedSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M19,16c0-3.87-3.13-7-7-7s-7,3.13-7,7H19z"
 }))));
+
 const MaterialWbTwilightRounded = (styled.default || styled)(MaterialWbTwilightRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialMarkEmailReadTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialMarkEmailReadTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -32,6 +33,7 @@ const MaterialMarkEmailReadTwoToneSvg = /*#__PURE__*/React.createElement("svg", 
 }), /*#__PURE__*/React.createElement("path", {
   d: "M12.08,18H4V8l8,5l8-5v4.08c0.71,0.1,1.38,0.31,2,0.6V6c0-1.1-0.9-2-2-2H4C2.9,4,2.01,4.9,2.01,6L2,18c0,1.1,0.9,2,2,2 h8.08C12.03,19.67,12,19.34,12,19S12.03,18.33,12.08,18z M20,6l-8,5L4,6H20z M17.34,22l-3.54-3.54l1.41-1.41l2.12,2.12l4.24-4.24 L23,16.34L17.34,22z"
 })));
+
 const MaterialMarkEmailReadTwoTone = (styled.default || styled)(MaterialMarkEmailReadTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

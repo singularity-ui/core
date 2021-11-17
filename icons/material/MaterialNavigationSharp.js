@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialNavigationSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialNavigationSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialNavigationSharpSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71L12 2z"
 }));
+
 const MaterialNavigationSharp = (styled.default || styled)(MaterialNavigationSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

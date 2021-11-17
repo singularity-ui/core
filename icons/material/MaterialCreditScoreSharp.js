@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialCreditScoreSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialCreditScoreSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -28,6 +29,7 @@ const MaterialCreditScoreSharpSvg = /*#__PURE__*/React.createElement("svg", {
 })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
   d: "M2,4v16h7v-2H4v-6h18V4H2z M20,8H4V6h16V8z M14.93,19.17l-2.83-2.83l-1.41,1.41L14.93,22L22,14.93l-1.41-1.41L14.93,19.17z"
 })));
+
 const MaterialCreditScoreSharp = (styled.default || styled)(MaterialCreditScoreSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

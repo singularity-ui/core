@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSubdirectoryArrowLeftSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSubdirectoryArrowLeftSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialSubdirectoryArrowLeftSharpSvg = /*#__PURE__*/React.createElement("
 }), /*#__PURE__*/React.createElement("path", {
   d: "M11 9l1.42 1.42L8.83 14H18V4h2v12H8.83l3.59 3.58L11 21l-6-6 6-6z"
 }));
+
 const MaterialSubdirectoryArrowLeftSharp = (styled.default || styled)(MaterialSubdirectoryArrowLeftSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

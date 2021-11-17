@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSportsCricketOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSportsCricketOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -37,6 +38,7 @@ const MaterialSportsCricketOutlinedSvg = /*#__PURE__*/React.createElement("svg",
 }), /*#__PURE__*/React.createElement("path", {
   d: "M18.5,2C16.57,2,15,3.57,15,5.5C15,7.43,16.57,9,18.5,9S22,7.43,22,5.5C22,3.57,20.43,2,18.5,2z M18.5,7 C17.67,7,17,6.33,17,5.5S17.67,4,18.5,4S20,4.67,20,5.5S19.33,7,18.5,7z"
 }))));
+
 const MaterialSportsCricketOutlined = (styled.default || styled)(MaterialSportsCricketOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

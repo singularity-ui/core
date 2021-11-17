@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialVerticalSplitTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialVerticalSplitTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -30,6 +31,7 @@ const MaterialVerticalSplitTwoToneSvg = /*#__PURE__*/React.createElement("svg", 
 }), /*#__PURE__*/React.createElement("path", {
   d: "M3 13h8v2H3zm0 4h8v2H3zm0-8h8v2H3zm0-4h8v2H3zm10 0v14h8V5h-8zm6 12h-4V7h4v10z"
 }));
+
 const MaterialVerticalSplitTwoTone = (styled.default || styled)(MaterialVerticalSplitTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialFourKPlusTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialFourKPlusTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -37,6 +38,7 @@ const MaterialFourKPlusTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("polygon", {
   points: "13,12.75 14.75,15 16.5,15 14.25,12 16.5,9 14.75,9 13,11.25 13,9 11.5,9 11.5,15 13,15"
 }))));
+
 const MaterialFourKPlusTwoTone = (styled.default || styled)(MaterialFourKPlusTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

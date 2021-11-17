@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialAutoAwesomeMosaicSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialAutoAwesomeMosaicSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -30,6 +31,7 @@ const MaterialAutoAwesomeMosaicSharpSvg = /*#__PURE__*/React.createElement("svg"
 })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
   d: "M3,21h8V3L3,3V21z M21,3h-8v8h8V3z M13,21h8v-8h-8V21z"
 }))));
+
 const MaterialAutoAwesomeMosaicSharp = (styled.default || styled)(MaterialAutoAwesomeMosaicSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

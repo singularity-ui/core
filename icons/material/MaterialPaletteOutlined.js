@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialPaletteOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialPaletteOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -45,6 +46,7 @@ const MaterialPaletteOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
   cy: "11.5",
   r: "1.5"
 }))))));
+
 const MaterialPaletteOutlined = (styled.default || styled)(MaterialPaletteOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

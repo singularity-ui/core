@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSystemSecurityUpdateWarningRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSystemSecurityUpdateWarningRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -34,6 +35,7 @@ const MaterialSystemSecurityUpdateWarningRoundedSvg = /*#__PURE__*/React.createE
 }), /*#__PURE__*/React.createElement("path", {
   d: "M17,1H7C5.9,1,5.01,1.9,5.01,3v18c0,1.1,0.89,2,1.99,2h10c1.1,0,2-0.9,2-2V3C19,1.9,18.1,1,17,1z M17,18H7V6h10V18z"
 }))));
+
 const MaterialSystemSecurityUpdateWarningRounded = (styled.default || styled)(MaterialSystemSecurityUpdateWarningRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

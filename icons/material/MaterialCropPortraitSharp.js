@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialCropPortraitSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialCropPortraitSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialCropPortraitSharpSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M19 3H5v18h14V3zm-2 16H7V5h10v14z"
 }));
+
 const MaterialCropPortraitSharp = (styled.default || styled)(MaterialCropPortraitSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

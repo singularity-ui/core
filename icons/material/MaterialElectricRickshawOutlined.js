@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialElectricRickshawOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialElectricRickshawOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -31,6 +32,7 @@ const MaterialElectricRickshawOutlinedSvg = /*#__PURE__*/React.createElement("sv
 })), /*#__PURE__*/React.createElement("polygon", {
   points: "7,20 11,20 11,18 17,21 13,21 13,23"
 }))));
+
 const MaterialElectricRickshawOutlined = (styled.default || styled)(MaterialElectricRickshawOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

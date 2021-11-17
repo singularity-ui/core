@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialArrowForwardOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialArrowForwardOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialArrowForwardOutlinedSvg = /*#__PURE__*/React.createElement("svg", 
 }), /*#__PURE__*/React.createElement("path", {
   d: "M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"
 }));
+
 const MaterialArrowForwardOutlined = (styled.default || styled)(MaterialArrowForwardOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

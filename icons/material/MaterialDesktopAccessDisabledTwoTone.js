@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialDesktopAccessDisabledTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialDesktopAccessDisabledTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -30,6 +31,7 @@ const MaterialDesktopAccessDisabledTwoToneSvg = /*#__PURE__*/React.createElement
   d: "M2.99 6.09V16h9.91zM6.55 4l12 12H21V4z",
   opacity: ".3"
 }));
+
 const MaterialDesktopAccessDisabledTwoTone = (styled.default || styled)(MaterialDesktopAccessDisabledTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSignalCellularFourBarTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSignalCellularFourBarTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialSignalCellularFourBarTwoToneSvg = /*#__PURE__*/React.createElement
 }), /*#__PURE__*/React.createElement("path", {
   d: "M2 22h20V2L2 22z"
 }));
+
 const MaterialSignalCellularFourBarTwoTone = (styled.default || styled)(MaterialSignalCellularFourBarTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

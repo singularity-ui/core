@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialUploadSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialUploadSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialUploadSharpSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M9 16h6v-6h4l-7-7-7 7h4v6zm-4 2h14v2H5v-2z"
 }));
+
 const MaterialUploadSharp = (styled.default || styled)(MaterialUploadSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

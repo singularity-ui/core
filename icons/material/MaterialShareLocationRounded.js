@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialShareLocationRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialShareLocationRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -38,6 +39,7 @@ const MaterialShareLocationRoundedSvg = /*#__PURE__*/React.createElement("svg", 
 }), /*#__PURE__*/React.createElement("path", {
   d: "M16,11.1C16,8.61,14.1,7,12,7s-4,1.61-4,4.1c0,1.51,1.1,3.28,3.31,5.3c0.39,0.36,0.98,0.36,1.38,0 C14.9,14.37,16,12.61,16,11.1z M12,12c-0.59,0-1.07-0.48-1.07-1.07c0-0.59,0.48-1.07,1.07-1.07s1.07,0.48,1.07,1.07 C13.07,11.52,12.59,12,12,12z"
 }))));
+
 const MaterialShareLocationRounded = (styled.default || styled)(MaterialShareLocationRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

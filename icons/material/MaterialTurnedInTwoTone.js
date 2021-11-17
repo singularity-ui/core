@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialTurnedInTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialTurnedInTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -30,6 +31,7 @@ const MaterialTurnedInTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
   d: "M7 17.97l4.21-1.81.79-.34.79.34L17 17.97V5H7z",
   opacity: ".3"
 }));
+
 const MaterialTurnedInTwoTone = (styled.default || styled)(MaterialTurnedInTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

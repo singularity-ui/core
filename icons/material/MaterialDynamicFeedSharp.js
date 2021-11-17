@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialDynamicFeedSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialDynamicFeedSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -45,6 +46,7 @@ const MaterialDynamicFeedSharpSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("polygon", {
   points: "4,12 2,12 2,21 13,21 13,19 4,19"
 }))));
+
 const MaterialDynamicFeedSharp = (styled.default || styled)(MaterialDynamicFeedSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

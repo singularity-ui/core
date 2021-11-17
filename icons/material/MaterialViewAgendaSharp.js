@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialViewAgendaSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialViewAgendaSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialViewAgendaSharpSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M21 13H2v8h19v-8zm0-10H2v8h19V3z"
 }));
+
 const MaterialViewAgendaSharp = (styled.default || styled)(MaterialViewAgendaSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

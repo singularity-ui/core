@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialKeyboardBackspaceTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialKeyboardBackspaceTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialKeyboardBackspaceTwoToneSvg = /*#__PURE__*/React.createElement("sv
 }), /*#__PURE__*/React.createElement("path", {
   d: "M21 11H6.83l3.58-3.59L9 6l-6 6 6 6 1.41-1.41L6.83 13H21v-2z"
 }));
+
 const MaterialKeyboardBackspaceTwoTone = (styled.default || styled)(MaterialKeyboardBackspaceTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialBlurLinearTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialBlurLinearTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -71,6 +72,7 @@ const MaterialBlurLinearTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M3 19h18v2H3z"
 }));
+
 const MaterialBlurLinearTwoTone = (styled.default || styled)(MaterialBlurLinearTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

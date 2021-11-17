@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialRecommendOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialRecommendOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -31,6 +32,7 @@ const MaterialRecommendOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M17,10h-4.59l0.58-3.41v-0.2c-0.01-0.26-0.12-0.51-0.3-0.7L12,5l-4.6,5c-0.27,0.26-0.42,0.62-0.4,1v5c0,1.1,0.9,2,2,2h5.5 c0.56,0.03,1.08-0.29,1.3-0.8l2.1-4.9c0.08-0.15,0.12-0.33,0.1-0.5V11C18,10.45,17.55,10,17,10z"
 }))));
+
 const MaterialRecommendOutlined = (styled.default || styled)(MaterialRecommendOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

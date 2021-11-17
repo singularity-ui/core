@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialDehazeOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialDehazeOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialDehazeOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M2 16v2h20v-2H2zm0-5v2h20v-2H2zm0-5v2h20V6H2z"
 }));
+
 const MaterialDehazeOutlined = (styled.default || styled)(MaterialDehazeOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

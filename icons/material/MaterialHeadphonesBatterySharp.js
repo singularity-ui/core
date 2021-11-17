@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialHeadphonesBatterySharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialHeadphonesBatterySharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -31,6 +32,7 @@ const MaterialHeadphonesBatterySharpSvg = /*#__PURE__*/React.createElement("svg"
 }), /*#__PURE__*/React.createElement("path", {
   d: "M8,6c-3.31,0-6,2.69-6,6v6h4v-5H3.5v-1c0-2.48,2.02-4.5,4.5-4.5s4.5,2.02,4.5,4.5v1H10v5h4v-6C14,8.69,11.31,6,8,6z"
 }))));
+
 const MaterialHeadphonesBatterySharp = (styled.default || styled)(MaterialHeadphonesBatterySharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

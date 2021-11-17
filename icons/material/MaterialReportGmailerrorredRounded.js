@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialReportGmailerrorredRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialReportGmailerrorredRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -33,6 +34,7 @@ const MaterialReportGmailerrorredRoundedSvg = /*#__PURE__*/React.createElement("
 }), /*#__PURE__*/React.createElement("path", {
   d: "M12 7c-.55 0-1 .45-1 1v5c0 .55.45 1 1 1s1-.45 1-1V8c0-.55-.45-1-1-1z"
 }));
+
 const MaterialReportGmailerrorredRounded = (styled.default || styled)(MaterialReportGmailerrorredRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

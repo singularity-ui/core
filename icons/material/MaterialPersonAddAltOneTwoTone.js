@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialPersonAddAltOneTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialPersonAddAltOneTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -41,6 +42,7 @@ const MaterialPersonAddAltOneTwoToneSvg = /*#__PURE__*/React.createElement("svg"
 }), /*#__PURE__*/React.createElement("path", {
   d: "M9,12c2.21,0,4-1.79,4-4c0-2.21-1.79-4-4-4S5,5.79,5,8C5,10.21,6.79,12,9,12z M9,6c1.1,0,2,0.9,2,2c0,1.1-0.9,2-2,2 S7,9.1,7,8C7,6.9,7.9,6,9,6z"
 }))));
+
 const MaterialPersonAddAltOneTwoTone = (styled.default || styled)(MaterialPersonAddAltOneTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

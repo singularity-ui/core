@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialAdminPanelSettingsTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialAdminPanelSettingsTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -41,6 +42,7 @@ const MaterialAdminPanelSettingsTwoToneSvg = /*#__PURE__*/React.createElement("s
 }), /*#__PURE__*/React.createElement("path", {
   d: "M17,17.5c-0.73,0-2.19,0.36-2.24,1.08c0.5,0.71,1.32,1.17,2.24,1.17s1.74-0.46,2.24-1.17C19.19,17.86,17.73,17.5,17,17.5z"
 }))));
+
 const MaterialAdminPanelSettingsTwoTone = (styled.default || styled)(MaterialAdminPanelSettingsTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

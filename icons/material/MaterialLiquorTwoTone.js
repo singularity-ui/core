@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialLiquorTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialLiquorTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -47,6 +48,7 @@ const MaterialLiquorTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M20.64,8.54l-0.96-0.32C19.27,8.08,19,7.7,19,7.27V3c0-0.55-0.45-1-1-1h-3c-0.55,0-1,0.45-1,1v4.28 c0,0.43-0.27,0.81-0.68,0.95l-0.96,0.32C11.55,8.83,11,9.59,11,10.45V20c0,1.1,0.9,2,2,2h7c1.1,0,2-0.9,2-2v-9.56 C22,9.58,21.45,8.82,20.64,8.54z M16,4h1v1h-1V4z M20,20h-7v-2h7V20z M20,16h-7v-2h7V16z M20,12h-7v-1.56l0.95-0.32 C15.18,9.72,16,8.57,16,7.28V7h1v0.28c0,1.29,0.82,2.44,2.05,2.85L20,10.44V12z"
 }))));
+
 const MaterialLiquorTwoTone = (styled.default || styled)(MaterialLiquorTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

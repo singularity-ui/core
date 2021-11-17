@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialTransitEnterexitOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialTransitEnterexitOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialTransitEnterexitOutlinedSvg = /*#__PURE__*/React.createElement("sv
 }), /*#__PURE__*/React.createElement("path", {
   d: "M16 18H6V8h3v4.77L15.98 6 18 8.03 11.15 15H16v3z"
 }));
+
 const MaterialTransitEnterexitOutlined = (styled.default || styled)(MaterialTransitEnterexitOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

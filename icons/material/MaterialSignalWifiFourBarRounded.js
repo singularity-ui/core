@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSignalWifiFourBarRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSignalWifiFourBarRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialSignalWifiFourBarRoundedSvg = /*#__PURE__*/React.createElement("sv
 }), /*#__PURE__*/React.createElement("path", {
   d: "M23.64 7c-.45-.34-4.93-4-11.64-4C5.28 3 .81 6.66.36 7l10.08 12.56c.8 1 2.32 1 3.12 0L23.64 7z"
 }));
+
 const MaterialSignalWifiFourBarRounded = (styled.default || styled)(MaterialSignalWifiFourBarRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

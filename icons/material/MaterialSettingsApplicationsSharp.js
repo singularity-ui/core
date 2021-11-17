@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSettingsApplicationsSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSettingsApplicationsSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -31,6 +32,7 @@ const MaterialSettingsApplicationsSharpSvg = /*#__PURE__*/React.createElement("s
   cy: "12",
   r: "2.45"
 }));
+
 const MaterialSettingsApplicationsSharp = (styled.default || styled)(MaterialSettingsApplicationsSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialCalendarTodayTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialCalendarTodayTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -30,6 +31,7 @@ const MaterialCalendarTodayTwoToneSvg = /*#__PURE__*/React.createElement("svg", 
   d: "M4 5.01h16V8H4z",
   opacity: ".3"
 }));
+
 const MaterialCalendarTodayTwoTone = (styled.default || styled)(MaterialCalendarTodayTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

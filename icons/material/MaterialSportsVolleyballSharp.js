@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSportsVolleyballSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSportsVolleyballSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -39,6 +40,7 @@ const MaterialSportsVolleyballSharpSvg = /*#__PURE__*/React.createElement("svg",
 }), /*#__PURE__*/React.createElement("path", {
   d: "M21.92,10.81c-0.55-4.63-4.26-8.3-8.92-8.76v3.6L21.92,10.81z"
 }))));
+
 const MaterialSportsVolleyballSharp = (styled.default || styled)(MaterialSportsVolleyballSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

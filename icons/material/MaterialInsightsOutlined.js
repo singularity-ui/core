@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialInsightsOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialInsightsOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -33,6 +34,7 @@ const MaterialInsightsOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("polygon", {
   points: "3.5,11 4,9 6,8.5 4,8 3.5,6 3,8 1,8.5 3,9"
 }))));
+
 const MaterialInsightsOutlined = (styled.default || styled)(MaterialInsightsOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

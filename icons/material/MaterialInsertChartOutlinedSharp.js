@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialInsertChartOutlinedSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialInsertChartOutlinedSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -24,6 +25,7 @@ const MaterialInsertChartOutlinedSharpSvg = /*#__PURE__*/React.createElement("sv
 }, /*#__PURE__*/React.createElement("path", {
   d: "M9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4zm2 2H5V5h14v14zm2-16H3v18h18V3z"
 }));
+
 const MaterialInsertChartOutlinedSharp = (styled.default || styled)(MaterialInsertChartOutlinedSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

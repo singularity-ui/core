@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialCancelScheduleSendTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialCancelScheduleSendTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -40,6 +41,7 @@ const MaterialCancelScheduleSendTwoToneSvg = /*#__PURE__*/React.createElement("s
 }), /*#__PURE__*/React.createElement("polygon", {
   points: "18.27,14.03 16.5,15.79 14.73,14.03 14.03,14.73 15.79,16.5 14.03,18.27 14.73,18.97 16.5,17.21 18.27,18.97 18.97,18.27 17.21,16.5 18.97,14.73"
 }))));
+
 const MaterialCancelScheduleSendTwoTone = (styled.default || styled)(MaterialCancelScheduleSendTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

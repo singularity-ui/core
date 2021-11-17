@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialDriveEtaOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialDriveEtaOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -35,6 +36,7 @@ const MaterialDriveEtaOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
   cy: "13.5",
   r: "1.5"
 }));
+
 const MaterialDriveEtaOutlined = (styled.default || styled)(MaterialDriveEtaOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

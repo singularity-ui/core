@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSportsFootballRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSportsFootballRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -37,6 +38,7 @@ const MaterialSportsFootballRoundedSvg = /*#__PURE__*/React.createElement("svg",
 }), /*#__PURE__*/React.createElement("path", {
   d: "M20.98,8.38c0.08-2.42-0.32-4.34-0.67-4.69s-2.28-0.76-4.69-0.67L20.98,8.38z"
 }))));
+
 const MaterialSportsFootballRounded = (styled.default || styled)(MaterialSportsFootballRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

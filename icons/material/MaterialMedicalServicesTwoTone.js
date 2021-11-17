@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialMedicalServicesTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialMedicalServicesTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -35,6 +36,7 @@ const MaterialMedicalServicesTwoToneSvg = /*#__PURE__*/React.createElement("svg"
 }), /*#__PURE__*/React.createElement("polygon", {
   points: "11,18 13,18 13,15 16,15 16,13 13,13 13,10 11,10 11,13 8,13 8,15 11,15"
 }))));
+
 const MaterialMedicalServicesTwoTone = (styled.default || styled)(MaterialMedicalServicesTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

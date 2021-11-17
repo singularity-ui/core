@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSkipPreviousSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSkipPreviousSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialSkipPreviousSharpSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M6 6h2v12H6V6zm3.5 6l8.5 6V6l-8.5 6z"
 }));
+
 const MaterialSkipPreviousSharp = (styled.default || styled)(MaterialSkipPreviousSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

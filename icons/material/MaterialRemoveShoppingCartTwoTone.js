@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialRemoveShoppingCartTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialRemoveShoppingCartTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -32,6 +33,7 @@ const MaterialRemoveShoppingCartTwoToneSvg = /*#__PURE__*/React.createElement("s
 }), /*#__PURE__*/React.createElement("path", {
   d: "M20 4H7.12l2 2h9.19l-2.76 5h-1.44l1.94 1.94c.54-.14.99-.49 1.25-.97l3.58-6.49C21.25 4.82 20.76 4 20 4zM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2z"
 }));
+
 const MaterialRemoveShoppingCartTwoTone = (styled.default || styled)(MaterialRemoveShoppingCartTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

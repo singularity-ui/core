@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialRoomOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialRoomOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -31,6 +32,7 @@ const MaterialRoomOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
   cy: "9",
   r: "2.5"
 }));
+
 const MaterialRoomOutlined = (styled.default || styled)(MaterialRoomOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

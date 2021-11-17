@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialStopCircleSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialStopCircleSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -30,6 +31,7 @@ const MaterialStopCircleSvg = /*#__PURE__*/React.createElement("svg", {
   d: "M8,16h8V8H8V16z M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10 S17.52,2,12,2L12,2z",
   "fill-rule": "evenodd"
 })));
+
 const MaterialStopCircle = (styled.default || styled)(MaterialStopCircleSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

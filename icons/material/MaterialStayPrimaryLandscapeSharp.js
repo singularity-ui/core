@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialStayPrimaryLandscapeSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialStayPrimaryLandscapeSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialStayPrimaryLandscapeSharpSvg = /*#__PURE__*/React.createElement("s
 }), /*#__PURE__*/React.createElement("path", {
   d: "M1 19h22V5H1v14zM19 7v10H5V7h14z"
 }));
+
 const MaterialStayPrimaryLandscapeSharp = (styled.default || styled)(MaterialStayPrimaryLandscapeSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialKeyboardArrowRightTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialKeyboardArrowRightTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialKeyboardArrowRightTwoToneSvg = /*#__PURE__*/React.createElement("s
 }), /*#__PURE__*/React.createElement("path", {
   d: "M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
 }));
+
 const MaterialKeyboardArrowRightTwoTone = (styled.default || styled)(MaterialKeyboardArrowRightTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

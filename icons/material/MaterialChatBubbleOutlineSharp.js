@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialChatBubbleOutlineSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialChatBubbleOutlineSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialChatBubbleOutlineSharpSvg = /*#__PURE__*/React.createElement("svg"
 }), /*#__PURE__*/React.createElement("path", {
   d: "M22 2H2v20l4-4h16V2zm-2 14H6l-2 2V4h16v12z"
 }));
+
 const MaterialChatBubbleOutlineSharp = (styled.default || styled)(MaterialChatBubbleOutlineSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

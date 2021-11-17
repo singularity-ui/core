@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialEditLocationAltRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialEditLocationAltRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -34,6 +35,7 @@ const MaterialEditLocationAltRoundedSvg = /*#__PURE__*/React.createElement("svg"
 }), /*#__PURE__*/React.createElement("path", {
   d: "M20.71,2L20,1.29c-0.39-0.39-1.02-0.39-1.41,0l-0.72,0.72l2.12,2.12l0.72-0.72C21.1,3.02,21.1,2.39,20.71,2z"
 }))));
+
 const MaterialEditLocationAltRounded = (styled.default || styled)(MaterialEditLocationAltRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

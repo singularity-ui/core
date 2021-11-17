@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialStayCurrentPortraitSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialStayCurrentPortraitSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialStayCurrentPortraitSharpSvg = /*#__PURE__*/React.createElement("sv
 }), /*#__PURE__*/React.createElement("path", {
   d: "M19 1.01L5.01 1v22H19V1.01zM17 19H7V5h10v14z"
 }));
+
 const MaterialStayCurrentPortraitSharp = (styled.default || styled)(MaterialStayCurrentPortraitSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

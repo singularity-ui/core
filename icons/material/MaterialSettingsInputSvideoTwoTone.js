@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSettingsInputSvideoTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSettingsInputSvideoTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -48,6 +49,7 @@ const MaterialSettingsInputSvideoTwoToneSvg = /*#__PURE__*/React.createElement("
   cy: "16.5",
   r: "1.5"
 }));
+
 const MaterialSettingsInputSvideoTwoTone = (styled.default || styled)(MaterialSettingsInputSvideoTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialAutoDeleteRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialAutoDeleteRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -37,6 +38,7 @@ const MaterialAutoDeleteRoundedSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M15.75,12L15.75,12C15.34,12,15,12.34,15,12.75v3.68c0,0.36,0.19,0.68,0.5,0.86l2.52,1.47c0.33,0.19,0.75,0.09,0.96-0.22 v0c0.23-0.34,0.12-0.81-0.24-1.02L16.5,16.2v-3.45C16.5,12.34,16.16,12,15.75,12z"
 }))));
+
 const MaterialAutoDeleteRounded = (styled.default || styled)(MaterialAutoDeleteRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

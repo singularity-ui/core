@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialPermDeviceInformationTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialPermDeviceInformationTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -30,6 +31,7 @@ const MaterialPermDeviceInformationTwoToneSvg = /*#__PURE__*/React.createElement
 }), /*#__PURE__*/React.createElement("path", {
   d: "M11 7h2v2h-2zm0 4h2v6h-2zm6-9.99L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 21H7v-1h10v1zm0-3H7V6h10v12zm0-14H7V3h10v1z"
 }));
+
 const MaterialPermDeviceInformationTwoTone = (styled.default || styled)(MaterialPermDeviceInformationTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

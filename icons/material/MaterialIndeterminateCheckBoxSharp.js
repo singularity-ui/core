@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialIndeterminateCheckBoxSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialIndeterminateCheckBoxSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialIndeterminateCheckBoxSharpSvg = /*#__PURE__*/React.createElement("
 }), /*#__PURE__*/React.createElement("path", {
   d: "M21 3H3v18h18V3zm-4 10H7v-2h10v2z"
 }));
+
 const MaterialIndeterminateCheckBoxSharp = (styled.default || styled)(MaterialIndeterminateCheckBoxSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

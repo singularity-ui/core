@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialDirectionsSubwayFilledOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialDirectionsSubwayFilledOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -38,6 +39,7 @@ const MaterialDirectionsSubwayFilledOutlinedSvg = /*#__PURE__*/React.createEleme
   cy: "14.5",
   r: "1.5"
 }))));
+
 const MaterialDirectionsSubwayFilledOutlined = (styled.default || styled)(MaterialDirectionsSubwayFilledOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

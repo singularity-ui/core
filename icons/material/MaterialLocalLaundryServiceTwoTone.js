@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialLocalLaundryServiceTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialLocalLaundryServiceTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -40,6 +41,7 @@ const MaterialLocalLaundryServiceTwoToneSvg = /*#__PURE__*/React.createElement("
 }), /*#__PURE__*/React.createElement("path", {
   d: "M12 19c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm2.36-7.36c1.3 1.3 1.3 3.42 0 4.72-1.3 1.3-3.42 1.3-4.72 0l4.72-4.72z"
 }));
+
 const MaterialLocalLaundryServiceTwoTone = (styled.default || styled)(MaterialLocalLaundryServiceTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

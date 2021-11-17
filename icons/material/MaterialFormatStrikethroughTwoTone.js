@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialFormatStrikethroughTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialFormatStrikethroughTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialFormatStrikethroughTwoToneSvg = /*#__PURE__*/React.createElement("
 }), /*#__PURE__*/React.createElement("path", {
   d: "M3 12h18v2H3zm11-2V7h5V4H5v3h5v3zm-4 6h4v3h-4z"
 }));
+
 const MaterialFormatStrikethroughTwoTone = (styled.default || styled)(MaterialFormatStrikethroughTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

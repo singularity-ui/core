@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialAccountTreeTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialAccountTreeTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -38,6 +39,7 @@ const MaterialAccountTreeTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
   opacity: ".3",
   points: "20,15 20,19 17,19 17,15 20,15"
 })));
+
 const MaterialAccountTreeTwoTone = (styled.default || styled)(MaterialAccountTreeTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSurroundSoundOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSurroundSoundOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -43,6 +44,7 @@ const MaterialSurroundSoundOutlinedSvg = /*#__PURE__*/React.createElement("svg",
 }), /*#__PURE__*/React.createElement("path", {
   d: "M15.72,15.72l1.23,1.23C18.32,15.59,19,13.79,19,12s-0.68-3.59-2.06-4.94l-1.23,1.23c1.02,1.02,1.54,2.36,1.54,3.71 C17.25,13.35,16.73,14.69,15.72,15.72z"
 }))));
+
 const MaterialSurroundSoundOutlined = (styled.default || styled)(MaterialSurroundSoundOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

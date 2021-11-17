@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialHorizontalSplitOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialHorizontalSplitOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialHorizontalSplitOutlinedSvg = /*#__PURE__*/React.createElement("svg
 }), /*#__PURE__*/React.createElement("path", {
   d: "M19 15v2H5v-2h14m2-10H3v2h18V5zm0 4H3v2h18V9zm0 4H3v6h18v-6z"
 }));
+
 const MaterialHorizontalSplitOutlined = (styled.default || styled)(MaterialHorizontalSplitOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

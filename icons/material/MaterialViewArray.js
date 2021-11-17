@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialViewArraySvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialViewArraySvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -29,6 +30,7 @@ const MaterialViewArraySvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M21,5h-3v14h3V5z M17,5H7v14h10V5z M6,5H3v14h3V5z"
 }));
+
 const MaterialViewArray = (styled.default || styled)(MaterialViewArraySvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

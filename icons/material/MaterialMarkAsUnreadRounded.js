@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialMarkAsUnreadRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialMarkAsUnreadRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -30,6 +31,7 @@ const MaterialMarkAsUnreadRoundedSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M20,8H7c-1.1,0-2,0.9-2,2v9c0,1.1,0.9,2,2,2h13c1.1,0,2-0.9,2-2v-9C22,8.9,21.1,8,20,8z M20,11.46 c0,0.33-0.19,0.64-0.48,0.79l-5.61,2.88c-0.25,0.13-0.56,0.13-0.81,0l-5.61-2.88C7.19,12.1,7,11.79,7,11.46v0 c0-0.67,0.7-1.1,1.3-0.79l5.2,2.67l5.2-2.67C19.3,10.36,20,10.79,20,11.46L20,11.46z"
 }))));
+
 const MaterialMarkAsUnreadRounded = (styled.default || styled)(MaterialMarkAsUnreadRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

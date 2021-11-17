@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialRadioTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialRadioTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -34,6 +35,7 @@ const MaterialRadioTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
   cy: "16.48",
   r: "2.5"
 }));
+
 const MaterialRadioTwoTone = (styled.default || styled)(MaterialRadioTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

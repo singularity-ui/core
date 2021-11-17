@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialEditLocationTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialEditLocationTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -35,6 +36,7 @@ const MaterialEditLocationTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
   opacity: ".3",
   points: "18.17,4.91 17.1,3.84 11.55,9.39 11.55,10.47 12.63,10.47"
 }));
+
 const MaterialEditLocationTwoTone = (styled.default || styled)(MaterialEditLocationTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

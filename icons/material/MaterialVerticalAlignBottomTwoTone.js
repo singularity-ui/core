@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialVerticalAlignBottomTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialVerticalAlignBottomTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialVerticalAlignBottomTwoToneSvg = /*#__PURE__*/React.createElement("
 }), /*#__PURE__*/React.createElement("path", {
   d: "M11 3v10H8l4 4 4-4h-3V3zM4 19h16v2H4z"
 }));
+
 const MaterialVerticalAlignBottomTwoTone = (styled.default || styled)(MaterialVerticalAlignBottomTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

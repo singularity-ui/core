@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialAgricultureTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialAgricultureTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -34,6 +35,7 @@ const MaterialAgricultureTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
   d: "M20,13.05V8h-5v1c0,2.21-1.79,4-4,4c0,0-0.42,0-0.42,0c0.14,0.32,0.25,0.65,0.32,1h6.16 c0.63-0.62,1.49-1,2.44-1C19.67,13,19.84,13.03,20,13.05z",
   opacity: ".3"
 }))));
+
 const MaterialAgricultureTwoTone = (styled.default || styled)(MaterialAgricultureTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

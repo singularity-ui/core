@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialColorLensOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialColorLensOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -43,6 +44,7 @@ const MaterialColorLensOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
   cy: "11.5",
   r: "1.5"
 }));
+
 const MaterialColorLensOutlined = (styled.default || styled)(MaterialColorLensOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

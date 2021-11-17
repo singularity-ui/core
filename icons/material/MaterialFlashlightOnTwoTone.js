@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialFlashlightOnTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialFlashlightOnTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -41,6 +42,7 @@ const MaterialFlashlightOnTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
   cy: "14",
   r: "1.5"
 }))));
+
 const MaterialFlashlightOnTwoTone = (styled.default || styled)(MaterialFlashlightOnTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

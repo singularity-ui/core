@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialImportContactsTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialImportContactsTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -30,6 +31,7 @@ const MaterialImportContactsTwoToneSvg = /*#__PURE__*/React.createElement("svg",
   d: "M11 7.49c-1.37-.58-3.16-.99-4.5-.99-1.2 0-2.4.15-3.5.5v11.5c1.1-.35 2.3-.5 3.5-.5 1.34 0 3.13.41 4.5.99V7.49z",
   opacity: ".3"
 }));
+
 const MaterialImportContactsTwoTone = (styled.default || styled)(MaterialImportContactsTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

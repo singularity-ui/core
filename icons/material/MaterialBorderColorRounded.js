@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialBorderColorRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialBorderColorRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -30,6 +31,7 @@ const MaterialBorderColorRoundedSvg = /*#__PURE__*/React.createElement("svg", {
   d: "M2 20h20c1.1 0 2 .9 2 2s-.9 2-2 2H2c-1.1 0-2-.9-2-2s.9-2 2-2z",
   "fill-opacity": ".36"
 }));
+
 const MaterialBorderColorRounded = (styled.default || styled)(MaterialBorderColorRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

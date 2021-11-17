@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialFormatStrikethroughOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialFormatStrikethroughOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialFormatStrikethroughOutlinedSvg = /*#__PURE__*/React.createElement(
 }), /*#__PURE__*/React.createElement("path", {
   d: "M10 19h4v-3h-4v3zM5 4v3h5v3h4V7h5V4H5zM3 14h18v-2H3v2z"
 }));
+
 const MaterialFormatStrikethroughOutlined = (styled.default || styled)(MaterialFormatStrikethroughOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

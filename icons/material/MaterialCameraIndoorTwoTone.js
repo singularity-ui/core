@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialCameraIndoorTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialCameraIndoorTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -33,6 +34,7 @@ const MaterialCameraIndoorTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M12,3L4,9v12h16V9L12,3z M18,19H6v-9l6-4.5l6,4.5V19z"
 }))));
+
 const MaterialCameraIndoorTwoTone = (styled.default || styled)(MaterialCameraIndoorTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

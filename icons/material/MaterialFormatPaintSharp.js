@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialFormatPaintSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialFormatPaintSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -24,6 +25,7 @@ const MaterialFormatPaintSharpSvg = /*#__PURE__*/React.createElement("svg", {
 }, /*#__PURE__*/React.createElement("path", {
   d: "M18 4V2H4v6h14V6h1v4H9v12h4V12h8V4h-3z"
 }));
+
 const MaterialFormatPaintSharp = (styled.default || styled)(MaterialFormatPaintSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

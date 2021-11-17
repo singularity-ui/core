@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialVideogameAssetOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialVideogameAssetOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -35,6 +36,7 @@ const MaterialVideogameAssetOutlinedSvg = /*#__PURE__*/React.createElement("svg"
   cy: "10.5",
   r: "1.5"
 }));
+
 const MaterialVideogameAssetOutlined = (styled.default || styled)(MaterialVideogameAssetOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialHdrEnhancedSelectTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialHdrEnhancedSelectTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -42,6 +43,7 @@ const MaterialHdrEnhancedSelectTwoToneSvg = /*#__PURE__*/React.createElement("sv
 }), /*#__PURE__*/React.createElement("path", {
   d: "M10,16H6.5v6H10c0.8,0,1.5-0.7,1.5-1.5v-3C11.5,16.7,10.8,16,10,16z M10,20.5H8v-3h2V20.5z"
 }))));
+
 const MaterialHdrEnhancedSelectTwoTone = (styled.default || styled)(MaterialHdrEnhancedSelectTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialPictureInPictureAltTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialPictureInPictureAltTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -30,6 +31,7 @@ const MaterialPictureInPictureAltTwoToneSvg = /*#__PURE__*/React.createElement("
   d: "M13 13h4v2h-4z",
   opacity: ".3"
 }));
+
 const MaterialPictureInPictureAltTwoTone = (styled.default || styled)(MaterialPictureInPictureAltTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

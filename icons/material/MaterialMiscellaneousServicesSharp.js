@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialMiscellaneousServicesSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialMiscellaneousServicesSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -31,6 +32,7 @@ const MaterialMiscellaneousServicesSharpSvg = /*#__PURE__*/React.createElement("
 }), /*#__PURE__*/React.createElement("path", {
   d: "M20.98,17.94l-0.01,0.01C20.99,17.8,21,17.65,21,17.5c0-0.15-0.01-0.3-0.04-0.44l0.01,0.01l1.1-0.86l-1.09-1.9l-1.29,0.52 v0.01c-0.24-0.18-0.49-0.33-0.77-0.45h0.01L18.73,13h-2.19l-0.2,1.38h0.01c-0.28,0.12-0.53,0.27-0.77,0.45v-0.01l-1.29-0.52 l-1.09,1.9l1.09,0.86l0.01-0.01c-0.02,0.14-0.03,0.29-0.03,0.44c0,0.15,0.01,0.3,0.03,0.46l-0.01-0.01l-0.94,0.75 c-0.08,0.06-0.15,0.12-0.15,0.12l1.09,1.89l1.3-0.51l-0.01-0.02c0.24,0.19,0.5,0.34,0.78,0.46h-0.01l0.2,1.38h2.19 c0,0,0.01-0.08,0.03-0.19l0.17-1.19h-0.01c0.28-0.12,0.54-0.27,0.78-0.46l-0.01,0.02l1.3,0.51l1.09-1.89c0,0-0.06-0.05-0.15-0.12 L20.98,17.94z M17.63,18.79c-0.71,0-1.29-0.58-1.29-1.29s0.58-1.29,1.29-1.29s1.29,0.58,1.29,1.29S18.34,18.79,17.63,18.79z"
 }))));
+
 const MaterialMiscellaneousServicesSharp = (styled.default || styled)(MaterialMiscellaneousServicesSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

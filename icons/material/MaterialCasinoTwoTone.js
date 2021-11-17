@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialCasinoTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialCasinoTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -50,6 +51,7 @@ const MaterialCasinoTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
   cy: "7.5",
   r: "1.5"
 }));
+
 const MaterialCasinoTwoTone = (styled.default || styled)(MaterialCasinoTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialScreenSearchDesktopSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialScreenSearchDesktopSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   style: "enable-background:new 0 0 24 24;",
@@ -35,6 +36,7 @@ const MaterialScreenSearchDesktopSvg = /*#__PURE__*/React.createElement("svg", {
   style: "fill:none",
   width: "24"
 }))));
+
 const MaterialScreenSearchDesktop = (styled.default || styled)(MaterialScreenSearchDesktopSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialPlayArrowOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialPlayArrowOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialPlayArrowOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M10 8.64L15.27 12 10 15.36V8.64M8 5v14l11-7L8 5z"
 }));
+
 const MaterialPlayArrowOutlined = (styled.default || styled)(MaterialPlayArrowOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

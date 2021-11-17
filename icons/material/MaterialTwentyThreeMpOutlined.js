@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialTwentyThreeMpOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialTwentyThreeMpOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -37,6 +38,7 @@ const MaterialTwentyThreeMpOutlinedSvg = /*#__PURE__*/React.createElement("svg",
 }), /*#__PURE__*/React.createElement("path", {
   d: "M17.5,10.5v-4c0-0.55-0.45-1-1-1H13V7h3v1h-2v1h2v1h-3v1.5h3.5C17.05,11.5,17.5,11.05,17.5,10.5z"
 }))));
+
 const MaterialTwentyThreeMpOutlined = (styled.default || styled)(MaterialTwentyThreeMpOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialVideoLabelSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialVideoLabelSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialVideoLabelSharpSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M23 3H1v18h22V3zm-2 13H3V5h18v11z"
 }));
+
 const MaterialVideoLabelSharp = (styled.default || styled)(MaterialVideoLabelSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

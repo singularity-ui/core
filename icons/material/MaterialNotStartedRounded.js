@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialNotStartedRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialNotStartedRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -28,6 +29,7 @@ const MaterialNotStartedRoundedSvg = /*#__PURE__*/React.createElement("svg", {
   fill: "none",
   points: "24,24 0,23.97 0,0 24,0.03"
 })));
+
 const MaterialNotStartedRounded = (styled.default || styled)(MaterialNotStartedRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

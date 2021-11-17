@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialCalendarViewDaySvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialCalendarViewDaySvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialCalendarViewDaySvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M3 17h18v2H3zm0-7h18v5H3zm0-4h18v2H3z"
 }));
+
 const MaterialCalendarViewDay = (styled.default || styled)(MaterialCalendarViewDaySvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

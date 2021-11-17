@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialViewAgendaTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialViewAgendaTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -30,6 +31,7 @@ const MaterialViewAgendaTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
   d: "M4 15h15v4H4zM4 5h15v4H4z",
   opacity: ".3"
 }));
+
 const MaterialViewAgendaTwoTone = (styled.default || styled)(MaterialViewAgendaTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

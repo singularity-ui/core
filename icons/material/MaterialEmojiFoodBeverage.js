@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialEmojiFoodBeverageSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialEmojiFoodBeverageSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -34,6 +35,7 @@ const MaterialEmojiFoodBeverageSvg = /*#__PURE__*/React.createElement("svg", {
   x: "4",
   y: "19"
 }))));
+
 const MaterialEmojiFoodBeverage = (styled.default || styled)(MaterialEmojiFoodBeverageSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

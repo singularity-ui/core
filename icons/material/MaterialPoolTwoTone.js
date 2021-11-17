@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialPoolTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialPoolTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -39,6 +40,7 @@ const MaterialPoolTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
   cy: "5.5",
   r: "2.5"
 }));
+
 const MaterialPoolTwoTone = (styled.default || styled)(MaterialPoolTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialHomeRepairServiceSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialHomeRepairServiceSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -31,6 +32,7 @@ const MaterialHomeRepairServiceSharpSvg = /*#__PURE__*/React.createElement("svg"
 })), /*#__PURE__*/React.createElement("path", {
   d: "M17,8V4H7v4H2v6h4v-2h2v2h8v-2h2v2h4V8H17z M9,6h6v2H9V6z"
 }))));
+
 const MaterialHomeRepairServiceSharp = (styled.default || styled)(MaterialHomeRepairServiceSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialFaceRetouchingNaturalOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialFaceRetouchingNaturalOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -39,6 +40,7 @@ const MaterialFaceRetouchingNaturalOutlinedSvg = /*#__PURE__*/React.createElemen
 }), /*#__PURE__*/React.createElement("polygon", {
   points: "23,4.5 20.6,3.4 19.5,1 18.4,3.4 16,4.5 18.4,5.6 19.5,8 20.6,5.6"
 }))));
+
 const MaterialFaceRetouchingNaturalOutlined = (styled.default || styled)(MaterialFaceRetouchingNaturalOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

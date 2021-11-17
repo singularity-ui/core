@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialPrintOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialPrintOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -31,6 +32,7 @@ const MaterialPrintOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
   cy: "11.5",
   r: "1"
 }));
+
 const MaterialPrintOutlined = (styled.default || styled)(MaterialPrintOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

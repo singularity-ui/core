@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSellOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSellOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -32,6 +33,7 @@ const MaterialSellOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
   cy: "6.5",
   r: "1.5"
 }))));
+
 const MaterialSellOutlined = (styled.default || styled)(MaterialSellOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

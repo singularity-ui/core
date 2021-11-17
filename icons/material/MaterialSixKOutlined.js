@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSixKOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSixKOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -33,6 +34,7 @@ const MaterialSixKOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M7.5,15H10c0.55,0,1-0.45,1-1v-1.5c0-0.55-0.45-1-1-1H8v-1h3V9H7.5c-0.55,0-1,0.45-1,1v4C6.5,14.55,6.95,15,7.5,15z M8,12.5h1.5V14H8V12.5z"
 })))));
+
 const MaterialSixKOutlined = (styled.default || styled)(MaterialSixKOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialLunchDiningSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialLunchDiningSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -36,6 +37,7 @@ const MaterialLunchDiningSvg = /*#__PURE__*/React.createElement("svg", {
   d: "M2,16v2c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2v-2H2z",
   "fill-rule": "evenodd"
 }))));
+
 const MaterialLunchDining = (styled.default || styled)(MaterialLunchDiningSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

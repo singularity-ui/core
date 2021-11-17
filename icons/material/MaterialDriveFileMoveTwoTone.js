@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialDriveFileMoveTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialDriveFileMoveTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -34,6 +35,7 @@ const MaterialDriveFileMoveTwoToneSvg = /*#__PURE__*/React.createElement("svg", 
   d: "M10.59,7.41L9.17,6H4v12h16V8h-8.83L10.59,7.41z M12,9l4,4l-4,4v-3H8v-2h4V9z",
   opacity: ".3"
 }))));
+
 const MaterialDriveFileMoveTwoTone = (styled.default || styled)(MaterialDriveFileMoveTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

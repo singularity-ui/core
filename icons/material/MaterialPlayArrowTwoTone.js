@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialPlayArrowTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialPlayArrowTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -30,6 +31,7 @@ const MaterialPlayArrowTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M8 19l11-7L8 5v14zm2-10.36L15.27 12 10 15.36V8.64z"
 }));
+
 const MaterialPlayArrowTwoTone = (styled.default || styled)(MaterialPlayArrowTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

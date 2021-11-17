@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialAutoDeleteTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialAutoDeleteTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -36,6 +37,7 @@ const MaterialAutoDeleteTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("polygon", {
   points: "16.5,12 15,12 15,17 18.6,19.1 19.4,17.9 16.5,16.2"
 }))));
+
 const MaterialAutoDeleteTwoTone = (styled.default || styled)(MaterialAutoDeleteTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialControlCameraSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialControlCameraSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -31,6 +32,7 @@ const MaterialControlCameraSvg = /*#__PURE__*/React.createElement("svg", {
   cy: "12",
   r: "3"
 }));
+
 const MaterialControlCamera = (styled.default || styled)(MaterialControlCameraSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

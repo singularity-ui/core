@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialDriveFileRenameOutlineTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialDriveFileRenameOutlineTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -36,6 +37,7 @@ const MaterialDriveFileRenameOutlineTwoToneSvg = /*#__PURE__*/React.createElemen
 }), /*#__PURE__*/React.createElement("path", {
   d: "M18.71,8.04c0.39-0.39,0.39-1.02,0-1.41l-2.34-2.34C16.17,4.09,15.92,4,15.66,4c-0.25,0-0.51,0.1-0.7,0.29l-1.83,1.83 l3.75,3.75L18.71,8.04z"
 }))));
+
 const MaterialDriveFileRenameOutlineTwoTone = (styled.default || styled)(MaterialDriveFileRenameOutlineTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

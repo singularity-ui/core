@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialVolunteerActivismRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialVolunteerActivismRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -33,6 +34,7 @@ const MaterialVolunteerActivismRoundedSvg = /*#__PURE__*/React.createElement("sv
 }), /*#__PURE__*/React.createElement("path", {
   d: "M19.99,17h-6.83c-0.11,0-0.22-0.02-0.33-0.06l-1.47-0.51c-0.26-0.09-0.39-0.37-0.3-0.63l0,0c0.09-0.26,0.38-0.4,0.64-0.3 l1.12,0.43c0.11,0.04,0.24,0.07,0.36,0.07h2.63c0.65,0,1.18-0.53,1.18-1.18v0c0-0.49-0.31-0.93-0.77-1.11L9.3,11.13 C9.08,11.04,8.84,11,8.6,11H7v9.02l6.37,1.81c0.41,0.12,0.85,0.1,1.25-0.05L22,19l0,0C22,17.89,21.1,17,19.99,17z"
 }))));
+
 const MaterialVolunteerActivismRounded = (styled.default || styled)(MaterialVolunteerActivismRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialDriveFileRenameOutlineRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialDriveFileRenameOutlineRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -33,6 +34,7 @@ const MaterialDriveFileRenameOutlineRoundedSvg = /*#__PURE__*/React.createElemen
 }), /*#__PURE__*/React.createElement("path", {
   d: "M18.71,8.04c0.39-0.39,0.39-1.02,0-1.41l-2.34-2.34c-0.39-0.39-1.02-0.39-1.41,0l-1.83,1.83l3.75,3.75L18.71,8.04z"
 }))));
+
 const MaterialDriveFileRenameOutlineRounded = (styled.default || styled)(MaterialDriveFileRenameOutlineRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

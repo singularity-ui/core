@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialZoomInSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialZoomInSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -29,6 +30,7 @@ const MaterialZoomInSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z"
 }));
+
 const MaterialZoomIn = (styled.default || styled)(MaterialZoomInSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

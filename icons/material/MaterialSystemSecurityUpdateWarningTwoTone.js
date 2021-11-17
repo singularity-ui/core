@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSystemSecurityUpdateWarningTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSystemSecurityUpdateWarningTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -44,6 +45,7 @@ const MaterialSystemSecurityUpdateWarningTwoToneSvg = /*#__PURE__*/React.createE
   d: "M7,21h10v-1H7V21z M7,3v1h10V3H7z",
   opacity: ".3"
 }))));
+
 const MaterialSystemSecurityUpdateWarningTwoTone = (styled.default || styled)(MaterialSystemSecurityUpdateWarningTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

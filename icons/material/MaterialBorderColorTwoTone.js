@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialBorderColorTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialBorderColorTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -36,6 +37,7 @@ const MaterialBorderColorTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
   x: "2",
   y: "20"
 }))));
+
 const MaterialBorderColorTwoTone = (styled.default || styled)(MaterialBorderColorTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

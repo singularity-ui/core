@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialHomeRepairServiceTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialHomeRepairServiceTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -37,6 +38,7 @@ const MaterialHomeRepairServiceTwoToneSvg = /*#__PURE__*/React.createElement("sv
 }, /*#__PURE__*/React.createElement("polygon", {
   points: "4,10 4,13 6,13 6,12 8,12 8,13 16,13 16,12 18,12 18,13 20,13 20,10 17,10 7,10"
 })))));
+
 const MaterialHomeRepairServiceTwoTone = (styled.default || styled)(MaterialHomeRepairServiceTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

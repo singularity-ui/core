@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialCarRepairRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialCarRepairRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -32,6 +33,7 @@ const MaterialCarRepairRoundedSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M4,18.01L4,18.01C4,18.55,4.45,19,4.99,19H11v2.01c0,0.55,0.45,0.99,0.99,0.99h0.01c0.55,0,0.99-0.45,0.99-0.99V19h6.01 c0.55,0,0.99-0.45,0.99-0.99v0c0-0.55-0.45-0.99-0.99-0.99H4.99C4.45,17.01,4,17.46,4,18.01z"
 }))));
+
 const MaterialCarRepairRounded = (styled.default || styled)(MaterialCarRepairRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

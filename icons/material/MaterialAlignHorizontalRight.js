@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialAlignHorizontalRightSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialAlignHorizontalRightSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -29,6 +30,7 @@ const MaterialAlignHorizontalRightSvg = /*#__PURE__*/React.createElement("svg", 
 }), /*#__PURE__*/React.createElement("path", {
   d: "M20,2h2v20h-2V2z M2,10h16V7H2V10z M8,17h10v-3H8V17z"
 }));
+
 const MaterialAlignHorizontalRight = (styled.default || styled)(MaterialAlignHorizontalRightSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

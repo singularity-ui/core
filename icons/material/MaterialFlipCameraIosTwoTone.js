@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialFlipCameraIosTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialFlipCameraIosTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -36,6 +37,7 @@ const MaterialFlipCameraIosTwoToneSvg = /*#__PURE__*/React.createElement("svg", 
 })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
   d: "M12,8c-0.86,0-1.65,0.24-2.36,0.62l0.74,0.73C10.87,9.13,11.42,9,12,9c2.21,0,4,1.79,4,4h-1.97H14l2.5,2.5l0.01-0.01 L19,13h-2C17,10.24,14.76,8,12,8z"
 })))));
+
 const MaterialFlipCameraIosTwoTone = (styled.default || styled)(MaterialFlipCameraIosTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

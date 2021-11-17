@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSettingsRemoteRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSettingsRemoteRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -33,6 +34,7 @@ const MaterialSettingsRemoteRoundedSvg = /*#__PURE__*/React.createElement("svg",
 }), /*#__PURE__*/React.createElement("path", {
   d: "M12,0C9.36,0,6.94,0.93,5.05,2.47c-0.46,0.38-0.5,1.07-0.08,1.49l0,0c0.36,0.36,0.93,0.39,1.32,0.07 C7.84,2.77,9.83,2,12,2c2.17,0,4.16,0.77,5.7,2.04c0.39,0.32,0.96,0.29,1.32-0.07l0,0c0.42-0.42,0.38-1.11-0.08-1.49 C17.06,0.93,14.64,0,12,0z"
 }))));
+
 const MaterialSettingsRemoteRounded = (styled.default || styled)(MaterialSettingsRemoteRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

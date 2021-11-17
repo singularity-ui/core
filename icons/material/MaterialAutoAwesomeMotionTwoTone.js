@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialAutoAwesomeMotionTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialAutoAwesomeMotionTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -40,6 +41,7 @@ const MaterialAutoAwesomeMotionTwoToneSvg = /*#__PURE__*/React.createElement("sv
 }), /*#__PURE__*/React.createElement("path", {
   d: "M18,6H8C6.9,6,6,6.9,6,8v10h2V8h10V6z"
 }))));
+
 const MaterialAutoAwesomeMotionTwoTone = (styled.default || styled)(MaterialAutoAwesomeMotionTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

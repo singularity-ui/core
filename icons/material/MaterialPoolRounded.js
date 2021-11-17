@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialPoolRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialPoolRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -31,6 +32,7 @@ const MaterialPoolRoundedSvg = /*#__PURE__*/React.createElement("svg", {
   cy: "5.5",
   r: "2.5"
 }));
+
 const MaterialPoolRounded = (styled.default || styled)(MaterialPoolRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialHdrAutoSelectRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialHdrAutoSelectRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -38,6 +39,7 @@ const MaterialHdrAutoSelectRoundedSvg = /*#__PURE__*/React.createElement("svg", 
 }), /*#__PURE__*/React.createElement("path", {
   d: "M12,2C8.69,2,6,4.69,6,8s2.69,6,6,6s6-2.69,6-6S15.31,2,12,2z M14.44,11c-0.24,0-0.45-0.15-0.53-0.38l-0.49-1.41h-2.83 l-0.5,1.41C10.01,10.85,9.8,11,9.56,11c-0.39,0-0.67-0.39-0.53-0.76l2.12-5.65C11.29,4.23,11.62,4,12,4s0.71,0.23,0.85,0.59 l2.12,5.65C15.11,10.61,14.84,11,14.44,11z"
 }))));
+
 const MaterialHdrAutoSelectRounded = (styled.default || styled)(MaterialHdrAutoSelectRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

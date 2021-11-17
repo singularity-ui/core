@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialBrightnessSevenTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialBrightnessSevenTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -34,6 +35,7 @@ const MaterialBrightnessSevenTwoToneSvg = /*#__PURE__*/React.createElement("svg"
   cy: "12",
   r: "2"
 }));
+
 const MaterialBrightnessSevenTwoTone = (styled.default || styled)(MaterialBrightnessSevenTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

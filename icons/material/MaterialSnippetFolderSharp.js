@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSnippetFolderSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSnippetFolderSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -29,6 +30,7 @@ const MaterialSnippetFolderSharpSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M12,6l-2-2H2v16h20V6H12z M19,17l-6,0V9h3.5l2.5,2.5V17z M15.88,10.5l1.62,1.62v3.38l-3,0v-5H15.88z"
 })));
+
 const MaterialSnippetFolderSharp = (styled.default || styled)(MaterialSnippetFolderSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

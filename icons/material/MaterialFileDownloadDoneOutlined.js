@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialFileDownloadDoneOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialFileDownloadDoneOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -34,6 +35,7 @@ const MaterialFileDownloadDoneOutlinedSvg = /*#__PURE__*/React.createElement("sv
   x: "5",
   y: "18"
 }))));
+
 const MaterialFileDownloadDoneOutlined = (styled.default || styled)(MaterialFileDownloadDoneOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

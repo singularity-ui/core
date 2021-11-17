@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialCallMadeSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialCallMadeSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialCallMadeSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5z"
 }));
+
 const MaterialCallMade = (styled.default || styled)(MaterialCallMadeSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

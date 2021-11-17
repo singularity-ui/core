@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialFilterAltTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialFilterAltTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -34,6 +35,7 @@ const MaterialFilterAltTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
   opacity: ".3",
   points: "7,6 17,6 11.99,12.3"
 }));
+
 const MaterialFilterAltTwoTone = (styled.default || styled)(MaterialFilterAltTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialBookmarksSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialBookmarksSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialBookmarksSharpSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M19 18l2 1V1H7v2h12v15zM17 5H3v18l7-3 7 3V5z"
 }));
+
 const MaterialBookmarksSharp = (styled.default || styled)(MaterialBookmarksSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialDirectionsOffSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialDirectionsOffSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -31,6 +32,7 @@ const MaterialDirectionsOffSharpSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M1.39,4.22l3.99,3.99l-3.79,3.79L12.01,22.4l3.79-3.79l3.99,3.99l1.41-1.41L2.81,2.81L1.39,4.22z M9.99,12.82V15h-2v-4.18 L9.99,12.82z"
 }))));
+
 const MaterialDirectionsOffSharp = (styled.default || styled)(MaterialDirectionsOffSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

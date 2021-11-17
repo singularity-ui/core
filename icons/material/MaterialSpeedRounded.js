@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSpeedRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSpeedRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -29,6 +30,7 @@ const MaterialSpeedRoundedSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M10.59 12.59a2 2 0 0 0 2.83 2.83l5.66-8.49z"
 }));
+
 const MaterialSpeedRounded = (styled.default || styled)(MaterialSpeedRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

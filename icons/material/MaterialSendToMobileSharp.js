@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSendToMobileSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSendToMobileSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -30,6 +31,7 @@ const MaterialSendToMobileSharpSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("polygon", {
   points: "22,12 18,8 18,11 13,11 13,13 18,13 18,16"
 }))));
+
 const MaterialSendToMobileSharp = (styled.default || styled)(MaterialSendToMobileSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

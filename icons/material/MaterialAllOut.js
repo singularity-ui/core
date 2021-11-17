@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialAllOutSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialAllOutSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialAllOutSvg = /*#__PURE__*/React.createElement("svg", {
   d: "M.21.16h24v24h-24z",
   fill: "none"
 }));
+
 const MaterialAllOut = (styled.default || styled)(MaterialAllOutSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

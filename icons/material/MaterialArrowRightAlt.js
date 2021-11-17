@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialArrowRightAltSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialArrowRightAltSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialArrowRightAltSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M16.01 11H4v2h12.01v3L20 12l-3.99-4z"
 }));
+
 const MaterialArrowRightAlt = (styled.default || styled)(MaterialArrowRightAltSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

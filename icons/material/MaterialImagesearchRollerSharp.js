@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialImagesearchRollerSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialImagesearchRollerSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -29,6 +30,7 @@ const MaterialImagesearchRollerSharpSvg = /*#__PURE__*/React.createElement("svg"
 })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
   d: "M20,2v6H6V6H4v4h10v5h2v8h-6v-8h2v-3H2V4h4V2H20z"
 }))));
+
 const MaterialImagesearchRollerSharp = (styled.default || styled)(MaterialImagesearchRollerSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

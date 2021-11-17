@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialDirectionsTransitFilledTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialDirectionsTransitFilledTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -46,6 +47,7 @@ const MaterialDirectionsTransitFilledTwoToneSvg = /*#__PURE__*/React.createEleme
   cy: "14.5",
   r: "1.5"
 }))));
+
 const MaterialDirectionsTransitFilledTwoTone = (styled.default || styled)(MaterialDirectionsTransitFilledTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

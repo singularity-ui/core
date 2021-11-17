@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialClosedCaptionOffSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialClosedCaptionOffSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -31,6 +32,7 @@ const MaterialClosedCaptionOffSharpSvg = /*#__PURE__*/React.createElement("svg",
 }, /*#__PURE__*/React.createElement("path", {
   d: "M21,4H3v16h18V4z M11,11H9.5v-0.5h-2v3h2V13H11v2H6V9h5V11z M18,11h-1.5v-0.5h-2v3h2V13H18v2h-5V9h5V11z"
 }))));
+
 const MaterialClosedCaptionOffSharp = (styled.default || styled)(MaterialClosedCaptionOffSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialPostAddSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialPostAddSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -43,6 +44,7 @@ const MaterialPostAddSvg = /*#__PURE__*/React.createElement("svg", {
   x: "7",
   y: "15"
 }))));
+
 const MaterialPostAdd = (styled.default || styled)(MaterialPostAddSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

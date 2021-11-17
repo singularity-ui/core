@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialOfflineShareOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialOfflineShareOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -32,6 +33,7 @@ const MaterialOfflineShareOutlinedSvg = /*#__PURE__*/React.createElement("svg", 
 }), /*#__PURE__*/React.createElement("path", {
   d: "M12.5,10.25h1.63l-0.69,0.69L14.5,12L17,9.5L14.5,7l-1.06,1.06l0.69,0.69H12c-0.55,0-1,0.45-1,1V12h1.5V10.25z"
 }))));
+
 const MaterialOfflineShareOutlined = (styled.default || styled)(MaterialOfflineShareOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

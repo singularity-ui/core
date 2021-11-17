@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialFourGMobiledataSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialFourGMobiledataSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -28,6 +29,7 @@ const MaterialFourGMobiledataSharpSvg = /*#__PURE__*/React.createElement("svg", 
 })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
   d: "M9,7H7v5H5V7H3v7h4v3h2v-3h2v-2H9V7z M17,11v2h2v2h-5V9h7V7h-9v10h9v-6H17z"
 }))));
+
 const MaterialFourGMobiledataSharp = (styled.default || styled)(MaterialFourGMobiledataSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

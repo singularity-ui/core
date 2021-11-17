@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialBedroomChildSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialBedroomChildSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -38,6 +39,7 @@ const MaterialBedroomChildSharpSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M22,2H2v20h20V2z M18,17h-1.5v-1.5h-9V17H6l0-6.32l1.5-0.01V7h9v3.67l1.5,0V17z"
 }))));
+
 const MaterialBedroomChildSharp = (styled.default || styled)(MaterialBedroomChildSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

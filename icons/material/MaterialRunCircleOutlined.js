@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialRunCircleOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialRunCircleOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -35,6 +36,7 @@ const MaterialRunCircleOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
   cy: "7",
   r: "1"
 }))));
+
 const MaterialRunCircleOutlined = (styled.default || styled)(MaterialRunCircleOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

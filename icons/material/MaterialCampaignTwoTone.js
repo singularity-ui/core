@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialCampaignTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialCampaignTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -40,6 +41,7 @@ const MaterialCampaignTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
   d: "M9.03,10.71L11,9.53v4.94l-1.97-1.18L8.55,13H8H4v-2h4h0.55L9.03,10.71z",
   opacity: ".3"
 }));
+
 const MaterialCampaignTwoTone = (styled.default || styled)(MaterialCampaignTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialPlumbingRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialPlumbingRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -37,6 +38,7 @@ const MaterialPlumbingRoundedSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M14.33,8.46l-0.71,0.71l-3.18-3.18C9.85,5.4,8.9,5.4,8.32,5.99c-0.59,0.59-0.59,1.54,0,2.12l3.18,3.18l-7,7 c-0.7,0.7-0.88,1.84-0.29,2.65c0.74,1.03,2.19,1.12,3.05,0.26L16.45,12c0.39,0.39,1.02,0.39,1.41,0c0.39-0.39,0.39-1.02,0-1.41 l-2.12-2.12C15.35,8.07,14.72,8.07,14.33,8.46z"
 }))));
+
 const MaterialPlumbingRounded = (styled.default || styled)(MaterialPlumbingRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSystemSecurityUpdateWarningSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSystemSecurityUpdateWarningSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -38,6 +39,7 @@ const MaterialSystemSecurityUpdateWarningSharpSvg = /*#__PURE__*/React.createEle
 }), /*#__PURE__*/React.createElement("path", {
   d: "M5.01,1v22H19V1H5.01z M17,18H7V6h10V18z"
 }))));
+
 const MaterialSystemSecurityUpdateWarningSharp = (styled.default || styled)(MaterialSystemSecurityUpdateWarningSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

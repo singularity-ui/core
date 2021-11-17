@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSeventeenMpRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSeventeenMpRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -34,6 +35,7 @@ const MaterialSeventeenMpRoundedSvg = /*#__PURE__*/React.createElement("svg", {
   x: "15",
   y: "14"
 }))));
+
 const MaterialSeventeenMpRounded = (styled.default || styled)(MaterialSeventeenMpRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

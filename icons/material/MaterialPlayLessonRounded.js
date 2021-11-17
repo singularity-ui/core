@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialPlayLessonRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialPlayLessonRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -30,6 +31,7 @@ const MaterialPlayLessonRoundedSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M18,13c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5S20.76,13,18,13z M16.75,19.6v-3.2c0-0.39,0.43-0.63,0.76-0.42l2.56,1.6 c0.31,0.2,0.31,0.65,0,0.85l-2.56,1.6C17.18,20.23,16.75,19.99,16.75,19.6z"
 }))));
+
 const MaterialPlayLessonRounded = (styled.default || styled)(MaterialPlayLessonRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

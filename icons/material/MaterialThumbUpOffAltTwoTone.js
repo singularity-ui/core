@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialThumbUpOffAltTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialThumbUpOffAltTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -38,6 +39,7 @@ const MaterialThumbUpOffAltTwoToneSvg = /*#__PURE__*/React.createElement("svg", 
   x: "1",
   y: "9"
 }))));
+
 const MaterialThumbUpOffAltTwoTone = (styled.default || styled)(MaterialThumbUpOffAltTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

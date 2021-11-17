@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialDoubleArrowTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialDoubleArrowTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -31,6 +32,7 @@ const MaterialDoubleArrowTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("polygon", {
   points: "8.5,5 4,5 9,12 4,19 8.5,19 13.5,12"
 }))));
+
 const MaterialDoubleArrowTwoTone = (styled.default || styled)(MaterialDoubleArrowTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

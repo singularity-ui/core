@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialScatterPlotSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialScatterPlotSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -34,6 +35,7 @@ const MaterialScatterPlotSharpSvg = /*#__PURE__*/React.createElement("svg", {
   cy: "17.6",
   r: "3"
 }));
+
 const MaterialScatterPlotSharp = (styled.default || styled)(MaterialScatterPlotSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

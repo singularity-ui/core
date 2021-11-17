@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialMonitorWeightRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialMonitorWeightRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -40,6 +41,7 @@ const MaterialMonitorWeightRoundedSvg = /*#__PURE__*/React.createElement("svg", 
   cy: "9",
   r: ".5"
 }))));
+
 const MaterialMonitorWeightRounded = (styled.default || styled)(MaterialMonitorWeightRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

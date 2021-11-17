@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialAssistantPhotoSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialAssistantPhotoSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialAssistantPhotoSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"
 }));
+
 const MaterialAssistantPhoto = (styled.default || styled)(MaterialAssistantPhotoSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

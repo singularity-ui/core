@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSpeakerPhoneRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSpeakerPhoneRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -33,6 +34,7 @@ const MaterialSpeakerPhoneRoundedSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M15,10l-6,0c-0.55,0-1,0.45-1,1v10c0,0.55,0.45,1,1,1h5.99c0.55,0,1-0.45,1-1L16,11C16,10.45,15.55,10,15,10z M15,20H9v-8 h6V20z"
 }))));
+
 const MaterialSpeakerPhoneRounded = (styled.default || styled)(MaterialSpeakerPhoneRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

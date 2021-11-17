@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSignalWifiConnectedNoInternetFourRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSignalWifiConnectedNoInternetFourRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -30,6 +31,7 @@ const MaterialSignalWifiConnectedNoInternetFourRoundedSvg = /*#__PURE__*/React.c
 }), /*#__PURE__*/React.createElement("path", {
   d: "M20.3,14.71L20.3,14.71c-0.39-0.39-1.02-0.39-1.41,0l-1.39,1.38l-1.39-1.38c-0.39-0.39-1.02-0.39-1.41,0 c-0.39,0.39-0.39,1.02,0,1.41l1.39,1.39l-1.39,1.39c-0.39,0.39-0.39,1.02,0,1.41l0,0c0.39,0.39,1.02,0.39,1.41,0l1.39-1.38 l1.39,1.38c0.39,0.39,1.02,0.39,1.41,0l0,0c0.39-0.39,0.39-1.02,0-1.41l-1.38-1.39l1.38-1.39C20.69,15.73,20.69,15.1,20.3,14.71z"
 }))));
+
 const MaterialSignalWifiConnectedNoInternetFourRounded = (styled.default || styled)(MaterialSignalWifiConnectedNoInternetFourRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

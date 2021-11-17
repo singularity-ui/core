@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialPrintTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialPrintTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -37,6 +38,7 @@ const MaterialPrintTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
   d: "M6 13h12v2h2v-4c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1v4h2v-2zm12-2.5c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z",
   opacity: ".3"
 }));
+
 const MaterialPrintTwoTone = (styled.default || styled)(MaterialPrintTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

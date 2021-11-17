@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialGroupWorkTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialGroupWorkTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -42,6 +43,7 @@ const MaterialGroupWorkTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
   cy: "14",
   r: "2"
 }));
+
 const MaterialGroupWorkTwoTone = (styled.default || styled)(MaterialGroupWorkTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

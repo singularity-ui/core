@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialPersonalVideoSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialPersonalVideoSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialPersonalVideoSharpSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M23 3H1v16h7v2h8v-2h6.99L23 3zm-2 14H3V5h18v12z"
 }));
+
 const MaterialPersonalVideoSharp = (styled.default || styled)(MaterialPersonalVideoSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

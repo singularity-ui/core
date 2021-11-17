@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialFastForwardTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialFastForwardTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -45,6 +46,7 @@ const MaterialFastForwardTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M21.5,12L13,6v12L21.5,12z M15,9.86L18.03,12L15,14.14V9.86z"
 }))));
+
 const MaterialFastForwardTwoTone = (styled.default || styled)(MaterialFastForwardTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

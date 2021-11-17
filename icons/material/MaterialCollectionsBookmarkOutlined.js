@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialCollectionsBookmarkOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialCollectionsBookmarkOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialCollectionsBookmarkOutlinedSvg = /*#__PURE__*/React.createElement(
 }), /*#__PURE__*/React.createElement("path", {
   d: "M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-3 2v5l-1-.75L15 9V4h2zm3 12H8V4h5v9l3-2.25L19 13V4h1v12z"
 }));
+
 const MaterialCollectionsBookmarkOutlined = (styled.default || styled)(MaterialCollectionsBookmarkOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

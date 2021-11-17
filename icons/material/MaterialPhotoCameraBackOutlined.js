@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialPhotoCameraBackOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialPhotoCameraBackOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -31,6 +32,7 @@ const MaterialPhotoCameraBackOutlinedSvg = /*#__PURE__*/React.createElement("svg
 }), /*#__PURE__*/React.createElement("polygon", {
   points: "11.25,16 9,13 6,17 18,17 14.25,12"
 }))));
+
 const MaterialPhotoCameraBackOutlined = (styled.default || styled)(MaterialPhotoCameraBackOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

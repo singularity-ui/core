@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialLinkOffSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialLinkOffSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -30,6 +31,7 @@ const MaterialLinkOffSvg = /*#__PURE__*/React.createElement("svg", {
   d: "M0 24V0",
   fill: "none"
 }));
+
 const MaterialLinkOff = (styled.default || styled)(MaterialLinkOffSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

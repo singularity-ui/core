@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialThirteenMpSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialThirteenMpSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -34,6 +35,7 @@ const MaterialThirteenMpSharpSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M3,3v18h18V3H3z M12,10h3V9h-2V8h2V7h-3V5.5h4.5v6H12V10z M7,5.5h3v6H8.5V7H7V5.5z M12.5,18.5H11V14h-1v3H8.5v-3h-1v4.5H6 v-6h6.5V18.5z M18,17h-3v1.5h-1.5v-6H18V17z"
 }))));
+
 const MaterialThirteenMpSharp = (styled.default || styled)(MaterialThirteenMpSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

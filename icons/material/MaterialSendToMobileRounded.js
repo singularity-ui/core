@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSendToMobileRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSendToMobileRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -30,6 +31,7 @@ const MaterialSendToMobileRoundedSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M21.65,11.65l-2.79-2.79C18.54,8.54,18,8.76,18,9.21V11h-4c-0.55,0-1,0.45-1,1v0c0,0.55,0.45,1,1,1h4v1.79 c0,0.45,0.54,0.67,0.85,0.35l2.79-2.79C21.84,12.16,21.84,11.84,21.65,11.65z"
 }))));
+
 const MaterialSendToMobileRounded = (styled.default || styled)(MaterialSendToMobileRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

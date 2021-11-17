@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialFactCheckTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialFactCheckTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -49,6 +50,7 @@ const MaterialFactCheckTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
   x: "5",
   y: "15"
 }))));
+
 const MaterialFactCheckTwoTone = (styled.default || styled)(MaterialFactCheckTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

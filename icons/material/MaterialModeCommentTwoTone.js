@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialModeCommentTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialModeCommentTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -30,6 +31,7 @@ const MaterialModeCommentTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
   d: "M4 4v12h14.83L20 17.17V4z",
   opacity: ".3"
 }));
+
 const MaterialModeCommentTwoTone = (styled.default || styled)(MaterialModeCommentTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

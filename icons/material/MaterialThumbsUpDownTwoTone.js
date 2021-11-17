@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialThumbsUpDownTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialThumbsUpDownTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -30,6 +31,7 @@ const MaterialThumbsUpDownTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
   d: "M3.93 4.28L2 6.21V12h5.92L10 7.13V7H3.36zM14 16.87V17h6.64l-.57 2.72L22 17.79V12h-5.92z",
   opacity: ".3"
 }));
+
 const MaterialThumbsUpDownTwoTone = (styled.default || styled)(MaterialThumbsUpDownTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

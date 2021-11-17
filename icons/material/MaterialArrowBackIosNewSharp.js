@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialArrowBackIosNewSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialArrowBackIosNewSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -29,6 +30,7 @@ const MaterialArrowBackIosNewSharpSvg = /*#__PURE__*/React.createElement("svg", 
 }), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("polygon", {
   points: "17.77,3.77 16,2 6,12 16,22 17.77,20.23 9.54,12"
 })));
+
 const MaterialArrowBackIosNewSharp = (styled.default || styled)(MaterialArrowBackIosNewSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

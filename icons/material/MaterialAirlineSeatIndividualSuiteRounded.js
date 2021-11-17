@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialAirlineSeatIndividualSuiteRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialAirlineSeatIndividualSuiteRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialAirlineSeatIndividualSuiteRoundedSvg = /*#__PURE__*/React.createEl
 }), /*#__PURE__*/React.createElement("path", {
   d: "M7 13c1.65 0 3-1.35 3-3S8.65 7 7 7s-3 1.35-3 3 1.35 3 3 3zm12-6h-6c-1.1 0-2 .9-2 2v5H3V8c0-.55-.45-1-1-1s-1 .45-1 1v7c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2v-4c0-2.21-1.79-4-4-4z"
 }));
+
 const MaterialAirlineSeatIndividualSuiteRounded = (styled.default || styled)(MaterialAirlineSeatIndividualSuiteRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

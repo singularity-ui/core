@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialExposureNegOneTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialExposureNegOneTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialExposureNegOneTwoToneSvg = /*#__PURE__*/React.createElement("svg",
 }), /*#__PURE__*/React.createElement("path", {
   d: "M19 18V5h-.3L14 6.7v1.7l3-1.02V18zM4 11h8v2H4z"
 }));
+
 const MaterialExposureNegOneTwoTone = (styled.default || styled)(MaterialExposureNegOneTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

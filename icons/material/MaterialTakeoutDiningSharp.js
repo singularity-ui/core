@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialTakeoutDiningSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialTakeoutDiningSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -31,6 +32,7 @@ const MaterialTakeoutDiningSharpSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("polygon", {
   points: "5.93,20 18.07,20 18.7,11.55 5.3,11.55"
 }))));
+
 const MaterialTakeoutDiningSharp = (styled.default || styled)(MaterialTakeoutDiningSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

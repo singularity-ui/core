@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialAddModeratorTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialAddModeratorTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -34,6 +35,7 @@ const MaterialAddModeratorTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
 })), /*#__PURE__*/React.createElement("path", {
   d: "M17,12c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5S19.76,12,17,12z M20,17.5h-2.5V20h-1v-2.5H14v-1h2.5V14h1v2.5H20V17.5z"
 }))));
+
 const MaterialAddModeratorTwoTone = (styled.default || styled)(MaterialAddModeratorTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

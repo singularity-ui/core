@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialLocalSeeRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialLocalSeeRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -33,6 +34,7 @@ const MaterialLocalSeeRoundedSvg = /*#__PURE__*/React.createElement("svg", {
 })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
   d: "M17.34,14.42c0.37,0.33,0.95,0.33,1.33,0C22.22,11.25,24,8.5,24,6.15C24,2.42,21.15,0,18,0s-6,2.42-6,6.15 C12,8.5,13.78,11.25,17.34,14.42z M17.27,5.25L18,3l0.73,2.25H21l-1.85,1.47L19.85,9L18,7.59L16.15,9l0.7-2.28L15,5.25H17.27z"
 })))));
+
 const MaterialLocalSeeRounded = (styled.default || styled)(MaterialLocalSeeRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

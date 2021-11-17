@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialEighteenMpTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialEighteenMpTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -58,6 +59,7 @@ const MaterialEighteenMpTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M13,11.5h2.5c0.55,0,1-0.45,1-1v-4c0-0.55-0.45-1-1-1H13c-0.55,0-1,0.45-1,1v4C12,11.05,12.45,11.5,13,11.5z M13.5,6.5H15 V8h-1.5V6.5z M13.5,9H15v1.5h-1.5V9z"
 }))));
+
 const MaterialEighteenMpTwoTone = (styled.default || styled)(MaterialEighteenMpTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

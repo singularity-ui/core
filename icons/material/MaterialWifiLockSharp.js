@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialWifiLockSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialWifiLockSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -30,6 +31,7 @@ const MaterialWifiLockSharpSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M22,15.11c0-1-0.68-1.92-1.66-2.08c-0.12-0.02-0.24-0.02-0.36-0.02l0,0c0,0-0.01,0-0.01,0C18.88,13.03,18,13.91,18,15v1 c-0.55,0-1,0-1,0v5h6v-5c0,0-0.45,0-1,0V15.11z M21,16h-2v-1c0-0.55,0.45-1,1-1s1,0.45,1,1V16z"
 }))));
+
 const MaterialWifiLockSharp = (styled.default || styled)(MaterialWifiLockSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

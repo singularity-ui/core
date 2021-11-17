@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialCameraswitchRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialCameraswitchRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -32,6 +33,7 @@ const MaterialCameraswitchRoundedSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M11.8,19.87c-0.32-0.32-0.85-0.09-0.85,0.35v1.74c-4.45-0.44-8.06-3.82-8.84-8.17c-0.08-0.46-0.5-0.78-0.97-0.78 c-0.62,0-1.09,0.57-0.98,1.18c1.24,6.92,8.06,10.93,14.4,9.53c0.39-0.09,0.55-0.56,0.26-0.85L11.8,19.87z"
 }))));
+
 const MaterialCameraswitchRounded = (styled.default || styled)(MaterialCameraswitchRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

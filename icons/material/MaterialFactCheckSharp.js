@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialFactCheckSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialFactCheckSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -30,6 +31,7 @@ const MaterialFactCheckSharpSvg = /*#__PURE__*/React.createElement("svg", {
   d: "M2,3v18h20V3H2z M10,17H5v-2h5V17z M10,13H5v-2h5V13z M10,9H5V7h5V9z M14.82,15 L12,12.16l1.41-1.41l1.41,1.42L17.99,9l1.42,1.42L14.82,15z",
   "fill-rule": "evenodd"
 }))));
+
 const MaterialFactCheckSharp = (styled.default || styled)(MaterialFactCheckSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

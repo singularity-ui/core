@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialFilterBAndWSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialFilterBAndWSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialFilterBAndWSharpSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M21 3H3v18h18V3zm-2 16l-7-8v8H5l7-8V5h7v14z"
 }));
+
 const MaterialFilterBAndWSharp = (styled.default || styled)(MaterialFilterBAndWSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

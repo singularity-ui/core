@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialFmdBadTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialFmdBadTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -31,6 +32,7 @@ const MaterialFmdBadTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
   d: "M12,19.33c4.05-3.7,6-6.79,6-9.14C18,6.57,15.35,4,12,4s-6,2.57-6,6.2C6,12.54,7.95,15.64,12,19.33z M11,6 h2v5h-2V6z M11,13h2v2h-2V13z",
   opacity: ".3"
 }))));
+
 const MaterialFmdBadTwoTone = (styled.default || styled)(MaterialFmdBadTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

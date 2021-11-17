@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSyncAltRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSyncAltRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -35,6 +36,7 @@ const MaterialSyncAltRoundedSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M2.35,16.35l2.79,2.79C5.46,19.46,6,19.24,6,18.79V17h14c0.55,0,1-0.45,1-1v0c0-0.55-0.45-1-1-1H6v-1.79 c0-0.45-0.54-0.67-0.85-0.35l-2.79,2.79C2.16,15.84,2.16,16.16,2.35,16.35z"
 }))));
+
 const MaterialSyncAltRounded = (styled.default || styled)(MaterialSyncAltRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

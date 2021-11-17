@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialCropThreeTwoSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialCropThreeTwoSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialCropThreeTwoSharpSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M21 4H3v16h18V4zm-2 14H5V6h14v12z"
 }));
+
 const MaterialCropThreeTwoSharp = (styled.default || styled)(MaterialCropThreeTwoSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

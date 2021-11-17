@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialStopScreenShareTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialStopScreenShareTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -33,6 +34,7 @@ const MaterialStopScreenShareTwoToneSvg = /*#__PURE__*/React.createElement("svg"
   d: "M20 6.02H9.8l3.13 3.13c.02 0 .04-.01.07-.02V7l4 3.73-1.28 1.2L20 16.21V6.02z",
   opacity: ".3"
 }));
+
 const MaterialStopScreenShareTwoTone = (styled.default || styled)(MaterialStopScreenShareTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

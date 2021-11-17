@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialReportGmailerrorredOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialReportGmailerrorredOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -33,6 +34,7 @@ const MaterialReportGmailerrorredOutlinedSvg = /*#__PURE__*/React.createElement(
 }), /*#__PURE__*/React.createElement("path", {
   d: "M11 7h2v7h-2z"
 }));
+
 const MaterialReportGmailerrorredOutlined = (styled.default || styled)(MaterialReportGmailerrorredOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

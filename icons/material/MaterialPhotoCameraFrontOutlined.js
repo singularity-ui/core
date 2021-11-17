@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialPhotoCameraFrontOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialPhotoCameraFrontOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -35,6 +36,7 @@ const MaterialPhotoCameraFrontOutlinedSvg = /*#__PURE__*/React.createElement("sv
 }), /*#__PURE__*/React.createElement("path", {
   d: "M14.78,14.58C13.93,14.21,12.99,14,12,14s-1.93,0.21-2.78,0.58C8.48,14.9,8,15.62,8,16.43V17h8v-0.57 C16,15.62,15.52,14.9,14.78,14.58z"
 }))));
+
 const MaterialPhotoCameraFrontOutlined = (styled.default || styled)(MaterialPhotoCameraFrontOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

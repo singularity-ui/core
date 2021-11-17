@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialBluetoothDriveTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialBluetoothDriveTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -41,6 +42,7 @@ const MaterialBluetoothDriveTwoToneSvg = /*#__PURE__*/React.createElement("svg",
 })), /*#__PURE__*/React.createElement("path", {
   d: "M22,3.85L19.15,1h-0.5v3.79l-2.3-2.29l-0.7,0.7L18.44,6l-2.79,2.79l0.7,0.71l2.3-2.3V11h0.5L22,8.14L19.85,6L22,3.85z M19.65,2.91l0.94,0.94l-0.94,0.94V2.91z M20.59,8.14l-0.94,0.94V7.2L20.59,8.14z"
 }))));
+
 const MaterialBluetoothDriveTwoTone = (styled.default || styled)(MaterialBluetoothDriveTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

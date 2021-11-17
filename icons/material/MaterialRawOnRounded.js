@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialRawOnRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialRawOnRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -33,6 +34,7 @@ const MaterialRawOnRoundedSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M19.84,9.55L19.24,12l-0.56-2.26C18.58,9.3,18.19,9,17.74,9l0,0c-0.45,0-0.84,0.3-0.94,0.74L16.24,12l-0.6-2.45 C15.56,9.23,15.27,9,14.93,9h0c-0.47,0-0.82,0.44-0.71,0.9l1.09,4.38C15.43,14.7,15.81,15,16.24,15l0,0c0.43,0,0.81-0.3,0.92-0.72 l0.58-2.32l0.58,2.32C18.43,14.7,18.81,15,19.24,15l0,0c0.43,0,0.81-0.3,0.92-0.72l1.09-4.38C21.37,9.44,21.02,9,20.55,9h0 C20.21,9,19.92,9.23,19.84,9.55z"
 }))));
+
 const MaterialRawOnRounded = (styled.default || styled)(MaterialRawOnRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

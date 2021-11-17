@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialMapsUgcOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialMapsUgcOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -33,6 +34,7 @@ const MaterialMapsUgcOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
   "fill-rule": "evenodd",
   points: "13,8 11,8 11,11 8,11 8,13 11,13 11,16 13,16 13,13 16,13 16,11 13,11"
 }));
+
 const MaterialMapsUgcOutlined = (styled.default || styled)(MaterialMapsUgcOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

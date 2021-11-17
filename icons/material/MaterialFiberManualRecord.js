@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialFiberManualRecordSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialFiberManualRecordSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -29,6 +30,7 @@ const MaterialFiberManualRecordSvg = /*#__PURE__*/React.createElement("svg", {
   cy: "12",
   r: "8"
 }));
+
 const MaterialFiberManualRecord = (styled.default || styled)(MaterialFiberManualRecordSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

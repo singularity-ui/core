@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialCheckBoxOutlineBlankSharpSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialCheckBoxOutlineBlankSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   height: "24",
   viewBox: "0 0 24 24",
@@ -27,6 +28,7 @@ const MaterialCheckBoxOutlineBlankSharpSvg = /*#__PURE__*/React.createElement("s
 }), /*#__PURE__*/React.createElement("path", {
   d: "M19 5v14H5V5h14m2-2H3v18h18V3z"
 }));
+
 const MaterialCheckBoxOutlineBlankSharp = (styled.default || styled)(MaterialCheckBoxOutlineBlankSharpSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

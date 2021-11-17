@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialSettingsInputSvideoRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialSettingsInputSvideoRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -47,6 +48,7 @@ const MaterialSettingsInputSvideoRoundedSvg = /*#__PURE__*/React.createElement("
 }), /*#__PURE__*/React.createElement("path", {
   d: "M15,7.5C15,6.67,14.33,6,13.5,6h-3C9.67,6,9,6.67,9,7.5S9.67,9,10.5,9h3C14.33,9,15,8.33,15,7.5z"
 }))));
+
 const MaterialSettingsInputSvideoRounded = (styled.default || styled)(MaterialSettingsInputSvideoRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

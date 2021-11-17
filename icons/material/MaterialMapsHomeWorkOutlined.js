@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialMapsHomeWorkOutlinedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialMapsHomeWorkOutlinedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -45,6 +46,7 @@ const MaterialMapsHomeWorkOutlinedSvg = /*#__PURE__*/React.createElement("svg", 
 }), /*#__PURE__*/React.createElement("polygon", {
   points: "10,3 10,4.97 12,6.4 12,5 21,5 21,19 17,19 17,21 23,21 23,3"
 }))));
+
 const MaterialMapsHomeWorkOutlined = (styled.default || styled)(MaterialMapsHomeWorkOutlinedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

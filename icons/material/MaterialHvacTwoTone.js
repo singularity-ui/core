@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialHvacTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialHvacTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -34,6 +35,7 @@ const MaterialHvacTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
 }), /*#__PURE__*/React.createElement("path", {
   d: "M12,18c3.31,0,6-2.69,6-6s-2.69-6-6-6s-6,2.69-6,6S8.69,18,12,18z M12,16c-1.01,0-1.91-0.39-2.62-1h5.24 C13.91,15.61,13.01,16,12,16z M12,8c1.01,0,1.91,0.39,2.62,1H9.38C10.09,8.39,10.99,8,12,8z M8.56,10h6.89 c0.26,0.45,0.44,0.96,0.51,1.5h-7.9C8.12,10.96,8.29,10.45,8.56,10z M15.95,12.5c-0.07,0.54-0.24,1.05-0.51,1.5H8.56 c-0.26-0.45-0.44-0.96-0.51-1.5H15.95z"
 }))));
+
 const MaterialHvacTwoTone = (styled.default || styled)(MaterialHvacTwoToneSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM

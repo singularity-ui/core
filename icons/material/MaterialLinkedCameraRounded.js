@@ -15,7 +15,8 @@ const SIZE = {
   LARGE: 'large'
 };
 const SIZES = Object.values(SIZE);
-const MaterialLinkedCameraRoundedSvg = /*#__PURE__*/React.createElement("svg", {
+
+const MaterialLinkedCameraRoundedSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "enable-background": "new 0 0 24 24",
   height: "24",
@@ -37,6 +38,7 @@ const MaterialLinkedCameraRoundedSvg = /*#__PURE__*/React.createElement("svg", {
 })), /*#__PURE__*/React.createElement("path", {
   d: "M17,8c0-1.1-0.9-2-2-2V4c0-0.55-0.45-1-1-1H9.88C9.32,3,8.78,3.24,8.4,3.65L7.17,5H4C2.9,5,2,5.9,2,7v12 c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2v-9c0-1.1-0.9-2-2-2H17z M12,17.5c-2.48,0-4.5-2.02-4.5-4.5S9.52,8.5,12,8.5 s4.5,2.02,4.5,4.5S14.48,17.5,12,17.5z"
 }))))));
+
 const MaterialLinkedCameraRounded = (styled.default || styled)(MaterialLinkedCameraRoundedSvg).attrs(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM
