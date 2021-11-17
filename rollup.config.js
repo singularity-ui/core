@@ -11,8 +11,9 @@ export default {
 
   output: [
     {
-      file: './dist/index.js',
+      dir: './dist',
       format: 'esm',
+      preserveModules: false,
       sourcemap: true,
     },
   ],

@@ -6,7 +6,7 @@
   "private": true,
   "main": "./index.ts",
   "scripts": {
-    "build": "rm -Rf ./dist && rollup -c && tsc --emitDeclarationOnly && yarn build:complete",
+    "build": "rm -Rf ./dist && rollup -c && yarn build:complete",
     "build:complete": "node ./scripts/build/removeFontsFromDeclarations.js && sh ./scripts/build/copyPublicFiles.sh && node ./scripts/build/generatePackageJson.js",
     "build:dev": "rm -Rf ./dist && rollup -c && yarn build:complete",
     "build:icons": "rm -Rf ./dist/icons && rollup -c ./rollup.config.icons.js",
