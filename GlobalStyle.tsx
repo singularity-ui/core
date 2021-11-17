@@ -7,6 +7,10 @@ import '@fontsource/poppins/600.css'
 import '@fontsource/poppins/700.css'
 
 export const GlobalStyle = createGlobalStyle`
+  html, body {
+    height: 100%;
+  }
+
   body {
     background-color: ${p => p.theme.color.body.background};
     font-family: ${p => p.theme.typography.font.default.family};
