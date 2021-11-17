@@ -26,7 +26,6 @@ const distPackageExtraProps = {
   types: 'index.d.ts',
 }
 
-// eslint-disable-next-line import/newline-after-import
 ;(async () => {
   const rootPackageJson = await fs.readFile('./package.json', 'utf-8')
   const rootPackage = JSON.parse(rootPackageJson)
@@ -36,5 +35,5 @@ const distPackageExtraProps = {
   )(rootPackage)
   const distPackageJson = JSON.stringify(distPackage, null, 2)
 
-  await fs.writeFile('./dist/package.json', distPackageJson)
+  await fs.writeFile('./dist/package.json', distPackageJson, 'utf-8')
 })()
