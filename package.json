@@ -15,7 +15,7 @@
     "prepare": "husky install",
     "test": "yarn test:lint && yarn test:type",
     "test:lint": "eslint --ext js,jsx,ts,tsx .",
-    "test:type": "tsc",
+    "test:type": "tsc --noEmit",
     "watch": "yarn build && rollup -cw"
   },
   "dependencies": {
