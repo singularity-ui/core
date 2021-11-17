@@ -1,6 +1,129 @@
-/* eslint-disable sort-keys-fix/sort-keys-fix */
+/* eslint-disable sort-keys-fix/sort-keys-fix, typescript-sort-keys/interface */
 
-export const theme = {
+export interface Theme {
+  appearance: {
+    borderRadius: {
+      small: string
+      medium: string
+      large: string
+    }
+  }
+
+  breakpoint: {
+    sm: string
+    md: string
+    lg: string
+    xl: string
+  }
+
+  color: {
+    a11n: {
+      focus: {
+        background: string
+        foreground: string
+      }
+    }
+
+    body: {
+      background: string
+      light: string
+      main: string
+      white: string
+    }
+
+    card: {
+      background: string
+    }
+
+    list: {
+      even: string
+      odd: string
+    }
+
+    primary: {
+      default: string
+      active: string
+      background: string
+    }
+    secondary: {
+      default: string
+      active: string
+      background: string
+    }
+    success: {
+      default: string
+      active: string
+      background: string
+    }
+    danger: {
+      default: string
+      active: string
+      background: string
+    }
+    warning: {
+      default: string
+      active: string
+      background: string
+    }
+    info: {
+      default: string
+      active: string
+      background: string
+    }
+  }
+
+  padding: {
+    button: {
+      small: string
+      medium: string
+      large: string
+    }
+
+    input: {
+      small: string
+      medium: string
+      large: string
+    }
+
+    inputBox: {
+      small: string
+      medium: string
+      large: string
+    }
+
+    layout: {
+      tiny: string
+      small: string
+      medium: string
+      large: string
+      giant: string
+    }
+  }
+
+  shadow: {
+    small: string
+    medium: string
+    large: string
+  }
+
+  typography: {
+    font: {
+      default: {
+        family: string
+        size: string
+        weight: number
+      }
+    }
+
+    size: {
+      small: number
+      medium: number
+      large: number
+    }
+  }
+}
+
+export const theme: Theme = {
   appearance: {
     borderRadius: {
       small: '0.25rem',

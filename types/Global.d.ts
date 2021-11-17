@@ -1,2 +1,9 @@
+import 'styled-components'
+
+import { Theme } from '../common/theme'
+
 declare module '*.css'
-// declare module '*.woff2'
+
+declare module 'styled-components' {
+  export interface DefaultTheme extends Theme {}
+}
