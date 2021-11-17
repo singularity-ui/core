@@ -1,3 +1,10 @@
+# [2.0.0-alpha.11](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.10...v2.0.0-alpha.11) (2021-11-17)
+
+
+### Features
+
+* set body line-height in GlobalStyle ([194904d](https://github.com/singularity-ui/core/commit/194904d13a140e67fb9e60695727882f27a13f80))
+
 # [2.0.0-alpha.10](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.9...v2.0.0-alpha.10) (2021-11-16)
 
 
