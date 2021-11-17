@@ -1,3 +1,10 @@
+# [2.0.0-alpha.17](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.16...v2.0.0-alpha.17) (2021-11-17)
+
+
+### Bug Fixes
+
+* **icons:** add missing PropTypes import in Material icons ([447d80d5](https://github.com/singularity-ui/core/commit/447d80d53e50f2722de2b617b9901897ff7e413e))
+
 # [2.0.0-alpha.16](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.15...v2.0.0-alpha.16) (2021-11-17)
 
 
