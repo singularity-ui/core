@@ -1,0 +1,49 @@
+import React from 'react';
+import styled from 'styled-components';
+const ACCENT = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+  SUCCESS: 'success',
+  DANGER: 'danger',
+  WARNING: 'warning',
+  INFO: 'info'
+};
+const ACCENTS = Object.values(ACCENT);
+const SIZE = {
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large'
+};
+const SIZES = Object.values(SIZE);
+const MaterialHomeRepairServiceSharpSvg = /*#__PURE__*/React.createElement("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  "enable-background": "new 0 0 24 24",
+  height: "24",
+  viewBox: "0 0 24 24",
+  width: "24",
+  ...props
+}, /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("rect", {
+  fill: "none",
+  height: "24",
+  width: "24"
+})), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("polygon", {
+  points: "18,16 16,16 16,15 8,15 8,16 6,16 6,15 2,15 2,20 22,20 22,15 18,15"
+})), /*#__PURE__*/React.createElement("path", {
+  d: "M17,8V4H7v4H2v6h4v-2h2v2h8v-2h2v2h4V8H17z M9,6h6v2H9V6z"
+}))));
+const MaterialHomeRepairServiceSharp = (styled.default || styled)(MaterialHomeRepairServiceSharpSvg).attrs(p => ({
+  accent: p.accent || ACCENT.PRIMARY,
+  size: p.size || SIZE.MEDIUM
+}))`
+  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
+  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
+
+  > path {
+    fill: ${p => p.theme.color[p.accent].active};
+  }
+`;
+MaterialHomeRepairServiceSharp.propTypes = {
+  accent: PropTypes.oneOf(ACCENTS),
+  size: PropTypes.oneOf(SIZES)
+};
+export default MaterialHomeRepairServiceSharp;

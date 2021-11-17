@@ -1,0 +1,50 @@
+import React from 'react';
+import styled from 'styled-components';
+const ACCENT = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+  SUCCESS: 'success',
+  DANGER: 'danger',
+  WARNING: 'warning',
+  INFO: 'info'
+};
+const ACCENTS = Object.values(ACCENT);
+const SIZE = {
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large'
+};
+const SIZES = Object.values(SIZE);
+const MaterialStrollerTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  "enable-background": "new 0 0 24 24",
+  height: "24",
+  viewBox: "0 0 24 24",
+  width: "24",
+  ...props
+}, /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("rect", {
+  fill: "none",
+  height: "24",
+  width: "24"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M10,5c0.29,0,0.58,0.02,0.86,0.05L9.49,6.66l-1.4-1.4C8.71,5.09,9.35,5,10,5 M15,8.66V15H9.6L15,8.66",
+  opacity: ".3"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M10,5c0.29,0,0.58,0.02,0.86,0.05L9.49,6.66l-1.4-1.4C8.71,5.09,9.35,5,10,5 M15,8.66V15H9.6L15,8.66 M18.65,3 c-1.66,0-2.54,1.27-3.18,2.03l-8.8,10.32C6.12,16,6.58,17,7.43,17H15c1.1,0,2-0.9,2-2V6.27C17.58,5.59,17.97,5,18.65,5 C19.42,5,20,5.66,20,6.48V7h2V6.48C22,4.56,20.52,3,18.65,3L18.65,3z M10,3C8.03,3,6.21,3.64,4.72,4.72l4.89,4.89l4.7-5.51 C13.03,3.4,11.56,3,10,3L10,3z M16,18c-1.1,0-2,0.9-2,2s0.9,2,2,2s2-0.9,2-2S17.1,18,16,18L16,18z M6,18c-1.1,0-2,0.9-2,2 s0.9,2,2,2s2-0.9,2-2S7.1,18,6,18L6,18z"
+})));
+const MaterialStrollerTwoTone = (styled.default || styled)(MaterialStrollerTwoToneSvg).attrs(p => ({
+  accent: p.accent || ACCENT.PRIMARY,
+  size: p.size || SIZE.MEDIUM
+}))`
+  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
+  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
+
+  > path {
+    fill: ${p => p.theme.color[p.accent].active};
+  }
+`;
+MaterialStrollerTwoTone.propTypes = {
+  accent: PropTypes.oneOf(ACCENTS),
+  size: PropTypes.oneOf(SIZES)
+};
+export default MaterialStrollerTwoTone;

@@ -1,5 +1,6 @@
 /* eslint-disable prefer-template, @typescript-eslint/no-use-before-define */
 
+import { transformSync } from '@babel/core'
 import glob from 'glob'
 import fs from 'graceful-fs'
 import ora from 'ora'
@@ -51,13 +52,14 @@ function convertPathToTsxIconName(svgIconPath) {
   )
 }
 
-function readMaterialIcon({ count, index, spinner, svgIconPaths }) {
+function readMaterialIcon({ count, index, spinner, svgIconPaths, template }) {
   const svgIconPath = svgIconPaths[index]
   if (svgIconPath === undefined) {
     readMaterialIcon({
       count,
       index: index + 1,
       svgIconPaths,
+      template,
     })
 
     return
@@ -75,37 +77,31 @@ function readMaterialIcon({ count, index, spinner, svgIconPaths }) {
       spinner,
       svgIconPaths,
       svgIconSource,
+      template,
       tsxIconName,
     })
   })
 }
 
-function writeMaterialIcon({ count, index, spinner, svgIconPaths, svgIconSource, tsxIconName }) {
-  const tsxIconSource = prettier.format(
-    `
-    import React from 'react'
+function writeMaterialIcon({ count, index, spinner, svgIconPaths, svgIconSource, template, tsxIconName }) {
+  const svgIconSourceWithProps = svgIconSource.replace(/>/, ` {...props}>`)
 
-    import Icon from '../Icon'
+  const jsxIconSource = template
+    .replace(/\/\*ICON_NAME\*\//g, tsxIconName)
+    .replace(/\/\*ICON_SVG_SOURCE\*\//g, svgIconSourceWithProps)
 
-    const ${tsxIconName}Svg = props => (
-      ${svgIconSource.replace(/>/, ` {...props}>`)}
-    )
+  const jsIconSource = transformSync(jsxIconSource, {
+    presets: [
+      [
+        '@babel/preset-react',
+        {
+          useSpread: true,
+        },
+      ],
+    ],
+  }).code
 
-    const ${tsxIconName} = props => <Icon as={${tsxIconName}Svg} {...props} />
-
-    ${tsxIconName}.defaultProps = { ...Icon.defaultProps }
-
-    ${tsxIconName}.propTypes = { ...Icon.propTypes }
-
-    export default ${tsxIconName}
-  `,
-    {
-      parser: 'babel',
-      ...prettierConfig,
-    },
-  )
-
-  fs.writeFile(`./icons/material/${tsxIconName}.tsx`, tsxIconSource, 'utf-8', () => {
+  fs.writeFile(`./icons/material/${tsxIconName}.js`, jsIconSource, 'utf-8', () => {
     if (index === count - 1) {
       spinner.succeed('Material icons generated.')
 
@@ -117,6 +113,7 @@ function writeMaterialIcon({ count, index, spinner, svgIconPaths, svgIconSource,
       index: index + 1,
       spinner,
       svgIconPaths,
+      template,
     })
   })
 }
@@ -127,6 +124,7 @@ const generateMaterialIcons = () => {
   rimraf.sync('./icons/material')
   fs.mkdirSync('./icons/material')
 
+  const template = fs.readFileSync('./scripts/icons/template.jst', 'utf-8')
   const svgIconPaths = glob.sync('./submodules/material-ui/packages/mui-icons-material/material-icons/*.svg')
   const count = svgIconPaths.length
   const index = 0
@@ -136,6 +134,7 @@ const generateMaterialIcons = () => {
     index,
     spinner,
     svgIconPaths,
+    template,
   })
 }
 

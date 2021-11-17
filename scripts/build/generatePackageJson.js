@@ -10,7 +10,10 @@ const distPackageExtraProps = {
   bugs: {
     url: 'https://github.com/singularity-ui/core/issues',
   },
-  exports: './index.js',
+  exports: {
+    '.': './index.js',
+    './icons/material/*': './icons/material/*.js',
+  },
   funding: 'https://github.com/singularity-ui/core?sponsor=1',
   homepage: 'https://singularity-ui.github.io/core/',
   name: '@singularity-ui/core',

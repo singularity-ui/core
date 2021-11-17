@@ -6,10 +6,10 @@
   "private": true,
   "main": "./index.ts",
   "scripts": {
-    "build": "rm -Rf ./dist && rollup -c && yarn build:complete",
+    "build": "rm -Rf ./dist && rollup -c && yarn build:icons && yarn build:complete",
     "build:complete": "node ./scripts/build/removeFontsFromDeclarations.js && sh ./scripts/build/copyPublicFiles.sh && node ./scripts/build/generatePackageJson.js",
     "build:dev": "rm -Rf ./dist && rollup -c && yarn build:complete",
-    "build:icons": "rm -Rf ./dist/icons && rollup -c ./rollup.config.icons.js",
+    "build:icons": "rm -Rf ./dist/icons/material && mkdirp ./dist/icons/material && cp ./icons/material/*.js ./dist/icons/material",
     "dev": "start-storybook -p 6006",
     "generate": "node -r dotenv/config ./scripts/icons/generateMaterialIcons.mjs",
     "prepare": "husky install",
@@ -27,6 +27,7 @@
     "tslib": "2.3.1"
   },
   "devDependencies": {
+    "@babel/preset-react": "7.16.0",
     "@fontsource/poppins": "4.5.0",
     "@ivangabriele/eslint-config-typescript-react": "2.0.0",
     "@ivangabriele/prettier-config": "2.0.1",
@@ -51,6 +52,7 @@
     "husky": "7.0.4",
     "jabber": "1.2.2",
     "microbundle": "0.14.1",
+    "mkdirp": "1.0.4",
     "ora": "6.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",

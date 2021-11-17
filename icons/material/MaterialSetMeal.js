@@ -1,0 +1,47 @@
+import React from 'react';
+import styled from 'styled-components';
+const ACCENT = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+  SUCCESS: 'success',
+  DANGER: 'danger',
+  WARNING: 'warning',
+  INFO: 'info'
+};
+const ACCENTS = Object.values(ACCENT);
+const SIZE = {
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large'
+};
+const SIZES = Object.values(SIZE);
+const MaterialSetMealSvg = /*#__PURE__*/React.createElement("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  "enable-background": "new 0 0 24 24",
+  height: "24",
+  viewBox: "0 0 24 24",
+  width: "24",
+  ...props
+}, /*#__PURE__*/React.createElement("rect", {
+  fill: "none",
+  height: "24",
+  width: "24"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M21.05,17.56L3.08,18.5L3,17l17.98-0.94L21.05,17.56z M21,19.48H3v1.5h18V19.48z M22,5v7c0,1.1-0.9,2-2,2H4 c-1.1,0-2-0.9-2-2V5c0-1.1,0.9-2,2-2h16C21.1,3,22,3.9,22,5z M20,6c-1.68,0-3.04,0.98-3.21,2.23C16.15,7.5,14.06,5.5,10.25,5.5 c-4.67,0-6.75,3-6.75,3s2.08,3,6.75,3c3.81,0,5.9-2,6.54-2.73C16.96,10.02,18.32,11,20,11V6z"
+}));
+const MaterialSetMeal = (styled.default || styled)(MaterialSetMealSvg).attrs(p => ({
+  accent: p.accent || ACCENT.PRIMARY,
+  size: p.size || SIZE.MEDIUM
+}))`
+  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
+  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
+
+  > path {
+    fill: ${p => p.theme.color[p.accent].active};
+  }
+`;
+MaterialSetMeal.propTypes = {
+  accent: PropTypes.oneOf(ACCENTS),
+  size: PropTypes.oneOf(SIZES)
+};
+export default MaterialSetMeal;

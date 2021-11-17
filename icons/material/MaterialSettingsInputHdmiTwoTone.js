@@ -1,0 +1,48 @@
+import React from 'react';
+import styled from 'styled-components';
+const ACCENT = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+  SUCCESS: 'success',
+  DANGER: 'danger',
+  WARNING: 'warning',
+  INFO: 'info'
+};
+const ACCENTS = Object.values(ACCENT);
+const SIZE = {
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large'
+};
+const SIZES = Object.values(SIZE);
+const MaterialSettingsInputHdmiTwoToneSvg = /*#__PURE__*/React.createElement("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  height: "24",
+  viewBox: "0 0 24 24",
+  width: "24",
+  ...props
+}, /*#__PURE__*/React.createElement("path", {
+  d: "M0 0h24v24H0V0z",
+  fill: "none"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M8 9H7v3.53l2.79 5.58.21.42V20h4v-1.47l.21-.42L17 12.53V9h-1z",
+  opacity: ".3"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M18 7V4c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v3H5v6l3 6v3h8v-3l3-6V7h-1zM8 4h8v3h-2.01V5h-1v2H11V5h-1v2H8V4zm9 8.53l-3 6V20h-4v-1.47l-3-6V9h10v3.53z"
+}));
+const MaterialSettingsInputHdmiTwoTone = (styled.default || styled)(MaterialSettingsInputHdmiTwoToneSvg).attrs(p => ({
+  accent: p.accent || ACCENT.PRIMARY,
+  size: p.size || SIZE.MEDIUM
+}))`
+  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
+  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
+
+  > path {
+    fill: ${p => p.theme.color[p.accent].active};
+  }
+`;
+MaterialSettingsInputHdmiTwoTone.propTypes = {
+  accent: PropTypes.oneOf(ACCENTS),
+  size: PropTypes.oneOf(SIZES)
+};
+export default MaterialSettingsInputHdmiTwoTone;

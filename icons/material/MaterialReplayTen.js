@@ -1,0 +1,51 @@
+import React from 'react';
+import styled from 'styled-components';
+const ACCENT = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+  SUCCESS: 'success',
+  DANGER: 'danger',
+  WARNING: 'warning',
+  INFO: 'info'
+};
+const ACCENTS = Object.values(ACCENT);
+const SIZE = {
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large'
+};
+const SIZES = Object.values(SIZE);
+const MaterialReplayTenSvg = /*#__PURE__*/React.createElement("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  "enable-background": "new 0 0 24 24",
+  height: "24",
+  viewBox: "0 0 24 24",
+  width: "24",
+  ...props
+}, /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("rect", {
+  fill: "none",
+  height: "24",
+  width: "24"
+})), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+  d: "M11.99,5V1l-5,5l5,5V7c3.31,0,6,2.69,6,6s-2.69,6-6,6s-6-2.69-6-6h-2c0,4.42,3.58,8,8,8s8-3.58,8-8S16.41,5,11.99,5z"
+}), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
+  d: "M10.89,16h-0.85v-3.26l-1.01,0.31v-0.69l1.77-0.63h0.09V16z"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M15.17,14.24c0,0.32-0.03,0.6-0.1,0.82s-0.17,0.42-0.29,0.57s-0.28,0.26-0.45,0.33s-0.37,0.1-0.59,0.1 s-0.41-0.03-0.59-0.1s-0.33-0.18-0.46-0.33s-0.23-0.34-0.3-0.57s-0.11-0.5-0.11-0.82V13.5c0-0.32,0.03-0.6,0.1-0.82 s0.17-0.42,0.29-0.57s0.28-0.26,0.45-0.33s0.37-0.1,0.59-0.1s0.41,0.03,0.59,0.1c0.18,0.07,0.33,0.18,0.46,0.33 s0.23,0.34,0.3,0.57s0.11,0.5,0.11,0.82V14.24z M14.32,13.38c0-0.19-0.01-0.35-0.04-0.48s-0.07-0.23-0.12-0.31 s-0.11-0.14-0.19-0.17s-0.16-0.05-0.25-0.05s-0.18,0.02-0.25,0.05s-0.14,0.09-0.19,0.17s-0.09,0.18-0.12,0.31 s-0.04,0.29-0.04,0.48v0.97c0,0.19,0.01,0.35,0.04,0.48s0.07,0.24,0.12,0.32s0.11,0.14,0.19,0.17s0.16,0.05,0.25,0.05 s0.18-0.02,0.25-0.05s0.14-0.09,0.19-0.17s0.09-0.19,0.11-0.32s0.04-0.29,0.04-0.48V13.38z"
+})))));
+const MaterialReplayTen = (styled.default || styled)(MaterialReplayTenSvg).attrs(p => ({
+  accent: p.accent || ACCENT.PRIMARY,
+  size: p.size || SIZE.MEDIUM
+}))`
+  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
+  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
+
+  > path {
+    fill: ${p => p.theme.color[p.accent].active};
+  }
+`;
+MaterialReplayTen.propTypes = {
+  accent: PropTypes.oneOf(ACCENTS),
+  size: PropTypes.oneOf(SIZES)
+};
+export default MaterialReplayTen;
