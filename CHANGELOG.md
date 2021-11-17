@@ -1,3 +1,47 @@
+# [2.0.0-beta.1](https://github.com/singularity-ui/core/compare/v1.10.0...v2.0.0-beta.1) (2021-11-17)
+
+
+### Bug Fixes
+
+* **build:** disable rollup modules preservation ([4f35bcb](https://github.com/singularity-ui/core/commit/4f35bcbfa25e0bebd81383acb4d71ba83c6e5bd9))
+* **build:** fix styled-components imports to make them compatible with Next.js ([f561f2a](https://github.com/singularity-ui/core/commit/f561f2a8db0e8e2c3ebe207837fb519a90424b11))
+* **build:** remove CSS imports from GlobalStyle declaration ([1cf7324](https://github.com/singularity-ui/core/commit/1cf7324f36123bd7a875300a06eeb7bf5df6e091))
+* **build:** split bundle & declarations emission ([73cb60e](https://github.com/singularity-ui/core/commit/73cb60e1212272f600123dcbc274be2d2c15638e))
+* **build:** switch to named exports with preserved modules ([3917e98](https://github.com/singularity-ui/core/commit/3917e9877bb794666ee206e8865cfa3e26b82fb8))
+* **contents:** downgrade react-paginate to v7 for Table ([17a0d14](https://github.com/singularity-ui/core/commit/17a0d142aa2e3f8011eeb4bbda8345b8399837a8))
+* **contents:** replace react-pagination by internal one in Table ([0f8e4ad](https://github.com/singularity-ui/core/commit/0f8e4adeb58090ad688eff0a84f23ebc126c6bc4))
+* **elements:** remove fowarded ref prop types in Button ([51392c7](https://github.com/singularity-ui/core/commit/51392c7610e5636185716bdba16b558ecf0ea049))
+* **elements:** switch prop types to forwarded ref in Button ([acd8d27](https://github.com/singularity-ui/core/commit/acd8d27c4de8e6b4e31f107a204555b15c0910d6))
+* **fields:** hack react-select/async import to make it ESM-compatible ([742cd9a](https://github.com/singularity-ui/core/commit/742cd9a4109020409ae7c98c7046a358de8f4028))
+* **icons:** add missing js ext for externalized import in Icon ([cfe7dbb](https://github.com/singularity-ui/core/commit/cfe7dbbc51ff09652ffe509b982b9d6fdb88590f))
+* **icons:** add missing Material icons props ([0909a56](https://github.com/singularity-ui/core/commit/0909a56e470370fc554bcebe863cfa8ed4732d34))
+* **icons:** add missing PropTypes import in Material icons ([447d80d](https://github.com/singularity-ui/core/commit/447d80d53e50f2722de2b617b9901897ff7e413e))
+* **icons:** fill svg instead of path color in Material icons ([ecda54b](https://github.com/singularity-ui/core/commit/ecda54b6b1635eca0936b10e2aaad1b09bb58e1d))
+* **rollup:** exclude common/constants while building icons ([48a7ae0](https://github.com/singularity-ui/core/commit/48a7ae09820c1e646442a5f63c76e3015f34e365))
+* **rollup:** nake react-select/dist/react-select.cjs.js external ([85a4050](https://github.com/singularity-ui/core/commit/85a4050b8f6217095b1bd6769c1f969448335c82))
+
+
+* build(rollup)!: migrate to ESM ([5ebc537](https://github.com/singularity-ui/core/commit/5ebc53773495f43cba9a327b89d0a2a2516b637b))
+
+
+### Features
+
+* **icons:** integrate Material icons in build ([b315ccb](https://github.com/singularity-ui/core/commit/b315ccb2544653d853ff1fb1954e40a77b2de993))
+* migrate to typescript with dist declarations ([388d6ce](https://github.com/singularity-ui/core/commit/388d6ceaa329e08040ec689ebcaa79a3476218c0))
+* set body & html height in GlobalStyle ([40c3449](https://github.com/singularity-ui/core/commit/40c34496c1172bb480b6677ca74d6f912ce40ab3))
+* set body line-height in GlobalStyle ([194904d](https://github.com/singularity-ui/core/commit/194904d13a140e67fb9e60695727882f27a13f80))
+
+
+### Reverts
+
+* ci(github): set git authoring envs for semantic-release ([d18b785](https://github.com/singularity-ui/core/commit/d18b785a62acb5defdb7253becdabff1c4624c4b))
+
+
+### BREAKING CHANGES
+
+* This package will only be distributed as a JavaScript
+module starting from version 3.0.0 and greater.
+
 # [2.0.0-alpha.18](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.17...v2.0.0-alpha.18) (2021-11-17)
 
 
