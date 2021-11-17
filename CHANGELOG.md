@@ -1,3 +1,10 @@
+# [2.0.0-alpha.13](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.12...v2.0.0-alpha.13) (2021-11-17)
+
+
+### Bug Fixes
+
+* **build:** split bundle & declarations emission ([73cb60e](https://github.com/singularity-ui/core/commit/73cb60e1212272f600123dcbc274be2d2c15638e))
+
 # [2.0.0-alpha.12](https://github.com/singularity-ui/core/compare/v2.0.0-alpha.11...v2.0.0-alpha.12) (2021-11-17)
 
 
