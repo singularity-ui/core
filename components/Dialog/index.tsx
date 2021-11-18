@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { FunctionComponent, HTMLAttributes } from 'react'
+import styled, { DefaultTheme, StyledComponent } from 'styled-components'
 
 import { Action } from './Action'
 import { Body } from './Body'
@@ -19,7 +19,12 @@ const StyledDialog = styled.div`
   top: 0;
 `
 
-export const Dialog = Object.assign(
+interface DialogComponent extends FunctionComponent<HTMLAttributes<any>> {
+  Action: StyledComponent<'div', DefaultTheme>
+  Body: StyledComponent<'div', DefaultTheme>
+  Title: StyledComponent<'h4', DefaultTheme>
+}
+export const Dialog: DialogComponent = Object.assign(
   ({ children, ...props }) => (
     <StyledDialog {...props}>
       <Overlay />
