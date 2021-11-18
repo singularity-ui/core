@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { ForwardRefRenderFunction, InputHTMLAttributes } from 'react'
 import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../common/constants'
@@ -7,7 +7,7 @@ import { SIZE, SIZES } from '../common/constants'
 const StyledLabel = styled.label<{
   isChecked: boolean
   isDisabled: boolean
-  size: 'large' | 'medium' | 'small'
+  size: Common.Size
 }>`
   align-items: center;
   background-color: ${p => p.theme.color.body.white};
@@ -34,7 +34,7 @@ const StyledLabel = styled.label<{
 
 const Letter = styled.span<{
   isChecked: boolean
-  size: 'large' | 'medium' | 'small'
+  size: Common.Size
 }>`
   align-items: center;
   background-color: ${p => (p.isChecked ? p.theme.color.primary.active : p.theme.color.secondary.default)};
@@ -68,78 +68,69 @@ const Error = styled.p`
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
-export const Radio = React.forwardRef<any, any>(
-  ({ className, error, helper, label, labelTextProps, letter, onChange, size, ...props }, ref) => {
-    const $input = React.useRef(null)
-    const $labelText = React.useRef(null)
-    const [isChecked, setIsChecked] = React.useState(props.checked === true || props.defaultChecked === true)
+type RadioProps = Omit<InputHTMLAttributes<any>, 'size'> & {
+  className?: string
+  error?: string
+  helper?: string
+  label?: string
+  letter?: string
+  size?: Common.Size
+}
+const RadioWithProps: ForwardRefRenderFunction<HTMLInputElement, RadioProps> = (
+  { className, error, helper, label, letter, onChange, size = SIZE.MEDIUM, ...props },
+  ref,
+) => {
+  const [isChecked, setIsChecked] = React.useState(props.checked === true || props.defaultChecked === true)
 
-    const isDisabled = Boolean(props.disabled)
+  const isDisabled = Boolean(props.disabled)
 
-    React.useImperativeHandle(ref, () => ({
-      get input() {
-        return $input.current
-      },
-      get labelText() {
-        return $labelText.current
-      },
-    }))
+  React.useEffect(() => {
+    setIsChecked(props.checked === true || props.defaultChecked === true)
+  }, [props.checked, props.defaultChecked])
 
-    React.useEffect(() => {
-      setIsChecked(props.checked === true || props.defaultChecked === true)
-    }, [props.checked, props.defaultChecked])
-
-    const handleOnChange = event => {
-      if (props.disabled) {
-        return
-      }
-
-      setIsChecked(event.target.checked)
-
-      if (onChange) {
-        onChange(event)
-      }
+  const handleOnChange = event => {
+    if (props.disabled) {
+      return
     }
 
-    return (
-      <div className={className}>
-        {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-        <StyledLabel className="Choice" isChecked={isChecked} isDisabled={isDisabled} size={size}>
-          <input ref={$input} onChange={handleOnChange} type="radio" {...props} />
+    setIsChecked(event.target.checked)
 
-          {letter && (
-            <Letter className="Letter" isChecked={isChecked} size={size}>
-              {letter}
-            </Letter>
-          )}
-          <LabelText ref={$labelText} className="LabelText" isChecked={isChecked} {...labelTextProps}>
-            {label}
-          </LabelText>
-        </StyledLabel>
+    if (onChange) {
+      onChange(event)
+    }
+  }
 
-        {!error && helper && <Helper className="Helper">{helper}</Helper>}
+  return (
+    <div className={className}>
+      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+      <StyledLabel className="Choice" isChecked={isChecked} isDisabled={isDisabled} size={size}>
+        <input ref={ref} onChange={handleOnChange} type="radio" {...props} />
 
-        {error && <Error className="Error">{error}</Error>}
-      </div>
-    )
-  },
-)
+        {letter && (
+          <Letter className="Letter" isChecked={isChecked} size={size}>
+            {letter}
+          </Letter>
+        )}
+        <LabelText className="LabelText" isChecked={isChecked}>
+          {label}
+        </LabelText>
+      </StyledLabel>
+
+      {!error && helper && <Helper className="Helper">{helper}</Helper>}
+
+      {error && <Error className="Error">{error}</Error>}
+    </div>
+  )
+}
+
+export const Radio = React.forwardRef(RadioWithProps)
 
 Radio.displayName = 'Radio'
-
-Radio.defaultProps = {
-  error: null,
-  helper: null,
-  labelTextProps: {},
-  letter: null,
-  size: SIZE.MEDIUM,
-}
 
 Radio.propTypes = {
   error: PropTypes.string,
   helper: PropTypes.string,
   label: PropTypes.string.isRequired,
-  labelTextProps: PropTypes.object,
   letter: PropTypes.string,
   size: PropTypes.oneOf(SIZES),
 }

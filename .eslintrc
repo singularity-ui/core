@@ -33,6 +33,7 @@
       "error",
       { "ignore": ["checked", "children", "className", "disabled", "defaultChecked", "onChange"] }
     ],
+    "react/require-default-props": "off",
 
     "react-hooks/exhaustive-deps": "off"
   },

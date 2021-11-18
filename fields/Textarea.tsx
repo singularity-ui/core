@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { ForwardRefRenderFunction, TextareaHTMLAttributes } from 'react'
 import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../common/constants'
 
 const Label = styled.label<{
-  size: 'large' | 'medium' | 'small'
+  size: Common.Size
 }>`
   display: block;
   font-size: ${p => Math.round(p.theme.typography.size[p.size] * 80)}%;
@@ -15,7 +15,7 @@ const Label = styled.label<{
 
 const StyledTextarea = styled.textarea<{
   hasError: boolean
-  size: 'large' | 'medium' | 'small'
+  size: Common.Size
 }>`
   background-color: ${p => p.theme.color.body.white};
   border: solid 1px ${p => (p.hasError ? p.theme.color.danger.default : p.theme.color.secondary.default)};
@@ -55,7 +55,17 @@ const Error = styled.p`
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
-export const Textarea = React.forwardRef<any, any>(({ className, error, helper, label, size, ...props }, ref) => {
+type TextareaProps = TextareaHTMLAttributes<any> & {
+  className?: string
+  error?: string
+  helper?: string
+  label?: string
+  size?: Common.Size
+}
+const TextareaWithRef: ForwardRefRenderFunction<HTMLTextAreaElement, TextareaProps> = (
+  { className, error, helper, label, size = SIZE.MEDIUM, ...props },
+  ref,
+) => {
   const hasError = typeof error === 'string' && error.length > 0
 
   return (
@@ -73,16 +83,11 @@ export const Textarea = React.forwardRef<any, any>(({ className, error, helper, 
       {error && <Error className="Error">{error}</Error>}
     </div>
   )
-})
+}
+
+export const Textarea = React.forwardRef(TextareaWithRef)
 
 Textarea.displayName = 'Textarea'
-
-Textarea.defaultProps = {
-  error: null,
-  helper: null,
-  label: null,
-  size: SIZE.MEDIUM,
-}
 
 Textarea.propTypes = {
   error: PropTypes.string,

@@ -5,8 +5,8 @@ import styled from 'styled-components'
 import { ACCENT, ACCENTS, SIZE, SIZES } from '../common/constants'
 
 interface IconProps {
-  accent: 'danger' | 'info' | 'primary' | 'secondary' | 'success' | 'warning'
-  size: 'large' | 'medium' | 'small'
+  accent: Common.Accent
+  size: Common.Size
 }
 
 const Icon = styled.svg.attrs<Partial<IconProps>>(p => ({

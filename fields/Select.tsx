@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { ForwardRefRenderFunction } from 'react'
 import ReactSelect from 'react-select'
 import ReactSelectAsync from 'react-select/async'
+import { StateManagerProps } from 'react-select/dist/declarations/src/useStateManager'
 import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../common/constants'
 
 const Label = styled.label<{
-  size: 'large' | 'medium' | 'small'
+  size: Common.Size
 }>`
   display: block;
   font-size: ${p => p.theme.typography.size[p.size] * 80}%;
@@ -17,7 +18,7 @@ const Label = styled.label<{
 
 const StyledSelect = styled(ReactSelect)<{
   hasError: boolean
-  size: 'large' | 'medium' | 'small'
+  size: Common.Size
 }>`
   .Select__control {
     background-color: ${p => p.theme.color.body.white};
@@ -94,7 +95,7 @@ const StyledSelect = styled(ReactSelect)<{
     height: calc(1.5rem * ${p => p.theme.typography.size[p.size]});
     width: calc(1.5rem * ${p => p.theme.typography.size[p.size]});
   }
-`
+` as any
 
 const Helper = styled.p`
   margin: 0;
@@ -108,45 +109,48 @@ const Error = styled.p`
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
-export const Select = React.forwardRef<any, any>(
-  ({ className, error, helper, isAsync, label, size, ...props }, ref) => {
-    const hasError = typeof error === 'string' && error.length > 0
+type SelectProps = StateManagerProps & {
+  className?: string
+  error?: string
+  helper?: string
+  isAsync?: boolean
+  label?: string
+  size?: Common.Size
+}
+const SelectWithRef: ForwardRefRenderFunction<any, SelectProps> = (
+  { className, error, helper, isAsync = false, label, size = SIZE.MEDIUM, ...props },
+  ref,
+) => {
+  const hasError = typeof error === 'string' && error.length > 0
 
-    return (
-      <div className={className}>
-        {label && (
-          <Label className="Label" size={size}>
-            {label}
-          </Label>
-        )}
+  return (
+    <div className={className}>
+      {label && (
+        <Label className="Label" size={size}>
+          {label}
+        </Label>
+      )}
 
-        <StyledSelect
-          ref={ref}
-          as={isAsync ? ReactSelectAsync : null}
-          className="Select"
-          classNamePrefix="Select"
-          hasError={hasError}
-          size={size}
-          {...props}
-        />
+      <StyledSelect
+        ref={ref}
+        as={isAsync ? ReactSelectAsync : undefined}
+        className="Select"
+        classNamePrefix="Select"
+        hasError={hasError}
+        size={size}
+        {...props}
+      />
 
-        {!error && helper && <Helper className="Helper">{helper}</Helper>}
+      {!error && helper && <Helper className="Helper">{helper}</Helper>}
 
-        {error && <Error className="Error">{error}</Error>}
-      </div>
-    )
-  },
-)
+      {error && <Error className="Error">{error}</Error>}
+    </div>
+  )
+}
+
+export const Select = React.forwardRef(SelectWithRef)
 
 Select.displayName = 'Select'
-
-Select.defaultProps = {
-  error: null,
-  helper: null,
-  isAsync: false,
-  label: null,
-  size: SIZE.MEDIUM,
-}
 
 Select.propTypes = {
   error: PropTypes.string,

@@ -1,36 +1,36 @@
 /* eslint-disable sort-keys-fix/sort-keys-fix */
 
-export const ACCENT = {
+export const ACCENT: {
+  [key: string]: Common.Accent
+} = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
   SUCCESS: 'success',
   DANGER: 'danger',
   WARNING: 'warning',
   INFO: 'info',
-} as {
-  [key: string]: 'danger' | 'info' | 'primary' | 'secondary' | 'success' | 'warning'
 }
 
-export const ACCENTS = Object.values(ACCENT) as Array<
-  'danger' | 'info' | 'primary' | 'secondary' | 'success' | 'warning'
->
+export const ACCENTS: Array<Common.Accent> = Object.values(ACCENT)
 
-export const SIZE = {
+export const SIZE: {
+  [key: string]: Common.Size
+} = {
   SMALL: 'small',
   MEDIUM: 'medium',
   LARGE: 'large',
-} as {
-  [key: string]: 'medium' | 'large' | 'small'
 }
 
-export const SIZES = Object.values(SIZE) as Array<'medium' | 'large' | 'small'>
+export const SIZES: Array<Common.Size> = Object.values(SIZE)
 
-export const SORT_ORDER = {
+export const SORT_ORDER: {
+  [key: string]: Common.SortOrder
+} = {
   ASC: 'asc',
   DESC: 'desc',
 }
 
-export const SORT_ORDERS = Object.values(SORT_ORDER)
+export const SORT_ORDERS: Array<Common.SortOrder> = Object.values(SORT_ORDER)
 
 export const TYPE = {
   ACTION: 'action',

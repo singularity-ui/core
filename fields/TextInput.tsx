@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { ForwardRefRenderFunction, InputHTMLAttributes } from 'react'
 import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../common/constants'
 
 const Label = styled.label<{
-  size: 'large' | 'medium' | 'small'
+  size: Common.Size
 }>`
   display: block;
   font-size: ${p => Math.round(p.theme.typography.size[p.size] * 80)}%;
@@ -14,17 +14,16 @@ const Label = styled.label<{
 `
 
 const StyledInput = styled.input<{
+  _size: Common.Size
   hasError: boolean
-  size: 'large' | 'medium' | 'small'
 }>`
-  background-color: ${p => (p as any).theme.color.body.white};
-  border: solid 1px
-    ${p => ((p as any).hasError ? (p as any).theme.color.danger.default : (p as any).theme.color.secondary.default)};
-  border-radius: ${p => (p as any).theme.appearance.borderRadius[(p as any).size]};
+  background-color: ${p => p.theme.color.body.white};
+  border: solid 1px ${p => (p.hasError ? p.theme.color.danger.default : p.theme.color.secondary.default)};
+  border-radius: ${p => p.theme.appearance.borderRadius[p._size]};
   font-family: inherit;
-  font-size: ${p => (p as any).theme.typography.size[(p as any).size] * 100}%;
+  font-size: ${p => p.theme.typography.size[p._size] * 100}%;
   font-weight: 400;
-  padding: ${p => (p as any).theme.padding.input[(p as any).size]};
+  padding: ${p => p.theme.padding.input[p._size]};
   transition-delay: 0s, 0s, 0s, 0s;
   transition-duration: 0.15s, 0.15s, 0.15s, 0.15s;
   transition-property: color, background-color, border-color, box-shadow;
@@ -36,15 +35,13 @@ const StyledInput = styled.input<{
   }
 
   :focus {
-    box-shadow: 0 0 0 1px
-      ${p => ((p as any).hasError ? (p as any).theme.color.danger.active : (p as any).theme.color.secondary.active)};
+    box-shadow: 0 0 0 1px ${p => (p.hasError ? p.theme.color.danger.active : p.theme.color.secondary.active)};
   }
 
   :hover {
-    border: solid 1px
-      ${p => ((p as any).hasError ? (p as any).theme.color.danger.active : (p as any).theme.color.secondary.active)};
+    border: solid 1px ${p => (p.hasError ? p.theme.color.danger.active : p.theme.color.secondary.active)};
   }
-`
+` as any
 
 const Helper = styled.p`
   margin: 0;
@@ -58,7 +55,17 @@ const Error = styled.p`
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
-export const TextInput = React.forwardRef<any, any>(({ className, error, helper, label, size, ...props }, ref) => {
+type TextInputProps = Omit<InputHTMLAttributes<any>, 'size'> & {
+  className?: string
+  error?: string
+  helper?: string
+  label?: string
+  size?: Common.Size
+}
+const TextInputWithRef: ForwardRefRenderFunction<HTMLInputElement, TextInputProps> = (
+  { className, error, helper, label, size = SIZE.MEDIUM, ...props },
+  ref,
+) => {
   const hasError = typeof error === 'string' && error.length > 0
 
   return (
@@ -76,16 +83,11 @@ export const TextInput = React.forwardRef<any, any>(({ className, error, helper,
       {error && <Error className="Error">{error}</Error>}
     </div>
   )
-})
+}
+
+export const TextInput = React.forwardRef(TextInputWithRef)
 
 TextInput.displayName = 'TextInput'
-
-TextInput.defaultProps = {
-  error: null,
-  helper: null,
-  label: null,
-  size: SIZE.MEDIUM,
-}
 
 TextInput.propTypes = {
   error: PropTypes.string,

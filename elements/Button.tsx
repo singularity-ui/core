@@ -1,14 +1,14 @@
 /* eslint-disable react/require-default-props */
 
 import PropTypes from 'prop-types'
-import React, { ButtonHTMLAttributes, ForwardRefExoticComponent, FunctionComponent } from 'react'
+import React, { ButtonHTMLAttributes, ForwardRefRenderFunction } from 'react'
 import styled from 'styled-components'
 
 import { ACCENT, ACCENTS, SIZE, SIZES } from '../common/constants'
 
 const StyledButton = styled.button<{
-  accent: 'danger' | 'info' | 'primary' | 'secondary' | 'success' | 'warning'
-  size: 'large' | 'medium' | 'small'
+  accent: Common.Accent
+  size: Common.Size
 }>`
   background-color: ${p => p.theme.color[p.accent].default};
   border: solid 1px ${p => p.theme.color[p.accent].default};
@@ -38,12 +38,12 @@ const StyledButton = styled.button<{
 `
 
 type ButtonProps = ButtonHTMLAttributes<any> & {
-  accent?: 'danger' | 'info' | 'primary' | 'secondary' | 'success' | 'warning'
+  accent?: Common.Accent
   children: any
-  size?: 'large' | 'medium' | 'small'
+  size?: Common.Size
   type?: 'button' | 'submit' | 'reset'
 }
-export const ButtonWithoutRef: FunctionComponent<ButtonProps> = (
+export const ButtonWithRef: ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = (
   { accent = ACCENT.PRIMARY, children, size = SIZE.MEDIUM, type = 'button', ...props }: ButtonProps,
   ref,
 ) => (
@@ -52,7 +52,7 @@ export const ButtonWithoutRef: FunctionComponent<ButtonProps> = (
   </StyledButton>
 )
 
-export const Button: ForwardRefExoticComponent<ButtonProps> = React.forwardRef(ButtonWithoutRef as any)
+export const Button = React.forwardRef(ButtonWithRef)
 
 Button.displayName = 'Button'
 

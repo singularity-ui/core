@@ -87,7 +87,7 @@ const StyledTdBoolean = styled(StyledTdIcon)<{
 `
 
 const StyledTdAction = styled(StyledTdIcon)<{
-  accent: 'danger' | 'info' | 'primary' | 'secondary' | 'success' | 'warning'
+  accent: Common.Accent
 }>`
   cursor: pointer;
 

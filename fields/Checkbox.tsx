@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { ForwardRefRenderFunction, InputHTMLAttributes } from 'react'
 import { CheckSquare, Square } from 'react-feather'
 import styled from 'styled-components'
 
@@ -7,7 +7,7 @@ import { SIZE, SIZES } from '../common/constants'
 
 const StyledLabel = styled.label<{
   hasError: boolean
-  size: 'large' | 'medium' | 'small'
+  size: Common.Size
 }>`
   align-items: center;
   border-bottom: solid 1px transparent;
@@ -66,68 +66,57 @@ const Error = styled.p`
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
-export const Checkbox = React.forwardRef<any, any>(
-  ({ className, error, helper, label, labelTextProps, onChange, size, ...props }, ref) => {
-    const $input = React.useRef(null)
-    const $labelText = React.useRef(null)
-    const [isChecked, setIsChecked] = React.useState(props.checked === true || props.defaultChecked === true)
+type CheckboxProps = Omit<InputHTMLAttributes<any>, 'size'> & {
+  className?: string
+  error?: string
+  helper?: string
+  label?: string
+  size?: Common.Size
+}
+export const CheckboxWithProps: ForwardRefRenderFunction<HTMLInputElement, CheckboxProps> = (
+  { className, error, helper, label, onChange, size = SIZE.MEDIUM, ...props },
+  ref,
+) => {
+  const [isChecked, setIsChecked] = React.useState(props.checked === true || props.defaultChecked === true)
 
-    const hasError = typeof error === 'string' && error.length > 0
+  const hasError = typeof error === 'string' && error.length > 0
 
-    React.useImperativeHandle(ref, () => ({
-      get input() {
-        return $input.current
-      },
-      get labelText() {
-        return $labelText.current
-      },
-    }))
+  React.useEffect(() => {
+    setIsChecked(props.checked === true || props.defaultChecked === true)
+  }, [props.checked, props.defaultChecked])
 
-    React.useEffect(() => {
-      setIsChecked(props.checked === true || props.defaultChecked === true)
-    }, [props.checked, props.defaultChecked])
+  const handleOnChange = event => {
+    setIsChecked(event.target.checked)
 
-    const handleOnChange = event => {
-      setIsChecked(event.target.checked)
-
-      if (onChange) {
-        onChange(event)
-      }
+    if (onChange) {
+      onChange(event)
     }
+  }
 
-    return (
-      <div className={className}>
-        {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-        <StyledLabel className="Checkbox" hasError={hasError} size={size}>
-          <input ref={$input} onChange={handleOnChange} type="checkbox" {...props} />
+  return (
+    <div className={className}>
+      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+      <StyledLabel className="Checkbox" hasError={hasError} size={size}>
+        <input ref={ref} onChange={handleOnChange} type="checkbox" {...props} />
 
-          {isChecked ? <CheckSquare /> : <Square />}
-          <LabelText ref={$labelText} isChecked={isChecked} {...labelTextProps}>
-            {label}
-          </LabelText>
-        </StyledLabel>
+        {isChecked ? <CheckSquare /> : <Square />}
+        <LabelText isChecked={isChecked}>{label}</LabelText>
+      </StyledLabel>
 
-        {!error && helper && <Helper className="Helper">{helper}</Helper>}
+      {!error && helper && <Helper className="Helper">{helper}</Helper>}
 
-        {error && <Error className="Error">{error}</Error>}
-      </div>
-    )
-  },
-)
+      {error && <Error className="Error">{error}</Error>}
+    </div>
+  )
+}
+
+export const Checkbox = React.forwardRef(CheckboxWithProps)
 
 Checkbox.displayName = 'Checkbox'
-
-Checkbox.defaultProps = {
-  error: null,
-  helper: null,
-  labelTextProps: {},
-  size: SIZE.MEDIUM,
-}
 
 Checkbox.propTypes = {
   error: PropTypes.string,
   helper: PropTypes.string,
   label: PropTypes.string.isRequired,
-  labelTextProps: PropTypes.object,
   size: PropTypes.oneOf(SIZES),
 }
