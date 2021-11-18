@@ -16,6 +16,7 @@ export default {
       control: { type: 'inline-radio' },
     },
     type: {
+      options: ['button', 'reset', 'submit'],
       control: { type: 'inline-radio' },
     },
   },
