@@ -76,7 +76,7 @@ const TextInputWithRef: ForwardRefRenderFunction<HTMLInputElement, TextInputProp
         </Label>
       )}
 
-      <StyledInput ref={ref} className="TextInput" hasError={hasError} size={size} {...props} />
+      <StyledInput ref={ref} _size={size} className="TextInput" hasError={hasError} {...props} />
 
       {!error && helper && <Helper className="Helper">{helper}</Helper>}
 
