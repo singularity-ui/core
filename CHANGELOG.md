@@ -4,6 +4,14 @@
 ### Bug Fixes
 
 * **fields:** add missing types ([b4ad2a0](https://github.com/singularity-ui/core/commit/b4ad2a0b3dad67869cbd571f26f212ee51d52ff3))
+* **fields:** use underscore to prevent size prop collision in TextInput ([37315af](https://github.com/singularity-ui/core/commit/37315af531adf148944a259d085a915f1c3a1183))
+
+# [2.0.0-beta.2](https://github.com/singularity-ui/core/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2021-11-18)
+
+
+### Bug Fixes
+
+* **fields:** add missing types ([b4ad2a0](https://github.com/singularity-ui/core/commit/b4ad2a0b3dad67869cbd571f26f212ee51d52ff3))
 
 # [2.0.0-beta.1](https://github.com/singularity-ui/core/compare/v1.10.0...v2.0.0-beta.1) (2021-11-17)
 
