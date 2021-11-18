@@ -1,4 +1,4 @@
 #!/bin/bash
 
-npm version $1
+npm version --no-git-tag-version $1
 yarn
