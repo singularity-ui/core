@@ -10,7 +10,8 @@ import { LoadingCell } from './LoadingCell'
 import { NoDataCell } from './NoDataCell'
 import { Pagination } from './Pagination'
 import { Row } from './Row'
-import { ColumnShape } from './shapes'
+import { ColumnPropType } from './shapes'
+import { TableColumnProps, TableColumnKeyFunction } from './types'
 
 const Box = styled.div`
   table {
@@ -31,7 +32,7 @@ const Box = styled.div`
 `
 
 type TableProps = TableHTMLAttributes<any> & {
-  columns?: any
+  columns: TableColumnProps[]
   data: Common.Collection
   defaultSortedKey?: string
   defaultSortedKeyIsDesc?: boolean
@@ -46,7 +47,7 @@ export const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps
   const [sortedData, setSortedData] = React.useState<Common.Collection>(
     sort(data, defaultSortedKey, defaultSortedKeyIsDesc),
   )
-  const [sortedKey, setSortedKey] = React.useState<string | undefined>(defaultSortedKey)
+  const [sortedKey, setSortedKey] = React.useState<string | TableColumnKeyFunction | undefined>(defaultSortedKey)
   const [sortedKeyOrder, setSortedKeyOrder] = React.useState<Common.SortOrder>(getSortOrder(defaultSortedKeyIsDesc))
 
   const isEmpty = data.length === 0
@@ -74,7 +75,7 @@ export const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps
   }, [data])
 
   React.useEffect(() => {
-    if (defaultSortedKey === null) {
+    if (defaultSortedKey === undefined) {
       return
     }
 
@@ -86,15 +87,11 @@ export const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps
       <table ref={ref} {...props}>
         <thead>
           <tr>
-            {columns.map(({ key: dataKey, ...columnProps }, index) => (
-              <Head
-                key={String(index)}
-                dataKey={dataKey}
-                onSort={sortDataByKey}
-                sortOrder={dataKey === sortedKey ? sortedKeyOrder : null}
-                {...columnProps}
-              />
-            ))}
+            {columns.map((column: TableColumnProps, index: number) => {
+              const sortOrder = column.type !== 'action' && column.key === sortedKey ? sortedKeyOrder : undefined
+
+              return <Head key={String(index)} column={column} onSort={sortDataByKey} sortOrder={sortOrder} />
+            })}
           </tr>
         </thead>
         <tbody>
@@ -112,7 +109,7 @@ export const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps
 
           {!isLoading &&
             !isEmpty &&
-            visibleData.map(dataRow => <Row key={generateKeyFromValue(dataRow)} columns={columns} data={dataRow} />)}
+            visibleData.map(dataRow => <Row key={generateKeyFromValue(dataRow)} columns={columns} dataRow={dataRow} />)}
         </tbody>
       </table>
 
@@ -126,10 +123,10 @@ export const Table = React.forwardRef(TableWithRef)
 Table.displayName = 'Table'
 
 Table.propTypes = {
-  columns: BetterPropTypes.arrayOf(ColumnShape).isRequired,
-  data: BetterPropTypes.arrayOf(BetterPropTypes.any).isRequired,
-  defaultSortedKey: BetterPropTypes.string.isNotNull,
-  defaultSortedKeyIsDesc: BetterPropTypes.bool.isNotNull,
-  isLoading: BetterPropTypes.bool.isNotNull,
-  perPage: BetterPropTypes.number.isNotNull,
+  columns: BetterPropTypes.arrayOf(ColumnPropType.isRequired).isRequired,
+  data: BetterPropTypes.arrayOf(BetterPropTypes.any.isRequired).isRequired,
+  defaultSortedKey: BetterPropTypes.string.isOptionalButNotNull,
+  defaultSortedKeyIsDesc: BetterPropTypes.bool.isOptionalButNotNull,
+  isLoading: BetterPropTypes.bool.isOptionalButNotNull,
+  perPage: BetterPropTypes.number.isOptionalButNotNull,
 }

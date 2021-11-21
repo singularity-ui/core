@@ -90,8 +90,8 @@ export const Textarea = React.forwardRef(TextareaWithRef)
 Textarea.displayName = 'Textarea'
 
 Textarea.propTypes = {
-  error: BetterPropTypes.string.isNotNull,
-  helper: BetterPropTypes.string.isNotNull,
-  label: BetterPropTypes.string.isNotNull,
-  size: BetterPropTypes.oneOf(SIZES).isNotNull,
+  error: BetterPropTypes.string.isOptionalButNotNull,
+  helper: BetterPropTypes.string.isOptionalButNotNull,
+  label: BetterPropTypes.string.isOptionalButNotNull,
+  size: BetterPropTypes.oneOf(SIZES).isOptionalButNotNull,
 }

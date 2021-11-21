@@ -128,9 +128,9 @@ export const Radio = React.forwardRef(RadioWithProps)
 Radio.displayName = 'Radio'
 
 Radio.propTypes = {
-  error: BetterPropTypes.string.isNotNull,
-  helper: BetterPropTypes.string.isNotNull,
+  error: BetterPropTypes.string.isOptionalButNotNull,
+  helper: BetterPropTypes.string.isOptionalButNotNull,
   label: BetterPropTypes.string.isRequired,
-  letter: BetterPropTypes.string.isNotNull,
-  size: BetterPropTypes.oneOf(SIZES).isNotNull,
+  letter: BetterPropTypes.string.isOptionalButNotNull,
+  size: BetterPropTypes.oneOf(SIZES).isOptionalButNotNull,
 }

@@ -90,8 +90,8 @@ export const TextInput = React.forwardRef(TextInputWithRef)
 TextInput.displayName = 'TextInput'
 
 TextInput.propTypes = {
-  error: BetterPropTypes.string.isNotNull,
-  helper: BetterPropTypes.string.isNotNull,
-  label: BetterPropTypes.string.isNotNull,
-  size: BetterPropTypes.oneOf(SIZES).isNotNull,
+  error: BetterPropTypes.string.isOptionalButNotNull,
+  helper: BetterPropTypes.string.isOptionalButNotNull,
+  label: BetterPropTypes.string.isOptionalButNotNull,
+  size: BetterPropTypes.oneOf(SIZES).isOptionalButNotNull,
 }

@@ -1,13 +1,13 @@
-import Jabber from 'jabber'
+import DumDum from 'dumdum'
 import React from 'react'
 import styled from 'styled-components'
 
 import { Tasker as SuiTasker } from '../..'
 
-const jabber = new Jabber()
+const dumdum = DumDum.create()
 
 const makeTasks = () =>
-  new Array(3).fill(null).map(() => () => <SuiTasker.Task>{jabber.createParagraph}</SuiTasker.Task>)
+  new Array(3).fill(null).map(() => () => <SuiTasker.Task>{dumdum.text([12, 100])}</SuiTasker.Task>)
 
 const StyledTasker = styled(SuiTasker)`
   width: 100%;

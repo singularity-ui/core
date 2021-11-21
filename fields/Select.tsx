@@ -153,9 +153,9 @@ export const Select = React.forwardRef(SelectWithRef)
 Select.displayName = 'Select'
 
 Select.propTypes = {
-  error: BetterPropTypes.string.isNotNull,
-  helper: BetterPropTypes.string.isNotNull,
-  isAsync: BetterPropTypes.bool.isNotNull,
-  label: BetterPropTypes.string.isNotNull,
-  size: BetterPropTypes.oneOf(SIZES).isNotNull,
+  error: BetterPropTypes.string.isOptionalButNotNull,
+  helper: BetterPropTypes.string.isOptionalButNotNull,
+  isAsync: BetterPropTypes.bool.isOptionalButNotNull,
+  label: BetterPropTypes.string.isOptionalButNotNull,
+  size: BetterPropTypes.oneOf(SIZES).isOptionalButNotNull,
 }

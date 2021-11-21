@@ -115,8 +115,8 @@ export const Checkbox = React.forwardRef(CheckboxWithProps)
 Checkbox.displayName = 'Checkbox'
 
 Checkbox.propTypes = {
-  error: BetterPropTypes.string.isNotNull,
-  helper: BetterPropTypes.string.isNotNull,
+  error: BetterPropTypes.string.isOptionalButNotNull,
+  helper: BetterPropTypes.string.isOptionalButNotNull,
   label: BetterPropTypes.string.isRequired,
-  size: BetterPropTypes.oneOf(SIZES).isNotNull,
+  size: BetterPropTypes.oneOf(SIZES).isOptionalButNotNull,
 }

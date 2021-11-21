@@ -57,7 +57,7 @@ export const Button = React.forwardRef(ButtonWithRef)
 Button.displayName = 'Button'
 
 Button.propTypes = {
-  accent: BetterPropTypes.oneOf(ACCENTS).isNotNull,
-  size: BetterPropTypes.oneOf(SIZES).isNotNull,
-  type: BetterPropTypes.oneOf<'button' | 'submit' | 'reset'>(['button', 'submit', 'reset']).isNotNull,
+  accent: BetterPropTypes.oneOf(ACCENTS).isOptionalButNotNull,
+  size: BetterPropTypes.oneOf(SIZES).isOptionalButNotNull,
+  type: BetterPropTypes.oneOf<'button' | 'submit' | 'reset'>(['button', 'submit', 'reset']).isOptionalButNotNull,
 }

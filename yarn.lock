@@ -4210,10 +4210,10 @@ better-opn@^2.1.1:
   dependencies:
     open "^7.0.3"
 
-better-prop-types@1.0.0-alpha.4:
-  version "1.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/better-prop-types/-/better-prop-types-1.0.0-alpha.4.tgz#7b20b7f4b6914c816b90872466c7b4a123e26578"
-  integrity sha512-I8niglXzzKTOnn8tJwGm5RUotV24vuEo2jl8oqNRF0M/FnBDk+SKDlok7YfAEd+HEYjEof7nPklPoQw+PWA5uQ==
+better-prop-types@alpha:
+  version "1.0.0-alpha.6"
+  resolved "https://registry.yarnpkg.com/better-prop-types/-/better-prop-types-1.0.0-alpha.6.tgz#cfe136add18e2ab40968f08a31994ca8c5b0aaf9"
+  integrity sha512-TrU8CtYSWIL5+hwKIeJMSTh1lbxhG88y2Ez6QAPXNVBCZeh14GNOinvAi7czHlfXCAuZAmIZhT3ZtvnswZcXMQ==
   dependencies:
     "@types/prop-types" "15.7.4"
     prop-types "15.7.2"
@@ -6052,6 +6052,11 @@ downshift@^6.0.15:
     prop-types "^15.7.2"
     react-is "^17.0.2"
     tslib "^2.3.0"
+
+dumdum@1.0.0-alpha.5:
+  version "1.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/dumdum/-/dumdum-1.0.0-alpha.5.tgz#e087b01275df6ad0e29d784367553851240c2608"
+  integrity sha512-gNPqZhYxub2TdHAszA9YDKnCUuAkSmIUvXWXvS9Axozh0Xek0CjKjj6ylheA1/4ufrtjYpOrWAubCG0bQ8Y6xw==
 
 duplexer2@~0.1.0:
   version "0.1.4"

@@ -4,8 +4,8 @@ import React, { FunctionComponent } from 'react'
 import { CheckCircle, XCircle } from 'react-feather'
 import styled from 'styled-components'
 
-import { ColumnShape } from './shapes'
-import { TableActionColumn, TableBooleanColumn, TableColumn } from './types'
+import { ColumnPropType } from './shapes'
+import { TableActionColumnProps, TableBooleanColumnProps, TableColumnProps } from './types'
 
 const ERROR_SCOPE = '🌌 @singularity/core/Table:'
 
@@ -107,13 +107,13 @@ const StyledTdToggle = styled(StyledTdIcon)`
   cursor: pointer;
 `
 
-const isId = maybeId => ['number', 'string'].includes(typeof maybeId)
+const isId = (maybeId: any) => ['number', 'string'].includes(typeof maybeId)
 const isMongoObjectId = R.pathEq(['constructor', 'name'], 'ObjectId')
 
 const path = (key: string, data: Common.CollectionItem) => R.path(key.split('.'), data) as any
 
 const getId = (data: Common.CollectionItem): any => {
-  const maybeId = data.id || data._id
+  const maybeId = data.id !== undefined ? data.id : data._id
 
   if (isMongoObjectId(maybeId)) {
     return maybeId.toString()
@@ -123,12 +123,12 @@ const getId = (data: Common.CollectionItem): any => {
 }
 
 type ActionCellProps = {
-  column: TableActionColumn
-  data: Common.CollectionItem
+  column: TableActionColumnProps
+  dataRow: Common.CollectionItem
 }
-export const ActionCell: FunctionComponent<ActionCellProps> = ({ column, data }) => {
+export const ActionCell: FunctionComponent<ActionCellProps> = ({ column, dataRow }) => {
   const { accent, action, Icon, label, withTooltip = false } = column
-  const id = getId(data)
+  const id = getId(dataRow)
 
   if (label === undefined) {
     console.warn(ERROR_SCOPE, `Each column must have a {label} property.`)
@@ -139,20 +139,21 @@ export const ActionCell: FunctionComponent<ActionCellProps> = ({ column, data })
   if (!isId(id)) {
     console.warn(
       ERROR_SCOPE,
-      `You must have an "id" or "_id" property in your {data} collection to use a {type}="action".`,
+      `You must have an "id" or "_id" property in your {data} collection ` +
+        `to use a {type}="action" in "${label}" column.`,
     )
 
     return <StyledTd />
   }
 
   if (accent === undefined) {
-    console.warn(ERROR_SCOPE, `You must set the {accent} property in "${label}" column to use a {type}="action".`)
+    console.warn(ERROR_SCOPE, `You must set the {accent} property to use a {type}="action" in "${label}" column.`)
 
     return <StyledTd />
   }
 
   if (Icon === undefined) {
-    console.warn(ERROR_SCOPE, `You must set the {Icon} property in "${label}" column to use a {type}="action".`)
+    console.warn(ERROR_SCOPE, `You must set the {Icon} property to use a {type}="action" in "${label}" column.`)
 
     return <StyledTd />
   }
@@ -171,12 +172,12 @@ export const ActionCell: FunctionComponent<ActionCellProps> = ({ column, data })
 }
 
 type BooleanCellProps = {
-  column: TableBooleanColumn
-  data: Common.CollectionItem
+  column: TableBooleanColumnProps
+  dataRow: Common.CollectionItem
 }
-export const BooleanCell: FunctionComponent<BooleanCellProps> = ({ column, data }) => {
+export const BooleanCell: FunctionComponent<BooleanCellProps> = ({ column, dataRow }) => {
   const { action, IconOff, IconOn, key, label, labelOff, labelOn, withTooltip = false } = column
-  const id = getId(data)
+  const maybeId = getId(dataRow)
 
   if (label === undefined) {
     console.warn(ERROR_SCOPE, `Each column must have a {label} property.`)
@@ -187,13 +188,13 @@ export const BooleanCell: FunctionComponent<BooleanCellProps> = ({ column, data 
   if (labelOff === undefined || labelOn === undefined) {
     console.warn(
       ERROR_SCOPE,
-      `You must set the {labelOff} and {labelOn} properties in "${label}" column to use a {type}="boolean".`,
+      `You must set the {labelOff} and {labelOn} properties to use a {type}="boolean" in "${label}" column.`,
     )
 
     return <StyledTd />
   }
 
-  if (!isId(id)) {
+  if (!isId(maybeId)) {
     console.warn(
       ERROR_SCOPE,
       `You must have an "id" or "_id" field in your {data} items to use an {action} property in "${label}" column.`,
@@ -203,18 +204,18 @@ export const BooleanCell: FunctionComponent<BooleanCellProps> = ({ column, data 
   }
 
   if (IconOff === undefined) {
-    console.warn(ERROR_SCOPE, `You must set the {IconOff} property in "${label}" column to use a {type}="action".`)
+    console.warn(ERROR_SCOPE, `You must set the {IconOff} property to use a {type}="action" in "${label}" column.`)
 
     return <StyledTd />
   }
 
   if (IconOn === undefined) {
-    console.warn(ERROR_SCOPE, `You must set the {IconOff} property in "${label}" column to use a {type}="action".`)
+    console.warn(ERROR_SCOPE, `You must set the {IconOff} property to use a {type}="action" in "${label}" column.`)
 
     return <StyledTd />
   }
 
-  const value = Boolean(typeof key === 'function' ? key(data) : path(key, data))
+  const value = Boolean(typeof key === 'function' ? key(dataRow) : path(key, dataRow))
   const toggledLabel = value ? labelOn : labelOff
 
   if (column.action === undefined) {
@@ -232,7 +233,7 @@ export const BooleanCell: FunctionComponent<BooleanCellProps> = ({ column, data 
       return
     }
 
-    action(id, !value)
+    action(maybeId, !value)
   }
 
   return (
@@ -245,16 +246,16 @@ export const BooleanCell: FunctionComponent<BooleanCellProps> = ({ column, data 
 }
 
 type CellProps = {
-  column: TableColumn
-  data: Common.CollectionItem
+  column: TableColumnProps
+  dataRow: Common.CollectionItem
 }
-export const Cell: FunctionComponent<CellProps> = ({ column, data }) => {
+export const Cell: FunctionComponent<CellProps> = ({ column, dataRow }) => {
   if (column.type === 'action') {
-    return <ActionCell column={column} data={data} />
+    return <ActionCell column={column} dataRow={dataRow} />
   }
 
   if (column.type === 'boolean') {
-    return <BooleanCell column={column} data={data} />
+    return <BooleanCell column={column} dataRow={dataRow} />
   }
 
   const { key, label, type } = column
@@ -271,7 +272,7 @@ export const Cell: FunctionComponent<CellProps> = ({ column, data }) => {
     return <StyledTd />
   }
 
-  const value = String(typeof key === 'function' ? key(data) : path(key, data))
+  const value = String(typeof key === 'function' ? key(dataRow) : path(key, dataRow))
 
   if (type === 'id') {
     return <StyledTdId>{value}</StyledTdId>
@@ -281,6 +282,6 @@ export const Cell: FunctionComponent<CellProps> = ({ column, data }) => {
 }
 
 Cell.propTypes = {
-  column: ColumnShape.isRequired,
-  data: BetterPropTypes.arrayOf(BetterPropTypes.any).isRequired,
+  column: ColumnPropType.isRequired,
+  dataRow: BetterPropTypes.any.isRequired,
 }

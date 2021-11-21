@@ -19,7 +19,7 @@
     "watch": "yarn build && rollup -cw"
   },
   "dependencies": {
-    "better-prop-types": "1.0.0-alpha.4",
+    "better-prop-types": "alpha",
     "ramda": "^0.27.1",
     "react-feather": "^2.0.9",
     "react-select": "^5.1.0",
@@ -45,6 +45,7 @@
     "@types/sha1": "1.1.3",
     "@types/styled-components": "5.1.15",
     "bhala": "1.0.2",
+    "dumdum": "1.0.0-alpha.5",
     "eslint-plugin-prettier": "4.0.0",
     "gh-pages": "3.2.3",
     "glob": "7.2.0",

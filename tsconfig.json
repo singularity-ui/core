@@ -24,7 +24,6 @@
     "icons/material/*",
     "node_modules/*",
     "scripts/*",
-    "stories/*",
     "storybook-static/*",
     "submodules/*",
     "rollup.config.icons.js",

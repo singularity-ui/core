@@ -22,6 +22,6 @@ export const Icon = styled.svg.attrs<Partial<IconProps>>(p => ({
 `
 
 Icon.propTypes = {
-  accent: BetterPropTypes.oneOf(ACCENTS).isNotNull,
-  size: BetterPropTypes.oneOf(SIZES).isNotNull,
+  accent: BetterPropTypes.oneOf(ACCENTS).isOptionalButNotNull,
+  size: BetterPropTypes.oneOf(SIZES).isOptionalButNotNull,
 }

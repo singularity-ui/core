@@ -1,10 +1,12 @@
 import BetterPropTypes from 'better-prop-types'
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
 
-import { ACCENT, SORT_ORDER, SORT_ORDERS, TYPE, TYPES } from '../../common/constants'
+import { ACCENT, SORT_ORDER, SORT_ORDERS } from '../../common/constants'
 import SortAsc from '../../icons/SortAsc'
 import SortDesc from '../../icons/SortDesc'
+import { ColumnPropType } from './shapes'
+import { TableColumnProps } from './types'
 
 const StyledTh = styled.th`
   border-bottom: solid 2px ${p => p.theme.color.body.light};
@@ -38,39 +40,51 @@ const SortAscOff = styled(StyledSortAsc)`
   }
 `
 
-export const Head = ({ dataKey, isSortable, label, onSort, sortOrder, type }) => {
+export type HeadProps = {
+  column: TableColumnProps
+  onSort: (key: string, isDesc: boolean) => void
+  sortOrder?: Common.SortOrder
+}
+export const Head: FunctionComponent<HeadProps> = ({ column, onSort, sortOrder }) => {
   const [isHovered, setIsHovered] = React.useState(false)
 
-  if (type === TYPE.ACTION) {
+  if (column.type === 'action' || column.type === 'boolean') {
     return <StyledTh as="td" />
+  }
+
+  const { isSortable = false, key, label } = column
+
+  const sort = () => {
+    if (!isSortable || typeof key !== 'string') {
+      return
+    }
+
+    const isDesc = sortOrder !== undefined && sortOrder !== SORT_ORDER.ASC
+
+    onSort(key, isDesc)
   }
 
   return (
     <StyledTh>
       <Box>
         <Label>{label}</Label>
-        {isSortable && sortOrder === null && <SortAscOff onClick={() => onSort(dataKey, false)} />}
+
+        {isSortable && sortOrder === null && <SortAscOff onClick={sort} />}
+
         {isSortable && sortOrder === SORT_ORDER.ASC && (
           <>
             {!isHovered && <StyledSortAsc accent={ACCENT.SECONDARY} onMouseOver={() => setIsHovered(true)} />}
             {isHovered && (
-              <StyledSortDesc
-                accent={ACCENT.SECONDARY}
-                onClick={() => onSort(dataKey, true)}
-                onMouseLeave={() => setIsHovered(false)}
-              />
+              <StyledSortDesc accent={ACCENT.SECONDARY} onClick={sort} onMouseLeave={() => setIsHovered(false)} />
             )}
           </>
         )}
+
         {isSortable && sortOrder === SORT_ORDER.DESC && (
           <>
             {!isHovered && <StyledSortDesc accent={ACCENT.SECONDARY} onMouseOver={() => setIsHovered(true)} />}
             {isHovered && (
-              <StyledSortAsc
-                accent={ACCENT.SECONDARY}
-                onClick={() => onSort(dataKey, false)}
-                onMouseLeave={() => setIsHovered(false)}
-              />
+              <StyledSortAsc accent={ACCENT.SECONDARY} onClick={sort} onMouseLeave={() => setIsHovered(false)} />
             )}
           </>
         )}
@@ -79,20 +93,9 @@ export const Head = ({ dataKey, isSortable, label, onSort, sortOrder, type }) =>
   )
 }
 
-Head.defaultProps = {
-  dataKey: null,
-  isSortable: false,
-  label: null,
-  onSort: null,
-  sortOrder: null,
-  type: TYPE.STRING,
-}
-
 Head.propTypes = {
-  dataKey: BetterPropTypes.string,
-  isSortable: BetterPropTypes.bool,
-  label: BetterPropTypes.string,
-  onSort: BetterPropTypes.func,
-  sortOrder: BetterPropTypes.oneOf(SORT_ORDERS),
-  type: BetterPropTypes.oneOf(TYPES),
+  column: ColumnPropType.isRequired,
+  onSort: BetterPropTypes.func.isRequired,
+  // eslint-disable-next-line react/no-typos
+  sortOrder: BetterPropTypes.oneOf(SORT_ORDERS).isOptionalButNotNull,
 }

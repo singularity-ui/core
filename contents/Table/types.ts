@@ -1,6 +1,6 @@
-export type TableColumnKeyFunction<T> = (dataRow: Common.CollectionItem) => T
+export type TableColumnKeyFunction<T = any> = (dataRow: Common.CollectionItem) => T
 
-export type TableActionColumn = {
+export type TableActionColumnProps = {
   Icon: any
   accent: Common.Accent
   action: (id: any) => void | Promise<void>
@@ -9,7 +9,7 @@ export type TableActionColumn = {
   withTooltip?: boolean
 }
 
-export type TableBooleanColumn = {
+export type TableBooleanColumnProps = {
   IconOff?: any
   IconOn?: any
   action?: (id: any, newValue: boolean) => void | Promise<void>
@@ -21,11 +21,11 @@ export type TableBooleanColumn = {
   withTooltip?: boolean
 }
 
-export type TableValueColumn = {
+export type TableValueColumnProps = {
   isSortable?: boolean
-  key: string | TableColumnKeyFunction<any>
+  key: string | TableColumnKeyFunction
   label: string
   type?: 'id' | 'tags'
 }
 
-export type TableColumn = TableActionColumn | TableBooleanColumn | TableValueColumn
+export type TableColumnProps = TableActionColumnProps | TableBooleanColumnProps | TableValueColumnProps
