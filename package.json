@@ -29,6 +29,7 @@
   "devDependencies": {
     "@babel/preset-react": "7.16.0",
     "@fontsource/poppins": "4.5.0",
+    "@ivangabriele/commitlint-config": "ivangabriele/commitlint-config",
     "@ivangabriele/eslint-config-typescript-react": "2.0.0",
     "@ivangabriele/prettier-config": "2.0.1",
     "@ivangabriele/semantic-release-config-dist": "1.2.0",
