@@ -1,3 +1,12 @@
+# [2.0.0-beta.3](https://github.com/singularity-ui/core/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2021-11-21)
+
+
+### Bug Fixes
+
+* **components:** add missing types ([9931ac6](https://github.com/singularity-ui/core/commit/9931ac624841109bfa227cfc3124899f99764597))
+* **contents:** add some missing types in Table ([8d822d9](https://github.com/singularity-ui/core/commit/8d822d9bc3575b9f92c12b79f59211ef640a2584))
+* **demo:** remove left file ([0000ce4](https://github.com/singularity-ui/core/commit/0000ce4f706b18ad8472011f1be23aa5d9eaf76f))
+
 # [2.0.0-beta.2](https://github.com/singularity-ui/core/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2021-11-18)
 
 
