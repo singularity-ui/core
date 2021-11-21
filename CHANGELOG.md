@@ -1,3 +1,10 @@
+# [2.0.0-beta.4](https://github.com/singularity-ui/core/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2021-11-21)
+
+
+### Bug Fixes
+
+* **contents:** add missing Table types ([eb72302](https://github.com/singularity-ui/core/commit/eb72302a9782acdb74638a2cb52b13477fe6f387))
+
 # [2.0.0-beta.3](https://github.com/singularity-ui/core/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2021-11-21)
 
 
