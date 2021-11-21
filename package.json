@@ -31,14 +31,11 @@
     "@fontsource/poppins": "4.5.0",
     "@ivangabriele/eslint-config-typescript-react": "2.0.0",
     "@ivangabriele/prettier-config": "2.0.1",
+    "@ivangabriele/semantic-release-config-dist": "1.2.0",
     "@rollup/plugin-commonjs": "21.0.1",
     "@rollup/plugin-node-resolve": "13.0.6",
     "@rollup/plugin-replace": "3.0.0",
     "@rollup/plugin-typescript": "8.3.0",
-    "@semantic-release/changelog": "6.0.1",
-    "@semantic-release/exec": "6.0.2",
-    "@semantic-release/git": "10.0.1",
-    "@semantic-release/github": "8.0.2",
     "@storybook/addon-actions": "6.3.12",
     "@storybook/addon-essentials": "6.3.12",
     "@storybook/addon-links": "6.3.12",
@@ -63,7 +60,6 @@
     "rollup-plugin-peer-deps-external": "2.2.4",
     "rollup-plugin-sizes": "1.0.4",
     "rollup-plugin-styles": "3.14.1",
-    "semantic-release": "18.0.0",
     "shelljs": "0.8.4",
     "styled-components": "5.3.3",
     "typescript": "4.4.4"
@@ -80,45 +76,6 @@
     "!/.storybook"
   ],
   "release": {
-    "branches": [
-      "main",
-      {
-        "name": "beta",
-        "prerelease": true
-      },
-      {
-        "name": "alpha",
-        "prerelease": true
-      }
-    ],
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      [
-        "@semantic-release/npm",
-        {
-          "pkgRoot": "./dist"
-        }
-      ],
-      "@semantic-release/github",
-      [
-        "@semantic-release/exec",
-        {
-          "prepareCmd": "./scripts/release/bump.sh ${nextRelease.version}"
-        }
-      ],
-      "@semantic-release/changelog",
-      [
-        "@semantic-release/git",
-        {
-          "assets": [
-            "CHANGELOG.md",
-            "package.json",
-            "yarn.lock"
-          ],
-          "message": "ci(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-        }
-      ]
-    ]
+    "extends": "@ivangabriele/semantic-release-config-dist"
   }
 }

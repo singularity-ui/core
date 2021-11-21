@@ -1374,6 +1374,20 @@
   resolved "https://registry.yarnpkg.com/@ivangabriele/prettier-config/-/prettier-config-2.0.1.tgz#a810b9d5174116c3eca96d96f42c252aac522ddb"
   integrity sha512-bnEuBx/iYfvePsTt7tIMGekXLNICfgXCBS69Z43Wivi1h+j0I03B9v4WDQq4IeEDYeiZd7GJP1Pwl3jFdosDDA==
 
+"@ivangabriele/semantic-release-config-dist@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@ivangabriele/semantic-release-config-dist/-/semantic-release-config-dist-1.2.0.tgz#5be97ccaf5972182f3f2f229b484c3465c599328"
+  integrity sha512-U6v03+ra6uKCvdWdNResO2R7gISdRmkhMyOcNF+zNvEhXHVf4brXelIRpENNIxpRtq9CUlpVax8H/AEHeky+nw==
+  dependencies:
+    "@semantic-release/changelog" "6.0.1"
+    "@semantic-release/commit-analyzer" "9.0.1"
+    "@semantic-release/exec" "6.0.2"
+    "@semantic-release/git" "10.0.1"
+    "@semantic-release/github" "8.0.2"
+    "@semantic-release/npm" "8.0.3"
+    "@semantic-release/release-notes-generator" "10.0.2"
+    semantic-release "18.0.0"
+
 "@jest/transform@^26.6.2":
   version "26.6.2"
   resolved "https://registry.yarnpkg.com/@jest/transform/-/transform-26.6.2.tgz#5ac57c5fa1ad17b2aae83e73e45813894dcf2e4b"
@@ -1879,7 +1893,7 @@
     fs-extra "^9.0.0"
     lodash "^4.17.4"
 
-"@semantic-release/commit-analyzer@^9.0.0":
+"@semantic-release/commit-analyzer@9.0.1", "@semantic-release/commit-analyzer@^9.0.0":
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/@semantic-release/commit-analyzer/-/commit-analyzer-9.0.1.tgz#e9b75a966898cae36493c7eb8158135eb302e270"
   integrity sha512-ncNsnrLmiykhgNZUXNvhhAjNN0me7VGIb0X5hu3ogyi5DDPapjGAHdEffO5vi+HX1BFWLRD/Ximx5PjGAKjAqQ==
@@ -1950,7 +1964,7 @@
     p-retry "^4.0.0"
     url-join "^4.0.0"
 
-"@semantic-release/npm@^8.0.0":
+"@semantic-release/npm@8.0.3", "@semantic-release/npm@^8.0.0":
   version "8.0.3"
   resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-8.0.3.tgz#69378ce529bbd263aa8fc899b2d0f874114e0302"
   integrity sha512-Qbg7x/O1t3sJqsv2+U0AL4Utgi/ymlCiUdt67Ftz9HL9N8aDML4t2tE0T9MBaYdqwD976hz57DqHHXKVppUBoA==
@@ -1969,7 +1983,7 @@
     semver "^7.1.2"
     tempy "^1.0.0"
 
-"@semantic-release/release-notes-generator@^10.0.0":
+"@semantic-release/release-notes-generator@10.0.2", "@semantic-release/release-notes-generator@^10.0.0":
   version "10.0.2"
   resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-10.0.2.tgz#944068c6ba0cf5d7779bdfeb537db29a4d295622"
   integrity sha512-I4eavIcDan8fNQHskZ2cbWkFMimvgxNkqR2UfuYNwYBgswEl3SJsN8XMf9gZWObt6nXDc2QfDwhjy8DjTZqS3w==
