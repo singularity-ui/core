@@ -45,5 +45,5 @@ yarn add -E @singularity-ui/core@beta
 [img-npm]: https://img.shields.io/npm/v/@singularity-ui/core/beta?style=flat-square
 [lnk-github]: https://github.com/singularity-ui/core/actions?query=branch%3Amain++
 [lnk-license]: https://github.com/singularity-ui/core/blob/main/LICENSE
-[lnk-npm]: https://www.npmjs.com/package/@singularity-ui/core
+[lnk-npm]: https://www.npmjs.com/package/@singularity-ui/core/v/beta
 [lnk-storybook]: https://singularity-ui.github.io/core/
