@@ -20,13 +20,13 @@ It's still in beta and largely undocumented but you can check [the Storybook][ln
 ## Usage
 
 ```sh
-npm i -E @singularity-ui/core
+npm i -E @singularity-ui/core@beta
 ```
 
 or
 
 ```sh
-yarn add -E @singularity-ui/core
+yarn add -E @singularity-ui/core@beta
 ```
 
 ## Roadmap
