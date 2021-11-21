@@ -44,6 +44,7 @@
         "components/**/*.tsx",
         "contents/**/*.tsx",
         "elements/**/*.tsx",
+        "icons/Icon.tsx",
         "fields/**/*.tsx",
         "GlobalStyle.tsx",
         "ThemeProvider.tsx"

@@ -1,11 +1,11 @@
-import PropTypes from 'prop-types'
+import BetterPropTypes from 'better-prop-types'
 import * as R from 'ramda'
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { CheckCircle, XCircle } from 'react-feather'
 import styled from 'styled-components'
 
-import { TYPE } from '../../common/constants'
 import { ColumnShape } from './shapes'
+import { TableActionColumn, TableBooleanColumn, TableColumn } from './types'
 
 const ERROR_SCOPE = '🌌 @singularity/core/Table:'
 
@@ -109,9 +109,10 @@ const StyledTdToggle = styled(StyledTdIcon)`
 
 const isId = maybeId => ['number', 'string'].includes(typeof maybeId)
 const isMongoObjectId = R.pathEq(['constructor', 'name'], 'ObjectId')
-const path = (key, obj) => R.path(key.split('.'), obj)
 
-const getId = data => {
+const path = (key: string, data: Common.CollectionItem) => R.path(key.split('.'), data) as any
+
+const getId = (data: Common.CollectionItem): any => {
   const maybeId = data.id || data._id
 
   if (isMongoObjectId(maybeId)) {
@@ -121,107 +122,165 @@ const getId = data => {
   return maybeId
 }
 
-export const Cell = ({ column, data }) => {
-  const { accent, action, Icon, IconOff, IconOn, key, label, labelOff, labelOn, type } = column
-  const maybeId = getId(data)
-  const withTooltip = Boolean(column.withTooltip)
+type ActionCellProps = {
+  column: TableActionColumn
+  data: Common.CollectionItem
+}
+export const ActionCell: FunctionComponent<ActionCellProps> = ({ column, data }) => {
+  const { accent, action, Icon, label, withTooltip = false } = column
+  const id = getId(data)
 
-  if (label === undefined && (labelOff === undefined || labelOn === undefined)) {
-    console.error(ERROR_SCOPE, `Each column must have a {label} property.`)
+  if (label === undefined) {
+    console.warn(ERROR_SCOPE, `Each column must have a {label} property.`)
 
     return <StyledTd />
   }
 
-  if (type === TYPE.ACTION) {
-    if (!isId(maybeId)) {
-      console.error(
-        ERROR_SCOPE,
-        `You must have an "id" or "_id" property in your {data} collection to use a {type}="action".`,
-      )
-
-      return <StyledTd />
-    }
-
-    if (accent === undefined) {
-      console.error(ERROR_SCOPE, `You must set the {accent} property in "${label}" column to use a {type}="action".`)
-
-      return <StyledTd />
-    }
-
-    if (Icon === undefined) {
-      console.error(ERROR_SCOPE, `You must set the {Icon} property in "${label}" column to use a {type}="action".`)
-
-      return <StyledTd />
-    }
-
-    return (
-      <StyledTdAction accent={accent} aria-label={label} onClick={() => action(maybeId)} role="button" tabIndex={0}>
-        {withTooltip && <span>{label}</span>}
-
-        <Icon />
-      </StyledTdAction>
+  if (!isId(id)) {
+    console.warn(
+      ERROR_SCOPE,
+      `You must have an "id" or "_id" property in your {data} collection to use a {type}="action".`,
     )
+
+    return <StyledTd />
   }
 
-  const value = path(key, data)
+  if (accent === undefined) {
+    console.warn(ERROR_SCOPE, `You must set the {accent} property in "${label}" column to use a {type}="action".`)
 
-  if (type === TYPE.TOGGLE) {
-    if (!isId(maybeId)) {
-      console.error(
-        ERROR_SCOPE,
-        `You must have an "id" or "_id" property in your {data} collection to use a {type}="toggle".`,
-      )
-
-      return <StyledTd />
-    }
-
-    if (IconOff === undefined) {
-      console.error(ERROR_SCOPE, `You must set the {IconOff} property in "${label}" column to use a {type}="action".`)
-
-      return <StyledTd />
-    }
-
-    if (IconOn === undefined) {
-      console.error(ERROR_SCOPE, `You must set the {IconOff} property in "${label}" column to use a {type}="action".`)
-
-      return <StyledTd />
-    }
-
-    const toggleLabel = value ? labelOn : labelOff
-
-    return (
-      <StyledTdToggle aria-label={toggleLabel} onClick={() => action(maybeId, !value)} role="button" tabIndex={0}>
-        {withTooltip && <span>{toggleLabel}</span>}
-
-        {value ? <IconOn /> : <IconOff />}
-      </StyledTdToggle>
-    )
+    return <StyledTd />
   }
 
-  if (type === TYPE.BOOLEAN) {
+  if (Icon === undefined) {
+    console.warn(ERROR_SCOPE, `You must set the {Icon} property in "${label}" column to use a {type}="action".`)
+
+    return <StyledTd />
+  }
+
+  const handleAction = () => {
+    action(id)
+  }
+
+  return (
+    <StyledTdAction accent={accent} aria-label={label} onClick={handleAction} role="button" tabIndex={0}>
+      {withTooltip && <span>{label}</span>}
+
+      <Icon />
+    </StyledTdAction>
+  )
+}
+
+type BooleanCellProps = {
+  column: TableBooleanColumn
+  data: Common.CollectionItem
+}
+export const BooleanCell: FunctionComponent<BooleanCellProps> = ({ column, data }) => {
+  const { action, IconOff, IconOn, key, label, labelOff, labelOn, withTooltip = false } = column
+  const id = getId(data)
+
+  if (label === undefined) {
+    console.warn(ERROR_SCOPE, `Each column must have a {label} property.`)
+
+    return <StyledTd />
+  }
+
+  if (labelOff === undefined || labelOn === undefined) {
+    console.warn(
+      ERROR_SCOPE,
+      `You must set the {labelOff} and {labelOn} properties in "${label}" column to use a {type}="boolean".`,
+    )
+
+    return <StyledTd />
+  }
+
+  if (!isId(id)) {
+    console.warn(
+      ERROR_SCOPE,
+      `You must have an "id" or "_id" field in your {data} items to use an {action} property in "${label}" column.`,
+    )
+
+    return <StyledTd />
+  }
+
+  if (IconOff === undefined) {
+    console.warn(ERROR_SCOPE, `You must set the {IconOff} property in "${label}" column to use a {type}="action".`)
+
+    return <StyledTd />
+  }
+
+  if (IconOn === undefined) {
+    console.warn(ERROR_SCOPE, `You must set the {IconOff} property in "${label}" column to use a {type}="action".`)
+
+    return <StyledTd />
+  }
+
+  const value = Boolean(typeof key === 'function' ? key(data) : path(key, data))
+  const toggledLabel = value ? labelOn : labelOff
+
+  if (column.action === undefined) {
     return (
       <StyledTdBoolean value={value}>
-        {withTooltip && <span>{label}</span>}
+        {withTooltip && <span>{toggledLabel}</span>}
 
         {value ? <CheckCircle /> : <XCircle />}
       </StyledTdBoolean>
     )
   }
 
-  if (type === TYPE.ID) {
+  const handleAction = () => {
+    if (action === undefined) {
+      return
+    }
+
+    action(id, !value)
+  }
+
+  return (
+    <StyledTdToggle aria-label={toggledLabel} onClick={handleAction} role="button" tabIndex={0}>
+      {withTooltip && <span>{toggledLabel}</span>}
+
+      {value ? <IconOn /> : <IconOff />}
+    </StyledTdToggle>
+  )
+}
+
+type CellProps = {
+  column: TableColumn
+  data: Common.CollectionItem
+}
+export const Cell: FunctionComponent<CellProps> = ({ column, data }) => {
+  if (column.type === 'action') {
+    return <ActionCell column={column} data={data} />
+  }
+
+  if (column.type === 'boolean') {
+    return <BooleanCell column={column} data={data} />
+  }
+
+  const { key, label, type } = column
+
+  if (label === undefined) {
+    console.warn(ERROR_SCOPE, `Each column must have a label.`)
+
+    return <StyledTd />
+  }
+
+  if (key === undefined) {
+    console.warn(ERROR_SCOPE, `You must set the {key} property in "${label}" column.`)
+
+    return <StyledTd />
+  }
+
+  const value = String(typeof key === 'function' ? key(data) : path(key, data))
+
+  if (type === 'id') {
     return <StyledTdId>{value}</StyledTdId>
   }
 
-  // return <StyledTd />
-  return (
-    <StyledTd>
-      <p>{value}</p>
-    </StyledTd>
-  )
+  return <StyledTd>{value}</StyledTd>
 }
 
 Cell.propTypes = {
   column: ColumnShape.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
-  data: PropTypes.any.isRequired,
+  data: BetterPropTypes.arrayOf(BetterPropTypes.any).isRequired,
 }

@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import BetterPropTypes from 'better-prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -24,6 +24,6 @@ export const Lane = ({ label, tasks }) => (
 )
 
 Lane.propTypes = {
-  label: PropTypes.string.isRequired,
-  tasks: PropTypes.arrayOf(PropTypes.elementType).isRequired,
+  label: BetterPropTypes.string.isRequired,
+  tasks: BetterPropTypes.arrayOf(BetterPropTypes.elementType).isRequired,
 }

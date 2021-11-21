@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import BetterPropTypes from 'better-prop-types'
 import styled from 'styled-components'
 
 // eslint-disable-next-line import/extensions
@@ -9,7 +9,7 @@ interface IconProps {
   size: Common.Size
 }
 
-const Icon = styled.svg.attrs<Partial<IconProps>>(p => ({
+export const Icon = styled.svg.attrs<Partial<IconProps>>(p => ({
   accent: p.accent || ACCENT.PRIMARY,
   size: p.size || SIZE.MEDIUM,
 }))<Partial<IconProps>>`
@@ -22,8 +22,6 @@ const Icon = styled.svg.attrs<Partial<IconProps>>(p => ({
 `
 
 Icon.propTypes = {
-  accent: PropTypes.oneOf(ACCENTS),
-  size: PropTypes.oneOf(SIZES),
+  accent: BetterPropTypes.oneOf(ACCENTS).isNotNull,
+  size: BetterPropTypes.oneOf(SIZES).isNotNull,
 }
-
-export default Icon

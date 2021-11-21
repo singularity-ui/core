@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import BetterPropTypes from 'better-prop-types'
 import React, { ForwardRefRenderFunction, InputHTMLAttributes } from 'react'
 import styled from 'styled-components'
 
@@ -90,8 +90,8 @@ export const TextInput = React.forwardRef(TextInputWithRef)
 TextInput.displayName = 'TextInput'
 
 TextInput.propTypes = {
-  error: PropTypes.string,
-  helper: PropTypes.string,
-  label: PropTypes.string,
-  size: PropTypes.oneOf(SIZES),
+  error: BetterPropTypes.string.isNotNull,
+  helper: BetterPropTypes.string.isNotNull,
+  label: BetterPropTypes.string.isNotNull,
+  size: BetterPropTypes.oneOf(SIZES).isNotNull,
 }

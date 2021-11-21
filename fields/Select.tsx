@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import BetterPropTypes from 'better-prop-types'
 import React, { ForwardRefRenderFunction } from 'react'
 import ReactSelect from 'react-select'
 import ReactSelectAsync from 'react-select/async'
@@ -153,9 +153,9 @@ export const Select = React.forwardRef(SelectWithRef)
 Select.displayName = 'Select'
 
 Select.propTypes = {
-  error: PropTypes.string,
-  helper: PropTypes.string,
-  isAsync: PropTypes.bool,
-  label: PropTypes.string,
-  size: PropTypes.oneOf(SIZES),
+  error: BetterPropTypes.string.isNotNull,
+  helper: BetterPropTypes.string.isNotNull,
+  isAsync: BetterPropTypes.bool.isNotNull,
+  label: BetterPropTypes.string.isNotNull,
+  size: BetterPropTypes.oneOf(SIZES).isNotNull,
 }

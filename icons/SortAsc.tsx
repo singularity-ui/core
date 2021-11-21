@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Icon from './Icon'
+import { Icon } from './Icon'
 
 /**
  * @see https://iconmonstr.com/sort-16-svg/
@@ -17,8 +17,6 @@ const SortAscSvg = props => (
 )
 
 const SortAsc = props => <Icon as={SortAscSvg} {...props} />
-
-SortAsc.defaultProps = { ...Icon.defaultProps }
 
 SortAsc.propTypes = { ...Icon.propTypes }
 

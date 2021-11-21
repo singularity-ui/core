@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import BetterPropTypes from 'better-prop-types'
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
 
@@ -47,5 +47,5 @@ export const Tasker = Object.assign<
 )
 
 Tasker.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape(Lane.propTypes)).isRequired,
+  data: BetterPropTypes.arrayOf(BetterPropTypes.shape(Lane.propTypes)).isRequired,
 }

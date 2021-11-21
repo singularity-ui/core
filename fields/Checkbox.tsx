@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import BetterPropTypes from 'better-prop-types'
 import React, { ForwardRefRenderFunction, InputHTMLAttributes } from 'react'
 import { CheckSquare, Square } from 'react-feather'
 import styled from 'styled-components'
@@ -115,8 +115,8 @@ export const Checkbox = React.forwardRef(CheckboxWithProps)
 Checkbox.displayName = 'Checkbox'
 
 Checkbox.propTypes = {
-  error: PropTypes.string,
-  helper: PropTypes.string,
-  label: PropTypes.string.isRequired,
-  size: PropTypes.oneOf(SIZES),
+  error: BetterPropTypes.string.isNotNull,
+  helper: BetterPropTypes.string.isNotNull,
+  label: BetterPropTypes.string.isRequired,
+  size: BetterPropTypes.oneOf(SIZES).isNotNull,
 }

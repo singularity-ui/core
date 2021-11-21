@@ -1,31 +1,35 @@
 /* eslint-disable import/prefer-default-export */
 
-import PropTypes from 'prop-types'
+import BetterPropTypes from 'better-prop-types'
 
-import { ACCENTS, TYPE, TYPES } from '../../common/constants'
+import { ACCENTS } from '../../common/constants'
 
-export const ColumnShape = PropTypes.oneOfType([
-  PropTypes.shape({
-    isSortable: PropTypes.bool,
-    key: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(TYPES),
-  }),
-  PropTypes.shape({
-    accent: PropTypes.oneOf(ACCENTS).isRequired,
-    action: PropTypes.func.isRequired,
-    Icon: PropTypes.elementType.isRequired,
-    label: PropTypes.string.isRequired,
-    type: PropTypes.oneOf([TYPE.ACTION]),
-    withTooltip: PropTypes.bool,
-  }),
-  PropTypes.shape({
-    action: PropTypes.func.isRequired,
-    IconOff: PropTypes.elementType.isRequired,
-    IconOn: PropTypes.elementType.isRequired,
-    labelOff: PropTypes.string.isRequired,
-    labelOn: PropTypes.string.isRequired,
-    type: PropTypes.oneOf([TYPE.TOGGLE]),
-    withTooltip: PropTypes.bool,
-  }),
-])
+export const ActionColumnShape = BetterPropTypes.exact({
+  accent: BetterPropTypes.oneOf(ACCENTS).isRequired,
+  action: BetterPropTypes.func.isNotNull,
+  Icon: BetterPropTypes.element.isRequired,
+  label: BetterPropTypes.string.isRequired,
+  type: BetterPropTypes.oneOf<'action'>(['action']).isRequired,
+  withTooltip: BetterPropTypes.bool.isNotNull,
+})
+
+export const BooleanColumnShape = BetterPropTypes.exact({
+  action: BetterPropTypes.func.isNotNull,
+  IconOff: BetterPropTypes.element.isNotNull,
+  IconOn: BetterPropTypes.element.isNotNull,
+  key: BetterPropTypes.oneOfType([BetterPropTypes.string, BetterPropTypes.func]).isRequired,
+  label: BetterPropTypes.string.isRequired,
+  labelOff: BetterPropTypes.string.isRequired,
+  labelOn: BetterPropTypes.string.isRequired,
+  type: BetterPropTypes.oneOf<'boolean'>(['boolean']).isRequired,
+  withTooltip: BetterPropTypes.bool.isNotNull,
+})
+
+export const ValueColumnShape = BetterPropTypes.exact({
+  isSortable: BetterPropTypes.bool.isNotNull,
+  key: BetterPropTypes.oneOfType([BetterPropTypes.string, BetterPropTypes.func]).isRequired,
+  label: BetterPropTypes.string.isRequired,
+  type: BetterPropTypes.oneOf<'id' | 'tags'>(['id', 'tags']).isNotNull,
+})
+
+export const ColumnShape = BetterPropTypes.oneOfType([ActionColumnShape, BooleanColumnShape, ValueColumnShape])

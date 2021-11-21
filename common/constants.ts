@@ -32,15 +32,13 @@ export const SORT_ORDER: {
 
 export const SORT_ORDERS: Array<Common.SortOrder> = Object.values(SORT_ORDER)
 
-export const TYPE = {
+export const TYPE: {
+  [key: string]: Common.Type
+} = {
   ACTION: 'action',
   BOOLEAN: 'boolean',
   ID: 'id',
-  NUMBER: 'number',
-  SINCE: 'since',
-  STRING: 'string',
   TAGS: 'tags',
-  TOGGLE: 'toggle',
 }
 
-export const TYPES = Object.values(TYPE)
+export const TYPES: Array<Common.Type> = Object.values(TYPE)

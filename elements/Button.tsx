@@ -1,6 +1,6 @@
 /* eslint-disable react/require-default-props */
 
-import PropTypes from 'prop-types'
+import BetterPropTypes from 'better-prop-types'
 import React, { ButtonHTMLAttributes, ForwardRefRenderFunction } from 'react'
 import styled from 'styled-components'
 
@@ -57,7 +57,7 @@ export const Button = React.forwardRef(ButtonWithRef)
 Button.displayName = 'Button'
 
 Button.propTypes = {
-  accent: PropTypes.oneOf(ACCENTS),
-  size: PropTypes.oneOf(SIZES),
-  type: PropTypes.oneOf(['button', 'submit', 'reset']),
+  accent: BetterPropTypes.oneOf(ACCENTS).isNotNull,
+  size: BetterPropTypes.oneOf(SIZES).isNotNull,
+  type: BetterPropTypes.oneOf<'button' | 'submit' | 'reset'>(['button', 'submit', 'reset']).isNotNull,
 }

@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import BetterPropTypes from 'better-prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -89,10 +89,10 @@ Head.defaultProps = {
 }
 
 Head.propTypes = {
-  dataKey: PropTypes.string,
-  isSortable: PropTypes.bool,
-  label: PropTypes.string,
-  onSort: PropTypes.func,
-  sortOrder: PropTypes.oneOf(SORT_ORDERS),
-  type: PropTypes.oneOf(TYPES),
+  dataKey: BetterPropTypes.string,
+  isSortable: BetterPropTypes.bool,
+  label: BetterPropTypes.string,
+  onSort: BetterPropTypes.func,
+  sortOrder: BetterPropTypes.oneOf(SORT_ORDERS),
+  type: BetterPropTypes.oneOf(TYPES),
 }

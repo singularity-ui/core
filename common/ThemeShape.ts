@@ -1,48 +1,48 @@
 /* eslint-disable sort-keys-fix/sort-keys-fix */
 
-import PropTypes from 'prop-types'
+import BetterPropTypes from 'better-prop-types'
 
-const ThemeColorShape = PropTypes.shape({
-  default: PropTypes.string,
-  active: PropTypes.string,
-  background: PropTypes.string,
+const ThemeColorShape = BetterPropTypes.shape({
+  default: BetterPropTypes.string,
+  active: BetterPropTypes.string,
+  background: BetterPropTypes.string,
 })
 
-const ThemeSizeShape = PropTypes.shape({
-  small: PropTypes.string,
-  medium: PropTypes.string,
-  large: PropTypes.string,
+const ThemeSizeShape = BetterPropTypes.shape({
+  small: BetterPropTypes.string,
+  medium: BetterPropTypes.string,
+  large: BetterPropTypes.string,
 })
 
-export const ThemeShape = PropTypes.shape({
-  appearance: PropTypes.shape({
+export const ThemeShape = BetterPropTypes.shape({
+  appearance: BetterPropTypes.shape({
     borderRadius: ThemeSizeShape,
   }),
 
-  breakpoint: PropTypes.shape({
-    sm: PropTypes.string,
-    md: PropTypes.string,
-    lg: PropTypes.string,
-    xl: PropTypes.string,
+  breakpoint: BetterPropTypes.shape({
+    sm: BetterPropTypes.string,
+    md: BetterPropTypes.string,
+    lg: BetterPropTypes.string,
+    xl: BetterPropTypes.string,
   }),
 
-  color: PropTypes.shape({
-    a11n: PropTypes.shape({
-      focus: PropTypes.shape({
-        background: PropTypes.string,
-        foreground: PropTypes.string,
+  color: BetterPropTypes.shape({
+    a11n: BetterPropTypes.shape({
+      focus: BetterPropTypes.shape({
+        background: BetterPropTypes.string,
+        foreground: BetterPropTypes.string,
       }),
     }),
 
-    body: PropTypes.shape({
-      background: PropTypes.string,
-      light: PropTypes.string,
-      main: PropTypes.string,
-      white: PropTypes.string,
+    body: BetterPropTypes.shape({
+      background: BetterPropTypes.string,
+      light: BetterPropTypes.string,
+      main: BetterPropTypes.string,
+      white: BetterPropTypes.string,
     }),
 
-    card: PropTypes.shape({
-      background: PropTypes.string,
+    card: BetterPropTypes.shape({
+      background: BetterPropTypes.string,
     }),
 
     primary: ThemeColorShape,
@@ -53,35 +53,35 @@ export const ThemeShape = PropTypes.shape({
     info: ThemeColorShape,
   }),
 
-  padding: PropTypes.shape({
+  padding: BetterPropTypes.shape({
     button: ThemeSizeShape,
     input: ThemeSizeShape,
     inputBox: ThemeSizeShape,
 
-    layout: PropTypes.shape({
-      tiny: PropTypes.string,
-      small: PropTypes.string,
-      medium: PropTypes.string,
-      large: PropTypes.string,
-      giant: PropTypes.string,
+    layout: BetterPropTypes.shape({
+      tiny: BetterPropTypes.string,
+      small: BetterPropTypes.string,
+      medium: BetterPropTypes.string,
+      large: BetterPropTypes.string,
+      giant: BetterPropTypes.string,
     }),
   }),
 
   shadow: ThemeSizeShape,
 
-  typography: PropTypes.shape({
-    font: PropTypes.shape({
-      default: PropTypes.shape({
-        family: PropTypes.string,
-        size: PropTypes.string,
-        weight: PropTypes.number,
+  typography: BetterPropTypes.shape({
+    font: BetterPropTypes.shape({
+      default: BetterPropTypes.shape({
+        family: BetterPropTypes.string,
+        size: BetterPropTypes.string,
+        weight: BetterPropTypes.number,
       }),
     }),
 
-    size: PropTypes.shape({
-      small: PropTypes.number,
-      medium: PropTypes.number,
-      large: PropTypes.number,
+    size: BetterPropTypes.shape({
+      small: BetterPropTypes.number,
+      medium: BetterPropTypes.number,
+      large: BetterPropTypes.number,
     }),
   }),
 })

@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
-import PropTypes from 'prop-types'
+import BetterPropTypes from 'better-prop-types'
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
 
@@ -55,7 +55,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({ onChange, pageC
 )
 
 Pagination.propTypes = {
-  onChange: PropTypes.func.isRequired,
-  pageCount: PropTypes.number.isRequired,
-  pageIndex: PropTypes.number.isRequired,
+  onChange: BetterPropTypes.func.isRequired,
+  pageCount: BetterPropTypes.number.isRequired,
+  pageIndex: BetterPropTypes.number.isRequired,
 }
