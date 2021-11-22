@@ -1,3 +1,10 @@
+# [2.0.0-beta.6](https://github.com/singularity-ui/core/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2021-11-22)
+
+
+### Bug Fixes
+
+* **fields:** add missing FileInput placeholder ([bf07f6d](https://github.com/singularity-ui/core/commit/bf07f6d70d75d162d33aa4da8cd994630df7720f))
+
 # [2.0.0-beta.5](https://github.com/singularity-ui/core/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2021-11-22)
 
 
