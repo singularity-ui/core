@@ -2,7 +2,6 @@ import BetterPropTypes from 'better-prop-types'
 import React, { ForwardRefRenderFunction } from 'react'
 import ReactSelect from 'react-select'
 import ReactSelectAsync from 'react-select/async'
-import { StateManagerProps } from 'react-select/dist/declarations/src/useStateManager'
 import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../common/constants'
@@ -109,7 +108,7 @@ const Error = styled.p`
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
-type SelectProps = StateManagerProps & {
+type SelectProps = any & {
   className?: string
   error?: string
   helper?: string

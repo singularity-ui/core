@@ -4210,10 +4210,10 @@ better-opn@^2.1.1:
   dependencies:
     open "^7.0.3"
 
-better-prop-types@alpha:
-  version "1.0.0-alpha.6"
-  resolved "https://registry.yarnpkg.com/better-prop-types/-/better-prop-types-1.0.0-alpha.6.tgz#cfe136add18e2ab40968f08a31994ca8c5b0aaf9"
-  integrity sha512-TrU8CtYSWIL5+hwKIeJMSTh1lbxhG88y2Ez6QAPXNVBCZeh14GNOinvAi7czHlfXCAuZAmIZhT3ZtvnswZcXMQ==
+better-prop-types@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/better-prop-types/-/better-prop-types-1.0.0.tgz#fd6a162a361c605af9740ddcd3a823eb505e3574"
+  integrity sha512-4k1ZHHDhOv51brN9XltZSoUD1Vci6GhOwOWCjMPOZvM0G0KzwH7EyoxXBBBDTlikwhW1YbM4D4BWM46akHkNwQ==
   dependencies:
     "@types/prop-types" "15.7.4"
     prop-types "15.7.2"
