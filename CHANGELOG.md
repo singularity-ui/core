@@ -1,3 +1,10 @@
+# [2.0.0-beta.7](https://github.com/singularity-ui/core/compare/v2.0.0-beta.6...v2.0.0-beta.7) (2021-11-22)
+
+
+### Bug Fixes
+
+* **fields:** anyfy Select props type ([995e503](https://github.com/singularity-ui/core/commit/995e50393ffe67c2c25b48d610987570c378e9bb))
+
 # [2.0.0-beta.6](https://github.com/singularity-ui/core/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2021-11-22)
 
 
