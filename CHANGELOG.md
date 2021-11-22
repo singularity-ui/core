@@ -1,3 +1,10 @@
+# [2.0.0-beta.5](https://github.com/singularity-ui/core/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2021-11-22)
+
+
+### Features
+
+* **fields:** add FileInput ([dd1300a](https://github.com/singularity-ui/core/commit/dd1300a7f76a981fdb2afabc430f3772029ee8b4))
+
 # [2.0.0-beta.4](https://github.com/singularity-ui/core/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2021-11-21)
 
 
