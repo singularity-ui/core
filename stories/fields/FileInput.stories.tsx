@@ -21,7 +21,8 @@ export default {
   args: {
     error: '',
     helper: '',
-    label: 'Choose a file…',
+    label: '',
+    placeholder: 'Choose a file…',
     size: SUI.SIZE.MEDIUM,
   },
 }

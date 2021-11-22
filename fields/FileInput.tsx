@@ -5,7 +5,16 @@ import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../common/constants'
 
-const Box = styled.div<{
+const Label = styled.label<{
+  size: Common.Size
+}>`
+  display: block;
+  font-size: ${p => Math.round(p.theme.typography.size[p.size] * 80)}%;
+  font-weight: 500;
+  padding: 0 0 ${p => p.theme.padding.layout.tiny} 0;
+`
+
+const FileBox = styled.div<{
   size: Common.Size
 }>`
   align-items: center;
@@ -70,11 +79,14 @@ const StyledInput = styled.input<{
   z-index: -1;
 `
 
-const Label = styled.label<{
+const Placeholder = styled.div<{
+  isFilled: boolean
   size: Common.Size
 }>`
+  color: ${p => (p.isFilled ? p.theme.color.body.main : p.theme.color.body.light)};
   font-size: ${p => Math.round(p.theme.typography.size[p.size] * 100)}%;
   font-weight: 500;
+  opacity: ${p => (p.isFilled ? 1 : 0.65)};
   padding: ${p => p.theme.padding.input[p.size]} 0 0 0;
 `
 
@@ -98,7 +110,7 @@ type FileInputProps = Omit<InputHTMLAttributes<any>, 'size'> & {
   size?: Common.Size
 }
 const FileInputWithRef: ForwardRefRenderFunction<HTMLInputElement, FileInputProps> = (
-  { className, error, helper, label, onChange, size = SIZE.MEDIUM, ...props },
+  { className, error, helper, label, onChange, placeholder, size = SIZE.MEDIUM, ...props },
   ref,
 ) => {
   const $input = React.useRef<HTMLInputElement>(null)
@@ -128,7 +140,13 @@ const FileInputWithRef: ForwardRefRenderFunction<HTMLInputElement, FileInputProp
 
   return (
     <div className={className}>
-      <Box onClick={triggerClickOnFileInput} size={size}>
+      {label && (
+        <Label className="Label" size={size}>
+          {label}
+        </Label>
+      )}
+
+      <FileBox onClick={triggerClickOnFileInput} size={size}>
         <StyledInput
           ref={$input}
           _size={size}
@@ -140,10 +158,10 @@ const FileInputWithRef: ForwardRefRenderFunction<HTMLInputElement, FileInputProp
         />
 
         <Upload />
-        <Label className="Label" size={size}>
-          {fileName || label}
-        </Label>
-      </Box>
+        <Placeholder className="Label" isFilled={Boolean(fileName)} size={size}>
+          {fileName || placeholder}
+        </Placeholder>
+      </FileBox>
 
       {!error && helper && <Helper className="Helper">{helper}</Helper>}
 

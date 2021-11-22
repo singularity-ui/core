@@ -41,7 +41,7 @@ const StyledInput = styled.input<{
   :hover {
     border: solid 1px ${p => (p.hasError ? p.theme.color.danger.active : p.theme.color.secondary.active)};
   }
-` as any
+`
 
 const Helper = styled.p`
   margin: 0;
