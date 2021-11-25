@@ -272,7 +272,7 @@ export const Cell: FunctionComponent<CellProps> = ({ column, dataRow }) => {
     return <StyledTd />
   }
 
-  const value = String(typeof key === 'function' ? key(dataRow) : path(key, dataRow))
+  const value = typeof key === 'function' ? key(dataRow) : path(key, dataRow)
 
   if (type === 'id') {
     return <StyledTdId>{value}</StyledTdId>
