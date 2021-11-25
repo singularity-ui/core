@@ -1,3 +1,10 @@
+# [2.0.0-beta.8](https://github.com/singularity-ui/core/compare/v2.0.0-beta.7...v2.0.0-beta.8) (2021-11-25)
+
+
+### Bug Fixes
+
+* **contents:** allow Table columm key to return anything ([211fbf2](https://github.com/singularity-ui/core/commit/211fbf2505b83d510b6a83625cec29decc529e63))
+
 # [2.0.0-beta.7](https://github.com/singularity-ui/core/compare/v2.0.0-beta.6...v2.0.0-beta.7) (2021-11-22)
 
 
