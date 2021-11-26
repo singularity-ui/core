@@ -32,7 +32,7 @@ const StyledButton = styled.button<{
     background-color: ${p => p.theme.color.a11n.focus.background} !important;
   }
 
-  :hover {
+  :hover:not(:disabled) {
     background-color: ${p => p.theme.color[p.accent].active};
   }
 `

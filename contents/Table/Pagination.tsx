@@ -2,6 +2,7 @@
 
 import BetterPropTypes from 'better-prop-types'
 import React, { FunctionComponent } from 'react'
+import { ChevronLeft, ChevronRight } from 'react-feather'
 import styled from 'styled-components'
 
 import { Button } from '../../elements/Button'
@@ -15,15 +16,19 @@ const Box = styled.div`
   user-select: none;
 `
 
-const Link = styled(Button)<{
-  isSelected: boolean
-}>`
-  background-color: ${p => p.theme.color.secondary[p.isSelected ? 'active' : 'default']};
+const Link = styled(Button)`
+  align-items: center;
+  background-color: ${p => p.theme.color.secondary.default};
   border: solid 1px ${p => p.theme.color.secondary.default};
   border-radius: 0;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
   min-width: calc(2.5rem + 2px);
 
   :disabled {
+    cursor: default;
     opacity: 0.65;
   }
 
@@ -33,8 +38,14 @@ const Link = styled(Button)<{
     color: ${p => p.theme.color.a11n.focus.foreground} !important;
   }
 
-  :hover {
+  :hover:not(:disabled) {
     background-color: ${p => p.theme.color.secondary.active};
+  }
+
+  > svg {
+    margin-top: -1px;
+    max-height: 1rem;
+    max-width: 1rem;
   }
 `
 
@@ -43,16 +54,43 @@ type PaginationProps = {
   pageCount: number
   pageIndex: number
 }
-export const Pagination: FunctionComponent<PaginationProps> = ({ onChange, pageCount, pageIndex }) => (
-  <Box>
-    {new Array(pageCount).fill(null).map((_, index) => (
-      // eslint-disable-next-line react/no-array-index-key
-      <Link key={index} disabled={index === pageIndex} isSelected={index === pageIndex} onClick={() => onChange(index)}>
-        {index + 1}
+export const Pagination: FunctionComponent<PaginationProps> = ({ onChange, pageCount, pageIndex }) => {
+  const links: Array<{
+    index: number
+    isDisabled: boolean
+    key: string
+    label: string
+  }> = []
+
+  if (pageCount <= 5) {
+    const arrayholder = new Array(pageCount).fill(null).map((_, index) => ({
+      index,
+      isDisabled: index === pageIndex,
+      key: `page-${index}`,
+      label: String(index + 1),
+    }))
+
+    links.push(...arrayholder)
+  }
+
+  return (
+    <Box>
+      <Link key="page-previous" disabled={pageIndex === 0} onClick={() => onChange(pageIndex - 1)}>
+        <ChevronLeft />
       </Link>
-    ))}
-  </Box>
-)
+
+      {links.map(({ index, isDisabled, key, label }) => (
+        <Link key={key} disabled={isDisabled} onClick={() => onChange(index)}>
+          {label}
+        </Link>
+      ))}
+
+      <Link key="page-next" disabled={pageIndex === pageCount - 1} onClick={() => onChange(pageIndex + 1)}>
+        <ChevronRight />
+      </Link>
+    </Box>
+  )
+}
 
 Pagination.propTypes = {
   onChange: BetterPropTypes.func.isRequired,
