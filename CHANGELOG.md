@@ -1,3 +1,10 @@
+# [2.0.0-beta.9](https://github.com/singularity-ui/core/compare/v2.0.0-beta.8...v2.0.0-beta.9) (2021-11-26)
+
+
+### Features
+
+* **contents:** add naive Table pagination logic ([55bbc60](https://github.com/singularity-ui/core/commit/55bbc60e41c1670789e6ed98e5c3f5318440aa87))
+
 # [2.0.0-beta.8](https://github.com/singularity-ui/core/compare/v2.0.0-beta.7...v2.0.0-beta.8) (2021-11-25)
 
 
