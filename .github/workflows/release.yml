@@ -30,7 +30,7 @@ jobs:
   deploy:
     name: Deploy
     needs: release
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/beta'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
