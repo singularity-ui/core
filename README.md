@@ -20,13 +20,13 @@ It's still in beta and largely undocumented but you can check [the Storybook][ln
 ## Usage
 
 ```sh
-npm i -E @singularity-ui/core@beta
+npm i -E @singularity/core@beta
 ```
 
 or
 
 ```sh
-yarn add -E @singularity-ui/core@beta
+yarn add -E @singularity/core@beta
 ```
 
 ## Roadmap
@@ -42,8 +42,8 @@ yarn add -E @singularity-ui/core@beta
 
 [img-github]:  https://img.shields.io/github/workflow/status/singularity-ui/core/Test/main?style=flat-square
 [img-license]: https://img.shields.io/github/license/singularity-ui/core?style=flat-square
-[img-npm]: https://img.shields.io/npm/v/@singularity-ui/core/beta?style=flat-square
+[img-npm]: https://img.shields.io/npm/v/@singularity/core/beta?style=flat-square
 [lnk-github]: https://github.com/singularity-ui/core/actions?query=branch%3Amain++
 [lnk-license]: https://github.com/singularity-ui/core/blob/main/LICENSE
-[lnk-npm]: https://www.npmjs.com/package/@singularity-ui/core/v/beta
+[lnk-npm]: https://www.npmjs.com/package/@singularity/core/v/beta
 [lnk-storybook]: https://singularity-ui.github.io/core/

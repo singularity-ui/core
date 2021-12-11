@@ -16,7 +16,7 @@ const distPackageExtraProps = {
   },
   funding: 'https://github.com/singularity-ui/core?sponsor=1',
   homepage: 'https://singularity-ui.github.io/core/',
-  name: '@singularity-ui/core',
+  name: '@singularity/core',
   publishConfig: {
     access: 'public',
   },

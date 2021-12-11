@@ -1,5 +1,5 @@
 {
-  "name": "@singularity-ui/root",
+  "name": "@singularity/root",
   "description": "Yet another React UI.",
   "version": "2.0.0-beta.9",
   "license": "MIT",
