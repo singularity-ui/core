@@ -21,18 +21,6 @@ const StyledTd = styled.td`
   :focus-visible svg {
     color: ${p => p.theme.color.a11n.focus.foreground} !important;
   }
-
-  p {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-`
-
-const StyledTdId = styled(StyledTd)`
-  font-family: monospace;
-  font-size: 1rem;
-  width: 2rem;
 `
 
 const StyledTdIcon = styled(StyledTd)`
@@ -78,14 +66,6 @@ const StyledTdIcon = styled(StyledTd)`
   }
 `
 
-const StyledTdBoolean = styled(StyledTdIcon)<{
-  value: any
-}>`
-  svg {
-    color: ${p => p.theme.color[p.value ? 'success' : 'danger'].active};
-  }
-`
-
 const StyledTdAction = styled(StyledTdIcon)<{
   accent: Common.Accent
 }>`
@@ -103,8 +83,28 @@ const StyledTdAction = styled(StyledTdIcon)<{
   }
 `
 
+const StyledTdBoolean = styled(StyledTdIcon)<{
+  value: any
+}>`
+  svg {
+    color: ${p => p.theme.color[p.value ? 'success' : 'danger'].active};
+  }
+`
+
+const StyledTdId = styled(StyledTd)`
+  font-family: monospace;
+  font-size: 1rem;
+  width: 2rem;
+`
+
 const StyledTdToggle = styled(StyledTdIcon)`
   cursor: pointer;
+`
+
+const StyledTdValue = styled(StyledTd)`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `
 
 const isId = (maybeId: any) => ['number', 'string'].includes(typeof maybeId)
@@ -278,7 +278,7 @@ export const Cell: FunctionComponent<CellProps> = ({ column, dataRow }) => {
     return <StyledTdId>{value}</StyledTdId>
   }
 
-  return <StyledTd>{value}</StyledTd>
+  return <StyledTdValue>{value}</StyledTdValue>
 }
 
 Cell.propTypes = {
