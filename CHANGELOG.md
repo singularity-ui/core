@@ -1,3 +1,10 @@
+# [2.0.0-beta.10](https://github.com/singularity-ui/core/compare/v2.0.0-beta.9...v2.0.0-beta.10) (2021-12-13)
+
+
+### Bug Fixes
+
+* **contents:** force ellipsis for Table cells overflowing text ([9195ebb](https://github.com/singularity-ui/core/commit/9195ebb3d1200f016160b464129dbacecb5cd881))
+
 # [2.0.0-beta.9](https://github.com/singularity-ui/core/compare/v2.0.0-beta.8...v2.0.0-beta.9) (2021-11-26)
 
 
