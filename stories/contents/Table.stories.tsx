@@ -95,4 +95,4 @@ export default {
   },
 }
 
-export const Table = props => <StyledTable {...props} />
+export const Table = (props: any) => <StyledTable {...props} />

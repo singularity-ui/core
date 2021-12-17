@@ -1,5 +1,5 @@
 import BetterPropTypes from 'better-prop-types'
-import React, { ForwardRefRenderFunction, InputHTMLAttributes } from 'react'
+import React, { ChangeEvent, ForwardRefRenderFunction, InputHTMLAttributes } from 'react'
 import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../common/constants'
@@ -68,11 +68,11 @@ const Error = styled.p`
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
-type RadioProps = Omit<InputHTMLAttributes<any>, 'size'> & {
+type RadioProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
   className?: string
   error?: string
   helper?: string
-  label?: string
+  label: string
   letter?: string
   size?: Common.Size
 }
@@ -88,7 +88,7 @@ const RadioWithProps: ForwardRefRenderFunction<HTMLInputElement, RadioProps> = (
     setIsChecked(props.checked === true || props.defaultChecked === true)
   }, [props.checked, props.defaultChecked])
 
-  const handleOnChange = event => {
+  const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (props.disabled) {
       return
     }

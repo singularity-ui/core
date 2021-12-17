@@ -29,4 +29,4 @@ export default {
   },
 }
 
-export const Checkbox = props => <StyledCheckbox {...props} />
+export const Checkbox = (props: any) => <StyledCheckbox {...props} />

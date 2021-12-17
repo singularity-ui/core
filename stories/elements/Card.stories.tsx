@@ -13,4 +13,4 @@ export default {
   component: SuiCard,
 }
 
-export const Card = props => <StyledCard {...props}>This is just a card.</StyledCard>
+export const Card = (props: any) => <StyledCard {...props}>This is just a card.</StyledCard>

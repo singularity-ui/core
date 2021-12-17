@@ -3102,6 +3102,11 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
+"@types/jabber@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@types/jabber/-/jabber-1.2.0.tgz#6e3dbc5741d093ffe84edde56d87b121dce6a5ea"
+  integrity sha512-7lknvb0FFVCLgorYUh1RjJ/ps6trEQcr8GueQ/4tEPa4p3zzkKgcQaBUhswZI+wviHtahWLIrJO8mhL6RsIPbQ==
+
 "@types/json-schema@^7.0.4", "@types/json-schema@^7.0.5", "@types/json-schema@^7.0.8", "@types/json-schema@^7.0.9":
   version "7.0.9"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.9.tgz#97edc9037ea0c38585320b28964dde3b39e4660d"

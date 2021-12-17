@@ -4,10 +4,14 @@ declare namespace Common {
   type SortOrder = 'asc' | 'desc'
   type Type = 'action' | 'boolean' | 'id' | 'tags'
 
+  type Call = (...params: any[]) => any | Promise<any>
+
   type Collection = CollectionItem[]
   type CollectionItem = {
     [key: string]: any
   }
 
-  type Call = (...params: any[]) => any | Promise<any>
+  type DeepPartial<T> = {
+    [P in keyof T]?: DeepPartial<T[P]>
+  }
 }

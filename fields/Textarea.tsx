@@ -55,7 +55,7 @@ const Error = styled.p`
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
-type TextareaProps = TextareaHTMLAttributes<any> & {
+type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
   className?: string
   error?: string
   helper?: string

@@ -37,7 +37,7 @@ const StyledButton = styled.button<{
   }
 `
 
-type ButtonProps = ButtonHTMLAttributes<any> & {
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   accent?: Common.Accent
   children: any
   size?: Common.Size

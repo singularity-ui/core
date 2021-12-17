@@ -36,4 +36,4 @@ export default {
   },
 }
 
-export const Select = props => <StyledSelect {...props} />
+export const Select = (props: any) => <StyledSelect {...props} />

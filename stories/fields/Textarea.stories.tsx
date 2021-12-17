@@ -30,4 +30,4 @@ export default {
   },
 }
 
-export const Textarea = props => <StyledTextarea {...props} />
+export const Textarea = (props: any) => <StyledTextarea {...props} />

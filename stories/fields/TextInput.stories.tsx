@@ -27,4 +27,4 @@ export default {
   },
 }
 
-export const TextInput = props => <StyledTextInput {...props} />
+export const TextInput = (props: any) => <StyledTextInput {...props} />

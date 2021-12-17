@@ -27,4 +27,4 @@ export default {
   },
 }
 
-export const FileInput = props => <StyledFileInput {...props} />
+export const FileInput = (props: any) => <StyledFileInput {...props} />

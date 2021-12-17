@@ -1,5 +1,5 @@
 import BetterPropTypes from 'better-prop-types'
-import React, { ForwardRefRenderFunction, InputHTMLAttributes } from 'react'
+import React, { ChangeEvent, ForwardRefRenderFunction, InputHTMLAttributes } from 'react'
 import { CheckSquare, Square } from 'react-feather'
 import styled from 'styled-components'
 
@@ -66,11 +66,11 @@ const Error = styled.p`
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
-type CheckboxProps = Omit<InputHTMLAttributes<any>, 'size'> & {
+type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
   className?: string
   error?: string
   helper?: string
-  label?: string
+  label: string
   size?: Common.Size
 }
 export const CheckboxWithProps: ForwardRefRenderFunction<HTMLInputElement, CheckboxProps> = (
@@ -85,7 +85,7 @@ export const CheckboxWithProps: ForwardRefRenderFunction<HTMLInputElement, Check
     setIsChecked(props.checked === true || props.defaultChecked === true)
   }, [props.checked, props.defaultChecked])
 
-  const handleOnChange = event => {
+  const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     setIsChecked(event.target.checked)
 
     if (onChange) {

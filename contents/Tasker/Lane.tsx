@@ -1,6 +1,8 @@
 import BetterPropTypes from 'better-prop-types'
-import React from 'react'
+import React, { HTMLAttributes } from 'react'
 import styled from 'styled-components'
+
+import { ReactComponentLike, SuiComponent } from '../../types'
 
 const Box = styled.div`
   background-color: white;
@@ -14,7 +16,11 @@ const Label = styled.h3`
   margin-bottom: ${p => p.theme.padding.layout.small};
 `
 
-export const Lane = ({ label, tasks }) => (
+type LaneProps = {
+  label: string
+  tasks: ReactComponentLike[]
+}
+export const Lane: SuiComponent<HTMLAttributes<HTMLDivElement>, LaneProps> = ({ label, tasks }) => (
   <Box>
     <Label>{label}</Label>
     {tasks.map((Task, index) => (
@@ -25,5 +31,5 @@ export const Lane = ({ label, tasks }) => (
 
 Lane.propTypes = {
   label: BetterPropTypes.string.isRequired,
-  tasks: BetterPropTypes.arrayOf(BetterPropTypes.elementType).isRequired,
+  tasks: BetterPropTypes.arrayOf(BetterPropTypes.elementType.isRequired).isRequired,
 }

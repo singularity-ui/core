@@ -55,7 +55,7 @@ const Error = styled.p`
   padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
-type TextInputProps = Omit<InputHTMLAttributes<any>, 'size'> & {
+type TextInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
   className?: string
   error?: string
   helper?: string

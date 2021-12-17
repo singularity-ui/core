@@ -30,4 +30,4 @@ export default {
   },
 }
 
-export const Radio = props => <StyledRadio {...props} />
+export const Radio = (props: any) => <StyledRadio {...props} />

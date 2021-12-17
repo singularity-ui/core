@@ -41,6 +41,7 @@
     "@storybook/addon-essentials": "6.4.9",
     "@storybook/addon-links": "6.4.9",
     "@storybook/react": "6.4.9",
+    "@types/jabber": "1.2.0",
     "@types/ramda": "0.27.60",
     "@types/sha1": "1.1.3",
     "@types/styled-components": "5.1.17",

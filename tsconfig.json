@@ -10,11 +10,11 @@
     "lib": ["dom", "dom.iterable", "ES2021"],
     "module": "esnext",
     "moduleResolution": "node",
+    "noImplicitAny": true,
     "outDir": "./dist",
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "strict": false,
-    "strictNullChecks": true,
+    "strict": true,
     "target": "ES6"
   },
   "include": ["**/*.js", "**/*.jsx", "**/*.mjs", "**/*.ts", "**/*.tsx"],

@@ -28,4 +28,4 @@ export default {
   },
 }
 
-export const Button = props => <SuiButton {...props}>Button</SuiButton>
+export const Button = (props: any) => <SuiButton {...props}>Button</SuiButton>

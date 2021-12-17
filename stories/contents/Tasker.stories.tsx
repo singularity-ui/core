@@ -28,4 +28,4 @@ export default {
   },
 }
 
-export const Tasker = props => <StyledTasker {...props} />
+export const Tasker = (props: any) => <StyledTasker {...props} />
