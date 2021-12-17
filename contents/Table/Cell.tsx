@@ -218,7 +218,7 @@ export const BooleanCell: FunctionComponent<BooleanCellProps> = ({ column, dataR
   const value = Boolean(typeof key === 'function' ? key(dataRow) : path(key, dataRow))
   const toggledLabel = value ? labelOn : labelOff
 
-  if (column.action === undefined) {
+  if (action === undefined) {
     return (
       <StyledTdBoolean value={value}>
         {withTooltip && <span>{toggledLabel}</span>}
@@ -229,10 +229,6 @@ export const BooleanCell: FunctionComponent<BooleanCellProps> = ({ column, dataR
   }
 
   const handleAction = () => {
-    if (action === undefined) {
-      return
-    }
-
     action(maybeId, !value)
   }
 
