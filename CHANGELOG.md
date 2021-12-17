@@ -1,3 +1,10 @@
+# [2.0.0-beta.11](https://github.com/singularity-ui/core/compare/v2.0.0-beta.10...v2.0.0-beta.11) (2021-12-17)
+
+
+### Bug Fixes
+
+* **contents:** check for undefined instead of null in Table head sort icon ([eae8556](https://github.com/singularity-ui/core/commit/eae855643ad83b786f73a08ba187c592e6d71066))
+
 # [2.0.0-beta.10](https://github.com/singularity-ui/core/compare/v2.0.0-beta.9...v2.0.0-beta.10) (2021-12-13)
 
 
