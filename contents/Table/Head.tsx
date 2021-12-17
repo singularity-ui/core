@@ -69,7 +69,7 @@ export const Head: FunctionComponent<HeadProps> = ({ column, onSort, sortOrder }
       <Box>
         <Label>{label}</Label>
 
-        {isSortable && sortOrder === null && <SortAscOff onClick={sort} />}
+        {isSortable && sortOrder === undefined && <SortAscOff onClick={sort} />}
 
         {isSortable && sortOrder === SORT_ORDER.ASC && (
           <>
