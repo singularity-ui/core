@@ -27,15 +27,15 @@
     "tslib": "2.3.1"
   },
   "devDependencies": {
-    "@babel/preset-react": "7.16.5",
+    "@babel/preset-react": "7.16.7",
     "@fontsource/poppins": "4.5.0",
     "@ivangabriele/commitlint-config": "ivangabriele/commitlint-config",
     "@ivangabriele/eslint-config-typescript-react": "2.1.4",
     "@ivangabriele/prettier-config": "2.0.2",
     "@ivangabriele/semantic-release-config-dist": "1.2.0",
     "@rollup/plugin-commonjs": "21.0.1",
-    "@rollup/plugin-node-resolve": "13.1.1",
-    "@rollup/plugin-replace": "3.0.0",
+    "@rollup/plugin-node-resolve": "13.1.2",
+    "@rollup/plugin-replace": "3.0.1",
     "@rollup/plugin-typescript": "8.3.0",
     "@storybook/addon-actions": "6.4.9",
     "@storybook/addon-essentials": "6.4.9",
