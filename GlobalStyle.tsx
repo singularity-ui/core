@@ -37,7 +37,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
-  p {
-    margin-bottom: ${p => p.theme.padding.layout.tiny};
+  * > p:not(:first-child) {
+    margin-top: ${p => p.theme.padding.layout.small};
   }
 `
