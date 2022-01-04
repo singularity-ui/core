@@ -1,4 +1,4 @@
-import React, { FunctionComponent, HTMLAttributes } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import { Action } from './Action'
@@ -7,7 +7,9 @@ import { Overlay } from './Overlay'
 import { Title } from './Title'
 import { Window } from './Window'
 
-const StyledDialog = styled.div`
+import type { FunctionComponent, HTMLAttributes } from 'react'
+
+export const StyledDialog = styled.div`
   align-items: center;
   bottom: 0;
   display: flex;
@@ -19,7 +21,7 @@ const StyledDialog = styled.div`
   top: 0;
 `
 
-const NonExtendedDialog: FunctionComponent<HTMLAttributes<HTMLDivElement>> = ({ children, ...props }) => (
+const BareDialog: FunctionComponent<HTMLAttributes<HTMLDivElement>> = ({ children, ...props }) => (
   <StyledDialog {...props}>
     <Overlay />
 
@@ -27,9 +29,9 @@ const NonExtendedDialog: FunctionComponent<HTMLAttributes<HTMLDivElement>> = ({ 
   </StyledDialog>
 )
 
-NonExtendedDialog.displayName = 'Dialog'
+BareDialog.displayName = 'Dialog'
 
-export const Dialog = Object.assign(NonExtendedDialog, {
+export const Dialog = Object.assign(BareDialog, {
   Action,
   Body,
   Title,

@@ -1,6 +1,7 @@
 export * as SUI from './common/constants'
 export { theme } from './common/theme'
 export { Dialog } from './components/Dialog'
+export { Modal } from './components/Modal'
 export { Table } from './contents/Table'
 export { Tasker } from './contents/Tasker'
 export { Button } from './elements/Button'
