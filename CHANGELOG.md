@@ -1,3 +1,10 @@
+# [2.0.0-beta.14](https://github.com/singularity-ui/core/compare/v2.0.0-beta.13...v2.0.0-beta.14) (2022-01-05)
+
+
+### Bug Fixes
+
+* **icons:** replace enable-background native prop with enableSource ([d4444b0](https://github.com/singularity-ui/core/commit/d4444b0eb60791cb7c5f86238aed26f0e0130b37))
+
 # [2.0.0-beta.13](https://github.com/singularity-ui/core/compare/v2.0.0-beta.12...v2.0.0-beta.13) (2022-01-05)
 
 
