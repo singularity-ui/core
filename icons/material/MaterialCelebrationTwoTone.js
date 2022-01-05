@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const MaterialCelebrationTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
-  "enable-background": "new 0 0 24 24",
+  enableSource: "new 0 0 24 24",
   height: "24",
   viewBox: "0 0 24 24",
   width: "24",
@@ -14,7 +14,7 @@ const MaterialCelebrationTwoToneSvg = props => /*#__PURE__*/React.createElement(
   width: "24",
   y: "0"
 })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("polygon", {
-  "enable-background": "new",
+  enableSource: "new",
   opacity: ".3",
   points: "12.35,16.18 7.82,11.65 5.3,18.7"
 }), /*#__PURE__*/React.createElement("path", {

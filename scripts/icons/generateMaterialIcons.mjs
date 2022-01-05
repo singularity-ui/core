@@ -101,7 +101,9 @@ function writeMaterialIcon({ count, index, spinner, svgIconPaths, svgIconSource,
     ],
   }).code
 
-  fs.writeFile(`./icons/material/${tsxIconName}.js`, jsIconSource, 'utf-8', () => {
+  const jsIconSourceWithFixes = jsIconSource.replace(/"enable-background"/g, 'enableSource')
+
+  fs.writeFile(`./icons/material/${tsxIconName}.js`, jsIconSourceWithFixes, 'utf-8', () => {
     if (index === count - 1) {
       spinner.succeed('Material icons generated.')
 

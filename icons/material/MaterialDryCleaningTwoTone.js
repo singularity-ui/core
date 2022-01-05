@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const MaterialDryCleaningTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
-  "enable-background": "new 0 0 24 24",
+  enableSource: "new 0 0 24 24",
   height: "24",
   viewBox: "0 0 24 24",
   width: "24",
@@ -14,7 +14,7 @@ const MaterialDryCleaningTwoToneSvg = props => /*#__PURE__*/React.createElement(
   width: "24",
   y: "0"
 })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("rect", {
-  "enable-background": "new",
+  enableSource: "new",
   height: "5",
   opacity: ".3",
   width: "6",

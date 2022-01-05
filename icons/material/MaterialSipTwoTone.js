@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const MaterialSipTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
-  "enable-background": "new 0 0 24 24",
+  enableSource: "new 0 0 24 24",
   height: "24",
   viewBox: "0 0 24 24",
   width: "24",
@@ -13,7 +13,7 @@ const MaterialSipTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   height: "24",
   width: "24"
 })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("rect", {
-  "enable-background": "new",
+  enableSource: "new",
   height: "1",
   opacity: ".3",
   width: "2",
@@ -21,7 +21,7 @@ const MaterialSipTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   y: "10.5"
 }), /*#__PURE__*/React.createElement("path", {
   d: "M4,18h16V6H4V18z M14,9h4c0.55,0,1,0.45,1,1v2c0,0.55-0.45,1-1,1h-2.5v2H14V9z M11,9h2v6h-2V9z M5,13.5h3.5v-0.75H6c-0.55,0-1-0.45-1-1V10c0-0.55,0.45-1,1-1h4v1.5H6.5v0.75H9c0.55,0,1,0.45,1,1V14 c0,0.55-0.45,1-1,1H5V13.5z",
-  "enable-background": "new",
+  enableSource: "new",
   opacity: ".3"
 }), /*#__PURE__*/React.createElement("path", {
   d: "M10,14v-1.75c0-0.55-0.45-1-1-1H6.5V10.5H10V9H6c-0.55,0-1,0.45-1,1v1.75c0,0.55,0.45,1,1,1h2.5v0.75H5V15h4 C9.55,15,10,14.55,10,14z"

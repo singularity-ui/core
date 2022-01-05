@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const MaterialLightbulbTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
-  "enable-background": "new 0 0 24 24",
+  enableSource: "new 0 0 24 24",
   height: "24",
   viewBox: "0 0 24 24",
   width: "24",
@@ -13,7 +13,7 @@ const MaterialLightbulbTwoToneSvg = props => /*#__PURE__*/React.createElement("s
   fill: "none"
 })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
   d: "M12,4C8.97,4,6.5,6.47,6.5,9.5c0,2.47,1.49,3.89,2.35,4.5h6.3 c0.86-0.61,2.35-2.03,2.35-4.5C17.5,6.47,15.03,4,12,4z",
-  "enable-background": "new",
+  enableSource: "new",
   opacity: ".3"
 }), /*#__PURE__*/React.createElement("path", {
   d: "M12,22c1.1,0,2-0.9,2-2h-4C10,21.1,10.9,22,12,22z"
