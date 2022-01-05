@@ -26,15 +26,15 @@
     "import/no-extraneous-dependencies": ["error", { "peerDependencies": true }],
 
     "react/forbid-prop-types": "off",
+    "react-hooks/exhaustive-deps": "off",
     "react/function-component-definition": "off",
     "react/jsx-props-no-spreading": "off",
+    "react/no-typos": "off",
     "react/prop-types": [
       "error",
       { "ignore": ["checked", "children", "className", "disabled", "defaultChecked", "onChange"] }
     ],
-    "react/require-default-props": "off",
-
-    "react-hooks/exhaustive-deps": "off"
+    "react/require-default-props": "off"
   },
   "overrides": [
     {

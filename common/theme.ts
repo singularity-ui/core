@@ -26,6 +26,7 @@ export interface Theme {
 
     body: {
       background: string
+      dark: string
       light: string
       main: string
       white: string
@@ -149,9 +150,10 @@ export const theme: Theme = {
 
     body: {
       background: '#f7f9fc',
+      dark: '#343a40',
       light: '#6c757d',
       main: '#495057',
-      white: '#ffffff',
+      white: '#f8f9fa',
     },
 
     card: {
