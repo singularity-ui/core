@@ -1,9 +1,10 @@
 import BetterPropTypes from 'better-prop-types'
 import React, { ChangeEvent, ForwardRefRenderFunction, InputHTMLAttributes } from 'react'
-import { CheckSquare, Square } from 'react-feather'
 import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../common/constants'
+import MaterialCheckBox from '../icons/material/MaterialCheckBox'
+import MaterialCheckBoxOutlineBlank from '../icons/material/MaterialCheckBoxOutlineBlank'
 
 const StyledLabel = styled.label<{
   hasError: boolean
@@ -34,7 +35,7 @@ const StyledLabel = styled.label<{
   }
 
   > svg {
-    color: ${p => (p.hasError ? p.theme.color.danger.default : p.theme.color.secondary.default)};
+    fill: ${p => (p.hasError ? p.theme.color.danger.default : p.theme.color.secondary.default)};
     margin-right: ${p => p.theme.padding.input[p.size]};
     height: ${p => p.theme.typography.size[p.size] * 1.5}rem !important;
     transition-delay: 0s, 0s, 0s, 0s;
@@ -44,7 +45,7 @@ const StyledLabel = styled.label<{
     width: ${p => p.theme.typography.size[p.size] * 1.5}rem !important;
   }
   :hover > svg {
-    color: ${p => (p.hasError ? p.theme.color.danger.active : p.theme.color.secondary.active)};
+    fill: ${p => (p.hasError ? p.theme.color.danger.active : p.theme.color.secondary.active)};
   }
 `
 
@@ -99,7 +100,7 @@ export const CheckboxWithProps: ForwardRefRenderFunction<HTMLInputElement, Check
       <StyledLabel className="Checkbox" hasError={hasError} size={size}>
         <input ref={ref} onChange={handleOnChange} type="checkbox" {...props} />
 
-        {isChecked ? <CheckSquare /> : <Square />}
+        {isChecked ? <MaterialCheckBox /> : <MaterialCheckBoxOutlineBlank />}
         <LabelText isChecked={isChecked}>{label}</LabelText>
       </StyledLabel>
 

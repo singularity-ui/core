@@ -2,10 +2,11 @@
 
 import BetterPropTypes from 'better-prop-types'
 import React, { FunctionComponent } from 'react'
-import { ChevronLeft, ChevronRight } from 'react-feather'
 import styled from 'styled-components'
 
 import { Button } from '../../elements/Button'
+import MaterialChevronLeft from '../../icons/material/MaterialChevronLeft'
+import MaterialChevronRight from '../../icons/material/MaterialChevronRight'
 
 const Box = styled.div`
   display: flex;
@@ -43,9 +44,8 @@ const Link = styled(Button)`
   }
 
   > svg {
+    fill: ${p => p.theme.color.body.white};
     margin-top: -1px;
-    max-height: 1rem;
-    max-width: 1rem;
   }
 `
 
@@ -76,7 +76,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({ onChange, pageC
   return (
     <Box>
       <Link key="page-previous" disabled={pageIndex === 0} onClick={() => onChange(pageIndex - 1)}>
-        <ChevronLeft />
+        <MaterialChevronLeft />
       </Link>
 
       {links.map(({ index, isDisabled, key, label }) => (
@@ -86,7 +86,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({ onChange, pageC
       ))}
 
       <Link key="page-next" disabled={pageIndex === pageCount - 1} onClick={() => onChange(pageIndex + 1)}>
-        <ChevronRight />
+        <MaterialChevronRight />
       </Link>
     </Box>
   )

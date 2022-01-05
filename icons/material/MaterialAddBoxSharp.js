@@ -15,11 +15,8 @@ const MaterialAddBoxSharpSvg = props => /*#__PURE__*/React.createElement("svg", 
 }));
 
 const MaterialAddBoxSharp = (styled.default || styled)(MaterialAddBoxSharpSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialAddBoxSharp;

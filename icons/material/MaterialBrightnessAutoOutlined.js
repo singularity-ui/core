@@ -15,11 +15,8 @@ const MaterialBrightnessAutoOutlinedSvg = props => /*#__PURE__*/React.createElem
 }));
 
 const MaterialBrightnessAutoOutlined = (styled.default || styled)(MaterialBrightnessAutoOutlinedSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialBrightnessAutoOutlined;

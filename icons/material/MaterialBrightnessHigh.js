@@ -15,11 +15,8 @@ const MaterialBrightnessHighSvg = props => /*#__PURE__*/React.createElement("svg
 }));
 
 const MaterialBrightnessHigh = (styled.default || styled)(MaterialBrightnessHighSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialBrightnessHigh;

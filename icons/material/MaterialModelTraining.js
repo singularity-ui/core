@@ -16,11 +16,8 @@ const MaterialModelTrainingSvg = props => /*#__PURE__*/React.createElement("svg"
 })));
 
 const MaterialModelTraining = (styled.default || styled)(MaterialModelTrainingSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialModelTraining;

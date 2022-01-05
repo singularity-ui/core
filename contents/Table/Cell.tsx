@@ -1,7 +1,6 @@
 import BetterPropTypes from 'better-prop-types'
 import * as R from 'ramda'
 import React, { FunctionComponent } from 'react'
-import { CheckCircle, XCircle } from 'react-feather'
 import styled from 'styled-components'
 
 import { ColumnPropType } from './shapes'
@@ -76,10 +75,10 @@ const StyledTdAction = styled(StyledTdIcon)<{
   }
 
   svg {
-    color: ${p => p.theme.color[p.accent].default};
+    fill: ${p => p.theme.color[p.accent].default};
   }
   :hover svg {
-    color: white;
+    fill: white;
   }
 `
 
@@ -87,7 +86,7 @@ const StyledTdBoolean = styled(StyledTdIcon)<{
   value: any
 }>`
   svg {
-    color: ${p => p.theme.color[p.value ? 'success' : 'danger'].active};
+    fill: ${p => p.theme.color[p.value ? 'success' : 'danger'].active};
   }
 `
 
@@ -223,7 +222,7 @@ export const BooleanCell: FunctionComponent<BooleanCellProps> = ({ column, dataR
       <StyledTdBoolean value={value}>
         {withTooltip && <span>{toggledLabel}</span>}
 
-        {value ? <CheckCircle /> : <XCircle />}
+        {value ? <IconOn /> : <IconOff />}
       </StyledTdBoolean>
     )
   }

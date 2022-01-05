@@ -15,11 +15,8 @@ const MaterialPanoramaWideAngleSharpSvg = props => /*#__PURE__*/React.createElem
 }));
 
 const MaterialPanoramaWideAngleSharp = (styled.default || styled)(MaterialPanoramaWideAngleSharpSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialPanoramaWideAngleSharp;

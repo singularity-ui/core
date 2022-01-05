@@ -15,11 +15,8 @@ const MaterialPortraitSvg = props => /*#__PURE__*/React.createElement("svg", {
 }));
 
 const MaterialPortrait = (styled.default || styled)(MaterialPortraitSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialPortrait;

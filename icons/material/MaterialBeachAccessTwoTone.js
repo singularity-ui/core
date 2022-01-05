@@ -18,11 +18,8 @@ const MaterialBeachAccessTwoToneSvg = props => /*#__PURE__*/React.createElement(
 }));
 
 const MaterialBeachAccessTwoTone = (styled.default || styled)(MaterialBeachAccessTwoToneSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialBeachAccessTwoTone;

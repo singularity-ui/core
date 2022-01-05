@@ -26,11 +26,8 @@ const MaterialSixMpSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
 }))));
 
 const MaterialSixMpSharp = (styled.default || styled)(MaterialSixMpSharpSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialSixMpSharp;

@@ -12,11 +12,8 @@ const MaterialRadioRoundedSvg = props => /*#__PURE__*/React.createElement("svg",
 }));
 
 const MaterialRadioRounded = (styled.default || styled)(MaterialRadioRoundedSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialRadioRounded;

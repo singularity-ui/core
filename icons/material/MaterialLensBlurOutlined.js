@@ -15,11 +15,8 @@ const MaterialLensBlurOutlinedSvg = props => /*#__PURE__*/React.createElement("s
 }))));
 
 const MaterialLensBlurOutlined = (styled.default || styled)(MaterialLensBlurOutlinedSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialLensBlurOutlined;

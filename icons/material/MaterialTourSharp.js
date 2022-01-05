@@ -18,11 +18,8 @@ const MaterialTourSharpSvg = props => /*#__PURE__*/React.createElement("svg", {
 })));
 
 const MaterialTourSharp = (styled.default || styled)(MaterialTourSharpSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialTourSharp;

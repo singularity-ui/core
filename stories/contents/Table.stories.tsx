@@ -1,10 +1,13 @@
 import Jabber from 'jabber'
 import React from 'react'
-import { CheckCircle, XCircle, Edit, Trash } from 'react-feather'
 import styled from 'styled-components'
 
 import { SUI, Table as SuiTable } from '../..'
 import { TableColumnProps } from '../../contents/Table/types'
+import MaterialDeleteOutlined from '../../icons/material/MaterialDeleteOutlined'
+import MaterialEditOutlined from '../../icons/material/MaterialEditOutlined'
+import MaterialPersonOffOutlined from '../../icons/material/MaterialPersonOffOutlined'
+import MaterialPersonOutlined from '../../icons/material/MaterialPersonOutlined'
 
 const jabber = new Jabber()
 
@@ -36,8 +39,8 @@ const COLUMNS: TableColumnProps[] = [
           window.alert(`Activate user account with id=${id}.`)
         : // eslint-disable-next-line no-alert
           window.alert(`Disable user account with id=${id}.`),
-    IconOff: XCircle,
-    IconOn: CheckCircle,
+    IconOff: MaterialPersonOffOutlined,
+    IconOn: MaterialPersonOutlined,
     withTooltip: true,
   },
   {
@@ -46,13 +49,13 @@ const COLUMNS: TableColumnProps[] = [
     // eslint-disable-next-line no-alert
     action: id => window.alert(`Edit user account with id=${id}.`),
     accent: SUI.ACCENT.SECONDARY,
-    Icon: Edit,
+    Icon: MaterialEditOutlined,
   },
   {
     accent: 'danger',
     // eslint-disable-next-line no-alert
     action: id => window.alert(`Delete user account with id=${id}.`),
-    Icon: Trash,
+    Icon: MaterialDeleteOutlined,
     label: 'Delete user',
     type: 'action',
   },

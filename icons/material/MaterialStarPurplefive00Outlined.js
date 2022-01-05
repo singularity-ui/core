@@ -15,11 +15,8 @@ const MaterialStarPurplefive00OutlinedSvg = props => /*#__PURE__*/React.createEl
 }));
 
 const MaterialStarPurplefive00Outlined = (styled.default || styled)(MaterialStarPurplefive00OutlinedSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialStarPurplefive00Outlined;

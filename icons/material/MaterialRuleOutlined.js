@@ -16,11 +16,8 @@ const MaterialRuleOutlinedSvg = props => /*#__PURE__*/React.createElement("svg",
 })));
 
 const MaterialRuleOutlined = (styled.default || styled)(MaterialRuleOutlinedSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialRuleOutlined;

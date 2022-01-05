@@ -1,9 +1,9 @@
 import BetterPropTypes from 'better-prop-types'
 import React, { ForwardRefRenderFunction, InputHTMLAttributes, ReactEventHandler } from 'react'
-import { Upload } from 'react-feather'
 import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../common/constants'
+import MaterialUploadFile from '../icons/material/MaterialUploadFile'
 
 const Label = styled.label<{
   size: Common.Size
@@ -57,7 +57,7 @@ const FileBox = styled.div<{
   }
 
   > svg {
-    color: ${p => p.theme.color.body.light};
+    fill: ${p => p.theme.color.body.light};
     height: ${p => Math.round(p.theme.typography.size[p.size] * 2)}rem;
     width: ${p => Math.round(p.theme.typography.size[p.size] * 2)}rem;
     opacity: 0.65;
@@ -157,7 +157,7 @@ const FileInputWithRef: ForwardRefRenderFunction<HTMLInputElement, FileInputProp
           {...props}
         />
 
-        <Upload />
+        <MaterialUploadFile />
         <Placeholder className="Label" isFilled={Boolean(fileName)} size={size}>
           {fileName || placeholder}
         </Placeholder>

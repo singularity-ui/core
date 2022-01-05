@@ -16,11 +16,8 @@ const MaterialFileDownloadOutlinedSvg = props => /*#__PURE__*/React.createElemen
 })));
 
 const MaterialFileDownloadOutlined = (styled.default || styled)(MaterialFileDownloadOutlinedSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialFileDownloadOutlined;

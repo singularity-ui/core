@@ -23,11 +23,8 @@ const MaterialSentimentSatisfiedAltRoundedSvg = props => /*#__PURE__*/React.crea
 }));
 
 const MaterialSentimentSatisfiedAltRounded = (styled.default || styled)(MaterialSentimentSatisfiedAltRoundedSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialSentimentSatisfiedAltRounded;

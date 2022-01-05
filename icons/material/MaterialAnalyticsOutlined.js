@@ -36,11 +36,8 @@ const MaterialAnalyticsOutlinedSvg = props => /*#__PURE__*/React.createElement("
 }))));
 
 const MaterialAnalyticsOutlined = (styled.default || styled)(MaterialAnalyticsOutlinedSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialAnalyticsOutlined;

@@ -15,11 +15,8 @@ const MaterialCloudQueueRoundedSvg = props => /*#__PURE__*/React.createElement("
 }));
 
 const MaterialCloudQueueRounded = (styled.default || styled)(MaterialCloudQueueRoundedSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialCloudQueueRounded;

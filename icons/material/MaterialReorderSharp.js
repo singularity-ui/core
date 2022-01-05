@@ -15,11 +15,8 @@ const MaterialReorderSharpSvg = props => /*#__PURE__*/React.createElement("svg",
 }));
 
 const MaterialReorderSharp = (styled.default || styled)(MaterialReorderSharpSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialReorderSharp;

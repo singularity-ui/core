@@ -16,11 +16,8 @@ const MaterialNightlifeTwoToneSvg = props => /*#__PURE__*/React.createElement("s
 })))));
 
 const MaterialNightlifeTwoTone = (styled.default || styled)(MaterialNightlifeTwoToneSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialNightlifeTwoTone;

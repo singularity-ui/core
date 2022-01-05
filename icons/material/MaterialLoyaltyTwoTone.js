@@ -24,11 +24,8 @@ const MaterialLoyaltyTwoToneSvg = props => /*#__PURE__*/React.createElement("svg
 }));
 
 const MaterialLoyaltyTwoTone = (styled.default || styled)(MaterialLoyaltyTwoToneSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialLoyaltyTwoTone;

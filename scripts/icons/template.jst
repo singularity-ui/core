@@ -7,11 +7,8 @@ const /*ICON_NAME*/Svg = props => (
 
 const /*ICON_NAME*/ = (styled.default || styled)(/*ICON_NAME*/Svg).attrs(p => ({
   accent: p.accent || 'primary',
-  size: p.size || 'medium',
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 
 export default /*ICON_NAME*/

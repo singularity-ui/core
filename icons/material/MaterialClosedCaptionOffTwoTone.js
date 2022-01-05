@@ -23,11 +23,8 @@ const MaterialClosedCaptionOffTwoToneSvg = props => /*#__PURE__*/React.createEle
 })))));
 
 const MaterialClosedCaptionOffTwoTone = (styled.default || styled)(MaterialClosedCaptionOffTwoToneSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialClosedCaptionOffTwoTone;

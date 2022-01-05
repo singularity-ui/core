@@ -16,11 +16,8 @@ const MaterialIndeterminateCheckBoxSvg = props => /*#__PURE__*/React.createEleme
 })))));
 
 const MaterialIndeterminateCheckBox = (styled.default || styled)(MaterialIndeterminateCheckBoxSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialIndeterminateCheckBox;

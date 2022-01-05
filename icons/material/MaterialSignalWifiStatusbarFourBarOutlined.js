@@ -15,11 +15,8 @@ const MaterialSignalWifiStatusbarFourBarOutlinedSvg = props => /*#__PURE__*/Reac
 })));
 
 const MaterialSignalWifiStatusbarFourBarOutlined = (styled.default || styled)(MaterialSignalWifiStatusbarFourBarOutlinedSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialSignalWifiStatusbarFourBarOutlined;

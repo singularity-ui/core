@@ -21,7 +21,6 @@
   "dependencies": {
     "better-prop-types": "^1.0.0",
     "ramda": "^0.27.1",
-    "react-feather": "^2.0.9",
     "react-select": "^5.1.0",
     "sha1": "^1.1.1",
     "tslib": "2.3.1"

@@ -12,11 +12,8 @@ const MaterialSlowMotionVideoRoundedSvg = props => /*#__PURE__*/React.createElem
 }));
 
 const MaterialSlowMotionVideoRounded = (styled.default || styled)(MaterialSlowMotionVideoRoundedSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialSlowMotionVideoRounded;

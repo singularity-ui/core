@@ -15,11 +15,8 @@ const MaterialOfflinePinOutlinedSvg = props => /*#__PURE__*/React.createElement(
 }));
 
 const MaterialOfflinePinOutlined = (styled.default || styled)(MaterialOfflinePinOutlinedSvg).attrs(p => ({
-  accent: p.accent || 'primary',
-  size: p.size || 'medium'
+  accent: p.accent || 'primary'
 }))`
   fill: ${p => p.theme.color[p.accent].active};
-  height: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
-  max-width: calc(${p => p.theme.typography.size[p.size]} * 1.5rem) !important;
 `;
 export default MaterialOfflinePinOutlined;
