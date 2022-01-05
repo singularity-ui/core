@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const MaterialOutboxTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
-  enableSource: "new 0 0 24 24",
   height: "24",
   viewBox: "0 0 24 24",
   width: "24",
@@ -14,7 +13,6 @@ const MaterialOutboxTwoToneSvg = props => /*#__PURE__*/React.createElement("svg"
   width: "24"
 })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
   d: "M12,18c-1.63,0-3.06-0.79-3.98-2H5v3h14v-3h-3.02C15.06,17.21,13.63,18,12,18z",
-  enableSource: "new",
   opacity: ".3"
 }), /*#__PURE__*/React.createElement("polygon", {
   points: "11,14 13,14 13,11 16,11 12,7 8,11 11,11"

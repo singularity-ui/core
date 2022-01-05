@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const MaterialTaxiAlertTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
-  enableSource: "new 0 0 24 24",
   height: "24",
   viewBox: "0 0 24 24",
   width: "24",
@@ -14,7 +13,6 @@ const MaterialTaxiAlertTwoToneSvg = props => /*#__PURE__*/React.createElement("s
   width: "24"
 })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
   d: "M4,18h14v-5H4V18z M15.5,14c0.83,0,1.5,0.67,1.5,1.5S16.33,17,15.5,17 S14,16.33,14,15.5S14.67,14,15.5,14z M6.5,14C7.33,14,8,14.67,8,15.5S7.33,17,6.5,17S5,16.33,5,15.5S5.67,14,6.5,14z",
-  enableSource: "new",
   opacity: ".3"
 }), /*#__PURE__*/React.createElement("circle", {
   cx: "6.5",

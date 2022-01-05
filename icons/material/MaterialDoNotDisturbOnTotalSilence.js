@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const MaterialDoNotDisturbOnTotalSilenceSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
-  enableSource: "new 0 0 24 24",
   height: "24",
   viewBox: "0 0 24 24",
   width: "24",

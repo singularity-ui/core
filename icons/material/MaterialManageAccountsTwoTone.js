@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const MaterialManageAccountsTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
-  enableSource: "new 0 0 24 24",
   height: "24",
   viewBox: "0 0 24 24",
   width: "24",
@@ -14,12 +13,10 @@ const MaterialManageAccountsTwoToneSvg = props => /*#__PURE__*/React.createEleme
 })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("circle", {
   cx: "10",
   cy: "8",
-  enableSource: "new",
   opacity: ".3",
   r: "2"
 }), /*#__PURE__*/React.createElement("path", {
   d: "M10,16c0-0.34,0.03-0.67,0.08-0.99C10.05,15,10.03,15,10,15 c-1.97,0-3.9,0.53-5.59,1.54C4.16,16.68,4,17,4,17.35V18h6.29C10.1,17.37,10,16.7,10,16z",
-  enableSource: "new",
   opacity: ".3"
 })), /*#__PURE__*/React.createElement("path", {
   d: "M4,18v-0.65c0-0.34,0.16-0.66,0.41-0.81C6.1,15.53,8.03,15,10,15c0.03,0,0.05,0,0.08,0.01c0.1-0.7,0.3-1.37,0.59-1.98 C10.45,13.01,10.23,13,10,13c-2.42,0-4.68,0.67-6.61,1.82C2.51,15.34,2,16.32,2,17.35V20h9.26c-0.42-0.6-0.75-1.28-0.97-2H4z M10,12c2.21,0,4-1.79,4-4s-1.79-4-4-4S6,5.79,6,8S7.79,12,10,12z M10,6c1.1,0,2,0.9,2,2s-0.9,2-2,2S8,9.1,8,8S8.9,6,10,6z"

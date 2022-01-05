@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const MaterialScheduleSendTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
-  enableSource: "new 0 0 24 24",
   height: "24",
   viewBox: "0 0 24 24",
   width: "24",
@@ -14,7 +13,6 @@ const MaterialScheduleSendTwoToneSvg = props => /*#__PURE__*/React.createElement
   width: "24"
 })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
   d: "M5,10.5l6,1.5l-6,1.5v3.49l5.39-2.27c0.6-1.73,1.86-3.16,3.48-3.97L5,7.01V10.5 z",
-  enableSource: "new",
   opacity: ".3"
 }), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
   d: "M11,12l-6-1.5V7.01l8.87,3.74c0.94-0.47,2-0.75,3.13-0.75c0.1,0,0.19,0.01,0.28,0.01L3,4v16l7-2.95c0-0.02,0-0.03,0-0.05 c0-0.8,0.14-1.56,0.39-2.28L5,16.99V13.5L11,12z"

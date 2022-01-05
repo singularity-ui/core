@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const MaterialImagesearchRollerTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
-  enableSource: "new 0 0 24 24",
   height: "24",
   viewBox: "0 0 24 24",
   width: "24",
@@ -13,14 +12,12 @@ const MaterialImagesearchRollerTwoToneSvg = props => /*#__PURE__*/React.createEl
   height: "24",
   width: "24"
 })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("rect", {
-  enableSource: "new",
   height: "2",
   opacity: ".3",
   width: "10",
   x: "8",
   y: "4"
 }), /*#__PURE__*/React.createElement("rect", {
-  enableSource: "new",
   height: "4",
   opacity: ".3",
   width: "2",

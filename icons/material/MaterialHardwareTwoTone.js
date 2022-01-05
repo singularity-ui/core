@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const MaterialHardwareTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
-  enableSource: "new 0 0 24 24",
   height: "24",
   viewBox: "0 0 24 24",
   width: "24",
@@ -15,10 +14,8 @@ const MaterialHardwareTwoToneSvg = props => /*#__PURE__*/React.createElement("sv
   y: "0"
 })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
   d: "M6.77,6H11v5h2V5H9C8.11,5,7.32,5.39,6.77,6z",
-  enableSource: "new",
   opacity: ".3"
 }), /*#__PURE__*/React.createElement("rect", {
-  enableSource: "new",
   height: "6",
   opacity: ".3",
   width: "2",

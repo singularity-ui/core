@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const MaterialStarRateTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
-  enableSource: "new 0 0 24 24",
   height: "24",
   viewBox: "0 0 24 24",
   width: "24",
@@ -13,7 +12,6 @@ const MaterialStarRateTwoToneSvg = props => /*#__PURE__*/React.createElement("sv
   height: "24",
   width: "24"
 }), /*#__PURE__*/React.createElement("polygon", {
-  enableSource: "new",
   opacity: ".3",
   points: "12.94,12 12,8.89 11.06,12 8.24,12 10.51,13.62 9.58,16.63 12,14.79 14.42,16.63 13.49,13.62 15.76,12"
 }), /*#__PURE__*/React.createElement("path", {

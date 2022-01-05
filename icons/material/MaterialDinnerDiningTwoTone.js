@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const MaterialDinnerDiningTwoToneSvg = props => /*#__PURE__*/React.createElement("svg", {
   xmlns: "http://www.w3.org/2000/svg",
-  enableSource: "new 0 0 24 24",
   height: "24",
   viewBox: "0 0 24 24",
   width: "24",
@@ -15,7 +14,6 @@ const MaterialDinnerDiningTwoToneSvg = props => /*#__PURE__*/React.createElement
   y: "0"
 })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", {
   d: "M17.08,15.14C16.41,14.4,15.49,14,14.5,14c-1.35,0-2.58,0.79-3.16,2h6.32 C17.52,15.69,17.32,15.4,17.08,15.14z",
-  enableSource: "new",
   opacity: ".3"
 }), /*#__PURE__*/React.createElement("polygon", {
   points: "2,19 4,21 20,21 22,19"

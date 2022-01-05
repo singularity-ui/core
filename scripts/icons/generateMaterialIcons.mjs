@@ -86,9 +86,11 @@ function readMaterialIcon({ count, index, spinner, svgIconPaths, template }) {
 function writeMaterialIcon({ count, index, spinner, svgIconPaths, svgIconSource, template, tsxIconName }) {
   const svgIconSourceWithProps = svgIconSource.replace(/>/, ` {...props}>`)
 
+  const svgIconSourceWithPropsFixed = svgIconSourceWithProps.replace(/enable-background="[^"]+"/g, '')
+
   const jsxIconSource = template
     .replace(/\/\*ICON_NAME\*\//g, tsxIconName)
-    .replace(/\/\*ICON_SVG_SOURCE\*\//g, svgIconSourceWithProps)
+    .replace(/\/\*ICON_SVG_SOURCE\*\//g, svgIconSourceWithPropsFixed)
 
   const jsIconSource = transformSync(jsxIconSource, {
     presets: [
@@ -101,9 +103,7 @@ function writeMaterialIcon({ count, index, spinner, svgIconPaths, svgIconSource,
     ],
   }).code
 
-  const jsIconSourceWithFixes = jsIconSource.replace(/"enable-background"/g, 'enableSource')
-
-  fs.writeFile(`./icons/material/${tsxIconName}.js`, jsIconSourceWithFixes, 'utf-8', () => {
+  fs.writeFile(`./icons/material/${tsxIconName}.js`, jsIconSource, 'utf-8', () => {
     if (index === count - 1) {
       spinner.succeed('Material icons generated.')
 
