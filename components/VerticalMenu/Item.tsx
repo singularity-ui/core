@@ -2,7 +2,7 @@ import BetterPropTypes from 'better-prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
-import type { HTMLAttributes, ReactElement } from 'react'
+import type { ForwardedRef, HTMLAttributes, ReactElement } from 'react'
 
 const StyleItem = styled.li`
   display: flex;
@@ -81,33 +81,37 @@ const LinkAsAnchor = styled.a<{
   }
 `
 
-export type VerticalMenuItemWithLinkProps = HTMLAttributes<HTMLAnchorElement> & {
+type VerticalMenuItemCustomProps = {
   accent?: Common.Accent
-  href: string
-  isActive?: boolean
-  isDark?: boolean
-}
-export type VerticalMenuItemWithSpanProps = HTMLAttributes<HTMLSpanElement> & {
-  accent?: Common.Accent
-  isActive?: boolean
-  isDark?: boolean
-}
-export function Item(props: VerticalMenuItemWithLinkProps): ReactElement<any, any>
-export function Item(props: VerticalMenuItemWithSpanProps): ReactElement<any, any>
-export function Item({
-  children,
-  className,
-  href,
-  isActive = false,
-  isDark = false,
-  ...props
-}: (VerticalMenuItemWithLinkProps | VerticalMenuItemWithSpanProps) & {
   href?: string
-}) {
+  isActive?: boolean
+  isDark?: boolean
+}
+export type VerticalMenuItemWithLinkProps = HTMLAttributes<Omit<HTMLAnchorElement, 'href'>> &
+  VerticalMenuItemCustomProps & {
+    href: string
+  }
+export type VerticalMenuItemWithSpanProps = HTMLAttributes<HTMLSpanElement> & VerticalMenuItemCustomProps
+function ItemWithRef(
+  props: VerticalMenuItemWithLinkProps,
+  ref: ForwardedRef<Omit<HTMLAnchorElement, 'href'>>,
+): ReactElement
+function ItemWithRef(props: VerticalMenuItemWithSpanProps, ref: ForwardedRef<HTMLSpanElement>): ReactElement
+function ItemWithRef(
+  {
+    children,
+    className,
+    href,
+    isActive = false,
+    isDark = false,
+    ...props
+  }: VerticalMenuItemWithLinkProps | VerticalMenuItemWithSpanProps,
+  ref: ForwardedRef<any>,
+) {
   if (href !== undefined) {
     return (
       <StyleItem className={className}>
-        <LinkAsAnchor className="Link" href={href} isActive={isActive} isDark={isDark} {...props}>
+        <LinkAsAnchor ref={ref} className="Link" href={href} isActive={isActive} isDark={isDark} {...props}>
           {children}
         </LinkAsAnchor>
       </StyleItem>
@@ -116,12 +120,16 @@ export function Item({
 
   return (
     <StyleItem>
-      <LinkAsSpan className="Link" isActive={isActive} isDark={isDark} {...props}>
+      <LinkAsSpan ref={ref} className="Link" isActive={isActive} isDark={isDark} {...props}>
         {children}
       </LinkAsSpan>
     </StyleItem>
   )
 }
+
+export const Item = React.forwardRef(ItemWithRef)
+
+Item.displayName = 'Item'
 
 Item.propTypes = {
   href: BetterPropTypes.string.isOptionalButNotNull,
