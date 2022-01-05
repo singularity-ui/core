@@ -153,7 +153,7 @@ export const theme: Theme = {
       dark: '#343a40',
       light: '#6c757d',
       main: '#495057',
-      white: '#f8f9fa',
+      white: '#ffffff',
     },
 
     card: {
