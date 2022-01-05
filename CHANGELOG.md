@@ -1,3 +1,10 @@
+# [2.0.0-beta.13](https://github.com/singularity-ui/core/compare/v2.0.0-beta.12...v2.0.0-beta.13) (2022-01-05)
+
+
+### Bug Fixes
+
+* restore theme body white color ([17f848e](https://github.com/singularity-ui/core/commit/17f848ea0408a83f647f028452a5d7f1a6ba5513))
+
 # [2.0.0-beta.12](https://github.com/singularity-ui/core/compare/v2.0.0-beta.11...v2.0.0-beta.12) (2022-01-05)
 
 
