@@ -1,3 +1,12 @@
+# [2.0.0-beta.12](https://github.com/singularity-ui/core/compare/v2.0.0-beta.11...v2.0.0-beta.12) (2022-01-05)
+
+
+### Features
+
+* **components:** add Modal ([86c7283](https://github.com/singularity-ui/core/commit/86c728397cae4e4434ad9377812b14e1379c4cc5))
+* **components:** add VerticalMenu ([3197bf3](https://github.com/singularity-ui/core/commit/3197bf3521838154aef2e73572e90b9b44657e41))
+* **elements:** add Field ([b4611c9](https://github.com/singularity-ui/core/commit/b4611c9871b5d691a54f60948510f3def8cc1a3c))
+
 # [2.0.0-beta.11](https://github.com/singularity-ui/core/compare/v2.0.0-beta.10...v2.0.0-beta.11) (2021-12-17)
 
 
