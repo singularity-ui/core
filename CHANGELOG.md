@@ -1,3 +1,10 @@
+# [2.0.0-beta.17](https://github.com/singularity-ui/core/compare/v2.0.0-beta.16...v2.0.0-beta.17) (2022-01-05)
+
+
+### Bug Fixes
+
+* **icons:** make default icons internal ones ([6383e27](https://github.com/singularity-ui/core/commit/6383e27c1536bda173a9e4b40ebf62541f9fc780))
+
 # [2.0.0-beta.16](https://github.com/singularity-ui/core/compare/v2.0.0-beta.15...v2.0.0-beta.16) (2022-01-05)
 
 
