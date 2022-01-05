@@ -1,3 +1,10 @@
+# [2.0.0-beta.15](https://github.com/singularity-ui/core/compare/v2.0.0-beta.14...v2.0.0-beta.15) (2022-01-05)
+
+
+### Bug Fixes
+
+* **components:** forward VerticalMenu.Item ref ([f9c7a9b](https://github.com/singularity-ui/core/commit/f9c7a9bca49c6dc1da18c55f62dcb84bdf334d19))
+
 # [2.0.0-beta.14](https://github.com/singularity-ui/core/compare/v2.0.0-beta.13...v2.0.0-beta.14) (2022-01-05)
 
 
