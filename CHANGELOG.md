@@ -1,3 +1,10 @@
+# [2.0.0-beta.16](https://github.com/singularity-ui/core/compare/v2.0.0-beta.15...v2.0.0-beta.16) (2022-01-05)
+
+
+### Bug Fixes
+
+* **icons:** remove deprecated enable-background SVG prop in Material icons ([487692e](https://github.com/singularity-ui/core/commit/487692eed779b94b961951628b18112ffc59f3c7))
+
 # [2.0.0-beta.15](https://github.com/singularity-ui/core/compare/v2.0.0-beta.14...v2.0.0-beta.15) (2022-01-05)
 
 
