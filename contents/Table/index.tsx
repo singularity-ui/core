@@ -37,10 +37,20 @@ type TableProps = TableHTMLAttributes<any> & {
   defaultSortedKey?: string
   defaultSortedKeyIsDesc?: boolean
   isLoading?: boolean
+  pageCount?: number
   perPage?: number
 }
 export const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps> = (
-  { columns, data, defaultSortedKey, defaultSortedKeyIsDesc = false, isLoading = false, perPage = 10, ...props },
+  {
+    columns,
+    data,
+    defaultSortedKey,
+    defaultSortedKeyIsDesc = false,
+    isLoading = false,
+    pageCount,
+    perPage = 10,
+    ...props
+  },
   ref,
 ) => {
   const [pageIndex, setPageIndex] = React.useState<number>(0)
@@ -51,8 +61,8 @@ export const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps
   const [sortedKeyOrder, setSortedKeyOrder] = React.useState<Common.SortOrder>(getSortOrder(defaultSortedKeyIsDesc))
 
   const isEmpty = data.length === 0
-  const pageCount = Math.ceil(data.length / perPage)
-  const isSinglePaged = pageCount <= 1
+  const controlledPageCount = pageCount || Math.ceil(data.length / perPage)
+  const isSinglePaged = controlledPageCount <= 1
 
   const startIndex = pageIndex * perPage
   const enIndex = startIndex + perPage
@@ -113,7 +123,7 @@ export const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps
         </tbody>
       </table>
 
-      {!isSinglePaged && <Pagination onChange={setPageIndex} pageCount={pageCount} pageIndex={pageIndex} />}
+      {!isSinglePaged && <Pagination onChange={setPageIndex} pageCount={controlledPageCount} pageIndex={pageIndex} />}
     </Box>
   )
 }
@@ -128,5 +138,6 @@ Table.propTypes = {
   defaultSortedKey: BetterPropTypes.string.isOptionalButNotNull,
   defaultSortedKeyIsDesc: BetterPropTypes.bool.isOptionalButNotNull,
   isLoading: BetterPropTypes.bool.isOptionalButNotNull,
+  pageCount: BetterPropTypes.number.isOptionalButNotNull,
   perPage: BetterPropTypes.number.isOptionalButNotNull,
 }
