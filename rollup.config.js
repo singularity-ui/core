@@ -6,7 +6,19 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import styles from 'rollup-plugin-styles'
 
 export default {
-  external: ['better-prop-types', 'ramda', 'sha1', 'tslib'],
+  external: [
+    'better-prop-types',
+    'is-hotkey',
+    'ramda',
+    'remark-parse',
+    'remark-slate',
+    'sha1',
+    'slate',
+    'slate-history',
+    'slate-react',
+    'tslib',
+    'unified',
+  ],
   input: './index.ts',
 
   output: [
