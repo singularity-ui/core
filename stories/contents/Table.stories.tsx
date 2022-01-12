@@ -61,8 +61,8 @@ const COLUMNS: TableColumnProps[] = [
   },
 ]
 
-const DATA = new Array(50).fill(null).map((_, index) => ({
-  id: index,
+const DATA = new Array(100).fill(null).map((_, index) => ({
+  id: index + 1,
   email: jabber.createEmail(),
   isActive: Math.random() < 0.5,
   organization: {
