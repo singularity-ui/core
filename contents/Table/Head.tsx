@@ -59,7 +59,7 @@ export const Head: FunctionComponent<HeadProps> = ({ column, onSort, sortOrder }
       return
     }
 
-    const isDesc = sortOrder !== undefined && sortOrder !== SORT_ORDER.ASC
+    const isDesc = sortOrder !== undefined && sortOrder === SORT_ORDER.ASC
 
     onSort(key, isDesc)
   }
