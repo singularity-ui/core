@@ -38,6 +38,7 @@ type TableProps = TableHTMLAttributes<any> & {
   defaultSortedKeyIsDesc?: boolean
   isLoading?: boolean
   pageCount?: number
+  pageIndex?: number
   perPage?: number
 }
 export const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps> = (
@@ -48,12 +49,13 @@ export const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps
     defaultSortedKeyIsDesc = false,
     isLoading = false,
     pageCount,
+    pageIndex,
     perPage = 10,
     ...props
   },
   ref,
 ) => {
-  const [pageIndex, setPageIndex] = React.useState<number>(0)
+  const [controlledPageIndex, setControlledPageIndex] = React.useState<number>(pageIndex || 0)
   const [sortedData, setSortedData] = React.useState<Common.Collection>(
     sort(data, defaultSortedKey, defaultSortedKeyIsDesc),
   )
@@ -64,7 +66,7 @@ export const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps
   const controlledPageCount = pageCount || Math.ceil(data.length / perPage)
   const isSinglePaged = controlledPageCount <= 1
 
-  const startIndex = pageIndex * perPage
+  const startIndex = controlledPageIndex * perPage
   const enIndex = startIndex + perPage
   const visibleData = isLoading || isEmpty ? [] : sortedData.slice(startIndex, enIndex)
 
@@ -123,7 +125,9 @@ export const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps
         </tbody>
       </table>
 
-      {!isSinglePaged && <Pagination onChange={setPageIndex} pageCount={controlledPageCount} pageIndex={pageIndex} />}
+      {!isSinglePaged && (
+        <Pagination onChange={setControlledPageIndex} pageCount={controlledPageCount} pageIndex={controlledPageIndex} />
+      )}
     </Box>
   )
 }
@@ -139,5 +143,6 @@ Table.propTypes = {
   defaultSortedKeyIsDesc: BetterPropTypes.bool.isOptionalButNotNull,
   isLoading: BetterPropTypes.bool.isOptionalButNotNull,
   pageCount: BetterPropTypes.number.isOptionalButNotNull,
+  pageIndex: BetterPropTypes.number.isOptionalButNotNull,
   perPage: BetterPropTypes.number.isOptionalButNotNull,
 }
