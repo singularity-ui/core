@@ -1,3 +1,18 @@
+# [2.0.0-beta.18](https://github.com/singularity-ui/core/compare/v2.0.0-beta.17...v2.0.0-beta.18) (2022-01-12)
+
+
+### Bug Fixes
+
+* **contents:** handle Table pagination cases greater than 5 pages ([ce5c8db](https://github.com/singularity-ui/core/commit/ce5c8db86fc60ab23be74414619427c11c6196c5))
+* **contents:** restore Table sorting switch ([11081b7](https://github.com/singularity-ui/core/commit/11081b7ff72ebdf9fb5d216835fa7fa6f15cee47))
+
+
+### Features
+
+* **fields:** add isAutoResizing prop to Textarea ([97874eb](https://github.com/singularity-ui/core/commit/97874ebd9e29aeba93150bf7a1cd1b9afc4d4767))
+* **fields:** add pageCount prop to Table ([c93a66c](https://github.com/singularity-ui/core/commit/c93a66c608f4706550162a20334432087c600a59))
+* **fields:** add pageIndex prop to Table ([f966821](https://github.com/singularity-ui/core/commit/f966821ade2448a825860848c175d100a25a5b7d))
+
 # [2.0.0-beta.17](https://github.com/singularity-ui/core/compare/v2.0.0-beta.16...v2.0.0-beta.17) (2022-01-05)
 
 
