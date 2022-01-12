@@ -22,6 +22,7 @@
     "better-prop-types": "^1.0.0",
     "ramda": "^0.27.1",
     "react-select": "^5.1.0",
+    "react-textarea-autosize": "8.3.3",
     "sha1": "^1.1.1",
     "tslib": "2.3.1"
   },

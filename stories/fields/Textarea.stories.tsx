@@ -5,7 +5,6 @@ import { Textarea as SuiTextarea, SUI } from '../..'
 
 const StyledTextarea = styled(SuiTextarea)`
   .Textarea {
-    height: 10rem;
     width: 30rem;
   }
 `
@@ -24,6 +23,7 @@ export default {
   args: {
     error: '',
     helper: '',
+    isAutoResizing: true,
     label: '',
     placeholder: 'A simple textarea',
     size: SUI.SIZE.MEDIUM,
