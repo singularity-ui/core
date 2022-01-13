@@ -270,10 +270,10 @@ export const Cell: FunctionComponent<CellProps> = ({ column, dataRow }) => {
   const value = transform !== undefined ? transform(dataRow) : path(key, dataRow)
 
   if (type === 'id') {
-    return <StyledTdId>{value}</StyledTdId>
+    return <StyledTdId title={value}>{value}</StyledTdId>
   }
 
-  return <StyledTdValue>{value}</StyledTdValue>
+  return <StyledTdValue title={value}>{value}</StyledTdValue>
 }
 
 Cell.propTypes = {
