@@ -1,15 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
 
-import { FileInput as SuiFileInput, SUI } from '../..'
-
-const StyledFileInput = styled(SuiFileInput)`
-  width: 30rem;
-`
+import { FileInput, SUI } from '../..'
 
 export default {
   title: 'Fields/File Input',
-  component: SuiFileInput,
+  component: FileInput,
 
   argTypes: {
     size: {
@@ -22,9 +17,9 @@ export default {
     error: '',
     helper: '',
     label: '',
-    placeholder: 'Choose a file…',
+    placeholder: 'Click or drag and drop a file…',
     size: SUI.SIZE.MEDIUM,
   },
 }
 
-export const FileInput = (props: any) => <StyledFileInput {...props} />
+export const _FileInput = (props: any) => <FileInput {...props} />
