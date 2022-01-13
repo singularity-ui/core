@@ -1,3 +1,10 @@
+# [2.0.0-beta.21](https://github.com/singularity-ui/core/compare/v2.0.0-beta.20...v2.0.0-beta.21) (2022-01-13)
+
+
+### Features
+
+* **contents:** add title to Table value cell ([2a18f03](https://github.com/singularity-ui/core/commit/2a18f038753c73236189707a77fd1979a98272f5))
+
 # [2.0.0-beta.20](https://github.com/singularity-ui/core/compare/v2.0.0-beta.19...v2.0.0-beta.20) (2022-01-13)
 
 
