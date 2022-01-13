@@ -31,7 +31,7 @@ const Box = styled.div`
   }
 `
 
-type TableProps = TableHTMLAttributes<any> & {
+export type TableProps = TableHTMLAttributes<any> & {
   columns: TableColumnProps[]
   data: Common.Collection
   defaultSortedKey?: string

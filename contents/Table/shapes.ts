@@ -17,7 +17,7 @@ export const BooleanColumnPropType = BetterPropTypes.exact({
   action: BetterPropTypes.func.isOptionalButNotNull,
   IconOff: BetterPropTypes.elementType.isOptionalButNotNull,
   IconOn: BetterPropTypes.elementType.isOptionalButNotNull,
-  key: BetterPropTypes.oneOfType([BetterPropTypes.string, BetterPropTypes.func]).isRequired,
+  key: BetterPropTypes.string.isRequired,
   label: BetterPropTypes.string.isRequired,
   labelOff: BetterPropTypes.string.isRequired,
   labelOn: BetterPropTypes.string.isRequired,
@@ -27,8 +27,9 @@ export const BooleanColumnPropType = BetterPropTypes.exact({
 
 export const ValueColumnPropType = BetterPropTypes.exact({
   isSortable: BetterPropTypes.bool.isOptionalButNotNull,
-  key: BetterPropTypes.oneOfType([BetterPropTypes.string, BetterPropTypes.func]).isRequired,
+  key: BetterPropTypes.string.isRequired,
   label: BetterPropTypes.string.isRequired,
+  transform: BetterPropTypes.func.isOptionalButNotNull,
   type: BetterPropTypes.oneOf<'id' | 'tags'>(['id', 'tags']).isOptionalButNotNull,
 })
 

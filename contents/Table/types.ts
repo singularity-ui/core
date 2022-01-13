@@ -13,7 +13,7 @@ export type TableBooleanColumnProps = {
   IconOff?: any
   IconOn?: any
   action?: (id: any, newValue: boolean) => void | Promise<void>
-  key: string | TableColumnKeyFunction<boolean>
+  key: string
   label: string
   labelOff: string
   labelOn: string
@@ -23,8 +23,9 @@ export type TableBooleanColumnProps = {
 
 export type TableValueColumnProps = {
   isSortable?: boolean
-  key: string | TableColumnKeyFunction
+  key: string
   label: string
+  transform?: TableColumnKeyFunction
   type?: 'id' | 'tags'
 }
 

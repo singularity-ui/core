@@ -21,4 +21,14 @@ export { ThemeProvider } from './ThemeProvider'
 export type { ButtonProps } from './elements/Button'
 export type { CardProps } from './elements/Card'
 export type { FieldProps } from './elements/Field'
+
+export type { TableProps } from './contents/Table'
+export type {
+  TableActionColumnProps,
+  TableBooleanColumnProps,
+  TableColumnKeyFunction,
+  TableColumnProps,
+  TableValueColumnProps,
+} from './contents/Table/types'
+
 export type { VerticalMenuProps } from './components/VerticalMenu'

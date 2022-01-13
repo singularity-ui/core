@@ -214,7 +214,7 @@ export const BooleanCell: FunctionComponent<BooleanCellProps> = ({ column, dataR
     return <StyledTd />
   }
 
-  const value = Boolean(typeof key === 'function' ? key(dataRow) : path(key, dataRow))
+  const value = Boolean(path(key, dataRow))
   const toggledLabel = value ? labelOn : labelOff
 
   if (action === undefined) {
@@ -253,7 +253,7 @@ export const Cell: FunctionComponent<CellProps> = ({ column, dataRow }) => {
     return <BooleanCell column={column} dataRow={dataRow} />
   }
 
-  const { key, label, type } = column
+  const { key, label, transform, type } = column
 
   if (label === undefined) {
     console.warn(ERROR_SCOPE, `Each column must have a label.`)
@@ -267,7 +267,7 @@ export const Cell: FunctionComponent<CellProps> = ({ column, dataRow }) => {
     return <StyledTd />
   }
 
-  const value = typeof key === 'function' ? key(dataRow) : path(key, dataRow)
+  const value = transform !== undefined ? transform(dataRow) : path(key, dataRow)
 
   if (type === 'id') {
     return <StyledTdId>{value}</StyledTdId>
