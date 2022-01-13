@@ -14,7 +14,7 @@ const StyledButton = styled.button<{
   cursor: pointer;
   line-height: 0.625;
   margin: 0 ${p => p.theme.padding.layout.small} 0 0;
-  padding: 0;
+  padding: 1px 0 0 0;
   transition-delay: 0s, 0s, 0s, 0s;
   transition-duration: 0.15s, 0.15s, 0.15s, 0.15s;
   transition-property: color, background-color, border-color, box-shadow;

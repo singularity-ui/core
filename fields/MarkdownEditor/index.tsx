@@ -40,6 +40,10 @@ const EditorBox = styled.div<{
   background-color: ${p => p.theme.color.body.white};
   border: solid 1px ${p => (p.hasError ? p.theme.color.danger.default : p.theme.color.secondary.default)};
   border-radius: ${p => p.theme.appearance.borderRadius.medium};
+
+  :focus-within {
+    box-shadow: 0 0 0 1px ${p => (p.hasError ? p.theme.color.danger.active : p.theme.color.secondary.active)};
+  }
 `
 
 const Toolbar = styled.div`
