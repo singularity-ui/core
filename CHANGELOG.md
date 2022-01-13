@@ -1,3 +1,11 @@
+# [2.0.0-beta.19](https://github.com/singularity-ui/core/compare/v2.0.0-beta.18...v2.0.0-beta.19) (2022-01-13)
+
+
+### Features
+
+* **fields:** add naive MarkdownEditor ([c0f2a03](https://github.com/singularity-ui/core/commit/c0f2a032f2378344eba18fa3d6ea77200bd0d30f))
+* **fields:** handle drag & drop in FileInput ([4063c78](https://github.com/singularity-ui/core/commit/4063c78bb7758640410908f4c7f2a7d5462f1263))
+
 # [2.0.0-beta.18](https://github.com/singularity-ui/core/compare/v2.0.0-beta.17...v2.0.0-beta.18) (2022-01-12)
 
 
