@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { Button as SuiButton, SUI } from '../..'
+import { Button, SUI } from '../..'
 
 export default {
   title: 'Elements/Button',
-  component: SuiButton,
+  component: Button,
 
   argTypes: {
     accent: {
@@ -28,4 +28,4 @@ export default {
   },
 }
 
-export const Button = (props: any) => <SuiButton {...props}>Button</SuiButton>
+export const _Button = (props: any) => <Button {...props}>Button</Button>

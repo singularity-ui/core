@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../common/constants'
 
-import type { FieldsetHTMLAttributes, ForwardRefRenderFunction } from 'react'
+import type { DOMAttributes, ForwardRefRenderFunction } from 'react'
 
 const StyledField = styled.div<{
   size: Common.Size
@@ -12,8 +12,7 @@ const StyledField = styled.div<{
   padding: ${p => p.theme.padding.input[p.size]} 0;
 `
 
-type FieldProps = FieldsetHTMLAttributes<HTMLDivElement> & {
-  children: any
+export type FieldProps = DOMAttributes<HTMLDivElement> & {
   size?: Common.Size
 }
 export const ButtonWithRef: ForwardRefRenderFunction<HTMLDivElement, FieldProps> = (

@@ -1,10 +1,12 @@
 /* eslint-disable react/require-default-props */
 
 import BetterPropTypes from 'better-prop-types'
-import React, { ButtonHTMLAttributes, ForwardRefRenderFunction } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import { ACCENT, ACCENTS, SIZE, SIZES } from '../common/constants'
+
+import type { ButtonHTMLAttributes, ForwardRefRenderFunction } from 'react'
 
 const StyledButton = styled.button<{
   accent: Common.Accent
@@ -37,11 +39,9 @@ const StyledButton = styled.button<{
   }
 `
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   accent?: Common.Accent
-  children: any
   size?: Common.Size
-  type?: 'button' | 'submit' | 'reset'
 }
 export const ButtonWithRef: ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = (
   { accent = ACCENT.PRIMARY, children, size = SIZE.MEDIUM, type = 'button', ...props }: ButtonProps,
@@ -59,5 +59,4 @@ Button.displayName = 'Button'
 Button.propTypes = {
   accent: BetterPropTypes.oneOf(ACCENTS).isOptionalButNotNull,
   size: BetterPropTypes.oneOf(SIZES).isOptionalButNotNull,
-  type: BetterPropTypes.oneOf<'button' | 'submit' | 'reset'>(['button', 'submit', 'reset']).isOptionalButNotNull,
 }

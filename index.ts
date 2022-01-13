@@ -18,4 +18,7 @@ export { TextInput } from './fields/TextInput'
 export { GlobalStyle } from './GlobalStyle'
 export { ThemeProvider } from './ThemeProvider'
 
+export type { ButtonProps } from './elements/Button'
+export type { CardProps } from './elements/Card'
+export type { FieldProps } from './elements/Field'
 export type { VerticalMenuProps } from './components/VerticalMenu'
