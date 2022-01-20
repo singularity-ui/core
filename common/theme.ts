@@ -1,5 +1,13 @@
 /* eslint-disable sort-keys-fix/sort-keys-fix, typescript-sort-keys/interface */
 
+type DeepPartial<T> = T extends object
+  ? {
+      [P in keyof T]?: DeepPartial<T[P]>
+    }
+  : T
+
+export type PartialTheme = DeepPartial<Theme>
+
 export interface Theme {
   appearance: {
     borderRadius: {

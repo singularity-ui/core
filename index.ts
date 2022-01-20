@@ -18,6 +18,7 @@ export { TextInput } from './fields/TextInput'
 export { GlobalStyle } from './GlobalStyle'
 export { ThemeProvider } from './ThemeProvider'
 
+export type { PartialTheme, Theme } from './common/theme'
 export type { ButtonProps } from './elements/Button'
 export type { CardProps } from './elements/Card'
 export type { FieldProps } from './elements/Field'

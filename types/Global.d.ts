@@ -1,6 +1,6 @@
 import 'styled-components'
 
-import { Theme } from '../common/theme'
+import { Theme } from '..'
 
 declare module '*.css'
 
