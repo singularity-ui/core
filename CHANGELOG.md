@@ -1,3 +1,78 @@
+# [2.0.0](https://github.com/singularity-ui/core/compare/v1.10.0...v2.0.0) (2022-01-25)
+
+
+### Bug Fixes
+
+* **build:** disable rollup modules preservation ([4f35bcb](https://github.com/singularity-ui/core/commit/4f35bcbfa25e0bebd81383acb4d71ba83c6e5bd9))
+* **build:** fix styled-components imports to make them compatible with Next.js ([f561f2a](https://github.com/singularity-ui/core/commit/f561f2a8db0e8e2c3ebe207837fb519a90424b11))
+* **build:** remove CSS imports from GlobalStyle declaration ([1cf7324](https://github.com/singularity-ui/core/commit/1cf7324f36123bd7a875300a06eeb7bf5df6e091))
+* **build:** split bundle & declarations emission ([73cb60e](https://github.com/singularity-ui/core/commit/73cb60e1212272f600123dcbc274be2d2c15638e))
+* **build:** switch to named exports with preserved modules ([3917e98](https://github.com/singularity-ui/core/commit/3917e9877bb794666ee206e8865cfa3e26b82fb8))
+* **components:** add missing types ([9931ac6](https://github.com/singularity-ui/core/commit/9931ac624841109bfa227cfc3124899f99764597))
+* **components:** forward VerticalMenu.Item ref ([f9c7a9b](https://github.com/singularity-ui/core/commit/f9c7a9bca49c6dc1da18c55f62dcb84bdf334d19))
+* **contents:** add missing Table types ([eb72302](https://github.com/singularity-ui/core/commit/eb72302a9782acdb74638a2cb52b13477fe6f387))
+* **contents:** add some missing types in Table ([8d822d9](https://github.com/singularity-ui/core/commit/8d822d9bc3575b9f92c12b79f59211ef640a2584))
+* **contents:** allow Table columm key to return anything ([211fbf2](https://github.com/singularity-ui/core/commit/211fbf2505b83d510b6a83625cec29decc529e63))
+* **contents:** check for undefined instead of null in Table head sort icon ([eae8556](https://github.com/singularity-ui/core/commit/eae855643ad83b786f73a08ba187c592e6d71066))
+* **contents:** downgrade react-paginate to v7 for Table ([17a0d14](https://github.com/singularity-ui/core/commit/17a0d142aa2e3f8011eeb4bbda8345b8399837a8))
+* **contents:** force ellipsis for Table cells overflowing text ([9195ebb](https://github.com/singularity-ui/core/commit/9195ebb3d1200f016160b464129dbacecb5cd881))
+* **contents:** handle Table pagination cases greater than 5 pages ([ce5c8db](https://github.com/singularity-ui/core/commit/ce5c8db86fc60ab23be74414619427c11c6196c5))
+* **contents:** replace react-pagination by internal one in Table ([0f8e4ad](https://github.com/singularity-ui/core/commit/0f8e4adeb58090ad688eff0a84f23ebc126c6bc4))
+* **contents:** restore Table sorting switch ([11081b7](https://github.com/singularity-ui/core/commit/11081b7ff72ebdf9fb5d216835fa7fa6f15cee47))
+* **demo:** remove left file ([0000ce4](https://github.com/singularity-ui/core/commit/0000ce4f706b18ad8472011f1be23aa5d9eaf76f))
+* **elements:** expose all types ([90e0887](https://github.com/singularity-ui/core/commit/90e0887a4f6af3c6685a80ff3e6460747be4973f))
+* **elements:** remove fowarded ref prop types in Button ([51392c7](https://github.com/singularity-ui/core/commit/51392c7610e5636185716bdba16b558ecf0ea049))
+* **elements:** switch prop types to forwarded ref in Button ([acd8d27](https://github.com/singularity-ui/core/commit/acd8d27c4de8e6b4e31f107a204555b15c0910d6))
+* **fields:** add missing FileInput placeholder ([bf07f6d](https://github.com/singularity-ui/core/commit/bf07f6d70d75d162d33aa4da8cd994630df7720f))
+* **fields:** add missing types ([b4ad2a0](https://github.com/singularity-ui/core/commit/b4ad2a0b3dad67869cbd571f26f212ee51d52ff3))
+* **fields:** anyfy Select props type ([995e503](https://github.com/singularity-ui/core/commit/995e50393ffe67c2c25b48d610987570c378e9bb))
+* **fields:** hack react-select/async import to make it ESM-compatible ([742cd9a](https://github.com/singularity-ui/core/commit/742cd9a4109020409ae7c98c7046a358de8f4028))
+* **fields:** use underscore to prevent size prop collision in TextInput ([37315af](https://github.com/singularity-ui/core/commit/37315af531adf148944a259d085a915f1c3a1183))
+* **icons:** add missing js ext for externalized import in Icon ([cfe7dbb](https://github.com/singularity-ui/core/commit/cfe7dbbc51ff09652ffe509b982b9d6fdb88590f))
+* **icons:** add missing Material icons props ([0909a56](https://github.com/singularity-ui/core/commit/0909a56e470370fc554bcebe863cfa8ed4732d34))
+* **icons:** add missing PropTypes import in Material icons ([447d80d](https://github.com/singularity-ui/core/commit/447d80d53e50f2722de2b617b9901897ff7e413e))
+* **icons:** fill svg instead of path color in Material icons ([ecda54b](https://github.com/singularity-ui/core/commit/ecda54b6b1635eca0936b10e2aaad1b09bb58e1d))
+* **icons:** make default icons internal ones ([6383e27](https://github.com/singularity-ui/core/commit/6383e27c1536bda173a9e4b40ebf62541f9fc780))
+* **icons:** remove deprecated enable-background SVG prop in Material icons ([487692e](https://github.com/singularity-ui/core/commit/487692eed779b94b961951628b18112ffc59f3c7))
+* **icons:** replace enable-background native prop with enableSource ([d4444b0](https://github.com/singularity-ui/core/commit/d4444b0eb60791cb7c5f86238aed26f0e0130b37))
+* restore theme body white color ([17f848e](https://github.com/singularity-ui/core/commit/17f848ea0408a83f647f028452a5d7f1a6ba5513))
+* **rollup:** exclude common/constants while building icons ([48a7ae0](https://github.com/singularity-ui/core/commit/48a7ae09820c1e646442a5f63c76e3015f34e365))
+* **rollup:** nake react-select/dist/react-select.cjs.js external ([85a4050](https://github.com/singularity-ui/core/commit/85a4050b8f6217095b1bd6769c1f969448335c82))
+
+
+* build(rollup)!: migrate to ESM ([5ebc537](https://github.com/singularity-ui/core/commit/5ebc53773495f43cba9a327b89d0a2a2516b637b))
+
+
+### Features
+
+* **common:** expose Theme & PartialTheme types ([10ebdd9](https://github.com/singularity-ui/core/commit/10ebdd9d4272c408b8ea15090964dde46d2c740c))
+* **components:** add Modal ([86c7283](https://github.com/singularity-ui/core/commit/86c728397cae4e4434ad9377812b14e1379c4cc5))
+* **components:** add VerticalMenu ([3197bf3](https://github.com/singularity-ui/core/commit/3197bf3521838154aef2e73572e90b9b44657e41))
+* **contents:** add naive Table pagination logic ([55bbc60](https://github.com/singularity-ui/core/commit/55bbc60e41c1670789e6ed98e5c3f5318440aa87))
+* **contents:** add title to Table value cell ([2a18f03](https://github.com/singularity-ui/core/commit/2a18f038753c73236189707a77fd1979a98272f5))
+* **elements:** add Field ([b4611c9](https://github.com/singularity-ui/core/commit/b4611c9871b5d691a54f60948510f3def8cc1a3c))
+* **fields:** add FileInput ([dd1300a](https://github.com/singularity-ui/core/commit/dd1300a7f76a981fdb2afabc430f3772029ee8b4))
+* **fields:** add isAutoResizing prop to Textarea ([97874eb](https://github.com/singularity-ui/core/commit/97874ebd9e29aeba93150bf7a1cd1b9afc4d4767))
+* **fields:** add naive MarkdownEditor ([c0f2a03](https://github.com/singularity-ui/core/commit/c0f2a032f2378344eba18fa3d6ea77200bd0d30f))
+* **fields:** add pageCount prop to Table ([c93a66c](https://github.com/singularity-ui/core/commit/c93a66c608f4706550162a20334432087c600a59))
+* **fields:** add pageIndex prop to Table ([f966821](https://github.com/singularity-ui/core/commit/f966821ade2448a825860848c175d100a25a5b7d))
+* **fields:** handle drag & drop in FileInput ([4063c78](https://github.com/singularity-ui/core/commit/4063c78bb7758640410908f4c7f2a7d5462f1263))
+* **icons:** integrate Material icons in build ([b315ccb](https://github.com/singularity-ui/core/commit/b315ccb2544653d853ff1fb1954e40a77b2de993))
+* migrate to typescript with dist declarations ([388d6ce](https://github.com/singularity-ui/core/commit/388d6ceaa329e08040ec689ebcaa79a3476218c0))
+* set body & html height in GlobalStyle ([40c3449](https://github.com/singularity-ui/core/commit/40c34496c1172bb480b6677ca74d6f912ce40ab3))
+* set body line-height in GlobalStyle ([194904d](https://github.com/singularity-ui/core/commit/194904d13a140e67fb9e60695727882f27a13f80))
+
+
+### Reverts
+
+* ci(github): set git authoring envs for semantic-release ([d18b785](https://github.com/singularity-ui/core/commit/d18b785a62acb5defdb7253becdabff1c4624c4b))
+
+
+### BREAKING CHANGES
+
+* This package will only be distributed as a JavaScript
+module starting from version 3.0.0 and greater.
+
 # [2.0.0-beta.22](https://github.com/singularity-ui/core/compare/v2.0.0-beta.21...v2.0.0-beta.22) (2022-01-20)
 
 
