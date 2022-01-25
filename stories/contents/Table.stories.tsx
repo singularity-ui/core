@@ -1,13 +1,13 @@
 import Jabber from 'jabber'
 import React from 'react'
-import styled from 'styled-components'
 
-import { SUI, Table as SuiTable } from '../..'
-import { TableColumnProps } from '../../contents/Table/types'
+import { SUI, Table } from '../..'
 import MaterialDeleteOutlined from '../../icons/material/MaterialDeleteOutlined'
 import MaterialEditOutlined from '../../icons/material/MaterialEditOutlined'
 import MaterialPersonOffOutlined from '../../icons/material/MaterialPersonOffOutlined'
 import MaterialPersonOutlined from '../../icons/material/MaterialPersonOutlined'
+
+import type { TableColumnProps } from '../..'
 
 const jabber = new Jabber()
 
@@ -70,13 +70,9 @@ const DATA = new Array(100).fill(null).map((_, index) => ({
   },
 }))
 
-const StyledTable = styled(SuiTable)`
-  width: 100%;
-`
-
 export default {
   title: 'Contents/Table',
-  component: SuiTable,
+  component: Table,
 
   argTypes: {
     defaultSortedKey: {
@@ -98,4 +94,4 @@ export default {
   },
 }
 
-export const Table = (props: any) => <StyledTable {...props} />
+export const _Table = (props: any) => <Table {...props} />

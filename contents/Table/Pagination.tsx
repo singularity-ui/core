@@ -52,7 +52,7 @@ const Link = styled(Button)<{
 `
 
 type PaginationProps = {
-  onChange: (pageIndex: number) => void
+  onChange: (newPageIndex: number) => void
   pageCount: number
   pageIndex: number
 }

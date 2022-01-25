@@ -1,5 +1,5 @@
 import BetterPropTypes from 'better-prop-types'
-import React, { ForwardRefRenderFunction, TableHTMLAttributes } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import { SORT_ORDER } from '../../common/constants'
@@ -12,6 +12,8 @@ import { Pagination } from './Pagination'
 import { Row } from './Row'
 import { ColumnPropType } from './shapes'
 import { TableColumnProps, TableColumnKeyFunction } from './types'
+
+import type { ForwardRefRenderFunction, TableHTMLAttributes } from 'react'
 
 const Box = styled.div`
   table {
@@ -37,17 +39,19 @@ export type TableProps = TableHTMLAttributes<any> & {
   defaultSortedKey?: string
   defaultSortedKeyIsDesc?: boolean
   isLoading?: boolean
+  onPageChange?: (newPageIndex: number) => void | Promise<void>
   pageCount?: number
   pageIndex?: number
   perPage?: number
 }
-export const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps> = (
+const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps> = (
   {
     columns,
     data,
     defaultSortedKey,
     defaultSortedKeyIsDesc = false,
     isLoading = false,
+    onPageChange,
     pageCount,
     pageIndex,
     perPage = 10,
@@ -69,6 +73,16 @@ export const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps
   const startIndex = controlledPageIndex * perPage
   const enIndex = startIndex + perPage
   const visibleData = isLoading || isEmpty ? [] : sortedData.slice(startIndex, enIndex)
+
+  const handlePageChange = (newPageIndex: number): void => {
+    if (onPageChange !== undefined) {
+      onPageChange(newPageIndex)
+
+      return
+    }
+
+    setControlledPageIndex(newPageIndex)
+  }
 
   const sortDataByKey = (key: string | undefined, isDesc: boolean): void => {
     setSortedKey(key)
@@ -126,7 +140,11 @@ export const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps
       </table>
 
       {!isSinglePaged && (
-        <Pagination onChange={setControlledPageIndex} pageCount={controlledPageCount} pageIndex={controlledPageIndex} />
+        <Pagination
+          onChange={handlePageChange}
+          pageCount={pageCount || controlledPageCount}
+          pageIndex={pageIndex || controlledPageIndex}
+        />
       )}
     </Box>
   )
@@ -142,6 +160,7 @@ Table.propTypes = {
   defaultSortedKey: BetterPropTypes.string.isOptionalButNotNull,
   defaultSortedKeyIsDesc: BetterPropTypes.bool.isOptionalButNotNull,
   isLoading: BetterPropTypes.bool.isOptionalButNotNull,
+  // onPageChange: BetterPropTypes.func.isOptionalButNotNull,
   pageCount: BetterPropTypes.number.isOptionalButNotNull,
   pageIndex: BetterPropTypes.number.isOptionalButNotNull,
   perPage: BetterPropTypes.number.isOptionalButNotNull,
