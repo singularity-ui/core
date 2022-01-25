@@ -26,6 +26,7 @@ export const BooleanColumnPropType = BetterPropTypes.exact({
 })
 
 export const ValueColumnPropType = BetterPropTypes.exact({
+  grow: BetterPropTypes.number.isOptionalButNotNull,
   isSortable: BetterPropTypes.bool.isOptionalButNotNull,
   key: BetterPropTypes.string.isRequired,
   label: BetterPropTypes.string.isRequired,

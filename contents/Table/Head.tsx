@@ -8,10 +8,13 @@ import SortDesc from '../../icons/SortDesc'
 import { ColumnPropType } from './shapes'
 import { TableColumnProps } from './types'
 
-const StyledTh = styled.th`
+const StyledTh = styled.th<{
+  grow?: number
+}>`
   border-bottom: solid 2px ${p => p.theme.color.body.light};
   padding: ${p => p.theme.padding.layout.medium};
   text-align: left;
+  width: ${p => (p.grow === undefined ? 'auto' : `${p.grow * 100}%`)};
 `
 
 const Box = styled.div`
@@ -52,7 +55,7 @@ export const Head: FunctionComponent<HeadProps> = ({ column, onSort, sortOrder }
     return <StyledTh as="td" />
   }
 
-  const { isSortable = false, key, label } = column
+  const { grow, isSortable = false, key, label } = column
 
   const sort = () => {
     if (!isSortable || typeof key !== 'string') {
@@ -65,7 +68,7 @@ export const Head: FunctionComponent<HeadProps> = ({ column, onSort, sortOrder }
   }
 
   return (
-    <StyledTh>
+    <StyledTh grow={grow}>
       <Box>
         <Label>{label}</Label>
 

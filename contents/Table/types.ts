@@ -22,6 +22,7 @@ export type TableBooleanColumnProps = {
 }
 
 export type TableValueColumnProps = {
+  grow?: number
   isSortable?: boolean
   key: string
   label: string
