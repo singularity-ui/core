@@ -1,3 +1,11 @@
+# [2.1.0](https://github.com/singularity-ui/core/compare/v2.0.0...v2.1.0) (2022-01-25)
+
+
+### Features
+
+* **contents:** add Table column grow prop ([b637837](https://github.com/singularity-ui/core/commit/b637837e6165a94ad1ba677fddf95b2a44b290b6))
+* **contents:** add Table pagination full async support ([f1709c1](https://github.com/singularity-ui/core/commit/f1709c1aa38b338b2097d68dbe768e20d1001fd3))
+
 # [2.0.0](https://github.com/singularity-ui/core/compare/v1.10.0...v2.0.0) (2022-01-25)
 
 
