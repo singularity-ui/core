@@ -3,6 +3,8 @@ import React, { ChangeEvent, ForwardRefRenderFunction, InputHTMLAttributes } fro
 import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../common/constants'
+import { getLowestFontSize } from '../helpers/getLowestFontSize'
+import { Error, Helper } from './shared'
 
 const StyledLabel = styled.label<{
   isChecked: boolean
@@ -41,7 +43,7 @@ const Letter = styled.span<{
   border-radius: 0.25rem;
   color: ${p => p.theme.color.body.white};
   display: flex;
-  font-size: ${p => p.theme.typography.size[p.size] * 80}%;
+  font-size: ${p => getLowestFontSize(p.theme, p.size)};
   font-weight: 700;
   height: 1.125rem;
   justify-content: center;
@@ -54,18 +56,6 @@ const LabelText = styled.span<{
   isChecked: boolean
 }>`
   font-weight: ${p => (p.isChecked ? 500 : 400)};
-`
-
-const Helper = styled.p`
-  margin: 0;
-  padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
-`
-
-const Error = styled.p`
-  color: ${p => p.theme.color.danger.default};
-  font-weight: 500;
-  margin: 0;
-  padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
 type RadioProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
@@ -116,9 +106,17 @@ const RadioWithProps: ForwardRefRenderFunction<HTMLInputElement, RadioProps> = (
         </LabelText>
       </StyledLabel>
 
-      {!error && helper && <Helper className="Helper">{helper}</Helper>}
+      {!error && helper && (
+        <Helper className="Helper" size={size}>
+          {helper}
+        </Helper>
+      )}
 
-      {error && <Error className="Error">{error}</Error>}
+      {error && (
+        <Error className="Error" size={size}>
+          {error}
+        </Error>
+      )}
     </div>
   )
 }

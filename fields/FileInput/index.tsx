@@ -4,18 +4,10 @@ import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../../common/constants'
 import MaterialUploadFile from '../../icons/material/MaterialUploadFile'
+import { Error, Helper, Label } from '../shared'
 import { FileItem } from './FileItem'
 
 import type { DragEventHandler, ForwardRefRenderFunction, InputHTMLAttributes, ReactEventHandler } from 'react'
-
-const Label = styled.label<{
-  size: Common.Size
-}>`
-  display: block;
-  font-size: ${p => Math.round(p.theme.typography.size[p.size] * 80)}%;
-  font-weight: 500;
-  padding: 0 0 ${p => p.theme.padding.layout.tiny} 0;
-`
 
 const FileBox = styled.div<{
   hasError: boolean
@@ -100,18 +92,6 @@ const FileList = styled.div<{
   display: flex;
   padding: 0 ${p => p.theme.padding.layout[p.size]} ${p => p.theme.padding.layout[p.size]};
   flex-direction: column;
-`
-
-const Helper = styled.p`
-  margin: 0;
-  padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
-`
-
-const Error = styled.p`
-  color: ${p => p.theme.color.danger.default};
-  font-weight: 500;
-  margin: 0;
-  padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
 type FileInputProps = Omit<InputHTMLAttributes<any>, 'size'> & {
@@ -238,9 +218,17 @@ const FileInputWithRef: ForwardRefRenderFunction<HTMLInputElement, FileInputProp
         )}
       </FileBox>
 
-      {!error && helper && <Helper className="Helper">{helper}</Helper>}
+      {!error && helper && (
+        <Helper className="Helper" size={size}>
+          {helper}
+        </Helper>
+      )}
 
-      {error && <Error className="Error">{error}</Error>}
+      {error && (
+        <Error className="Error" size={size}>
+          {error}
+        </Error>
+      )}
     </div>
   )
 }

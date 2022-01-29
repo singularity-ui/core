@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { SIZE, SIZES } from '../common/constants'
 import MaterialCheckBox from '../icons/material/MaterialCheckBox'
 import MaterialCheckBoxOutlineBlank from '../icons/material/MaterialCheckBoxOutlineBlank'
+import { Error, Helper } from './shared'
 
 const StyledLabel = styled.label<{
   hasError: boolean
@@ -55,18 +56,6 @@ const LabelText = styled.span<{
   font-weight: ${p => (p.isChecked ? 500 : 400)};
 `
 
-const Helper = styled.p`
-  margin: 0;
-  padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
-`
-
-const Error = styled.p`
-  color: ${p => p.theme.color.danger.default};
-  font-weight: 500;
-  margin: 0;
-  padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
-`
-
 type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
   className?: string
   error?: string
@@ -104,9 +93,17 @@ export const CheckboxWithProps: ForwardRefRenderFunction<HTMLInputElement, Check
         <LabelText isChecked={isChecked}>{label}</LabelText>
       </StyledLabel>
 
-      {!error && helper && <Helper className="Helper">{helper}</Helper>}
+      {!error && helper && (
+        <Helper className="Helper" size={size}>
+          {helper}
+        </Helper>
+      )}
 
-      {error && <Error className="Error">{error}</Error>}
+      {error && (
+        <Error className="Error" size={size}>
+          {error}
+        </Error>
+      )}
     </div>
   )
 }

@@ -5,6 +5,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { SIZES } from '../../common/constants'
+import { getLowestFontSize } from '../../helpers/getLowestFontSize'
 import MaterialExtension from '../../icons/material/MaterialExtension'
 import MaterialPictureAsPdf from '../../icons/material/MaterialPictureAsPdf'
 
@@ -47,7 +48,7 @@ const Info = styled.div`
 const Name = styled.p<{
   size: Common.Size
 }>`
-  font-size: ${p => Math.round(p.theme.typography.size[p.size] * 80)}%;
+  font-size: ${p => getLowestFontSize(p.theme, p.size)};
   font-weight: 500;
   overflow: hidden;
   text-overflow: ellipsis;

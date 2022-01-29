@@ -3,17 +3,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../common/constants'
+import { Error, Helper, Label } from './shared'
 
 import type { ForwardRefRenderFunction, TextareaHTMLAttributes } from 'react'
-
-const Label = styled.label<{
-  size: Common.Size
-}>`
-  display: block;
-  font-size: ${p => Math.round(p.theme.typography.size[p.size] * 80)}%;
-  font-weight: 500;
-  padding: 0 0 ${p => p.theme.padding.layout.tiny} 0;
-`
 
 const StyledTextarea = styled.textarea<{
   hasError: boolean
@@ -45,18 +37,6 @@ const StyledTextarea = styled.textarea<{
   :hover {
     border: solid 1px ${p => (p.hasError ? p.theme.color.danger.active : p.theme.color.secondary.active)};
   }
-`
-
-const Helper = styled.p`
-  margin: 0;
-  padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
-`
-
-const Error = styled.p`
-  color: ${p => p.theme.color.danger.default};
-  font-weight: 500;
-  margin: 0;
-  padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
 type TextareaMeasurement = {
@@ -153,9 +133,17 @@ const TextareaWithRef: ForwardRefRenderFunction<HTMLTextAreaElement, TextareaPro
         {...props}
       />
 
-      {!error && helper && <Helper className="Helper">{helper}</Helper>}
+      {!error && helper && (
+        <Helper className="Helper" size={size}>
+          {helper}
+        </Helper>
+      )}
 
-      {error && <Error className="Error">{error}</Error>}
+      {error && (
+        <Error className="Error" size={size}>
+          {error}
+        </Error>
+      )}
     </div>
   )
 }

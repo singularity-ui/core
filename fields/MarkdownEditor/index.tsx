@@ -18,21 +18,13 @@ import MaterialFormatItalic from '../../icons/material/MaterialFormatItalic'
 import MaterialFormatListBulleted from '../../icons/material/MaterialFormatListBulleted'
 import MaterialFormatListNumbered from '../../icons/material/MaterialFormatListNumbered'
 import MaterialFormatQuote from '../../icons/material/MaterialFormatQuote'
+import { Error, Helper, Label } from '../shared'
 import { BlockButton } from './BlockButton'
 import { MarkButton } from './MarkButton'
 
 import type { DOMAttributes, FunctionComponent } from 'react'
 import type { BaseEditor, Descendant } from 'slate'
 import type { ReactEditor } from 'slate-react'
-
-const Label = styled.label<{
-  size: Common.Size
-}>`
-  display: block;
-  font-size: ${p => Math.round(p.theme.typography.size[p.size] * 80)}%;
-  font-weight: 500;
-  padding: 0 0 ${p => p.theme.padding.layout.tiny} 0;
-`
 
 const EditorBox = styled.div<{
   hasError: boolean
@@ -55,18 +47,6 @@ const Toolbar = styled.div`
 
 const EditableBox = styled.div`
   padding: ${p => p.theme.padding.layout.medium};
-`
-
-const Helper = styled.p`
-  margin: 0;
-  padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
-`
-
-const Error = styled.p`
-  color: ${p => p.theme.color.danger.default};
-  font-weight: 500;
-  margin: 0;
-  padding: ${p => p.theme.padding.layout.tiny} 0 0 0;
 `
 
 type CustomElement = { children: CustomText[]; type: string }
@@ -178,9 +158,17 @@ export const MarkdownEditor: FunctionComponent<MarkdownEditorProps> = ({
         </Slate>
       </EditorBox>
 
-      {!hasError && helper && <Helper className="Helper">{helper}</Helper>}
+      {!hasError && helper && (
+        <Helper className="Helper" size={size}>
+          {helper}
+        </Helper>
+      )}
 
-      {hasError && <Error className="Error">{error}</Error>}
+      {hasError && (
+        <Error className="Error" size={size}>
+          {error}
+        </Error>
+      )}
     </div>
   )
 }

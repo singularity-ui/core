@@ -43,6 +43,7 @@
         "components/**/*.tsx",
         "contents/**/*.tsx",
         "elements/**/*.tsx",
+        "helpers/**/*.ts",
         "icons/Icon.tsx",
         "fields/**/*.tsx",
         "GlobalStyle.tsx",

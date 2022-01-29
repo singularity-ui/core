@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { SORT_ORDER } from '../../common/constants'
-import generateKeyFromValue from '../../helpers/generateKeyFromValue'
+import { generateKeyFromValue } from '../../helpers/generateKeyFromValue'
 import { Head } from './Head'
 import { getSortOrder, sort } from './helpers'
 import { LoadingCell } from './LoadingCell'
