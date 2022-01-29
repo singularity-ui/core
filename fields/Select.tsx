@@ -1,11 +1,16 @@
 import BetterPropTypes from 'better-prop-types'
-import React, { ForwardRefRenderFunction } from 'react'
+import React from 'react'
 import ReactSelect from 'react-select'
 import ReactSelectAsync from 'react-select/async'
 import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../common/constants'
 import { Error, Helper, Label } from './shared'
+
+import type { ForwardRefRenderFunction } from 'react'
+import type { GroupBase } from 'react-select'
+import type { AsyncProps } from 'react-select/async'
+import type { StateManagerProps } from 'react-select/dist/declarations/src/useStateManager'
 
 const StyledSelect = styled(ReactSelect)<{
   hasError: boolean
@@ -88,15 +93,30 @@ const StyledSelect = styled(ReactSelect)<{
   }
 ` as any
 
-type SelectProps = any & {
+export type SelectOption = Readonly<{
+  label: string
+  value: string
+}>
+
+export type SelectProps<Option = SelectOption> = StateManagerProps<Option, boolean, GroupBase<Option>> & {
   className?: string
   error?: string
   helper?: string
-  isAsync?: boolean
+  isAsync: false | undefined
   label?: string
+  options?: Option[]
   size?: Common.Size
 }
-const SelectWithRef: ForwardRefRenderFunction<any, SelectProps> = (
+export type SelectAsyncProps<Option = SelectOption> = AsyncProps<Option, boolean, GroupBase<Option>> & {
+  className?: string
+  error?: string
+  helper?: string
+  isAsync: true
+  label?: string
+  options?: Option[]
+  size?: Common.Size
+}
+const SelectWithRef: ForwardRefRenderFunction<any, SelectProps | SelectAsyncProps> = (
   { className, error, helper, isAsync = false, label, size = SIZE.MEDIUM, ...props },
   ref,
 ) => {
@@ -142,7 +162,7 @@ Select.displayName = 'Select'
 Select.propTypes = {
   error: BetterPropTypes.string.isOptionalButNotNull,
   helper: BetterPropTypes.string.isOptionalButNotNull,
-  isAsync: BetterPropTypes.bool.isOptionalButNotNull,
+  isAsync: BetterPropTypes.bool.isOptionalButNotNull as any,
   label: BetterPropTypes.string.isOptionalButNotNull,
   size: BetterPropTypes.oneOf(SIZES).isOptionalButNotNull,
 }
