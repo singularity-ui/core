@@ -8,6 +8,7 @@ export { Tasker } from './contents/Tasker'
 export { Button } from './elements/Button'
 export { Card } from './elements/Card'
 export { Field } from './elements/Field'
+// export { Tag } from './elements/Tag'
 export { Checkbox } from './fields/Checkbox'
 export { FileInput } from './fields/FileInput'
 export { MarkdownEditor } from './fields/MarkdownEditor'
@@ -19,9 +20,6 @@ export { GlobalStyle } from './GlobalStyle'
 export { ThemeProvider } from './ThemeProvider'
 
 export type { PartialTheme, Theme } from './common/theme'
-export type { ButtonProps } from './elements/Button'
-export type { CardProps } from './elements/Card'
-export type { FieldProps } from './elements/Field'
 
 export type { TableProps } from './contents/Table'
 export type {
@@ -31,5 +29,12 @@ export type {
   TableColumnProps,
   TableValueColumnProps,
 } from './contents/Table/types'
+
+export type { ButtonProps } from './elements/Button'
+export type { CardProps } from './elements/Card'
+export type { FieldProps } from './elements/Field'
+// export type { TagProps } from './elements/Tag'
+
+export type { SelectProps } from './fields/Select'
 
 export type { VerticalMenuProps } from './components/VerticalMenu'

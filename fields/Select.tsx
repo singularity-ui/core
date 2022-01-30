@@ -98,7 +98,7 @@ export type SelectOption = Readonly<{
   value: string
 }>
 
-export type SelectProps<Option = SelectOption> = StateManagerProps<Option, boolean, GroupBase<Option>> & {
+type SelectSyncProps<Option> = StateManagerProps<Option, boolean, GroupBase<Option>> & {
   className?: string
   error?: string
   helper?: string
@@ -107,7 +107,7 @@ export type SelectProps<Option = SelectOption> = StateManagerProps<Option, boole
   options?: Option[]
   size?: Common.Size
 }
-export type SelectAsyncProps<Option = SelectOption> = AsyncProps<Option, boolean, GroupBase<Option>> & {
+type SelectAsyncProps<Option> = AsyncProps<Option, boolean, GroupBase<Option>> & {
   className?: string
   error?: string
   helper?: string
@@ -116,7 +116,8 @@ export type SelectAsyncProps<Option = SelectOption> = AsyncProps<Option, boolean
   options?: Option[]
   size?: Common.Size
 }
-const SelectWithRef: ForwardRefRenderFunction<any, SelectProps | SelectAsyncProps> = (
+export type SelectProps<Option = SelectOption> = SelectSyncProps<Option> | SelectAsyncProps<Option>
+const SelectWithRef: ForwardRefRenderFunction<any, SelectProps> = (
   { className, error, helper, isAsync = false, label, size = SIZE.MEDIUM, ...props },
   ref,
 ) => {
