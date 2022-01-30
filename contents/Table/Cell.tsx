@@ -1,10 +1,19 @@
 import BetterPropTypes from 'better-prop-types'
 import * as R from 'ramda'
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
+import { Tag } from '../../elements/Tag'
 import { ColumnPropType } from './shapes'
-import { TableActionColumnProps, TableBooleanColumnProps, TableColumnProps } from './types'
+
+import type {
+  TableActionColumnProps,
+  TableBooleanColumnProps,
+  TableColumnProps,
+  TableTagsColumnProps,
+  TableValueColumnProps,
+} from './types'
+import type { FunctionComponent } from 'react'
 
 const ERROR_SCOPE = '🌌 @singularity/core/Table:'
 
@@ -93,7 +102,6 @@ const StyledTdBoolean = styled(StyledTdIcon)<{
 const StyledTdId = styled(StyledTd)`
   font-family: monospace;
   font-size: 1rem;
-  width: 2rem;
 `
 
 const StyledTdToggle = styled(StyledTdIcon)`
@@ -240,19 +248,42 @@ export const BooleanCell: FunctionComponent<BooleanCellProps> = ({ column, dataR
   )
 }
 
-type CellProps = {
-  column: TableColumnProps
+type TagsCellProps = {
+  column: TableTagsColumnProps
   dataRow: Common.CollectionItem
 }
-export const Cell: FunctionComponent<CellProps> = ({ column, dataRow }) => {
-  if (column.type === 'action') {
-    return <ActionCell column={column} dataRow={dataRow} />
+export const TagsCell: FunctionComponent<TagsCellProps> = ({ column, dataRow }) => {
+  const { key, label, transform } = column
+
+  if (label === undefined) {
+    console.warn(ERROR_SCOPE, `Each column must have a label.`)
+
+    return <StyledTd />
   }
 
-  if (column.type === 'boolean') {
-    return <BooleanCell column={column} dataRow={dataRow} />
+  if (key === undefined) {
+    console.warn(ERROR_SCOPE, `You must set the {key} property in "${label}" column.`)
+
+    return <StyledTd />
   }
 
+  const valueOrValues = transform !== undefined ? transform(dataRow) : path(key, dataRow)
+  const values = Array.isArray(valueOrValues) ? valueOrValues : [valueOrValues]
+
+  return (
+    <StyledTdValue>
+      {values.map((value: any) => (
+        <Tag>{value}</Tag>
+      ))}
+    </StyledTdValue>
+  )
+}
+
+type ValueCellProps = {
+  column: TableValueColumnProps
+  dataRow: Common.CollectionItem
+}
+export const ValueCell: FunctionComponent<ValueCellProps> = ({ column, dataRow }) => {
   const { key, label, transform, type } = column
 
   if (label === undefined) {
@@ -274,6 +305,26 @@ export const Cell: FunctionComponent<CellProps> = ({ column, dataRow }) => {
   }
 
   return <StyledTdValue title={value}>{value}</StyledTdValue>
+}
+
+type CellProps = {
+  column: TableColumnProps
+  dataRow: Common.CollectionItem
+}
+export const Cell: FunctionComponent<CellProps> = ({ column, dataRow }) => {
+  if (column.type === 'action') {
+    return <ActionCell column={column} dataRow={dataRow} />
+  }
+
+  if (column.type === 'boolean') {
+    return <BooleanCell column={column} dataRow={dataRow} />
+  }
+
+  if (column.type === 'tags') {
+    return <TagsCell column={column} dataRow={dataRow} />
+  }
+
+  return <ValueCell column={column} dataRow={dataRow} />
 }
 
 Cell.propTypes = {

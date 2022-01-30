@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${p => p.theme.color.body.background};
     font-family: ${p => p.theme.typography.font.default.family};
     font-size: ${p => p.theme.typography.font.default.size};
-    font-weigth: ${p => p.theme.typography.font.default.weight};
+    font-weight: ${p => p.theme.typography.font.default.weight};
     line-height: 1.5;
     margin: 0;
     color: ${p => p.theme.color.body.main};
@@ -39,5 +39,9 @@ export const GlobalStyle = createGlobalStyle`
 
   * > p:not(:first-child) {
     margin-top: ${p => p.theme.padding.layout.small};
+  }
+
+  * > .Tag:not(:first-child) {
+    margin-left: ${p => p.theme.padding.layout.small};
   }
 `

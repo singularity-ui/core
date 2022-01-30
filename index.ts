@@ -27,6 +27,7 @@ export type {
   TableBooleanColumnProps,
   TableColumnKeyFunction,
   TableColumnProps,
+  TableTagsColumnProps,
   TableValueColumnProps,
 } from './contents/Table/types'
 

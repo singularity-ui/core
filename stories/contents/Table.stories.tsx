@@ -7,8 +7,9 @@ import MaterialEditOutlined from '../../icons/material/MaterialEditOutlined'
 import MaterialPersonOffOutlined from '../../icons/material/MaterialPersonOffOutlined'
 import MaterialPersonOutlined from '../../icons/material/MaterialPersonOutlined'
 
-import type { TableColumnProps } from '../..'
+import type { TableColumnProps, TableProps } from '../..'
 
+const getRandomTags = () => new Array(Math.round(Math.random() * 3)).fill(null).map((_, index) => `Tag ${index + 1}`)
 const jabber = new Jabber()
 
 const COLUMNS: TableColumnProps[] = [
@@ -18,14 +19,21 @@ const COLUMNS: TableColumnProps[] = [
     type: 'id',
   },
   {
+    grow: 0.25,
     label: 'Email',
     key: 'email',
     isSortable: true,
   },
   {
+    grow: 0.2,
     label: 'Organization',
     key: 'organization.name',
     isSortable: true,
+  },
+  {
+    label: 'Tags',
+    key: 'tags',
+    type: 'tags',
   },
   {
     label: 'Activated',
@@ -68,6 +76,7 @@ const DATA = new Array(100).fill(null).map((_, index) => ({
   organization: {
     name: `${jabber.createWord(6, true)} Inc.`,
   },
+  tags: getRandomTags(),
 }))
 
 export default {
@@ -82,6 +91,9 @@ export default {
     defaultSortedKeyIsDesc: {
       control: { type: 'boolean' },
     },
+    perPage: {
+      control: { type: 'number' },
+    },
   },
 
   args: {
@@ -90,8 +102,8 @@ export default {
     defaultSortedKey: 'email',
     defaultSortedKeyIsDesc: false,
     isLoading: false,
-    perPage: 10,
+    perPage: 5,
   },
 }
 
-export const _Table = (props: any) => <Table {...props} />
+export const _Table = (props: TableProps) => <Table {...props} />

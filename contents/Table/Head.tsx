@@ -55,7 +55,19 @@ export const Head: FunctionComponent<HeadProps> = ({ column, onSort, sortOrder }
     return <StyledTh as="td" />
   }
 
-  const { grow, isSortable = false, key, label } = column
+  const { grow, key, label } = column
+
+  if (column.type === 'tags') {
+    return (
+      <StyledTh grow={grow}>
+        <Box>
+          <Label>{label}</Label>
+        </Box>
+      </StyledTh>
+    )
+  }
+
+  const { isSortable = false } = column
 
   const sort = () => {
     if (!isSortable || typeof key !== 'string') {

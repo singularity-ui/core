@@ -17,6 +17,7 @@ const StyledTag = styled.span<{
   border-radius: ${p => p.theme.appearance.borderRadius[p.size]};
   color: ${p => p.theme.color.body.black};
   font-size: ${p => getLowerFontSize(p.theme, p.size)};
+  font-weight: 400;
   padding: ${p => p.theme.padding.tag[p.size]};
 `
 

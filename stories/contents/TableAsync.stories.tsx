@@ -25,21 +25,10 @@ export default {
   title: 'Contents/Table Async',
   component: Table,
 
-  argTypes: {
-    defaultSortedKey: {
-      options: ['email', 'organization.name'],
-      control: { type: 'inline-radio' },
-    },
-    defaultSortedKeyIsDesc: {
-      control: { type: 'boolean' },
-    },
-  },
+  argTypes: {},
 
   args: {
     columns: COLUMNS,
-    defaultSortedKey: 'email',
-    defaultSortedKeyIsDesc: false,
-    isLoading: false,
   },
 }
 

@@ -21,13 +21,25 @@ export type TableBooleanColumnProps = {
   withTooltip?: boolean
 }
 
+export type TableTagsColumnProps = {
+  grow?: number
+  key: string
+  label: string
+  transform?: TableColumnKeyFunction
+  type: 'tags'
+}
+
 export type TableValueColumnProps = {
   grow?: number
   isSortable?: boolean
   key: string
   label: string
   transform?: TableColumnKeyFunction
-  type?: 'id' | 'tags'
+  type?: 'id'
 }
 
-export type TableColumnProps = TableActionColumnProps | TableBooleanColumnProps | TableValueColumnProps
+export type TableColumnProps =
+  | TableActionColumnProps
+  | TableBooleanColumnProps
+  | TableTagsColumnProps
+  | TableValueColumnProps
