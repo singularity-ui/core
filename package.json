@@ -1,7 +1,7 @@
 {
   "name": "@singularity/root",
   "description": "Yet another React UI.",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "license": "MIT",
   "private": true,
   "main": "./index.ts",

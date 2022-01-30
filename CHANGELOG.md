@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/singularity-ui/core/compare/v2.2.0...v2.2.1) (2022-01-30)
+
+
+### Bug Fixes
+
+* **fields:** make Select isAsync prop optional ([1797bef](https://github.com/singularity-ui/core/commit/1797bef400d74abd023e143be49f47332ec80a95))
+
 # [2.2.0](https://github.com/singularity-ui/core/compare/v2.1.0...v2.2.0) (2022-01-30)
 
 
