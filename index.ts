@@ -8,7 +8,7 @@ export { Tasker } from './contents/Tasker'
 export { Button } from './elements/Button'
 export { Card } from './elements/Card'
 export { Field } from './elements/Field'
-// export { Tag } from './elements/Tag'
+export { Tag } from './elements/Tag'
 export { Checkbox } from './fields/Checkbox'
 export { FileInput } from './fields/FileInput'
 export { MarkdownEditor } from './fields/MarkdownEditor'
@@ -33,7 +33,7 @@ export type {
 export type { ButtonProps } from './elements/Button'
 export type { CardProps } from './elements/Card'
 export type { FieldProps } from './elements/Field'
-// export type { TagProps } from './elements/Tag'
+export type { TagProps } from './elements/Tag'
 
 export type { SelectProps } from './fields/Select'
 

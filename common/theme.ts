@@ -1,5 +1,7 @@
 /* eslint-disable sort-keys-fix/sort-keys-fix, typescript-sort-keys/interface */
 
+import { UNIT } from './constants'
+
 type DeepPartial<T> = T extends object
   ? {
       [P in keyof T]?: DeepPartial<T[P]>
@@ -34,6 +36,7 @@ export interface Theme {
 
     body: {
       background: string
+      black: string
       dark: string
       light: string
       main: string
@@ -107,6 +110,12 @@ export interface Theme {
       large: string
       giant: string
     }
+
+    tag: {
+      small: string
+      medium: string
+      large: string
+    }
   }
 
   shadow: {
@@ -158,6 +167,7 @@ export const theme: Theme = {
 
     body: {
       background: '#f7f9fc',
+      black: '#000000',
       dark: '#343a40',
       light: '#6c757d',
       main: '#495057',
@@ -219,9 +229,9 @@ export const theme: Theme = {
     },
 
     inputBox: {
-      small: '0.1875rem 0.375rem',
-      medium: '0.25rem 0.5rem',
-      large: '0.375rem 0.75rem',
+      small: `${UNIT.U4 / 1.5}rem ${UNIT.U8 / 1.5}rem`,
+      medium: `${UNIT.U4}rem ${UNIT.U8}rem`,
+      large: `${UNIT.U4 * 1.5}rem ${UNIT.U8 * 1.5}rem`,
     },
 
     layout: {
@@ -230,6 +240,12 @@ export const theme: Theme = {
       medium: '1rem',
       large: '2rem',
       giant: '4rem',
+    },
+
+    tag: {
+      small: `${UNIT.U1 / 1.5}rem ${UNIT.U8 / 1.5}rem ${UNIT.U3 / 1.5}rem`,
+      medium: `${UNIT.U1}rem ${UNIT.U8}rem ${UNIT.U3}rem`,
+      large: `${UNIT.U1 * 1.5}rem ${UNIT.U8 * 1.5}rem ${UNIT.U3 * 1.5}rem`,
     },
   },
 

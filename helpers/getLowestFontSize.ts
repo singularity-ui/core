@@ -14,7 +14,7 @@ export function getLowestFontSize(theme: Theme, size: Common.Size): string {
     return lowestFontSize
   }
 
-  const newLowestFontSize = `${Math.round(theme.typography.size[size] * 90)}%`
+  const newLowestFontSize = `${Math.round(theme.typography.size[size] * 80)}%`
   __CACHE[size] = newLowestFontSize
 
   return newLowestFontSize
