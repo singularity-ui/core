@@ -3,9 +3,27 @@ import styled from 'styled-components'
 
 import { Select, SUI } from '../..'
 
+import type { SelectProps } from '../..'
+
 const Box = styled.div`
-  width: 30rem;
+  max-width: 30rem;
 `
+
+const args: SelectProps = {
+  error: '',
+  helper: '',
+  isMulti: true,
+  label: '',
+  options: [
+    { value: 'bfd7ea', label: 'Beau Blue' },
+    { value: 'c81d25', label: 'Lava' },
+    { value: '087e8b', label: 'Metallic Seaweed' },
+    { value: '0b3954', label: 'Prussian Blue' },
+    { value: 'ff5a5f', label: 'Sizzling Red' },
+  ],
+  placeholder: 'Pick your colors',
+  size: SUI.SIZE.MEDIUM,
+}
 
 export default {
   title: 'Fields/Select Multi',
@@ -18,25 +36,10 @@ export default {
     },
   },
 
-  args: {
-    error: '',
-    helper: '',
-    isAsync: false,
-    isMulti: true,
-    label: '',
-    options: [
-      { value: 'bfd7ea', label: 'Beau Blue' },
-      { value: 'c81d25', label: 'Lava' },
-      { value: '087e8b', label: 'Metallic Seaweed' },
-      { value: '0b3954', label: 'Prussian Blue' },
-      { value: 'ff5a5f', label: 'Sizzling Red' },
-    ],
-    placeholder: 'Pick your colors',
-    size: SUI.SIZE.MEDIUM,
-  },
+  ...args,
 }
 
-export const SelectMulti = (props: any) => (
+export const SelectMulti = (props: SelectProps) => (
   <Box>
     <Select {...props} />
   </Box>

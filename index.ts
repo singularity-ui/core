@@ -36,6 +36,6 @@ export type { CardProps } from './elements/Card'
 export type { FieldProps } from './elements/Field'
 export type { TagProps } from './elements/Tag'
 
-export type { SelectProps } from './fields/Select'
+export type { SelectOption, SelectProps } from './fields/Select'
 
 export type { VerticalMenuProps } from './components/VerticalMenu'

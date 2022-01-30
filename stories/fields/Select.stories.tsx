@@ -1,15 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Select as SuiSelect, SUI } from '../..'
+import { Select, SUI } from '../..'
 
-const StyledSelect = styled(SuiSelect)`
-  width: 30rem;
+import type { SelectProps } from '../..'
+
+const Box = styled.div`
+  max-width: 30rem;
 `
+
+const args: SelectProps = {
+  error: '',
+  helper: '',
+  isMulti: false,
+  label: '',
+  options: [
+    { value: '36', label: 'XS' },
+    { value: '38', label: 'S' },
+    { value: '40', label: 'M' },
+    { value: '42', label: 'L' },
+    { value: '44', label: 'XL' },
+  ],
+  placeholder: 'Pick your size',
+  size: SUI.SIZE.MEDIUM,
+}
 
 export default {
   title: 'Fields/Select',
-  component: SuiSelect,
+  component: Select,
 
   argTypes: {
     size: {
@@ -18,22 +36,11 @@ export default {
     },
   },
 
-  args: {
-    error: '',
-    helper: '',
-    isAsync: false,
-    isMulti: false,
-    label: '',
-    options: [
-      { value: '36', label: 'XS' },
-      { value: '38', label: 'S' },
-      { value: '40', label: 'M' },
-      { value: '42', label: 'L' },
-      { value: '44', label: 'XL' },
-    ],
-    placeholder: 'Pick your size',
-    size: SUI.SIZE.MEDIUM,
-  },
+  ...args,
 }
 
-export const Select = (props: any) => <StyledSelect {...props} />
+export const _Select = (props: SelectProps) => (
+  <Box>
+    <Select {...props} />
+  </Box>
+)

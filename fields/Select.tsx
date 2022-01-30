@@ -93,16 +93,16 @@ const StyledSelect = styled(ReactSelect)<{
   }
 ` as any
 
-export type SelectOption = Readonly<{
+export type SelectOption<Value = string> = Readonly<{
   label: string
-  value: string
+  value: Value
 }>
 
 type SelectSyncProps<Option> = StateManagerProps<Option, boolean, GroupBase<Option>> & {
   className?: string
   error?: string
   helper?: string
-  isAsync: false | undefined
+  isAsync?: false
   label?: string
   options?: Option[]
   size?: Common.Size
@@ -116,7 +116,9 @@ type SelectAsyncProps<Option> = AsyncProps<Option, boolean, GroupBase<Option>> &
   options?: Option[]
   size?: Common.Size
 }
+
 export type SelectProps<Option = SelectOption> = SelectSyncProps<Option> | SelectAsyncProps<Option>
+
 const SelectWithRef: ForwardRefRenderFunction<any, SelectProps> = (
   { className, error, helper, isAsync = false, label, size = SIZE.MEDIUM, ...props },
   ref,
