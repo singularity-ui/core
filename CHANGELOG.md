@@ -1,3 +1,13 @@
+# [2.2.0](https://github.com/singularity-ui/core/compare/v2.1.0...v2.2.0) (2022-01-30)
+
+
+### Features
+
+* **contents:** add Table tags column type ([beffed6](https://github.com/singularity-ui/core/commit/beffed68c1961b63fa0dc6c778cdd843c559ed41))
+* **elements:** add Tag ([1bc83bd](https://github.com/singularity-ui/core/commit/1bc83bd73c87a20c5de68ecdd7776a2affb81471))
+* **fields:** expose react-select declarations for Select ([79334b5](https://github.com/singularity-ui/core/commit/79334b5ad7fcb9ea601a771e7d0e539f70b585a3))
+* **fields:** expose SelectProps definition ([cbfe635](https://github.com/singularity-ui/core/commit/cbfe63560d28007d5b694252a5bd86cc871e6fac))
+
 # [2.1.0](https://github.com/singularity-ui/core/compare/v2.0.0...v2.1.0) (2022-01-25)
 
 
