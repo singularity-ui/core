@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/singularity-ui/core/compare/v2.2.1...v2.3.0) (2022-01-30)
+
+
+### Features
+
+* **elements:** add className on Card ([3645b62](https://github.com/singularity-ui/core/commit/3645b62b8d12c07abe1d0a066e8769233e0f489b))
+
 ## [2.2.1](https://github.com/singularity-ui/core/compare/v2.2.0...v2.2.1) (2022-01-30)
 
 
