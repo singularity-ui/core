@@ -1,3 +1,10 @@
+## [2.4.1](https://github.com/singularity-ui/core/compare/v2.4.0...v2.4.1) (2022-02-01)
+
+
+### Bug Fixes
+
+* **fields:** set id via inputId in Select ([f64bb3e](https://github.com/singularity-ui/core/commit/f64bb3e84a5866e4dd93cda38c9306fea283c429))
+
 # [2.4.0](https://github.com/singularity-ui/core/compare/v2.3.0...v2.4.0) (2022-02-01)
 
 
