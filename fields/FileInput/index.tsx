@@ -111,6 +111,7 @@ const FileInputWithRef: ForwardRefRenderFunction<HTMLInputElement, FileInputProp
 
   const hasError = typeof error === 'string' && error.length > 0
   const hasFiles = files.length > 0
+  const id = props.id || props.name
 
   React.useImperativeHandle(ref, () => $input.current as HTMLInputElement)
 
@@ -177,7 +178,7 @@ const FileInputWithRef: ForwardRefRenderFunction<HTMLInputElement, FileInputProp
   return (
     <div className={className}>
       {label && (
-        <Label className="Label" size={size}>
+        <Label className="Label" htmlFor={id} size={size}>
           {label}
         </Label>
       )}
@@ -198,6 +199,7 @@ const FileInputWithRef: ForwardRefRenderFunction<HTMLInputElement, FileInputProp
             _size={size}
             className="TextInput"
             hasError={hasError}
+            id={id}
             onChange={handleChange}
             type="file"
             {...props}

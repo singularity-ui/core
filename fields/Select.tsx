@@ -124,11 +124,12 @@ const SelectWithRef: ForwardRefRenderFunction<any, SelectProps> = (
   ref,
 ) => {
   const hasError = typeof error === 'string' && error.length > 0
+  const id = props.id || props.name
 
   return (
     <div className={className}>
       {label && (
-        <Label className="Label" size={size}>
+        <Label className="Label" htmlFor={id} size={size}>
           {label}
         </Label>
       )}
@@ -139,6 +140,7 @@ const SelectWithRef: ForwardRefRenderFunction<any, SelectProps> = (
         className="Select"
         classNamePrefix="Select"
         hasError={hasError}
+        id={id}
         size={size}
         {...props}
       />

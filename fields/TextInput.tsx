@@ -47,16 +47,17 @@ const TextInputWithRef: ForwardRefRenderFunction<HTMLInputElement, TextInputProp
   ref,
 ) => {
   const hasError = typeof error === 'string' && error.length > 0
+  const id = props.id || props.name
 
   return (
     <div className={className}>
       {label && (
-        <Label className="Label" size={size}>
+        <Label className="Label" htmlFor={id} size={size}>
           {label}
         </Label>
       )}
 
-      <StyledInput ref={ref} _size={size} className="TextInput" hasError={hasError} {...props} />
+      <StyledInput ref={ref} _size={size} className="TextInput" hasError={hasError} id={id} {...props} />
 
       {!error && helper && (
         <Helper className="Helper" size={size}>

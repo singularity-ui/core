@@ -85,7 +85,6 @@ export const CheckboxWithProps: ForwardRefRenderFunction<HTMLInputElement, Check
 
   return (
     <div className={className}>
-      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
       <StyledLabel className="Checkbox" hasError={hasError} size={size}>
         <input ref={ref} onChange={handleOnChange} type="checkbox" {...props} />
 

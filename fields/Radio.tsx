@@ -92,7 +92,6 @@ const RadioWithProps: ForwardRefRenderFunction<HTMLInputElement, RadioProps> = (
 
   return (
     <div className={className}>
-      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
       <StyledLabel className="Choice" isChecked={isChecked} isDisabled={isDisabled} size={size}>
         <input ref={ref} onChange={handleOnChange} type="radio" {...props} />
 
