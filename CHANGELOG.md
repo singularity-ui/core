@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/singularity-ui/core/compare/v2.3.0...v2.4.0) (2022-02-01)
+
+
+### Features
+
+* **fields:** generate htmlFor + id from name in FileInput, Select & TextInput ([0519c64](https://github.com/singularity-ui/core/commit/0519c64d231eb4d5cad16e6d2af7c69c02ab0dee))
+
 # [2.3.0](https://github.com/singularity-ui/core/compare/v2.2.1...v2.3.0) (2022-01-30)
 
 
