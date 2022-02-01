@@ -140,7 +140,7 @@ const SelectWithRef: ForwardRefRenderFunction<any, SelectProps> = (
         className="Select"
         classNamePrefix="Select"
         hasError={hasError}
-        id={id}
+        inputId={id}
         size={size}
         {...props}
       />
