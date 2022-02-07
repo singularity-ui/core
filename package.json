@@ -36,7 +36,7 @@
     "@babel/preset-react": "7.16.7",
     "@fontsource/poppins": "4.5.1",
     "@ivangabriele/commitlint-config": "ivangabriele/commitlint-config",
-    "@ivangabriele/eslint-config-typescript-react": "2.1.4",
+    "@ivangabriele/eslint-config-typescript-react": "3.0.1",
     "@ivangabriele/prettier-config": "3.0.2",
     "@ivangabriele/semantic-release-config-dist": "1.3.0",
     "@rollup/plugin-commonjs": "21.0.1",
