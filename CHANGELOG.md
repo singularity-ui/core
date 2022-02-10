@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/singularity-ui/core/compare/v2.4.1...v2.5.0) (2022-02-10)
+
+
+### Features
+
+* **icons:** remove Material icons from dist ([1f17053](https://github.com/singularity-ui/core/commit/1f170532857d22c16bd96b46a97e231a53cac574))
+
 ## [2.4.1](https://github.com/singularity-ui/core/compare/v2.4.0...v2.4.1) (2022-02-01)
 
 
