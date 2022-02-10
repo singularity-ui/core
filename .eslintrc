@@ -15,7 +15,6 @@
     "/icons/material/",
     "/scripts/",
     "/storybook-static/",
-    "/submodules/",
     "rollup.config.icons.js",
     "rollup.config.js"
   ],
