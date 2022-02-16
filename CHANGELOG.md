@@ -1,3 +1,10 @@
+## [3.0.2](https://github.com/singularity-ui/core/compare/v3.0.1...v3.0.2) (2022-02-16)
+
+
+### Bug Fixes
+
+* **GlobalStyle:** remove CSS imports ([f54cfb6](https://github.com/singularity-ui/core/commit/f54cfb600c7585b595800ee411ad4c87519a21dd))
+
 ## [3.0.1](https://github.com/singularity-ui/core/compare/v3.0.0...v3.0.1) (2022-02-16)
 
 
