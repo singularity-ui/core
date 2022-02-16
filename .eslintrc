@@ -10,7 +10,6 @@
     "project": "./tsconfig.json"
   },
   "ignorePatterns": [
-    "/.storybook/",
     "/dist/",
     "/icons/material/",
     "/scripts/",

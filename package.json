@@ -93,11 +93,6 @@
     "styled-components": "^5.3.3"
   },
   "prettier": "@ivangabriele/prettier-config",
-  "eslintIgnore": [
-    "/dist",
-    "/storybook-static",
-    "!/.storybook"
-  ],
   "release": {
     "extends": "@ivangabriele/semantic-release-config-dist"
   }
