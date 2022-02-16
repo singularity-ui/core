@@ -1,3 +1,10 @@
+## [3.0.3](https://github.com/singularity-ui/core/compare/v3.0.2...v3.0.3) (2022-02-16)
+
+
+### Bug Fixes
+
+* remove package.json main prop from dist ([eebf90e](https://github.com/singularity-ui/core/commit/eebf90e5d94d07599cca9ab953174615d40e613f))
+
 ## [3.0.2](https://github.com/singularity-ui/core/compare/v3.0.1...v3.0.2) (2022-02-16)
 
 
