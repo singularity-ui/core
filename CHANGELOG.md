@@ -1,3 +1,16 @@
+# [3.0.0](https://github.com/singularity-ui/core/compare/v2.5.0...v3.0.0) (2022-02-16)
+
+
+### Build System
+
+* migrate to preserved modules structure ([041c060](https://github.com/singularity-ui/core/commit/041c060feb9d320706a621802c86eb035f583a63))
+
+
+### BREAKING CHANGES
+
+* This may require a radical change of setup for projects using
+this library.
+
 # [2.5.0](https://github.com/singularity-ui/core/compare/v2.4.1...v2.5.0) (2022-02-10)
 
 
