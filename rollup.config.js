@@ -24,8 +24,8 @@ export default {
   output: [
     {
       dir: './dist',
-      format: 'esm',
-      preserveModules: false,
+      format: 'es',
+      preserveModules: true,
       sourcemap: true,
     },
   ],
@@ -40,7 +40,9 @@ export default {
     // Convert CommonJS to ES6:
     commonjs(),
     // Transpile TS & TSX to JS:
-    typescript(),
+    typescript({
+      tsconfig: './tsconfig.dist.json',
+    }),
     // Hack to make styled-component compatible with Next.js inability to fully support ESM:
     replace({
       '= styled(': '= (styled.default || styled)(',

@@ -10,10 +10,6 @@ const distPackageExtraProps = {
   bugs: {
     url: 'https://github.com/singularity-ui/core/issues',
   },
-  exports: {
-    '.': './index.js',
-    './icons/material/*': './icons/material/*.js',
-  },
   funding: 'https://github.com/singularity-ui/core?sponsor=1',
   homepage: 'https://singularity-ui.github.io/core/',
   name: '@singularity/core',
@@ -26,7 +22,7 @@ const distPackageExtraProps = {
   },
   sideEffects: false,
   type: 'module',
-  types: 'index.d.ts',
+  types: './index.d.ts',
 }
 
 ;(async () => {

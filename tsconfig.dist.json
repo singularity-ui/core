@@ -1,0 +1,15 @@
+{
+  "extends": ".",
+  "include": ["**/*.js", "**/*.jsx", "**/*.mjs", "**/*.ts", "**/*.tsx"],
+  "exclude": [
+    ".storybook/*",
+    "dist/*",
+    "icons/material/*",
+    "node_modules/*",
+    "scripts/*",
+    "storybook-static/*",
+    "rollup.config.icons.js",
+    "rollup.config.js",
+    "stories/*"
+  ]
+}
