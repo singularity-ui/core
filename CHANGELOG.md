@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/singularity-ui/core/compare/v3.0.0...v3.0.1) (2022-02-16)
+
+
+### Bug Fixes
+
+* **GlobalStyle:** include @fontsource/poppins as a dep ([5da2bc2](https://github.com/singularity-ui/core/commit/5da2bc2c34f8a46d1dea84f1dc9c1dc678ddf668))
+
 # [3.0.0](https://github.com/singularity-ui/core/compare/v2.5.0...v3.0.0) (2022-02-16)
 
 
