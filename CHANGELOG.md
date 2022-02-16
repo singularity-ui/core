@@ -1,3 +1,10 @@
+## [3.0.4](https://github.com/singularity-ui/core/compare/v3.0.3...v3.0.4) (2022-02-16)
+
+
+### Bug Fixes
+
+* add exports prop in dist package.json ([6b96459](https://github.com/singularity-ui/core/commit/6b964590f8c9a342e2f899c1ea9981c23d784b6c))
+
 ## [3.0.3](https://github.com/singularity-ui/core/compare/v3.0.2...v3.0.3) (2022-02-16)
 
 
