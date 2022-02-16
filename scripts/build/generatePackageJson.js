@@ -29,7 +29,7 @@ const distPackageExtraProps = {
   const rootPackageJson = await fs.readFile('./package.json', 'utf-8')
   const rootPackage = JSON.parse(rootPackageJson)
   const distPackage = R.pipe(
-    R.omit(['devDependencies', 'eslintIgnore', 'prettier', 'private', 'release', 'scripts', 'workspaces']),
+    R.omit(['devDependencies', 'main', 'prettier', 'private', 'release', 'scripts', 'workspaces']),
     R.mergeLeft(distPackageExtraProps),
   )(rootPackage)
   const distPackageJson = JSON.stringify(distPackage, null, 2)
