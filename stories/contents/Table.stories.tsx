@@ -1,11 +1,8 @@
 import Jabber from 'jabber'
 import React from 'react'
+import { Edit, Trash, UserCheck, UserX } from 'react-feather'
 
 import { SUI, Table } from '../..'
-import MaterialDeleteOutlined from '../../icons/material/MaterialDeleteOutlined'
-import MaterialEditOutlined from '../../icons/material/MaterialEditOutlined'
-import MaterialPersonOffOutlined from '../../icons/material/MaterialPersonOffOutlined'
-import MaterialPersonOutlined from '../../icons/material/MaterialPersonOutlined'
 
 import type { TableColumnProps, TableProps } from '../..'
 
@@ -47,8 +44,8 @@ const COLUMNS: TableColumnProps[] = [
           window.alert(`Activate user account with id=${id}.`)
         : // eslint-disable-next-line no-alert
           window.alert(`Disable user account with id=${id}.`),
-    IconOff: MaterialPersonOffOutlined,
-    IconOn: MaterialPersonOutlined,
+    IconOff: UserX,
+    IconOn: UserCheck,
     withTooltip: true,
   },
   {
@@ -57,13 +54,13 @@ const COLUMNS: TableColumnProps[] = [
     // eslint-disable-next-line no-alert
     action: id => window.alert(`Edit user account with id=${id}.`),
     accent: SUI.ACCENT.SECONDARY,
-    Icon: MaterialEditOutlined,
+    Icon: Edit,
   },
   {
     accent: 'danger',
     // eslint-disable-next-line no-alert
     action: id => window.alert(`Delete user account with id=${id}.`),
-    Icon: MaterialDeleteOutlined,
+    Icon: Trash,
     label: 'Delete user',
     type: 'action',
   },

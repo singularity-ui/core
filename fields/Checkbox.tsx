@@ -3,8 +3,8 @@ import React, { ChangeEvent, ForwardRefRenderFunction, InputHTMLAttributes } fro
 import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../common/constants'
-import MaterialCheckBox from '../icons/material/MaterialCheckBox'
 import MaterialCheckBoxOutlineBlank from '../icons/material/MaterialCheckBoxOutlineBlank'
+import MaterialCheckBoxOutlined from '../icons/material/MaterialCheckBoxOutlined'
 import { Error, Helper } from './shared'
 
 const StyledLabel = styled.label<{
@@ -88,7 +88,7 @@ export const CheckboxWithProps: ForwardRefRenderFunction<HTMLInputElement, Check
       <StyledLabel className="Checkbox" hasError={hasError} size={size}>
         <input ref={ref} onChange={handleOnChange} type="checkbox" {...props} />
 
-        {isChecked ? <MaterialCheckBox /> : <MaterialCheckBoxOutlineBlank />}
+        {isChecked ? <MaterialCheckBoxOutlined /> : <MaterialCheckBoxOutlineBlank />}
         <LabelText isChecked={isChecked}>{label}</LabelText>
       </StyledLabel>
 

@@ -10,6 +10,7 @@
     "lib": ["DOM", "DOM.Iterable", "ES2021"],
     "module": "ESNext",
     "moduleResolution": "Node",
+    "noEmit": true,
     "noImplicitAny": true,
     "outDir": "./dist",
     "resolveJsonModule": true,
@@ -25,6 +26,7 @@
     "node_modules/*",
     "scripts/*",
     "storybook-static/*",
+    "postcss.config.js",
     "rollup.config.icons.js",
     "rollup.config.js"
   ]
