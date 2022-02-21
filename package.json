@@ -59,7 +59,7 @@
     "@typescript-eslint/eslint-plugin": "5.12.0",
     "@typescript-eslint/parser": "5.12.0",
     "babel-loader": "8.2.3",
-    "bhala": "2.1.0",
+    "bhala": "3.0.4",
     "dumdum": "1.0.0-alpha.5",
     "eslint": "8.9.0",
     "eslint-config-airbnb": "19.0.4",
