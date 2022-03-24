@@ -113,10 +113,10 @@ const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps> = (
       <table ref={ref} {...props}>
         <thead>
           <tr>
-            {columns.map((column: TableColumnProps, index: number) => {
+            {columns.map((column: TableColumnProps) => {
               const sortOrder = column.type !== 'action' && column.key === sortedKey ? sortedKeyOrder : undefined
 
-              return <Head key={String(index)} column={column} onSort={sortDataByKey} sortOrder={sortOrder} />
+              return <Head key={column.label} column={column} onSort={sortDataByKey} sortOrder={sortOrder} />
             })}
           </tr>
         </thead>

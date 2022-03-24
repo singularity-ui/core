@@ -24,6 +24,8 @@ export const Lane: SuiComponent<HTMLAttributes<HTMLDivElement>, LaneProps> = ({ 
   <Box>
     <Label>{label}</Label>
     {tasks.map((Task, index) => (
+      // TODO Stop using index as key in lane tasks list
+      // eslint-disable-next-line react/no-array-index-key
       <Task key={String(index)} />
     ))}
   </Box>

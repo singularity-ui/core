@@ -34,6 +34,8 @@ export const Tasker = Object.assign<
     return (
       <Box {...props}>
         {data.map((dataLane, laneIndex) => (
+          // TODO Stop using index as key in lanes list
+          // eslint-disable-next-line react/no-array-index-key
           <LaneBox key={String(laneIndex)} width={laneWidth}>
             <Lane label={dataLane.label} tasks={dataLane.tasks} />
           </LaneBox>
