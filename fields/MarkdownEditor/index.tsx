@@ -70,7 +70,9 @@ const HOTKEYS: Record<string, string> = {
   'mod+u': 'underline',
 }
 
-const deserialize = unified().use(remarkParse).use(remarkSlate)
+const deserialize = unified()
+  .use(remarkParse as any)
+  .use(remarkSlate)
 
 type MarkdownEditorProps = DOMAttributes<HTMLDivElement> & {
   className?: string

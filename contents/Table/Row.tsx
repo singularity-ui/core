@@ -11,8 +11,8 @@ type RowProps = {
 }
 export const Row: FunctionComponent<RowProps> = ({ columns, dataRow }) => (
   <tr>
-    {columns.map((column, index) => (
-      <Cell key={String(index)} column={column} dataRow={dataRow} />
+    {columns.map(column => (
+      <Cell key={dataRow.id} column={column} dataRow={dataRow} />
     ))}
   </tr>
 )

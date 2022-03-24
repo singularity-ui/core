@@ -9,6 +9,7 @@ declare namespace Common {
   type Collection = CollectionItem[]
   type CollectionItem = {
     [key: string]: any
+    id: string
   }
 
   type DeepPartial<T> = {
