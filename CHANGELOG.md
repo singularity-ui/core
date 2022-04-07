@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/singularity-ui/core/compare/v3.0.5...v3.1.0) (2022-04-07)
+
+
+### Features
+
+* **contents:** add transform prop to Table boolean column ([24d973e](https://github.com/singularity-ui/core/commit/24d973ec84f1c507546948df832751d29c6a6315))
+
 ## [3.0.5](https://github.com/singularity-ui/core/compare/v3.0.4...v3.0.5) (2022-03-24)
 
 ## [3.0.4](https://github.com/singularity-ui/core/compare/v3.0.3...v3.0.4) (2022-02-16)
