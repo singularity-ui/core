@@ -17,6 +17,7 @@ export type TableBooleanColumnProps = {
   label: string
   labelOff: string
   labelOn: string
+  transform?: TableColumnKeyFunction
   type: 'boolean'
   withTooltip?: boolean
 }

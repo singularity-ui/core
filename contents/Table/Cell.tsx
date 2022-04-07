@@ -183,7 +183,7 @@ type BooleanCellProps = {
   dataRow: Common.CollectionItem
 }
 export const BooleanCell: FunctionComponent<BooleanCellProps> = ({ column, dataRow }) => {
-  const { action, IconOff, IconOn, key, label, labelOff, labelOn, withTooltip = false } = column
+  const { action, IconOff, IconOn, key, label, labelOff, labelOn, transform, withTooltip = false } = column
   const maybeId = getId(dataRow)
 
   if (label === undefined) {
@@ -222,7 +222,7 @@ export const BooleanCell: FunctionComponent<BooleanCellProps> = ({ column, dataR
     return <StyledTd />
   }
 
-  const value = Boolean(path(key, dataRow))
+  const value = Boolean(transform !== undefined ? transform(dataRow) : path(key, dataRow))
   const toggledLabel = value ? labelOn : labelOff
 
   if (action === undefined) {

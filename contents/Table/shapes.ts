@@ -21,6 +21,7 @@ export const BooleanColumnPropType = BetterPropTypes.exact({
   label: BetterPropTypes.string.isRequired,
   labelOff: BetterPropTypes.string.isRequired,
   labelOn: BetterPropTypes.string.isRequired,
+  transform: BetterPropTypes.func.isOptionalButNotNull,
   type: BetterPropTypes.oneOf<'boolean'>(['boolean']).isRequired,
   withTooltip: BetterPropTypes.bool.isOptionalButNotNull,
 })
