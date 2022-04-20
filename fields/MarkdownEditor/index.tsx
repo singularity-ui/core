@@ -74,7 +74,7 @@ const deserialize = unified()
   .use(remarkParse as any)
   .use(remarkSlate)
 
-type MarkdownEditorProps = DOMAttributes<HTMLDivElement> & {
+export type MarkdownEditorProps = Omit<DOMAttributes<HTMLDivElement>, 'onInput'> & {
   className?: string
   defaultValue?: string
   error?: string
