@@ -37,5 +37,6 @@ export type { FieldProps } from './elements/Field'
 export type { TagProps } from './elements/Tag'
 
 export type { SelectOption, SelectProps } from './fields/Select'
+export type { MarkdownEditorProps } from './fields/MarkdownEditor'
 
 export type { VerticalMenuProps } from './components/VerticalMenu'
