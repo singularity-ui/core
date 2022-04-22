@@ -5,8 +5,8 @@ import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
 
 import { Button } from '../../elements/Button'
-import MaterialChevronLeft from '../../icons/material/MaterialChevronLeft'
-import MaterialChevronRight from '../../icons/material/MaterialChevronRight'
+import { MaterialChevronLeft } from '../../icons/material/MaterialChevronLeft'
+import { MaterialChevronRight } from '../../icons/material/MaterialChevronRight'
 
 const Box = styled.div`
   display: flex;

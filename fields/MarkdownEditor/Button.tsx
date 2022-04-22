@@ -1,6 +1,3 @@
-/* eslint-disable react/require-default-props */
-
-import BetterPropTypes from 'better-prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -34,7 +31,7 @@ const StyledButton = styled.button<{
   }
 `
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   isActive?: boolean
 }
 export const Button: FunctionComponent<ButtonProps> = ({ children, isActive = false, ...props }) => (
@@ -42,7 +39,3 @@ export const Button: FunctionComponent<ButtonProps> = ({ children, isActive = fa
     {children}
   </StyledButton>
 )
-
-Button.propTypes = {
-  isActive: BetterPropTypes.bool.isOptionalButNotNull,
-}

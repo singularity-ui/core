@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../../common/constants'
-import MaterialUploadFile from '../../icons/material/MaterialUploadFile'
+import { MaterialUploadFile } from '../../icons/material/MaterialUploadFile'
 import { Error, Helper, Label } from '../shared'
 import { FileItem } from './FileItem'
 
@@ -24,8 +24,10 @@ const FileBox = styled.div<{
       return p.hasError ? p.theme.color.danger.default : p.theme.color.secondary.default
     }};
   border-radius: ${p => p.theme.appearance.borderRadius[p.size]};
-  box-shadow: 0 0 0 ${p => (p.isHovered ? '1px' : 0)}
-    ${p => (p.hasError ? p.theme.color.danger.active : p.theme.color.secondary.active)};
+  box-shadow: ${p =>
+    ['0 0 0', p.isHovered ? '1px' : 0, p.hasError ? p.theme.color.danger.active : p.theme.color.secondary.active].join(
+      ' ',
+    )};
   cursor: pointer;
   display: flex;
   flex-direction: column;

@@ -1,28 +1,20 @@
-/* eslint-disable react/jsx-props-no-spreading, react/prop-types, @typescript-eslint/no-use-before-define */
-
 import BetterPropTypes from 'better-prop-types'
 import isHotkey from 'is-hotkey'
 import React from 'react'
-import remarkParse from 'remark-parse'
-import remarkSlate, { serialize } from 'remark-slate'
-import { Editor as SlateEditor, createEditor } from 'slate'
+import { createEditor } from 'slate'
 import { withHistory } from 'slate-history'
 import { Editable, Slate, withReact } from 'slate-react'
 import styled from 'styled-components'
-import { unified } from 'unified'
 
 import { SIZE } from '../../common/constants'
-import MaterialCode from '../../icons/material/MaterialCode'
-import MaterialFormatBold from '../../icons/material/MaterialFormatBold'
-import MaterialFormatItalic from '../../icons/material/MaterialFormatItalic'
-import MaterialFormatListBulleted from '../../icons/material/MaterialFormatListBulleted'
-import MaterialFormatListNumbered from '../../icons/material/MaterialFormatListNumbered'
-import MaterialFormatQuote from '../../icons/material/MaterialFormatQuote'
 import { Error, Helper, Label } from '../shared'
-import { BlockButton } from './BlockButton'
-import { MarkButton } from './MarkButton'
+import { Element } from './Element'
+import { deserialize, serialize, toggleMark } from './helpers'
+import { Leaf } from './Leaf'
+import { Toolbar } from './Toolbar'
 
-import type { DOMAttributes, FunctionComponent } from 'react'
+import type { CustomElement, CustomText } from './types'
+import type { DOMAttributes, FunctionComponent, KeyboardEventHandler } from 'react'
 import type { BaseEditor, Descendant } from 'slate'
 import type { ReactEditor } from 'slate-react'
 
@@ -32,27 +24,16 @@ const EditorBox = styled.div<{
   background-color: ${p => p.theme.color.body.white};
   border: solid 1px ${p => (p.hasError ? p.theme.color.danger.default : p.theme.color.secondary.default)};
   border-radius: ${p => p.theme.appearance.borderRadius.medium};
+  position: relative;
 
   :focus-within {
     box-shadow: 0 0 0 1px ${p => (p.hasError ? p.theme.color.danger.active : p.theme.color.secondary.active)};
   }
 `
 
-const Toolbar = styled.div`
-  align-items: center;
-  border-bottom: solid 2px ${p => p.theme.color.secondary.background};
-  display: flex;
-  padding: ${p => p.theme.padding.layout.medium};
-`
-
 const EditableBox = styled.div`
   padding: ${p => p.theme.padding.layout.medium};
 `
-
-type CustomElement = { children: CustomText[]; type: string }
-type CustomText = Record<string, any> & {
-  text: string
-}
 
 // https://docs.slatejs.org/walkthroughs/01-installing-slate
 declare module 'slate' {
@@ -64,24 +45,20 @@ declare module 'slate' {
 }
 
 const HOTKEYS: Record<string, string> = {
-  'mod+`': 'code',
+  // 'mod+`': 'code',
   'mod+b': 'bold',
   'mod+i': 'italic',
-  'mod+u': 'underline',
+  // 'mod+u': 'underline',
 }
 
-const deserialize = unified()
-  .use(remarkParse as any)
-  .use(remarkSlate)
-
-export type MarkdownEditorProps = Omit<DOMAttributes<HTMLDivElement>, 'onInput'> & {
+export type MarkdownEditorProps = Omit<DOMAttributes<HTMLDivElement>, 'onChange'> & {
   className?: string
   defaultValue?: string
   error?: string
   helper?: string
   isDisabled?: boolean
   label: string
-  onInput?: (newMarkdownSource: string) => void | Promise<void>
+  onChange?: (newMarkdownSource: string) => void | Promise<void>
   placeholder: string
   size?: Common.Size
 }
@@ -92,7 +69,7 @@ export const MarkdownEditor: FunctionComponent<MarkdownEditorProps> = ({
   helper,
   isDisabled = false,
   label,
-  onInput,
+  onChange,
   placeholder,
   size = SIZE.MEDIUM,
   ...props
@@ -102,21 +79,38 @@ export const MarkdownEditor: FunctionComponent<MarkdownEditorProps> = ({
   const editor = React.useMemo(() => withHistory(withReact(createEditor())), [])
 
   const defaultValueAsAst = React.useMemo(() => {
-    const value = defaultValue === undefined || defaultValue.trim().length === 0 ? placeholder : defaultValue
+    console.log(deserialize(defaultValue))
 
-    return deserialize.processSync(value).result as Descendant[]
+    return deserialize(defaultValue)
   }, [defaultValue])
   const hasError = typeof error === 'string' && error.length > 0
 
-  const handleChange = (newValueAsAst: Descendant[]) => {
-    if (onInput === undefined) {
+  const handleChange = React.useCallback((newValueAsAst: Descendant[]) => {
+    if (onChange === undefined) {
       return
     }
 
-    const newValueAsMarkdown = newValueAsAst.map((v: Descendant) => serialize(v)).join('')
+    // console.log(newValueAsAst)
+    const newValueAsMarkdown = serialize(newValueAsAst)
+    // console.log(newValueAsMarkdown)
 
-    onInput(newValueAsMarkdown)
-  }
+    onChange(newValueAsMarkdown)
+  }, [])
+
+  const handleKeyDown: KeyboardEventHandler<HTMLDivElement> = React.useCallback(
+    event => {
+      // eslint-disable-next-line no-restricted-syntax
+      for (const hotkey in HOTKEYS) {
+        if (isHotkey(hotkey, event)) {
+          event.preventDefault()
+
+          const mark = HOTKEYS[hotkey]
+          toggleMark(editor, mark)
+        }
+      }
+    },
+    [editor],
+  )
 
   return (
     <div className={className}>
@@ -128,29 +122,13 @@ export const MarkdownEditor: FunctionComponent<MarkdownEditorProps> = ({
 
       <EditorBox className="EditorBox" hasError={hasError}>
         <Slate editor={editor} onChange={handleChange} value={defaultValueAsAst}>
-          <Toolbar>
-            <MarkButton format="bold" Icon={MaterialFormatBold} />
-            <MarkButton format="italic" Icon={MaterialFormatItalic} />
-            <MarkButton format="code" Icon={MaterialCode} />
-            <BlockButton format="block_quote" Icon={MaterialFormatQuote} />
-            <BlockButton format="ul-list" Icon={MaterialFormatListBulleted} />
-            <BlockButton format="ol_list" Icon={MaterialFormatListNumbered} />
-          </Toolbar>
+          <Toolbar />
 
           <EditableBox className="EditableBox">
             <Editable
               disabled={isDisabled}
-              onKeyDown={event => {
-                // eslint-disable-next-line no-restricted-syntax
-                for (const hotkey in HOTKEYS) {
-                  if (isHotkey(hotkey, event as any)) {
-                    event.preventDefault()
-
-                    const mark = HOTKEYS[hotkey]
-                    toggleMark(editor, mark)
-                  }
-                }
-              }}
+              onKeyDown={handleKeyDown}
+              placeholder={placeholder}
               renderElement={renderElement}
               renderLeaf={renderLeaf}
               spellCheck
@@ -183,77 +161,6 @@ MarkdownEditor.propTypes = {
   helper: BetterPropTypes.string.isOptionalButNotNull,
   isDisabled: BetterPropTypes.bool.isOptionalButNotNull,
   label: BetterPropTypes.string.isRequired,
-  onInput: BetterPropTypes.func.isOptionalButNotNull,
+  onChange: BetterPropTypes.func.isOptionalButNotNull,
   placeholder: BetterPropTypes.string.isRequired,
-}
-
-const toggleMark = (editor: BaseEditor & ReactEditor, format: string) => {
-  const isActive = isMarkActive(editor, format)
-
-  if (isActive) {
-    SlateEditor.removeMark(editor, format)
-  } else {
-    SlateEditor.addMark(editor, format, true)
-  }
-}
-
-const isMarkActive = (editor: BaseEditor & ReactEditor, format: string) => {
-  const marks = SlateEditor.marks(editor)
-
-  return marks ? marks[format] === true : false
-}
-
-const Element: FunctionComponent<{
-  attributes: Record<string, any>
-  children: any
-  element: CustomElement
-}> = ({ attributes, children, element }) => {
-  switch (element.type) {
-    case 'block_quote':
-      return <blockquote {...attributes}>{children}</blockquote>
-
-    case 'list-item':
-      return <li {...attributes}>{children}</li>
-
-    case 'ol_list':
-      return <ol {...attributes}>{children}</ol>
-
-    case 'paragraph':
-      return <p {...attributes}>{children}</p>
-
-    case 'ul_list':
-    case 'ul-list':
-      return <ul {...attributes}>{children}</ul>
-
-    default:
-      return <div {...attributes}>{children}</div>
-  }
-}
-
-const Leaf: FunctionComponent<{
-  attributes: Record<string, any>
-  children: any
-  leaf: Record<string, boolean>
-}> = ({ attributes, children, leaf }) => {
-  if (leaf.bold) {
-    // eslint-disable-next-line no-param-reassign
-    children = <strong>{children}</strong>
-  }
-
-  if (leaf.code) {
-    // eslint-disable-next-line no-param-reassign
-    children = <code>{children}</code>
-  }
-
-  if (leaf.italic) {
-    // eslint-disable-next-line no-param-reassign
-    children = <em>{children}</em>
-  }
-
-  if (leaf.underline) {
-    // eslint-disable-next-line no-param-reassign
-    children = <u>{children}</u>
-  }
-
-  return <span {...attributes}>{children}</span>
 }

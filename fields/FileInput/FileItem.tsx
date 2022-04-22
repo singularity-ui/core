@@ -6,8 +6,8 @@ import styled from 'styled-components'
 
 import { SIZES } from '../../common/constants'
 import { getLowestFontSize } from '../../helpers/getLowestFontSize'
-import MaterialExtension from '../../icons/material/MaterialExtension'
-import MaterialPictureAsPdf from '../../icons/material/MaterialPictureAsPdf'
+import { MaterialExtension } from '../../icons/material/MaterialExtension'
+import { MaterialPictureAsPdf } from '../../icons/material/MaterialPictureAsPdf'
 
 import type { DOMAttributes, FunctionComponent } from 'react'
 

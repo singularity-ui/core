@@ -10,6 +10,7 @@
     "storybook-static/*",
     "rollup.config.icons.js",
     "rollup.config.js",
-    "stories/*"
+    "stories/*",
+    "**/*.test.ts"
   ]
 }

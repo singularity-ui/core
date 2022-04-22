@@ -21,6 +21,9 @@ export { ThemeProvider } from './ThemeProvider'
 
 export type { PartialTheme, Theme } from './common/theme'
 
+export type { DialogProps } from './components/Dialog'
+export type { ModalProps } from './components/Modal'
+
 export type { TableProps } from './contents/Table'
 export type {
   TableActionColumnProps,
