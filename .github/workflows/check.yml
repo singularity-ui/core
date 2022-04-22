@@ -35,6 +35,24 @@ jobs:
       - name: Type
         run: yarn test:type
 
+  # test_unit:
+  #   name: Unit Test
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v3
+  #     - name: Setup Node.js
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         cache: yarn
+  #         node-version: 16
+  #     - name: Install
+  #       run: yarn
+  #     - name: Test
+  #       run: yarn test:unit --coverage
+  #     - name: Upload coverage
+  #       run: yarn codecov
+
   build:
     name: Build
     runs-on: ubuntu-latest

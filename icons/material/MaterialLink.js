@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const MaterialUploadFileSvg = props =>
+const MaterialLinkSvg = props =>
   /* #__PURE__ */ React.createElement(
     'svg',
     {
@@ -12,15 +12,15 @@ const MaterialUploadFileSvg = props =>
       ...props,
     },
     /* #__PURE__ */ React.createElement('path', {
-      d: 'M0 0h24v24H0V0z',
+      d: 'M0 0h24v24H0z',
       fill: 'none',
     }),
     /* #__PURE__ */ React.createElement('path', {
-      d: 'M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 15.01l1.41 1.41L11 14.84V19h2v-4.16l1.59 1.59L16 15.01 12.01 11z',
+      d: 'M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z',
     }),
   )
 
-export const MaterialUploadFile = (styled.default || styled)(MaterialUploadFileSvg).attrs(p => ({
+export const MaterialLink = (styled.default || styled)(MaterialLinkSvg).attrs(p => ({
   accent: p.accent || 'primary',
 }))`
   fill: ${p => p.theme.color[p.accent].active};

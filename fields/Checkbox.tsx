@@ -3,8 +3,8 @@ import React, { ChangeEvent, ForwardRefRenderFunction, InputHTMLAttributes } fro
 import styled from 'styled-components'
 
 import { SIZE, SIZES } from '../common/constants'
-import MaterialCheckBoxOutlineBlank from '../icons/material/MaterialCheckBoxOutlineBlank'
-import MaterialCheckBoxOutlined from '../icons/material/MaterialCheckBoxOutlined'
+import { MaterialCheckBoxOutlineBlank } from '../icons/material/MaterialCheckBoxOutlineBlank'
+import { MaterialCheckBoxOutlined } from '../icons/material/MaterialCheckBoxOutlined'
 import { Error, Helper } from './shared'
 
 const StyledLabel = styled.label<{

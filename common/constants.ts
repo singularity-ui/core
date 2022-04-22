@@ -1,4 +1,4 @@
-/* eslint-disable sort-keys-fix/sort-keys-fix */
+/* eslint-disable sort-keys-fix/sort-keys-fix, typescript-sort-keys/string-enum */
 
 export const ACCENT: {
   [key: string]: Common.Accent
@@ -43,8 +43,7 @@ export const TYPE: {
 
 export const TYPES: Array<Common.Type> = Object.values(TYPE)
 
-/* eslint-disable typescript-sort-keys/string-enum */
-export enum UNIT {
+export enum Unit {
   U1 = 0.0625,
   U2 = 0.125,
   U3 = 0.1875,
@@ -58,4 +57,3 @@ export enum UNIT {
   U32 = 2,
   U64 = 4,
 }
-/* eslint-enable typescript-sort-keys/string-enum */

@@ -10,14 +10,15 @@ import { Window } from '../Dialog/Window'
 
 import type { FunctionComponent, HTMLAttributes, MouseEventHandler } from 'react'
 
-type BareModalProps = HTMLAttributes<HTMLDivElement> & {
+export type ModalProps = HTMLAttributes<HTMLDivElement> & {
+  isAbsolute?: boolean
   onCancel: MouseEventHandler<HTMLDivElement>
 }
-const BareModal: FunctionComponent<BareModalProps> = ({ children, onCancel, ...props }) => (
-  <StyledDialog {...props}>
-    <Overlay onClick={onCancel} />
+const BareModal: FunctionComponent<ModalProps> = ({ children, isAbsolute = false, onCancel, ...props }) => (
+  <StyledDialog isAbsolute={isAbsolute} {...props}>
+    <Overlay isAbsolute={isAbsolute} onClick={onCancel} />
 
-    <Window>{children}</Window>
+    <Window isAbsolute={isAbsolute}>{children}</Window>
   </StyledDialog>
 )
 

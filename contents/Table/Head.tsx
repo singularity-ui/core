@@ -3,8 +3,8 @@ import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
 
 import { ACCENT, SORT_ORDER, SORT_ORDERS } from '../../common/constants'
-import SortAsc from '../../icons/SortAsc'
-import SortDesc from '../../icons/SortDesc'
+import { SortAsc } from '../../icons/SortAsc'
+import { SortDesc } from '../../icons/SortDesc'
 import { ColumnPropType } from './shapes'
 import { TableColumnProps } from './types'
 
