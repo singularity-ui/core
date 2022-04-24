@@ -4,6 +4,7 @@ export type TableActionColumnProps = {
   Icon: any
   accent: Common.Accent
   action: (id: any) => void | Promise<void>
+  key: string
   label: string
   type: 'action'
   withTooltip?: boolean

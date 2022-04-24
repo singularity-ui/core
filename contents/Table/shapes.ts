@@ -8,6 +8,7 @@ export const ActionColumnPropType = BetterPropTypes.exact({
   accent: BetterPropTypes.oneOf(ACCENTS).isRequired,
   action: BetterPropTypes.func.isRequired,
   Icon: BetterPropTypes.elementType.isRequired,
+  key: BetterPropTypes.string.isRequired,
   label: BetterPropTypes.string.isRequired,
   type: BetterPropTypes.oneOf<'action'>(['action']).isRequired,
   withTooltip: BetterPropTypes.bool.isOptionalButNotNull,

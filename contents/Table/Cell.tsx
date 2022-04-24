@@ -273,7 +273,7 @@ export const TagsCell: FunctionComponent<TagsCellProps> = ({ column, dataRow }) 
   return (
     <StyledTdValue>
       {values.map((value: any) => (
-        <Tag>{value}</Tag>
+        <Tag key={String(value)}>{value}</Tag>
       ))}
     </StyledTdValue>
   )

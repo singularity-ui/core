@@ -12,7 +12,7 @@ type RowProps = {
 export const Row: FunctionComponent<RowProps> = ({ columns, dataRow }) => (
   <tr>
     {columns.map(column => (
-      <Cell key={dataRow.id} column={column} dataRow={dataRow} />
+      <Cell key={`${dataRow.id}-${column.key}`} column={column} dataRow={dataRow} />
     ))}
   </tr>
 )

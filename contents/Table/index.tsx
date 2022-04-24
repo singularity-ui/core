@@ -3,7 +3,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { SORT_ORDER } from '../../common/constants'
-import { generateKeyFromValue } from '../../helpers/generateKeyFromValue'
 import { Head } from './Head'
 import { getSortOrder, sort } from './helpers'
 import { LoadingCell } from './LoadingCell'
@@ -116,7 +115,7 @@ const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps> = (
             {columns.map((column: TableColumnProps) => {
               const sortOrder = column.type !== 'action' && column.key === sortedKey ? sortedKeyOrder : undefined
 
-              return <Head key={column.label} column={column} onSort={sortDataByKey} sortOrder={sortOrder} />
+              return <Head key={column.key} column={column} onSort={sortDataByKey} sortOrder={sortOrder} />
             })}
           </tr>
         </thead>
@@ -135,7 +134,7 @@ const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps> = (
 
           {!isLoading &&
             !isEmpty &&
-            visibleData.map(dataRow => <Row key={generateKeyFromValue(dataRow)} columns={columns} dataRow={dataRow} />)}
+            visibleData.map(dataRow => <Row key={dataRow.id} columns={columns} dataRow={dataRow} />)}
         </tbody>
       </table>
 
