@@ -55,12 +55,14 @@ const COLUMNS: TableColumnProps[] = [
     action: id => window.alert(`Edit user account with id=${id}.`),
     accent: SUI.ACCENT.SECONDARY,
     Icon: Edit,
+    key: 'edit',
   },
   {
     accent: 'danger',
     // eslint-disable-next-line no-alert
     action: id => window.alert(`Delete user account with id=${id}.`),
     Icon: Trash,
+    key: 'delete',
     label: 'Delete user',
     type: 'action',
   },
