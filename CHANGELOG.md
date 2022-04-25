@@ -1,3 +1,10 @@
+## [4.0.2](https://github.com/singularity-ui/core/compare/v4.0.1...v4.0.2) (2022-04-25)
+
+
+### Bug Fixes
+
+* **build:** remove is-hotkey all together ([#85](https://github.com/singularity-ui/core/issues/85)) ([7fa8e6d](https://github.com/singularity-ui/core/commit/7fa8e6d35f13a48fcb031ad174293ae00f095ec6))
+
 ## [4.0.1](https://github.com/singularity-ui/core/compare/v4.0.0...v4.0.1) (2022-04-25)
 
 
