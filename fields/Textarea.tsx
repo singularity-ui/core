@@ -45,7 +45,7 @@ type TextareaMeasurement = {
   paddingHeight: number
 }
 
-type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
+export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
   className?: string
   error?: string
   helper?: string

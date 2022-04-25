@@ -1,15 +1,12 @@
 import React from 'react'
-import styled from 'styled-components'
 
-import { Checkbox as SuiCheckbox, SUI } from '../..'
+import { Checkbox, SUI } from '../..'
 
-const StyledCheckbox = styled(SuiCheckbox)`
-  width: 30rem;
-`
+import type { CheckboxProps } from '../..'
 
 export default {
   title: 'Fields/Checkbox',
-  component: SuiCheckbox,
+  component: Checkbox,
 
   argTypes: {
     defaultChecked: {
@@ -29,4 +26,4 @@ export default {
   },
 }
 
-export const Checkbox = (props: any) => <StyledCheckbox {...props} />
+export const _Checkbox = (props: CheckboxProps) => <Checkbox {...props} />

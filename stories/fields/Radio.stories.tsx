@@ -1,15 +1,12 @@
 import React from 'react'
-import styled from 'styled-components'
 
-import { Radio as SuiRadio, SUI } from '../..'
+import { Radio, SUI } from '../..'
 
-const StyledRadio = styled(SuiRadio)`
-  // width: 30rem;
-`
+import type { RadioProps } from '../..'
 
 export default {
   title: 'Fields/Radio',
-  component: SuiRadio,
+  component: Radio,
 
   argTypes: {
     defaultChecked: {
@@ -30,4 +27,4 @@ export default {
   },
 }
 
-export const Radio = (props: any) => <StyledRadio {...props} />
+export const _Radio = (props: RadioProps) => <Radio {...props} />

@@ -1,15 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { TextInput as SuiTextInput, SUI } from '../..'
+import { TextInput, SUI } from '../..'
 
-const StyledTextInput = styled(SuiTextInput)`
-  width: 30rem;
+import type { TextInputProps } from '../..'
+
+const Box = styled.div`
+  max-width: 30rem;
 `
 
 export default {
   title: 'Fields/Text Input',
-  component: SuiTextInput,
+  component: TextInput,
 
   argTypes: {
     size: {
@@ -19,6 +21,8 @@ export default {
   },
 
   args: {
+    defaultValue: '',
+    disabled: false,
     error: '',
     helper: '',
     label: '',
@@ -27,4 +31,8 @@ export default {
   },
 }
 
-export const TextInput = (props: any) => <StyledTextInput {...props} />
+export const _TextInput = (props: TextInputProps) => (
+  <Box>
+    <TextInput {...props} />
+  </Box>
+)

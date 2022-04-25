@@ -96,7 +96,7 @@ const FileList = styled.div<{
   flex-direction: column;
 `
 
-type FileInputProps = Omit<InputHTMLAttributes<any>, 'size'> & {
+export type FileInputProps = Omit<InputHTMLAttributes<any>, 'size'> & {
   className?: string
   error?: string
   helper?: string

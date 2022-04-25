@@ -56,7 +56,7 @@ const LabelText = styled.span<{
   font-weight: ${p => (p.isChecked ? 500 : 400)};
 `
 
-type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
+export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
   className?: string
   error?: string
   helper?: string

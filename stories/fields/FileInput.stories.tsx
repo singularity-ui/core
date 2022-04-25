@@ -2,6 +2,8 @@ import React from 'react'
 
 import { FileInput, SUI } from '../..'
 
+import type { FileInputProps } from '../..'
+
 export default {
   title: 'Fields/File Input',
   component: FileInput,
@@ -14,6 +16,7 @@ export default {
   },
 
   args: {
+    disabled: false,
     error: '',
     helper: '',
     label: '',
@@ -22,4 +25,4 @@ export default {
   },
 }
 
-export const _FileInput = (props: any) => <FileInput {...props} />
+export const _FileInput = (props: FileInputProps) => <FileInput {...props} />

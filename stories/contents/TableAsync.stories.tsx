@@ -43,14 +43,14 @@ export const TableAsync = (props: any) => {
   const loadData = async (newPageIndex: number): Promise<void> => {
     setIsLoading(true)
 
-    const url = `https://api.instantwebtools.net/v1/passenger?page=${newPageIndex}&size=${PER_PAGE}`
-    const request = new Request(url)
-    const response = await fetch(request)
+    const response = await fetch(`https://api.instantwebtools.net/v1/passenger?page=${newPageIndex}&size=${PER_PAGE}`)
     const result = await response.json()
+
+    const dataWithId = result.data.map(({ _id, ...rest }: any) => ({ id: _id, ...rest }))
 
     setPageCount(result.totalPages)
     setPageIndex(newPageIndex)
-    setData(result.data)
+    setData(dataWithId)
     setIsLoading(false)
   }
 

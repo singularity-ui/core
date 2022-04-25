@@ -1,17 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Textarea as SuiTextarea, SUI } from '../..'
+import { Textarea, SUI } from '../..'
 
-const StyledTextarea = styled(SuiTextarea)`
-  .Textarea {
-    width: 30rem;
-  }
+import type { TextareaProps } from '../..'
+
+const Box = styled.div`
+  width: 30rem;
 `
 
 export default {
   title: 'Fields/Textarea',
-  component: SuiTextarea,
+  component: Textarea,
 
   argTypes: {
     size: {
@@ -21,6 +21,8 @@ export default {
   },
 
   args: {
+    defaultValue: '',
+    disabled: false,
     error: '',
     helper: '',
     isAutoResizing: true,
@@ -30,4 +32,8 @@ export default {
   },
 }
 
-export const Textarea = (props: any) => <StyledTextarea {...props} />
+export const _Textarea = (props: TextareaProps) => (
+  <Box>
+    <Textarea {...props} />
+  </Box>
+)
