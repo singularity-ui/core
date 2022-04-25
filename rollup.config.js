@@ -10,7 +10,6 @@ const getConfig = input => {
   return {
     external: [
       'better-prop-types',
-      // 'is-hotkey',
       'ramda',
       'remark-parse',
       'remark-slate',

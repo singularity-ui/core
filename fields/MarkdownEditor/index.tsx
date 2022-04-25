@@ -1,5 +1,4 @@
 import BetterPropTypes from 'better-prop-types'
-import isHotkey from 'is-hotkey'
 import React from 'react'
 import { createEditor } from 'slate'
 import { withHistory } from 'slate-history'
@@ -10,13 +9,13 @@ import { SIZE } from '../../common/constants'
 import { Error, Helper, Label } from '../shared'
 import { MarkdownEditorFormat } from './constants'
 import { Element } from './Element'
-import { deserialize, serialize, toggleMark } from './helpers'
+import { deserialize, serialize } from './helpers'
 import { Leaf } from './Leaf'
 import { Toolbar } from './Toolbar'
 import { withLinks } from './withLinks'
 
 import type { CustomElement, CustomText } from './types'
-import type { DOMAttributes, FunctionComponent, KeyboardEventHandler } from 'react'
+import type { DOMAttributes, FunctionComponent } from 'react'
 import type { BaseEditor, Descendant } from 'slate'
 import type { ReactEditor } from 'slate-react'
 
@@ -46,11 +45,6 @@ declare module 'slate' {
     Element: CustomElement
     Text: CustomText
   }
-}
-
-const HOTKEYS: Record<string, MarkdownEditorFormat> = {
-  'mod+b': MarkdownEditorFormat.STRONG,
-  'mod+i': MarkdownEditorFormat.EM,
 }
 
 export type MarkdownEditorProps = Omit<DOMAttributes<HTMLDivElement>, 'onChange'> & {
@@ -93,21 +87,6 @@ export const MarkdownEditor: FunctionComponent<MarkdownEditorProps> = ({
     onChange(newValueAsMarkdown)
   }, [])
 
-  const handleKeyDown: KeyboardEventHandler<HTMLDivElement> = React.useCallback(
-    event => {
-      // eslint-disable-next-line no-restricted-syntax
-      for (const hotkey in HOTKEYS) {
-        if (isHotkey(hotkey, event)) {
-          event.preventDefault()
-
-          const mark = HOTKEYS[hotkey]
-          toggleMark(editor, mark)
-        }
-      }
-    },
-    [editor],
-  )
-
   return (
     <div className={className}>
       {label && (
@@ -123,7 +102,6 @@ export const MarkdownEditor: FunctionComponent<MarkdownEditorProps> = ({
           <EditableBox className="EditableBox">
             <Editable
               disabled={isDisabled}
-              onKeyDown={handleKeyDown}
               placeholder={placeholder}
               renderElement={renderElement}
               renderLeaf={renderLeaf}
