@@ -16,11 +16,10 @@ const deserializer = unified()
   .use(remarkSlate)
 
 export const deserialize = (sourceAsMarkdown?: string): Descendant[] => {
-  if (sourceAsMarkdown === undefined) {
-    return []
-  }
+  const controlledSourceAsMarkdown =
+    typeof sourceAsMarkdown !== 'string' || sourceAsMarkdown.trim().length === 0 ? '<br>' : sourceAsMarkdown
 
-  const sourceAsAst = deserializer.processSync(sourceAsMarkdown).result as Descendant[]
+  const sourceAsAst = deserializer.processSync(controlledSourceAsMarkdown).result as Descendant[]
   const sourceAsAstWithUnwrappedParagraphs = unwrapDeepParagraphsFromAstNodes(sourceAsAst)
 
   return sourceAsAstWithUnwrappedParagraphs
@@ -108,8 +107,15 @@ export const isSelectionCollapsed = (editor: BaseEditor & ReactEditor): boolean 
   return isCollapsed
 }
 
-export const serialize = (newValueAsAst: Descendant[]): string =>
-  newValueAsAst.map((v: Descendant) => remarkSlateSerialize(v)).join('\n')
+export const serialize = (newValueAsAst: Descendant[]): string => {
+  const newValueAsMarkdown = newValueAsAst.map((v: Descendant) => remarkSlateSerialize(v)).join('\n')
+
+  if (newValueAsMarkdown.trim() === '<br>') {
+    return ''
+  }
+
+  return newValueAsMarkdown
+}
 
 export const toggleBlock = (editor: BaseEditor & ReactEditor, format: MarkdownEditorFormat): void => {
   const isActive = isBlockActive(editor, format)
