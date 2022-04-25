@@ -6,6 +6,7 @@ import { Editable, Slate, withReact } from 'slate-react'
 import styled from 'styled-components'
 
 import { SIZE } from '../../common/constants'
+import { generateKeyFromValue } from '../../helpers/generateKeyFromValue'
 import { Error, Helper, Label } from '../shared'
 import { MarkdownEditorFormat } from './constants'
 import { Element } from './Element'
@@ -76,6 +77,7 @@ export const MarkdownEditor: FunctionComponent<MarkdownEditorProps> = ({
 
   const defaultValueAsAst = React.useMemo(() => deserialize(defaultValue), [defaultValue])
   const hasError = typeof error === 'string' && error.length > 0
+  const key = React.useMemo(() => generateKeyFromValue(defaultValue), [defaultValue])
 
   const handleChange = React.useCallback((newValueAsAst: Descendant[]) => {
     if (onChange === undefined) {
@@ -96,7 +98,7 @@ export const MarkdownEditor: FunctionComponent<MarkdownEditorProps> = ({
       )}
 
       <EditorBox className="EditorBox" hasError={hasError}>
-        <Slate editor={editor} onChange={handleChange} value={defaultValueAsAst}>
+        <Slate key={key} editor={editor} onChange={handleChange} value={defaultValueAsAst}>
           <Toolbar />
 
           <EditableBox className="EditableBox">
