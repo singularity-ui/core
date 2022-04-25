@@ -1,3 +1,11 @@
+## [4.0.1](https://github.com/singularity-ui/core/compare/v4.0.0...v4.0.1) (2022-04-25)
+
+
+### Bug Fixes
+
+* **build:** include is-hotkey dep in build ([#83](https://github.com/singularity-ui/core/issues/83)) ([ba17da7](https://github.com/singularity-ui/core/commit/ba17da701080aa480a0d220895467733f3ee4845))
+* **fields:** handle MarkdownEditor default value when empty ([#82](https://github.com/singularity-ui/core/issues/82)) ([7990cf4](https://github.com/singularity-ui/core/commit/7990cf42cb57b2cadccabe3e11653d5723931bf8))
+
 # [4.0.0](https://github.com/singularity-ui/core/compare/v3.1.0...v4.0.0) (2022-04-25)
 
 
