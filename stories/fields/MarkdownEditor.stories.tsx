@@ -2,6 +2,8 @@ import React from 'react'
 
 import { MarkdownEditor } from '../..'
 
+import type { MarkdownEditorProps } from '../../fields/MarkdownEditor'
+
 export default {
   title: 'Fields/Markdown Editor',
   component: MarkdownEditor,
@@ -9,14 +11,35 @@ export default {
   argTypes: {},
 
   args: {
-    defaultValue: `This is editable **rich** text, _much_ better than a \`<textarea>\`!
+    defaultValue: `
+# Header 1
 
-Since it’s rich text, you can do things like turn a selection of text **bold**,
-or add a semantically rendered block quote in the middle of the page, like this:
+## Header 2
 
-> A wise quote.
+### Header 3
 
-Try it out for yourself!`,
+#### Header 4
+
+##### Header 5
+
+###### Header 6
+
+A paragraph.
+
+Some **bold text**.
+
+Some _italic text_.
+
+> A quote.
+
+And [a link](https://www.example.com).
+
+- A list item
+- Another list item
+
+1. A numbered list item
+2. Another numbered list item
+`,
     error: '',
     helper: '',
     isDisabled: false,
@@ -25,4 +48,4 @@ Try it out for yourself!`,
   },
 }
 
-export const _MarkdownEditor = (props: any) => <MarkdownEditor {...props} />
+export const _MarkdownEditor = (props: MarkdownEditorProps) => <MarkdownEditor {...props} />

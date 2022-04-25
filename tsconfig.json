@@ -22,7 +22,6 @@
   "exclude": [
     ".storybook/*",
     "dist/*",
-    "icons/material/*",
     "node_modules/*",
     "scripts/*",
     "storybook-static/*",

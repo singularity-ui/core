@@ -1,46 +1,28 @@
-/* eslint-disable react/jsx-props-no-spreading, react/prop-types, @typescript-eslint/no-use-before-define */
-
 import React from 'react'
-import { Editor as SlateEditor } from 'slate'
 import { useSlate } from 'slate-react'
 
 import { Button } from './Button'
+import { isMarkActive, isSelectionCollapsed, toggleMark } from './helpers'
 
+import type { MarkdownEditorFormat } from './constants'
 import type { FunctionComponent } from 'react'
-import type { BaseEditor } from 'slate'
-import type { ReactEditor } from 'slate-react'
 
-const toggleMark = (editor: BaseEditor & ReactEditor, format: string) => {
-  const isActive = isMarkActive(editor, format)
-
-  if (isActive) {
-    SlateEditor.removeMark(editor, format)
-  } else {
-    SlateEditor.addMark(editor, format, true)
-  }
+export type MarkButtonProps = {
+  Icon: FunctionComponent
+  format: MarkdownEditorFormat
 }
-
-const isMarkActive = (editor: BaseEditor & ReactEditor, format: string) => {
-  const marks = SlateEditor.marks(editor)
-
-  return marks ? marks[format] === true : false
-}
-
-export const MarkButton: FunctionComponent<{
-  Icon: any
-  format: string
-}> = ({ format, Icon }) => {
+export const MarkButton: FunctionComponent<MarkButtonProps> = ({ format, Icon }) => {
   const editor = useSlate()
 
+  const isActive = isMarkActive(editor, format)
+  const isCollapsed = isSelectionCollapsed(editor)
+
+  const toggle = () => {
+    toggleMark(editor, format)
+  }
+
   return (
-    <Button
-      isActive={isMarkActive(editor, format)}
-      onMouseDown={event => {
-        event.preventDefault()
-        toggleMark(editor, format)
-      }}
-      type="button"
-    >
+    <Button isActive={isActive} isDisabled={!isActive && isCollapsed} onClick={toggle} type="button">
       <Icon />
     </Button>
   )

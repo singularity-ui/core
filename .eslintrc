@@ -11,7 +11,6 @@
   },
   "ignorePatterns": [
     "/dist/",
-    "/icons/material/",
     "/scripts/",
     "/storybook-static/",
     "postcss.config.js",
@@ -37,34 +36,13 @@
   },
   "overrides": [
     {
-      "files": [
-        "common/**/*.ts",
-        "components/**/*.tsx",
-        "contents/**/*.tsx",
-        "elements/**/*.tsx",
-        "helpers/**/*.ts",
-        "icons/Icon.tsx",
-        "fields/**/*.tsx",
-        "GlobalStyle.tsx",
-        "ThemeProvider.tsx"
-      ],
-      "rules": {
-        "import/no-default-export": "error",
-        "import/prefer-default-export": "off"
-      }
-    },
-    {
-      "files": ["icons/**/*.tsx"],
-      "rules": {
-        "react/jsx-sort-props": "off"
-      }
-    },
-    {
       "files": ["**/*.stories.tsx"],
       "rules": {
         "sort-keys-fix/sort-keys-fix": "off",
 
-        "@typescript-eslint/naming-convention": "off"
+        "@typescript-eslint/naming-convention": "off",
+
+        "import/no-default-export": "off"
       }
     },
     {

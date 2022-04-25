@@ -1,6 +1,3 @@
-/* eslint-disable react/require-default-props */
-
-import BetterPropTypes from 'better-prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -8,12 +5,14 @@ import type { ButtonHTMLAttributes, FunctionComponent } from 'react'
 
 const StyledButton = styled.button<{
   isActive: boolean
+  isDisabled: boolean
 }>`
   background-color: transparent;
   border: 0;
-  cursor: pointer;
+  cursor: ${p => (p.isDisabled ? 'not-allowed' : 'pointer')};
   line-height: 0.625;
-  margin: 0 ${p => p.theme.padding.layout.small} 0 0;
+  margin: 0 ${p => p.theme.padding.layout.tiny} 0 0;
+  opacity: ${p => (p.isDisabled ? 0.35 : 1)};
   padding: 1px 0 0 0;
   transition-delay: 0s, 0s, 0s, 0s;
   transition-duration: 0.15s, 0.15s, 0.15s, 0.15s;
@@ -34,15 +33,17 @@ const StyledButton = styled.button<{
   }
 `
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   isActive?: boolean
+  isDisabled?: boolean
 }
-export const Button: FunctionComponent<ButtonProps> = ({ children, isActive = false, ...props }) => (
-  <StyledButton isActive={isActive} type="button" {...props}>
+export const Button: FunctionComponent<ButtonProps> = ({
+  children,
+  isActive = false,
+  isDisabled = false,
+  ...props
+}) => (
+  <StyledButton isActive={isActive} isDisabled={isDisabled} type="button" {...props}>
     {children}
   </StyledButton>
 )
-
-Button.propTypes = {
-  isActive: BetterPropTypes.bool.isOptionalButNotNull,
-}

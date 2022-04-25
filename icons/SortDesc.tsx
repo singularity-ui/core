@@ -11,8 +11,8 @@ const SortDescSvg = (props: HTMLAttributes<SVGElement>) => (
   </svg>
 )
 
-const SortDesc = (props: IconProps) => <Icon as={SortDescSvg} {...props} />
+export const SortDesc = (props: IconProps) => <Icon as={SortDescSvg} {...props} />
 
-SortDesc.propTypes = { ...Icon.propTypes }
-
-export default SortDesc
+SortDesc.propTypes = {
+  ...Icon.propTypes,
+}
