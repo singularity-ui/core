@@ -9,22 +9,6 @@ const Box = styled.div`
   max-width: 30rem;
 `
 
-const args: SelectProps = {
-  error: '',
-  helper: '',
-  isMulti: false,
-  label: '',
-  options: [
-    { value: '36', label: 'XS' },
-    { value: '38', label: 'S' },
-    { value: '40', label: 'M' },
-    { value: '42', label: 'L' },
-    { value: '44', label: 'XL' },
-  ],
-  placeholder: 'Pick your size',
-  size: SUI.SIZE.MEDIUM,
-}
-
 export default {
   title: 'Fields/Select',
   component: Select,
@@ -36,7 +20,23 @@ export default {
     },
   },
 
-  ...args,
+  args: {
+    disabled: false,
+    error: '',
+    helper: '',
+    isAsync: false,
+    isMulti: false,
+    label: '',
+    options: [
+      { value: '36', label: 'XS' },
+      { value: '38', label: 'S' },
+      { value: '40', label: 'M' },
+      { value: '42', label: 'L' },
+      { value: '44', label: 'XL' },
+    ],
+    placeholder: 'Pick your size',
+    size: SUI.SIZE.MEDIUM,
+  },
 }
 
 export const _Select = (props: SelectProps) => (

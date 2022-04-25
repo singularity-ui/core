@@ -2,6 +2,8 @@ import React from 'react'
 
 import { Button, SUI } from '../..'
 
+import type { ButtonProps } from '../..'
+
 export default {
   title: 'Elements/Button',
   component: Button,
@@ -23,9 +25,10 @@ export default {
 
   args: {
     accent: SUI.ACCENT.PRIMARY,
+    disabled: false,
     size: SUI.SIZE.MEDIUM,
     type: 'button',
   },
 }
 
-export const _Button = (props: any) => <Button {...props}>Button</Button>
+export const _Button = (props: ButtonProps) => <Button {...props}>Button</Button>

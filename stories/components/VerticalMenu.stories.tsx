@@ -25,12 +25,12 @@ export default {
   args: {},
 }
 
-export const _VerticalMenu = (args: VerticalMenuProps) => {
+export const _VerticalMenu = (props: VerticalMenuProps) => {
   const [selectedItem, setSelectedItem] = React.useState(ITEM.DASHBOARD)
 
   return (
     <Box>
-      <VerticalMenu {...args}>
+      <VerticalMenu {...props}>
         <VerticalMenu.Item isActive={selectedItem === ITEM.DASHBOARD} onClick={() => setSelectedItem(ITEM.DASHBOARD)}>
           Dashboard
         </VerticalMenu.Item>

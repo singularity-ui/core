@@ -58,7 +58,7 @@ const LabelText = styled.span<{
   font-weight: ${p => (p.isChecked ? 500 : 400)};
 `
 
-type RadioProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
+export type RadioProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
   className?: string
   error?: string
   helper?: string

@@ -44,7 +44,12 @@ export type { CardProps } from './elements/Card'
 export type { FieldProps } from './elements/Field'
 export type { TagProps } from './elements/Tag'
 
-export type { SelectOption, SelectProps } from './fields/Select'
+export type { CheckboxProps } from './fields/Checkbox'
+export type { FileInputProps } from './fields/FileInput'
 export type { MarkdownEditorProps } from './fields/MarkdownEditor'
+export type { RadioProps } from './fields/Radio'
+export type { SelectOption, SelectProps } from './fields/Select'
+export type { TextareaProps } from './fields/Textarea'
+export type { TextInputProps } from './fields/TextInput'
 
 export type { VerticalMenuProps } from './components/VerticalMenu'

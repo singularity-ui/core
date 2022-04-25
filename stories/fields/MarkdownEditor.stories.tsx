@@ -2,7 +2,7 @@ import React from 'react'
 
 import { MarkdownEditor } from '../..'
 
-import type { MarkdownEditorProps } from '../../fields/MarkdownEditor'
+import type { MarkdownEditorProps } from '../..'
 
 export default {
   title: 'Fields/Markdown Editor',
@@ -11,35 +11,7 @@ export default {
   argTypes: {},
 
   args: {
-    defaultValue: `
-# Header 1
-
-## Header 2
-
-### Header 3
-
-#### Header 4
-
-##### Header 5
-
-###### Header 6
-
-A paragraph.
-
-Some **bold text**.
-
-Some _italic text_.
-
-> A quote.
-
-And [a link](https://www.example.com).
-
-- A list item
-- Another list item
-
-1. A numbered list item
-2. Another numbered list item
-`,
+    defaultValue: ``,
     error: '',
     helper: '',
     isDisabled: false,
@@ -48,4 +20,36 @@ And [a link](https://www.example.com).
   },
 }
 
-export const _MarkdownEditor = (props: MarkdownEditorProps) => <MarkdownEditor {...props} />
+export const _MarkdownEditor = (props: MarkdownEditorProps) => {
+  const $markdownSource = React.useRef<string>()
+  const [isLoading, setIsLoading] = React.useState(true)
+
+  const controlledProps = React.useMemo(() => {
+    if (isLoading) {
+      return {
+        ...props,
+        isDisabled: true,
+        placeholder: 'Loading example…',
+      }
+    }
+
+    return {
+      ...props,
+      defaultValue: $markdownSource.current,
+    }
+  }, [isLoading])
+
+  const loadExample = React.useCallback(async () => {
+    const response = await fetch('/documents/example.md')
+    const body = await response.text()
+
+    $markdownSource.current = body
+    setIsLoading(false)
+  }, [])
+
+  React.useEffect(() => {
+    loadExample()
+  }, [])
+
+  return <MarkdownEditor {...controlledProps} />
+}

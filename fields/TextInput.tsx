@@ -35,7 +35,7 @@ const StyledInput = styled.input<{
   }
 `
 
-type TextInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
+export type TextInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
   className?: string
   error?: string
   helper?: string
