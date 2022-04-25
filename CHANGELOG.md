@@ -1,3 +1,24 @@
+# [4.0.0](https://github.com/singularity-ui/core/compare/v3.1.0...v4.0.0) (2022-04-25)
+
+
+### Bug Fixes
+
+* **contents:** use row id as key in Table ([#78](https://github.com/singularity-ui/core/issues/78)) ([d360123](https://github.com/singularity-ui/core/commit/d360123d9f6e989af652ab952f6a9efb488c056e))
+* **fields:** omit inherited onInput type from MarkdownEditor ([#76](https://github.com/singularity-ui/core/issues/76)) ([70b2a50](https://github.com/singularity-ui/core/commit/70b2a50f30e305ca0263c2423662b3042e5badcf))
+
+
+### Features
+
+* **fields:** finalize MarkdownEditor ([#77](https://github.com/singularity-ui/core/issues/77)) ([a19e2d7](https://github.com/singularity-ui/core/commit/a19e2d77a70879fe3ea9a4d2f804b080b26fc944))
+
+
+### BREAKING CHANGES
+
+* **fields:** - All icons use named exports instead of default ones
+- `UNIT` enum constant has been renamed `Unit`
+- MarkdownEditor `onInput` prop has been renamed `onChange`
+* **contents:** `key` prop is now required for all columns in Table, including action ones
+
 # [3.1.0](https://github.com/singularity-ui/core/compare/v3.0.5...v3.1.0) (2022-04-07)
 
 
