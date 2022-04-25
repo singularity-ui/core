@@ -1,3 +1,10 @@
+## [4.0.3](https://github.com/singularity-ui/core/compare/v4.0.2...v4.0.3) (2022-04-25)
+
+
+### Bug Fixes
+
+* **fields:** force MarkdownEditor re-rendering on default value change ([#87](https://github.com/singularity-ui/core/issues/87)) ([bc4b0db](https://github.com/singularity-ui/core/commit/bc4b0db54749ca106f06f8d3343d306fc1fa2b0b))
+
 ## [4.0.2](https://github.com/singularity-ui/core/compare/v4.0.1...v4.0.2) (2022-04-25)
 
 
