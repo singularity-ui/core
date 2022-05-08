@@ -16,10 +16,20 @@ const deserializer = unified()
   .use(remarkSlate)
 
 export const deserialize = (sourceAsMarkdown?: string): Descendant[] => {
-  const controlledSourceAsMarkdown =
-    typeof sourceAsMarkdown !== 'string' || sourceAsMarkdown.trim().length === 0 ? '<br>' : sourceAsMarkdown
+  if (typeof sourceAsMarkdown !== 'string' || sourceAsMarkdown.trim().length === 0) {
+    return [
+      {
+        children: [
+          {
+            text: '',
+          },
+        ],
+        type: MarkdownEditorFormat.P,
+      },
+    ]
+  }
 
-  const sourceAsAst = deserializer.processSync(controlledSourceAsMarkdown).result as Descendant[]
+  const sourceAsAst = deserializer.processSync(sourceAsMarkdown).result as Descendant[]
   const sourceAsAstWithUnwrappedParagraphs = unwrapDeepParagraphsFromAstNodes(sourceAsAst)
 
   return sourceAsAstWithUnwrappedParagraphs
