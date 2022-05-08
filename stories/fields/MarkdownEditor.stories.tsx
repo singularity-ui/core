@@ -17,6 +17,7 @@ export default {
     isDisabled: false,
     label: '',
     placeholder: 'A amazing Markdown editor!',
+    name: 'markdownEditor',
   },
 }
 

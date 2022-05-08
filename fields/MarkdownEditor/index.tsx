@@ -53,8 +53,10 @@ export type MarkdownEditorProps = Omit<DOMAttributes<HTMLDivElement>, 'onChange'
   defaultValue?: string
   error?: string
   helper?: string
+  id?: string
   isDisabled?: boolean
   label: string
+  name?: string
   onChange?: (newMarkdownSource: string) => void | Promise<void>
   placeholder: string
   size?: Common.Size
@@ -77,6 +79,7 @@ export const MarkdownEditor: FunctionComponent<MarkdownEditorProps> = ({
 
   const defaultValueAsAst = React.useMemo(() => deserialize(defaultValue), [defaultValue])
   const hasError = typeof error === 'string' && error.length > 0
+  const id = props.id || props.name
   const key = React.useMemo(() => generateKeyFromValue(defaultValue), [defaultValue])
 
   const handleChange = React.useCallback((newValueAsAst: Descendant[]) => {
@@ -92,7 +95,7 @@ export const MarkdownEditor: FunctionComponent<MarkdownEditorProps> = ({
   return (
     <div className={className}>
       {label && (
-        <Label className="Label" size={size}>
+        <Label className="Label" htmlFor={id} size={size}>
           {label}
         </Label>
       )}
@@ -104,6 +107,7 @@ export const MarkdownEditor: FunctionComponent<MarkdownEditorProps> = ({
           <EditableBox className="EditableBox">
             <Editable
               disabled={isDisabled}
+              id={id}
               placeholder={placeholder}
               renderElement={renderElement}
               renderLeaf={renderLeaf}
