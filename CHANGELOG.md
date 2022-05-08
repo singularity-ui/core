@@ -1,3 +1,15 @@
+# [4.1.0](https://github.com/singularity-ui/core/compare/v4.0.3...v4.1.0) (2022-05-08)
+
+
+### Bug Fixes
+
+* **fields:** add name & id props to MarkdownEditor ([ebd2e20](https://github.com/singularity-ui/core/commit/ebd2e209f83f2cbab849a9c7b153fc006b143641))
+
+
+### Features
+
+* **fields:** expose all components props definitions ([#89](https://github.com/singularity-ui/core/issues/89)) ([dba8093](https://github.com/singularity-ui/core/commit/dba80934d1baac36a2335824cc12a7c9e5e61164))
+
 ## [4.0.3](https://github.com/singularity-ui/core/compare/v4.0.2...v4.0.3) (2022-04-25)
 
 
