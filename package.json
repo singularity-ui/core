@@ -35,8 +35,8 @@
   "devDependencies": {
     "@babel/core": "7.17.10",
     "@babel/preset-react": "7.16.7",
-    "@commitlint/cli": "16.2.4",
-    "@commitlint/config-conventional": "16.2.4",
+    "@commitlint/cli": "17.0.0",
+    "@commitlint/config-conventional": "17.0.0",
     "@fontsource/poppins": "4.5.8",
     "@ivangabriele/commitlint-config": "1.0.5",
     "@ivangabriele/eslint-config-typescript-react": "4.1.0",
