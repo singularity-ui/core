@@ -78,7 +78,7 @@
     "eslint-plugin-sort-keys-fix": "1.1.2",
     "eslint-plugin-typescript-sort-keys": "2.1.0",
     "esm-path": "1.0.1",
-    "gh-pages": "3.2.3",
+    "gh-pages": "4.0.0",
     "husky": "8.0.1",
     "jabber": "1.4.0",
     "jest": "28.1.0",
