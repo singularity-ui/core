@@ -10,6 +10,7 @@ import type {
   TableActionColumnProps,
   TableBooleanColumnProps,
   TableColumnProps,
+  TableCustomColumnProps,
   TableTagsColumnProps,
   TableValueColumnProps,
 } from './types'
@@ -279,6 +280,34 @@ export const TagsCell: FunctionComponent<TagsCellProps> = ({ column, dataRow }) 
   )
 }
 
+type CustomCellProps = {
+  column: TableCustomColumnProps
+  dataRow: Common.CollectionItem
+}
+export const CustomCell: FunctionComponent<CustomCellProps> = ({ column, dataRow }) => {
+  const { key, label, render: CustomComponent } = column
+
+  if (label === undefined) {
+    console.warn(ERROR_SCOPE, `Each column must have a label.`)
+
+    return <StyledTd />
+  }
+
+  if (key === undefined) {
+    console.warn(ERROR_SCOPE, `You must set the {key} property in "${label}" column.`)
+
+    return <StyledTd />
+  }
+
+  const value = path(key, dataRow)
+
+  return (
+    <StyledTd>
+      <CustomComponent dataRow={dataRow} value={value} />
+    </StyledTd>
+  )
+}
+
 type ValueCellProps = {
   column: TableValueColumnProps
   dataRow: Common.CollectionItem
@@ -322,6 +351,10 @@ export const Cell: FunctionComponent<CellProps> = ({ column, dataRow }) => {
 
   if (column.type === 'tags') {
     return <TagsCell column={column} dataRow={dataRow} />
+  }
+
+  if (column.type === 'custom') {
+    return <CustomCell column={column} dataRow={dataRow} />
   }
 
   return <ValueCell column={column} dataRow={dataRow} />

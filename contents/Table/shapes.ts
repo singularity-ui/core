@@ -44,9 +44,18 @@ export const ValueColumnPropType = BetterPropTypes.exact({
   type: BetterPropTypes.oneOf<'id'>(['id']).isOptionalButNotNull,
 })
 
+export const CustomColumnPropType = BetterPropTypes.exact({
+  grow: BetterPropTypes.number.isOptionalButNotNull,
+  key: BetterPropTypes.string.isRequired,
+  label: BetterPropTypes.string.isRequired,
+  render: BetterPropTypes.any.isRequired,
+  type: BetterPropTypes.oneOf<'custom'>(['custom']).isOptionalButNotNull,
+})
+
 export const ColumnPropType = BetterPropTypes.oneOfType([
   ActionColumnPropType.isRequired,
   BooleanColumnPropType.isRequired,
   TagsColumnPropType.isRequired,
   ValueColumnPropType.isRequired,
+  CustomColumnPropType.isRequired,
 ])

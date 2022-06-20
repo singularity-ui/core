@@ -1,3 +1,5 @@
+import type { ComponentType } from 'react'
+
 export type TableColumnKeyFunction<T = any> = (dataRow: Common.CollectionItem) => T
 
 export type TableActionColumnProps = {
@@ -40,8 +42,18 @@ export type TableValueColumnProps = {
   type?: 'id'
 }
 
+export type TableCustomColumnProps = {
+  grow?: number
+  key: string
+  label: string
+  render: ComponentType<{ dataRow: Common.CollectionItem; value: any }>
+  type: 'custom'
+  // isSortable?: boolean // TODO: do it later
+}
+
 export type TableColumnProps =
   | TableActionColumnProps
   | TableBooleanColumnProps
   | TableTagsColumnProps
   | TableValueColumnProps
+  | TableCustomColumnProps
