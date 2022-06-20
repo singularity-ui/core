@@ -1,3 +1,10 @@
+# [4.2.0](https://github.com/singularity-ui/core/compare/v4.1.0...v4.2.0) (2022-06-20)
+
+
+### Features
+
+* **contents:** add custom cell type for Table component ([#100](https://github.com/singularity-ui/core/issues/100)) ([32be288](https://github.com/singularity-ui/core/commit/32be28832eb40ec4303508e787ca7e3d6af43d1c))
+
 # [4.1.0](https://github.com/singularity-ui/core/compare/v4.0.3...v4.1.0) (2022-05-08)
 
 
