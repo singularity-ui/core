@@ -33,6 +33,12 @@ const COLUMNS: TableColumnProps[] = [
     type: 'tags',
   },
   {
+    label: 'Custom Cell',
+    key: 'custom',
+    type: 'custom',
+    render: ({ value }) => <div style={{ color: 'red' }}>{value}</div>,
+  },
+  {
     label: 'Activated',
     labelOff: 'Activate user account',
     labelOn: 'Disable user account',
@@ -76,6 +82,7 @@ const DATA = new Array(100).fill(null).map((_, index) => ({
     name: `${jabber.createWord(6, true)} Inc.`,
   },
   tags: getRandomTags(),
+  custom: jabber.createWord(6, true),
 }))
 
 export default {

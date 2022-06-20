@@ -57,7 +57,7 @@ export const Head: FunctionComponent<HeadProps> = ({ column, onSort, sortOrder }
 
   const { grow, key, label } = column
 
-  if (column.type === 'tags') {
+  if (column.type === 'tags' || column.type === 'custom') {
     return (
       <StyledTh grow={grow}>
         <Box>
