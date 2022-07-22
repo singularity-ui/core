@@ -1,3 +1,10 @@
+## [4.2.1](https://github.com/singularity-ui/core/compare/v4.2.0...v4.2.1) (2022-07-22)
+
+
+### Bug Fixes
+
+* sringify errors cases in key generator helper ([#102](https://github.com/singularity-ui/core/issues/102)) ([dd381ab](https://github.com/singularity-ui/core/commit/dd381aba9097e9f0880f94f46f90e1dcb13fe696))
+
 # [4.2.0](https://github.com/singularity-ui/core/compare/v4.1.0...v4.2.0) (2022-06-20)
 
 
