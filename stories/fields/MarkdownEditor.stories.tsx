@@ -1,6 +1,8 @@
 import React from 'react'
 
 import { MarkdownEditor } from '../..'
+// @ts-ignore
+import exampleMarkdown from '../../public/documents/example.md'
 
 import type { MarkdownEditorProps } from '../..'
 
@@ -11,7 +13,7 @@ export default {
   argTypes: {},
 
   args: {
-    defaultValue: ``,
+    defaultValue: exampleMarkdown,
     error: '',
     helper: '',
     isDisabled: false,
@@ -21,36 +23,4 @@ export default {
   },
 }
 
-export const _MarkdownEditor = (props: MarkdownEditorProps) => {
-  const $markdownSource = React.useRef<string>()
-  const [isLoading, setIsLoading] = React.useState(true)
-
-  const controlledProps = React.useMemo(() => {
-    if (isLoading) {
-      return {
-        ...props,
-        isDisabled: true,
-        placeholder: 'Loading example…',
-      }
-    }
-
-    return {
-      ...props,
-      defaultValue: $markdownSource.current,
-    }
-  }, [isLoading])
-
-  const loadExample = React.useCallback(async () => {
-    const response = await fetch('/documents/example.md')
-    const body = await response.text()
-
-    $markdownSource.current = body
-    setIsLoading(false)
-  }, [])
-
-  React.useEffect(() => {
-    loadExample()
-  }, [])
-
-  return <MarkdownEditor {...controlledProps} />
-}
+export const _MarkdownEditor = (props: MarkdownEditorProps) => <MarkdownEditor {...props} />
