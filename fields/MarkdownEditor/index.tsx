@@ -58,6 +58,8 @@ export type MarkdownEditorProps = Omit<DOMAttributes<HTMLDivElement>, 'onChange'
   label: string
   name?: string
   onChange?: (newMarkdownSource: string) => void | Promise<void>
+  /** Needed when using a controlled state, to avoid losing focus when `onChange` is triggered and `defaultValue` updated */
+  parentKey?: string
   placeholder: string
   size?: Common.Size
 }
@@ -70,6 +72,7 @@ export const MarkdownEditor: FunctionComponent<MarkdownEditorProps> = ({
   label,
   onChange,
   placeholder,
+  parentKey,
   size = SIZE.MEDIUM,
   ...props
 }) => {
@@ -101,7 +104,7 @@ export const MarkdownEditor: FunctionComponent<MarkdownEditorProps> = ({
       )}
 
       <EditorBox className="EditorBox" hasError={hasError}>
-        <Slate key={key} editor={editor} onChange={handleChange} value={defaultValueAsAst}>
+        <Slate key={parentKey || key} editor={editor} onChange={handleChange} value={defaultValueAsAst}>
           <Toolbar />
 
           <EditableBox className="EditableBox">
