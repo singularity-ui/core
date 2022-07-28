@@ -1,3 +1,10 @@
+## [4.2.2](https://github.com/singularity-ui/core/compare/v4.2.1...v4.2.2) (2022-07-28)
+
+
+### Bug Fixes
+
+* **MarkdownEditor:** pass down a key from parent to avoid losing focus while on controlled state ([#104](https://github.com/singularity-ui/core/issues/104)) ([1cd7677](https://github.com/singularity-ui/core/commit/1cd76773a450d1b8e58d50ae95e5a013430296aa))
+
 ## [4.2.1](https://github.com/singularity-ui/core/compare/v4.2.0...v4.2.1) (2022-07-22)
 
 
