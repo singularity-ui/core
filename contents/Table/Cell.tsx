@@ -56,7 +56,7 @@ const StyledTdIcon = styled(StyledTd)`
     position: absolute;
     bottom: -1.25rem;
     transition: all 0.5s;
-    transform: translateX(-50%);
+    transform: translateX(-90%);
     user-select: none;
     z-index: 99999;
   }
@@ -65,7 +65,7 @@ const StyledTdIcon = styled(StyledTd)`
     border-left: 0.375rem solid transparent;
     border-right: 0.375rem solid transparent;
     border-bottom: 0.375rem solid ${p => p.theme.color.body.light};
-    left: 50%;
+    right: 0.5rem;
     position: absolute;
     top: -0.375rem;
     transform: translateX(-50%);

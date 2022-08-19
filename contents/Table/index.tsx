@@ -20,15 +20,20 @@ const Box = styled.div`
     width: 100%;
   }
 
-  table > tbody > tr:nth-child(even) {
-    background-color: ${p => p.theme.color.list.even};
-  }
-  table > tbody > tr:nth-child(odd) {
-    background-color: ${p => p.theme.color.list.odd};
-  }
+  table > tbody > tr {
+    :nth-child(even) {
+      background-color: ${p => p.theme.color.list.even};
+    }
+    :nth-child(odd) {
+      background-color: ${p => p.theme.color.list.odd};
+    }
+    :last-child > td {
+      border-bottom: solid 2px ${p => p.theme.color.body.light};
+    }
 
-  table > tbody > tr:last-child > td {
-    border-bottom: solid 2px ${p => p.theme.color.body.light};
+    :hover {
+      background-color: ${p => p.theme.color.secondary.background};
+    }
   }
 `
 
