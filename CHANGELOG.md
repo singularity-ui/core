@@ -1,3 +1,10 @@
+# [4.3.0](https://github.com/singularity-ui/core/compare/v4.2.2...v4.3.0) (2022-08-19)
+
+
+### Features
+
+* **contents:** add counters to Tasker ([#108](https://github.com/singularity-ui/core/issues/108)) ([c49a4cd](https://github.com/singularity-ui/core/commit/c49a4cdffa5d706f86892a9c4e401e6fc9ce6574))
+
 ## [4.2.2](https://github.com/singularity-ui/core/compare/v4.2.1...v4.2.2) (2022-07-28)
 
 
