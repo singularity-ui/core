@@ -7,6 +7,14 @@ import { Task } from './Task'
 
 const Box = styled.div`
   display: flex;
+  min-height: 0;
+
+  > div:first-child {
+    padding-left: 0;
+  }
+  > div:last-child {
+    padding-right: 0;
+  }
 `
 
 const LaneBox = styled.div<{
