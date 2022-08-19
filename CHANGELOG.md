@@ -1,3 +1,10 @@
+# [4.4.0](https://github.com/singularity-ui/core/compare/v4.3.0...v4.4.0) (2022-08-19)
+
+
+### Features
+
+* **contents:** add hover background color in Table ([#111](https://github.com/singularity-ui/core/issues/111)) ([8cdedc7](https://github.com/singularity-ui/core/commit/8cdedc75fae4f0e0daca9f208b535313e19eaf72))
+
 # [4.3.0](https://github.com/singularity-ui/core/compare/v4.2.2...v4.3.0) (2022-08-19)
 
 
