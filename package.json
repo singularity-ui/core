@@ -44,7 +44,7 @@
     "@ivangabriele/semantic-release-config-dist": "2.1.0",
     "@rollup/plugin-commonjs": "22.0.2",
     "@rollup/plugin-node-resolve": "13.3.0",
-    "@rollup/plugin-replace": "4.0.0",
+    "@rollup/plugin-replace": "5.0.0",
     "@rollup/plugin-typescript": "8.3.4",
     "@storybook/addon-actions": "6.5.10",
     "@storybook/addon-essentials": "6.5.10",
