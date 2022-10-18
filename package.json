@@ -43,7 +43,7 @@
     "@ivangabriele/prettier-config": "3.1.0",
     "@ivangabriele/semantic-release-config-dist": "2.1.0",
     "@rollup/plugin-commonjs": "23.0.0",
-    "@rollup/plugin-node-resolve": "13.3.0",
+    "@rollup/plugin-node-resolve": "15.0.0",
     "@rollup/plugin-replace": "5.0.0",
     "@rollup/plugin-typescript": "8.5.0",
     "@storybook/addon-actions": "6.5.12",
