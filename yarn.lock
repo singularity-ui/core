@@ -2200,10 +2200,10 @@
   resolved "https://registry.yarnpkg.com/@ivangabriele/commitlint-config/-/commitlint-config-1.0.6.tgz#9cef204ab6c939b030a005490d49218984f37282"
   integrity sha512-l81vM90B//z1V6oApwItvH32UaGDmYp0z9Xnh6ZYRHz1oeFLgfyFNXNNOl8FFYxdI8E8VQEI6kc0uE3W3lVKRw==
 
-"@ivangabriele/eslint-config-typescript-react@4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@ivangabriele/eslint-config-typescript-react/-/eslint-config-typescript-react-4.3.0.tgz#64247acf89d0066b12e0e6fb267121b399a2ee68"
-  integrity sha512-6uwxr5DFcQbq0nlzVnp40FKRIj6Xwzvd3vrcERknIS0dQPXBNt0CpXYpLkSJ4Q+y/oKkPSVpivLmNz8+7GEvdA==
+"@ivangabriele/eslint-config-typescript-react@5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@ivangabriele/eslint-config-typescript-react/-/eslint-config-typescript-react-5.0.0.tgz#c514dc0e7fb910ee4dd85c2d7c16d87257e8d12e"
+  integrity sha512-mALz/yu5/UVg2Kc24mUTtd1nM3yCg+CIExt+kP1l7tXaFBY5BTnB0DGYEGrkr+CB3lRA7MzYOqw1L7bcHlhc2A==
 
 "@ivangabriele/prettier-config@3.1.0":
   version "3.1.0"
