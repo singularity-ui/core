@@ -1,8 +1,6 @@
 # Singularity UI
 
-[![License][img-license]][lnk-license]
-[![CI Status][img-github]][lnk-github]
-[![NPM Version][img-npm]][lnk-npm]
+[![License][img-license]][lnk-license] [![CI Status][img-github]][lnk-github] [![NPM Version][img-npm]][lnk-npm]
 
 > Yet another React UI.
 
@@ -36,7 +34,8 @@ yarn add -E @singularity/core
 
 ---
 
-[img-github]:  https://img.shields.io/github/workflow/status/singularity-ui/core/Test/main?style=flat-square
+[img-github]:
+  https://img.shields.io/github/actions/workflow/status/singularity-ui/core/check.yml?branch=main&style=flat-square
 [img-license]: https://img.shields.io/github/license/singularity-ui/core?style=flat-square
 [img-npm]: https://img.shields.io/npm/v/@singularity/core?style=flat-square
 [lnk-github]: https://github.com/singularity-ui/core/actions?query=branch%3Amain++
