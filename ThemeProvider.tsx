@@ -1,19 +1,16 @@
-import * as R from 'ramda'
-import React, { FunctionComponent } from 'react'
+import { mergeDeepRight } from 'ramda'
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components'
 
 import { theme as baseTheme, Theme } from './common/theme'
-import { ThemeShape } from './common/ThemeShape'
+
+const UntypedStyledComponentsThemeProvider: any = StyledComponentsThemeProvider
 
 export type ThemeProviderProps = {
+  children: any
   theme?: Common.DeepPartial<Theme>
 }
-export const ThemeProvider: FunctionComponent<ThemeProviderProps> = ({ children, theme = {} }) => {
-  const finalTheme = R.mergeDeepRight(baseTheme, theme)
+export function ThemeProvider({ children, theme = {} }: ThemeProviderProps) {
+  const finalTheme = mergeDeepRight(baseTheme, theme)
 
-  return <StyledComponentsThemeProvider theme={finalTheme}>{children}</StyledComponentsThemeProvider>
-}
-
-ThemeProvider.propTypes = {
-  theme: ThemeShape.isOptionalButNotNull,
+  return <UntypedStyledComponentsThemeProvider theme={finalTheme}>{children}</UntypedStyledComponentsThemeProvider>
 }

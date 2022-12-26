@@ -1,10 +1,9 @@
-import BetterPropTypes from 'better-prop-types'
-import React from 'react'
+import { forwardRef } from 'react'
 import styled from 'styled-components'
 
-import { SIZE, SIZES } from '../common/constants'
+import { SIZE } from '../common/constants'
 
-import type { DOMAttributes, ForwardRefRenderFunction } from 'react'
+import type { DOMAttributes, ForwardedRef } from 'react'
 
 const StyledField = styled.div<{
   size: Common.Size
@@ -15,19 +14,14 @@ const StyledField = styled.div<{
 export type FieldProps = DOMAttributes<HTMLDivElement> & {
   size?: Common.Size
 }
-export const ButtonWithRef: ForwardRefRenderFunction<HTMLDivElement, FieldProps> = (
-  { children, size = SIZE.MEDIUM, ...props }: FieldProps,
-  ref,
-) => (
-  <StyledField ref={ref} size={size} {...props}>
-    {children}
-  </StyledField>
-)
-
-export const Field = React.forwardRef(ButtonWithRef)
-
-Field.displayName = 'Button'
-
-Field.propTypes = {
-  size: BetterPropTypes.oneOf(SIZES).isOptionalButNotNull,
+function FieldWithRef({ children, size = SIZE.MEDIUM, ...props }: FieldProps, ref: ForwardedRef<HTMLDivElement>) {
+  return (
+    <StyledField ref={ref} size={size} {...props}>
+      {children}
+    </StyledField>
+  )
 }
+
+FieldWithRef.displayName = 'Field'
+
+export const Field = forwardRef(FieldWithRef)

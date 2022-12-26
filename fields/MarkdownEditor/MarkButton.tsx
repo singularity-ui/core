@@ -11,7 +11,7 @@ export type MarkButtonProps = {
   Icon: FunctionComponent
   format: MarkdownEditorFormat
 }
-export const MarkButton: FunctionComponent<MarkButtonProps> = ({ format, Icon }) => {
+export function MarkButton({ format, Icon }: MarkButtonProps) {
   const editor = useSlate()
 
   const isActive = isMarkActive(editor, format)

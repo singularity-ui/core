@@ -1,13 +1,11 @@
 import React from 'react'
 
-import type { FunctionComponent } from 'react'
-
 export type LeafProps = {
   attributes: Record<string, any>
   children: any
   leaf: Record<string, any>
 }
-export const Leaf: FunctionComponent<LeafProps> = ({ attributes, children, leaf }) => {
+export function Leaf({ attributes, children, leaf }: LeafProps) {
   switch (true) {
     case leaf.bold:
       return (

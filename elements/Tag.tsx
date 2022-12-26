@@ -1,13 +1,12 @@
 /* eslint-disable react/require-default-props */
 
-import BetterPropTypes from 'better-prop-types'
-import React from 'react'
+import { forwardRef } from 'react'
 import styled from 'styled-components'
 
-import { ACCENT, ACCENTS, SIZE, SIZES } from '../common/constants'
+import { ACCENT, SIZE } from '../common/constants'
 import { getLowerFontSize } from '../helpers/getLowerFontSize'
 
-import type { ForwardRefRenderFunction, HTMLAttributes } from 'react'
+import type { ForwardedRef, HTMLAttributes } from 'react'
 
 const StyledTag = styled.span<{
   accent: Common.Accent
@@ -25,20 +24,17 @@ export type TagProps = HTMLAttributes<HTMLSpanElement> & {
   accent?: Common.Accent
   size?: Common.Size
 }
-export const TagWithRef: ForwardRefRenderFunction<HTMLSpanElement, TagProps> = (
+function TagWithRef(
   { accent = ACCENT.PRIMARY, children, size = SIZE.MEDIUM, ...props }: TagProps,
-  ref,
-) => (
-  <StyledTag ref={ref} accent={accent} className="Tag" size={size} {...props}>
-    {children}
-  </StyledTag>
-)
-
-export const Tag = React.forwardRef(TagWithRef)
-
-Tag.displayName = 'Tag'
-
-Tag.propTypes = {
-  accent: BetterPropTypes.oneOf(ACCENTS).isOptionalButNotNull,
-  size: BetterPropTypes.oneOf(SIZES).isOptionalButNotNull,
+  ref: ForwardedRef<HTMLSpanElement>,
+) {
+  return (
+    <StyledTag ref={ref} accent={accent} className="Tag" size={size} {...props}>
+      {children}
+    </StyledTag>
+  )
 }
+
+TagWithRef.displayName = 'Tag'
+
+export const Tag = forwardRef(TagWithRef)

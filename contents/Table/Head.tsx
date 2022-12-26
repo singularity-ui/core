@@ -1,12 +1,11 @@
-import BetterPropTypes from 'better-prop-types'
-import React, { FunctionComponent } from 'react'
+import { useState } from 'react'
 import styled from 'styled-components'
 
-import { ACCENT, SORT_ORDER, SORT_ORDERS } from '../../common/constants'
+import { ACCENT, SORT_ORDER } from '../../common/constants'
 import { SortAsc } from '../../icons/SortAsc'
 import { SortDesc } from '../../icons/SortDesc'
-import { ColumnPropType } from './shapes'
-import { TableColumnProps } from './types'
+
+import type { TableColumnProps } from './types'
 
 const StyledTh = styled.th<{
   grow?: number
@@ -48,8 +47,8 @@ export type HeadProps = {
   onSort: (key: string, isDesc: boolean) => void
   sortOrder?: Common.SortOrder
 }
-export const Head: FunctionComponent<HeadProps> = ({ column, onSort, sortOrder }) => {
-  const [isHovered, setIsHovered] = React.useState(false)
+export function Head({ column, onSort, sortOrder }: HeadProps) {
+  const [isHovered, setIsHovered] = useState(false)
 
   if (column.type === 'action' || column.type === 'boolean') {
     return <StyledTh as="td" />
@@ -106,11 +105,4 @@ export const Head: FunctionComponent<HeadProps> = ({ column, onSort, sortOrder }
       </Box>
     </StyledTh>
   )
-}
-
-Head.propTypes = {
-  column: ColumnPropType.isRequired,
-  onSort: BetterPropTypes.func.isRequired,
-  // eslint-disable-next-line react/no-typos
-  sortOrder: BetterPropTypes.oneOf(SORT_ORDERS).isOptionalButNotNull,
 }

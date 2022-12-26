@@ -1,8 +1,4 @@
-import BetterPropTypes from 'better-prop-types'
-import React, { HTMLAttributes } from 'react'
 import styled from 'styled-components'
-
-import { ReactComponentLike, SuiComponent } from '../../types'
 
 const Box = styled.div`
   background-color: white;
@@ -40,25 +36,22 @@ const TasksBox = styled.div`
 
 type LaneProps = {
   label: string
-  tasks: ReactComponentLike[]
+  tasks: any[]
 }
-export const Lane: SuiComponent<HTMLAttributes<HTMLDivElement>, LaneProps> = ({ label, tasks }) => (
-  <Box className="Lane">
-    <Header className="Header">
-      <Label className="Label">{label}</Label>
-      <Counter className="Counter">{tasks.length}</Counter>
-    </Header>
-    <TasksBox>
-      {tasks.map((Task, index) => (
-        // TODO Stop using index as key in lane tasks list
-        // eslint-disable-next-line react/no-array-index-key
-        <Task key={String(index)} className="Task" />
-      ))}
-    </TasksBox>
-  </Box>
-)
-
-Lane.propTypes = {
-  label: BetterPropTypes.string.isRequired,
-  tasks: BetterPropTypes.arrayOf(BetterPropTypes.elementType.isRequired).isRequired,
+export function Lane({ label, tasks }: LaneProps) {
+  return (
+    <Box className="Lane">
+      <Header className="Header">
+        <Label className="Label">{label}</Label>
+        <Counter className="Counter">{tasks.length}</Counter>
+      </Header>
+      <TasksBox>
+        {tasks.map((Task, index) => (
+          // TODO Stop using index as key in lane tasks list
+          // eslint-disable-next-line react/no-array-index-key
+          <Task key={String(index)} className="Task" />
+        ))}
+      </TasksBox>
+    </Box>
+  )
 }

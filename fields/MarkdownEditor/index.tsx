@@ -1,4 +1,3 @@
-import BetterPropTypes from 'better-prop-types'
 import React from 'react'
 import { createEditor } from 'slate'
 import { withHistory } from 'slate-history'
@@ -15,8 +14,9 @@ import { Leaf } from './Leaf'
 import { Toolbar } from './Toolbar'
 import { withLinks } from './withLinks'
 
+import type { LeafProps } from './Leaf'
 import type { CustomElement, CustomText } from './types'
-import type { DOMAttributes, FunctionComponent } from 'react'
+import type { DOMAttributes } from 'react'
 import type { BaseEditor, Descendant } from 'slate'
 import type { ReactEditor } from 'slate-react'
 
@@ -63,7 +63,7 @@ export type MarkdownEditorProps = Omit<DOMAttributes<HTMLDivElement>, 'onChange'
   placeholder: string
   size?: Common.Size
 }
-export const MarkdownEditor: FunctionComponent<MarkdownEditorProps> = ({
+export function MarkdownEditor({
   className,
   defaultValue,
   error,
@@ -75,9 +75,9 @@ export const MarkdownEditor: FunctionComponent<MarkdownEditorProps> = ({
   parentKey,
   size = SIZE.MEDIUM,
   ...props
-}) => {
-  const renderElement = React.useCallback(elementProps => <Element {...elementProps} />, [])
-  const renderLeaf = React.useCallback(leafProps => <Leaf {...leafProps} />, [])
+}: MarkdownEditorProps) {
+  const renderElement = React.useCallback((elementProps: any) => <Element {...elementProps} />, [])
+  const renderLeaf = React.useCallback((leafProps: LeafProps) => <Leaf {...leafProps} />, [])
   const editor = React.useMemo(() => withLinks(withHistory(withReact(createEditor()))), [])
 
   const defaultValueAsAst = React.useMemo(() => deserialize(defaultValue), [defaultValue])
@@ -134,16 +134,4 @@ export const MarkdownEditor: FunctionComponent<MarkdownEditorProps> = ({
       )}
     </div>
   )
-}
-
-MarkdownEditor.displayName = 'MarkdownEditor'
-
-MarkdownEditor.propTypes = {
-  defaultValue: BetterPropTypes.string.isOptionalButNotNull,
-  error: BetterPropTypes.string.isOptionalButNotNull,
-  helper: BetterPropTypes.string.isOptionalButNotNull,
-  isDisabled: BetterPropTypes.bool.isOptionalButNotNull,
-  label: BetterPropTypes.string.isRequired,
-  onChange: BetterPropTypes.func.isOptionalButNotNull,
-  placeholder: BetterPropTypes.string.isRequired,
 }

@@ -1,10 +1,7 @@
-import BetterPropTypes from 'better-prop-types'
 import * as R from 'ramda'
-import React from 'react'
 import styled from 'styled-components'
 
 import { Tag } from '../../elements/Tag'
-import { ColumnPropType } from './shapes'
 
 import type {
   TableActionColumnProps,
@@ -14,7 +11,6 @@ import type {
   TableTagsColumnProps,
   TableValueColumnProps,
 } from './types'
-import type { FunctionComponent } from 'react'
 
 const ERROR_SCOPE = '🌌 @singularity/core/Table:'
 
@@ -134,7 +130,7 @@ type ActionCellProps = {
   column: TableActionColumnProps
   dataRow: Common.CollectionItem
 }
-export const ActionCell: FunctionComponent<ActionCellProps> = ({ column, dataRow }) => {
+function ActionCell({ column, dataRow }: ActionCellProps) {
   const { accent, action, Icon, label, withTooltip = false } = column
   const id = getId(dataRow)
 
@@ -183,7 +179,7 @@ type BooleanCellProps = {
   column: TableBooleanColumnProps
   dataRow: Common.CollectionItem
 }
-export const BooleanCell: FunctionComponent<BooleanCellProps> = ({ column, dataRow }) => {
+function BooleanCell({ column, dataRow }: BooleanCellProps) {
   const { action, IconOff, IconOn, key, label, labelOff, labelOn, transform, withTooltip = false } = column
   const maybeId = getId(dataRow)
 
@@ -253,7 +249,7 @@ type TagsCellProps = {
   column: TableTagsColumnProps
   dataRow: Common.CollectionItem
 }
-export const TagsCell: FunctionComponent<TagsCellProps> = ({ column, dataRow }) => {
+function TagsCell({ column, dataRow }: TagsCellProps) {
   const { key, label, transform } = column
 
   if (label === undefined) {
@@ -284,7 +280,7 @@ type CustomCellProps = {
   column: TableCustomColumnProps
   dataRow: Common.CollectionItem
 }
-export const CustomCell: FunctionComponent<CustomCellProps> = ({ column, dataRow }) => {
+function CustomCell({ column, dataRow }: CustomCellProps) {
   const { key, label, render: CustomComponent } = column
 
   if (label === undefined) {
@@ -312,7 +308,7 @@ type ValueCellProps = {
   column: TableValueColumnProps
   dataRow: Common.CollectionItem
 }
-export const ValueCell: FunctionComponent<ValueCellProps> = ({ column, dataRow }) => {
+function ValueCell({ column, dataRow }: ValueCellProps) {
   const { key, label, transform, type } = column
 
   if (label === undefined) {
@@ -340,7 +336,7 @@ type CellProps = {
   column: TableColumnProps
   dataRow: Common.CollectionItem
 }
-export const Cell: FunctionComponent<CellProps> = ({ column, dataRow }) => {
+export function Cell({ column, dataRow }: CellProps) {
   if (column.type === 'action') {
     return <ActionCell column={column} dataRow={dataRow} />
   }
@@ -358,9 +354,4 @@ export const Cell: FunctionComponent<CellProps> = ({ column, dataRow }) => {
   }
 
   return <ValueCell column={column} dataRow={dataRow} />
-}
-
-Cell.propTypes = {
-  column: ColumnPropType.isRequired,
-  dataRow: BetterPropTypes.any.isRequired,
 }

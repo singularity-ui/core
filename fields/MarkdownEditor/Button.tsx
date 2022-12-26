@@ -1,7 +1,6 @@
-import React from 'react'
 import styled from 'styled-components'
 
-import type { ButtonHTMLAttributes, FunctionComponent } from 'react'
+import type { ButtonHTMLAttributes } from 'react'
 
 const StyledButton = styled.button<{
   isActive: boolean
@@ -37,13 +36,10 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   isActive?: boolean
   isDisabled?: boolean
 }
-export const Button: FunctionComponent<ButtonProps> = ({
-  children,
-  isActive = false,
-  isDisabled = false,
-  ...props
-}) => (
-  <StyledButton isActive={isActive} isDisabled={isDisabled} type="button" {...props}>
-    {children}
-  </StyledButton>
-)
+export function Button({ children, isActive = false, isDisabled = false, ...props }: ButtonProps) {
+  return (
+    <StyledButton isActive={isActive} isDisabled={isDisabled} type="button" {...props}>
+      {children}
+    </StyledButton>
+  )
+}

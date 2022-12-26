@@ -1,15 +1,12 @@
 /* eslint-disable react/require-default-props */
 
-import BetterPropTypes from 'better-prop-types'
-import React from 'react'
 import styled from 'styled-components'
 
-import { SIZES } from '../../common/constants'
 import { getLowestFontSize } from '../../helpers/getLowestFontSize'
 import { MaterialExtension } from '../../icons/material/MaterialExtension'
 import { MaterialPictureAsPdf } from '../../icons/material/MaterialPictureAsPdf'
 
-import type { DOMAttributes, FunctionComponent } from 'react'
+import type { DOMAttributes } from 'react'
 
 const Box = styled.div<{
   size: Common.Size
@@ -67,11 +64,11 @@ const FILE_MIME_PROPS: Record<
   },
 }
 
-type FileItemProps = DOMAttributes<HTMLDivElement> & {
+export type FileItemProps = DOMAttributes<HTMLDivElement> & {
   file: File
   size: Common.Size
 }
-export const FileItem: FunctionComponent<FileItemProps> = ({ file, size }) => {
+export function FileItem({ file, size }: FileItemProps) {
   const maybeSupportedMime = FILE_MIME_PROPS[file.type]
   const Icon = maybeSupportedMime !== undefined ? maybeSupportedMime.Icon : MaterialExtension
 
@@ -86,19 +83,4 @@ export const FileItem: FunctionComponent<FileItemProps> = ({ file, size }) => {
       </Info>
     </Box>
   )
-}
-
-FileItem.propTypes = {
-  file: BetterPropTypes.exact({
-    arrayBuffer: BetterPropTypes.func.isRequired,
-    lastModified: BetterPropTypes.number.isRequired,
-    name: BetterPropTypes.string.isRequired,
-    size: BetterPropTypes.number.isRequired,
-    slice: BetterPropTypes.func.isRequired,
-    stream: BetterPropTypes.func.isRequired,
-    text: BetterPropTypes.func.isRequired,
-    type: BetterPropTypes.string.isRequired,
-    webkitRelativePath: BetterPropTypes.string.isRequired,
-  }).isRequired,
-  size: BetterPropTypes.oneOf(SIZES).isRequired,
 }

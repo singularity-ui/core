@@ -5,8 +5,6 @@ import styled from 'styled-components'
 import { MarkdownEditorFormat } from './constants'
 import { getBlockFormat, toggleBlock } from './helpers'
 
-import type { FunctionComponent } from 'react'
-
 const StyledSelect = styled.select`
   border: 0;
   color: ${p => p.theme.color.body.dark};
@@ -21,7 +19,7 @@ const StyledSelect = styled.select`
 export type ToolbarBlockListProps = {
   formats: Array<MarkdownEditorFormat>
 }
-export const ToolbarBlockList: FunctionComponent<ToolbarBlockListProps> = ({ formats }) => {
+export function ToolbarBlockList({ formats }: ToolbarBlockListProps) {
   const $select = React.useRef<HTMLSelectElement>(null)
   const editor = useSlate()
 

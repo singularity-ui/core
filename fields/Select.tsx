@@ -1,13 +1,12 @@
-import BetterPropTypes from 'better-prop-types'
-import React from 'react'
+import { forwardRef } from 'react'
 import ReactSelect from 'react-select'
 import ReactSelectAsync from 'react-select/async'
 import styled from 'styled-components'
 
-import { SIZE, SIZES } from '../common/constants'
+import { SIZE } from '../common/constants'
 import { Error, Helper, Label } from './shared'
 
-import type { ForwardRefRenderFunction } from 'react'
+import type { ForwardedRef } from 'react'
 import type { GroupBase } from 'react-select'
 import type { AsyncProps } from 'react-select/async'
 import type { StateManagerProps } from 'react-select/dist/declarations/src/useStateManager'
@@ -119,10 +118,10 @@ type SelectAsyncProps<Option> = AsyncProps<Option, boolean, GroupBase<Option>> &
 
 export type SelectProps<Option = SelectOption> = SelectSyncProps<Option> | SelectAsyncProps<Option>
 
-const SelectWithRef: ForwardRefRenderFunction<any, SelectProps> = (
-  { className, error, helper, isAsync = false, label, size = SIZE.MEDIUM, ...props },
-  ref,
-) => {
+function SelectWithRef(
+  { className, error, helper, isAsync = false, label, size = SIZE.MEDIUM, ...props }: SelectProps,
+  ref: ForwardedRef<any>,
+) {
   const hasError = typeof error === 'string' && error.length > 0
   const id = props.id || props.name
 
@@ -160,14 +159,6 @@ const SelectWithRef: ForwardRefRenderFunction<any, SelectProps> = (
   )
 }
 
-export const Select = React.forwardRef(SelectWithRef)
+SelectWithRef.displayName = 'Select'
 
-Select.displayName = 'Select'
-
-Select.propTypes = {
-  error: BetterPropTypes.string.isOptionalButNotNull,
-  helper: BetterPropTypes.string.isOptionalButNotNull,
-  isAsync: BetterPropTypes.bool.isOptionalButNotNull as any,
-  label: BetterPropTypes.string.isOptionalButNotNull,
-  size: BetterPropTypes.oneOf(SIZES).isOptionalButNotNull,
-}
+export const Select = forwardRef(SelectWithRef)

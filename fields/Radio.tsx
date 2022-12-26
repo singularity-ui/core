@@ -1,10 +1,11 @@
-import BetterPropTypes from 'better-prop-types'
-import React, { ChangeEvent, ForwardRefRenderFunction, InputHTMLAttributes } from 'react'
+import { forwardRef, useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-import { SIZE, SIZES } from '../common/constants'
+import { SIZE } from '../common/constants'
 import { getLowestFontSize } from '../helpers/getLowestFontSize'
 import { Error, Helper } from './shared'
+
+import type { ChangeEvent, ForwardedRef, InputHTMLAttributes } from 'react'
 
 const StyledLabel = styled.label<{
   isChecked: boolean
@@ -66,15 +67,15 @@ export type RadioProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
   letter?: string
   size?: Common.Size
 }
-const RadioWithProps: ForwardRefRenderFunction<HTMLInputElement, RadioProps> = (
-  { className, error, helper, label, letter, onChange, size = SIZE.MEDIUM, ...props },
-  ref,
-) => {
-  const [isChecked, setIsChecked] = React.useState(props.checked === true || props.defaultChecked === true)
+function RadioWithRef(
+  { className, error, helper, label, letter, onChange, size = SIZE.MEDIUM, ...props }: RadioProps,
+  ref: ForwardedRef<HTMLInputElement>,
+) {
+  const [isChecked, setIsChecked] = useState(props.checked === true || props.defaultChecked === true)
 
   const isDisabled = Boolean(props.disabled)
 
-  React.useEffect(() => {
+  useEffect(() => {
     setIsChecked(props.checked === true || props.defaultChecked === true)
   }, [props.checked, props.defaultChecked])
 
@@ -120,14 +121,6 @@ const RadioWithProps: ForwardRefRenderFunction<HTMLInputElement, RadioProps> = (
   )
 }
 
-export const Radio = React.forwardRef(RadioWithProps)
+RadioWithRef.displayName = 'Radio'
 
-Radio.displayName = 'Radio'
-
-Radio.propTypes = {
-  error: BetterPropTypes.string.isOptionalButNotNull,
-  helper: BetterPropTypes.string.isOptionalButNotNull,
-  label: BetterPropTypes.string.isRequired,
-  letter: BetterPropTypes.string.isOptionalButNotNull,
-  size: BetterPropTypes.oneOf(SIZES).isOptionalButNotNull,
-}
+export const Radio = forwardRef(RadioWithRef)

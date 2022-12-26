@@ -17,10 +17,7 @@ import {
   wrapOrUpdateInlineBlock,
 } from './helpers'
 
-import type { FunctionComponent } from 'react'
-
-export type LinkButtonGroupProps = {}
-export const LinkButtonGroup: FunctionComponent<LinkButtonGroupProps> = () => {
+export function LinkButtonGroup() {
   const $input = React.useRef<HTMLInputElement>(null)
   const [isModalOpen, setIsModalOpen] = React.useState(false)
   const editor = useSlate()

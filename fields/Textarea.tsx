@@ -1,11 +1,10 @@
-import BetterPropTypes from 'better-prop-types'
-import React from 'react'
+import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react'
 import styled from 'styled-components'
 
-import { SIZE, SIZES } from '../common/constants'
+import { SIZE } from '../common/constants'
 import { Error, Helper, Label } from './shared'
 
-import type { ForwardRefRenderFunction, TextareaHTMLAttributes } from 'react'
+import type { ForwardedRef, TextareaHTMLAttributes } from 'react'
 
 const StyledTextarea = styled.textarea<{
   hasError: boolean
@@ -53,13 +52,13 @@ export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
   label?: string
   size?: Common.Size
 }
-const TextareaWithRef: ForwardRefRenderFunction<HTMLTextAreaElement, TextareaProps> = (
-  { isAutoResizing = false, className, error, helper, label, onInput, size = SIZE.MEDIUM, ...props },
-  ref,
-) => {
-  const $textarea = React.useRef<HTMLTextAreaElement>(null)
-  const $textareaMeasurement = React.useRef<TextareaMeasurement>()
-  const [hasRenderedOnce, setHasRenderedOnce] = React.useState(false)
+function TextareaWithRef(
+  { isAutoResizing = false, className, error, helper, label, onInput, size = SIZE.MEDIUM, ...props }: TextareaProps,
+  ref: ForwardedRef<HTMLTextAreaElement>,
+) {
+  const $textarea = useRef<HTMLTextAreaElement>(null)
+  const $textareaMeasurement = useRef<TextareaMeasurement>()
+  const [hasRenderedOnce, setHasRenderedOnce] = useState(false)
 
   const hasError = typeof error === 'string' && error.length > 0
   const id = props.id || props.name
@@ -79,9 +78,9 @@ const TextareaWithRef: ForwardRefRenderFunction<HTMLTextAreaElement, TextareaPro
   }
   const controlInput = isAutoResizing ? resizeToFit : onInput
 
-  React.useImperativeHandle(ref, () => $textarea.current as HTMLTextAreaElement)
+  useImperativeHandle(ref, () => $textarea.current as HTMLTextAreaElement)
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!isAutoResizing) {
       return
     }
@@ -148,14 +147,6 @@ const TextareaWithRef: ForwardRefRenderFunction<HTMLTextAreaElement, TextareaPro
   )
 }
 
-export const Textarea = React.forwardRef(TextareaWithRef)
+TextareaWithRef.displayName = 'Textarea'
 
-Textarea.displayName = 'Textarea'
-
-Textarea.propTypes = {
-  error: BetterPropTypes.string.isOptionalButNotNull,
-  helper: BetterPropTypes.string.isOptionalButNotNull,
-  isAutoResizing: BetterPropTypes.bool.isOptionalButNotNull,
-  label: BetterPropTypes.string.isOptionalButNotNull,
-  size: BetterPropTypes.oneOf(SIZES).isOptionalButNotNull,
-}
+export const Textarea = forwardRef(TextareaWithRef)

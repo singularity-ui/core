@@ -1,13 +1,12 @@
-import BetterPropTypes from 'better-prop-types'
-import React from 'react'
+import { forwardRef, useImperativeHandle, useRef, useState } from 'react'
 import styled from 'styled-components'
 
-import { SIZE, SIZES } from '../../common/constants'
+import { SIZE } from '../../common/constants'
 import { MaterialUploadFile } from '../../icons/material/MaterialUploadFile'
 import { Error, Helper, Label } from '../shared'
 import { FileItem } from './FileItem'
 
-import type { DragEventHandler, ForwardRefRenderFunction, InputHTMLAttributes, ReactEventHandler } from 'react'
+import type { DragEventHandler, ForwardedRef, InputHTMLAttributes, ReactEventHandler } from 'react'
 
 const FileBox = styled.div<{
   hasError: boolean
@@ -103,19 +102,19 @@ export type FileInputProps = Omit<InputHTMLAttributes<any>, 'size'> & {
   label?: string
   size?: Common.Size
 }
-const FileInputWithRef: ForwardRefRenderFunction<HTMLInputElement, FileInputProps> = (
-  { className, error, helper, label, onChange, placeholder, size = SIZE.MEDIUM, ...props },
-  ref,
-) => {
-  const $input = React.useRef<HTMLInputElement>(null)
-  const [isHovered, setIsHovered] = React.useState(false)
-  const [files, setFiles] = React.useState<File[]>([])
+function FileInputWithRef(
+  { className, error, helper, label, onChange, placeholder, size = SIZE.MEDIUM, ...props }: FileInputProps,
+  ref: ForwardedRef<HTMLInputElement>,
+) {
+  const $input = useRef<HTMLInputElement>(null)
+  const [isHovered, setIsHovered] = useState(false)
+  const [files, setFiles] = useState<File[]>([])
 
   const hasError = typeof error === 'string' && error.length > 0
   const hasFiles = files.length > 0
   const id = props.id || props.name
 
-  React.useImperativeHandle(ref, () => $input.current as HTMLInputElement)
+  useImperativeHandle(ref, () => $input.current as HTMLInputElement)
 
   const handleChange: ReactEventHandler<HTMLInputElement> = event => {
     if (event.currentTarget.files === null) {
@@ -237,14 +236,6 @@ const FileInputWithRef: ForwardRefRenderFunction<HTMLInputElement, FileInputProp
   )
 }
 
-export const FileInput = React.forwardRef(FileInputWithRef)
+FileInputWithRef.displayName = 'FileInput'
 
-FileInput.displayName = 'FileInput'
-
-FileInput.propTypes = {
-  error: BetterPropTypes.string.isOptionalButNotNull,
-  helper: BetterPropTypes.string.isOptionalButNotNull,
-  label: BetterPropTypes.string.isOptionalButNotNull,
-  placeholder: BetterPropTypes.string.isRequired,
-  size: BetterPropTypes.oneOf(SIZES).isOptionalButNotNull,
-}
+export const FileInput = forwardRef(FileInputWithRef)

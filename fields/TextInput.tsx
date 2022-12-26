@@ -1,9 +1,10 @@
-import BetterPropTypes from 'better-prop-types'
-import React, { ForwardRefRenderFunction, InputHTMLAttributes } from 'react'
+import { forwardRef } from 'react'
 import styled from 'styled-components'
 
-import { SIZE, SIZES } from '../common/constants'
+import { SIZE } from '../common/constants'
 import { Error, Helper, Label } from './shared'
+
+import type { ForwardedRef, InputHTMLAttributes } from 'react'
 
 const StyledInput = styled.input<{
   _size: Common.Size
@@ -42,10 +43,10 @@ export type TextInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>
   label?: string
   size?: Common.Size
 }
-const TextInputWithRef: ForwardRefRenderFunction<HTMLInputElement, TextInputProps> = (
-  { className, error, helper, label, size = SIZE.MEDIUM, ...props },
-  ref,
-) => {
+function TextInputWithRef(
+  { className, error, helper, label, size = SIZE.MEDIUM, ...props }: TextInputProps,
+  ref: ForwardedRef<HTMLInputElement>,
+) {
   const hasError = typeof error === 'string' && error.length > 0
   const id = props.id || props.name
 
@@ -74,13 +75,6 @@ const TextInputWithRef: ForwardRefRenderFunction<HTMLInputElement, TextInputProp
   )
 }
 
-export const TextInput = React.forwardRef(TextInputWithRef)
+TextInputWithRef.displayName = 'TextInput'
 
-TextInput.displayName = 'TextInput'
-
-TextInput.propTypes = {
-  error: BetterPropTypes.string.isOptionalButNotNull,
-  helper: BetterPropTypes.string.isOptionalButNotNull,
-  label: BetterPropTypes.string.isOptionalButNotNull,
-  size: BetterPropTypes.oneOf(SIZES).isOptionalButNotNull,
-}
+export const TextInput = forwardRef(TextInputWithRef)

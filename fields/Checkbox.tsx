@@ -1,11 +1,12 @@
-import BetterPropTypes from 'better-prop-types'
-import React, { ChangeEvent, ForwardRefRenderFunction, InputHTMLAttributes } from 'react'
+import { forwardRef, useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-import { SIZE, SIZES } from '../common/constants'
+import { SIZE } from '../common/constants'
 import { MaterialCheckBoxOutlineBlank } from '../icons/material/MaterialCheckBoxOutlineBlank'
 import { MaterialCheckBoxOutlined } from '../icons/material/MaterialCheckBoxOutlined'
 import { Error, Helper } from './shared'
+
+import type { ChangeEvent, ForwardedRef, InputHTMLAttributes } from 'react'
 
 const StyledLabel = styled.label<{
   hasError: boolean
@@ -63,15 +64,15 @@ export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> 
   label: string
   size?: Common.Size
 }
-export const CheckboxWithProps: ForwardRefRenderFunction<HTMLInputElement, CheckboxProps> = (
-  { className, error, helper, label, onChange, size = SIZE.MEDIUM, ...props },
-  ref,
-) => {
-  const [isChecked, setIsChecked] = React.useState(props.checked === true || props.defaultChecked === true)
+function CheckboxWithRef(
+  { className, error, helper, label, onChange, size = SIZE.MEDIUM, ...props }: CheckboxProps,
+  ref: ForwardedRef<HTMLInputElement>,
+) {
+  const [isChecked, setIsChecked] = useState(props.checked === true || props.defaultChecked === true)
 
   const hasError = typeof error === 'string' && error.length > 0
 
-  React.useEffect(() => {
+  useEffect(() => {
     setIsChecked(props.checked === true || props.defaultChecked === true)
   }, [props.checked, props.defaultChecked])
 
@@ -107,13 +108,6 @@ export const CheckboxWithProps: ForwardRefRenderFunction<HTMLInputElement, Check
   )
 }
 
-export const Checkbox = React.forwardRef(CheckboxWithProps)
+CheckboxWithRef.displayName = 'Checkbox'
 
-Checkbox.displayName = 'Checkbox'
-
-Checkbox.propTypes = {
-  error: BetterPropTypes.string.isOptionalButNotNull,
-  helper: BetterPropTypes.string.isOptionalButNotNull,
-  label: BetterPropTypes.string.isRequired,
-  size: BetterPropTypes.oneOf(SIZES).isOptionalButNotNull,
-}
+export const Checkbox = forwardRef(CheckboxWithRef)

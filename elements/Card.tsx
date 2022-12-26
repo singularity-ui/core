@@ -1,7 +1,7 @@
-import React from 'react'
+import { forwardRef } from 'react'
 import styled from 'styled-components'
 
-import type { ForwardRefRenderFunction, HTMLAttributes } from 'react'
+import type { ForwardedRef, HTMLAttributes } from 'react'
 
 const StyledCard = styled.div`
   background-color: ${p => p.theme.color.card.background};
@@ -11,14 +11,14 @@ const StyledCard = styled.div`
 `
 
 export type CardProps = HTMLAttributes<HTMLDivElement>
-const CardWithRef: ForwardRefRenderFunction<HTMLDivElement, CardProps> = ({ children, ...props }: CardProps, ref) => (
-  <StyledCard ref={ref} className="Card" {...props}>
-    {children}
-  </StyledCard>
-)
+function CardWithRef({ children, ...props }: CardProps, ref: ForwardedRef<HTMLDivElement>) {
+  return (
+    <StyledCard ref={ref} className="Card" {...props}>
+      {children}
+    </StyledCard>
+  )
+}
 
-export const Card = React.forwardRef(CardWithRef)
+export const Card = forwardRef(CardWithRef)
 
 Card.displayName = 'Card'
-
-Card.propTypes = {}

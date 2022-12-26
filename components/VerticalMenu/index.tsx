@@ -1,9 +1,8 @@
-import React from 'react'
 import styled from 'styled-components'
 
 import { Item } from './Item'
 
-import type { FunctionComponent, HTMLAttributes } from 'react'
+import type { HTMLAttributes } from 'react'
 
 const StyledVerticalMenu = styled.ul`
   display: flex;
@@ -21,15 +20,15 @@ const StyledVerticalMenu = styled.ul`
 export type VerticalMenuProps = HTMLAttributes<HTMLUListElement> & {
   size?: Common.Size
 }
-const BareVerticalMenu: FunctionComponent<VerticalMenuProps> = ({ children, ...props }) => (
-  <nav>
-    <StyledVerticalMenu {...props}>{children}</StyledVerticalMenu>
-  </nav>
-)
+function BareVerticalMenu({ children, ...props }: VerticalMenuProps) {
+  return (
+    <nav>
+      <StyledVerticalMenu {...props}>{children}</StyledVerticalMenu>
+    </nav>
+  )
+}
 
 BareVerticalMenu.displayName = 'VerticalMenu'
-
-BareVerticalMenu.propTypes = {}
 
 export const VerticalMenu = Object.assign(BareVerticalMenu, {
   Item,
