@@ -1,7 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-
-import BetterPropTypes from 'better-prop-types'
-import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
 
 import { Button } from '../../elements/Button'
@@ -56,7 +52,7 @@ type PaginationProps = {
   pageCount: number
   pageIndex: number
 }
-export const Pagination: FunctionComponent<PaginationProps> = ({ onChange, pageCount, pageIndex }) => {
+export function Pagination({ onChange, pageCount, pageIndex }: PaginationProps) {
   const links: Array<{
     index: number
     isDisabled: boolean
@@ -185,16 +181,19 @@ export const Pagination: FunctionComponent<PaginationProps> = ({ onChange, pageC
 
   return (
     <Box>
+      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <Link key="page-previous" disabled={pageIndex === 0} isSeparator={false} onClick={() => onChange(pageIndex - 1)}>
         <MaterialChevronLeft />
       </Link>
 
       {links.map(({ index, isDisabled, isSeparator, key, label }) => (
+        // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <Link key={key} disabled={isDisabled} isSeparator={isSeparator} onClick={() => onChange(index)}>
           {label}
         </Link>
       ))}
 
+      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <Link
         key="page-next"
         disabled={pageIndex === pageCount - 1}
@@ -205,10 +204,4 @@ export const Pagination: FunctionComponent<PaginationProps> = ({ onChange, pageC
       </Link>
     </Box>
   )
-}
-
-Pagination.propTypes = {
-  onChange: BetterPropTypes.func.isRequired,
-  pageCount: BetterPropTypes.number.isRequired,
-  pageIndex: BetterPropTypes.number.isRequired,
 }

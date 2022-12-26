@@ -1,5 +1,4 @@
-import BetterPropTypes from 'better-prop-types'
-import React from 'react'
+import { forwardRef, useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 import { SORT_ORDER } from '../../common/constants'
@@ -9,10 +8,9 @@ import { LoadingCell } from './LoadingCell'
 import { NoDataCell } from './NoDataCell'
 import { Pagination } from './Pagination'
 import { Row } from './Row'
-import { ColumnPropType } from './shapes'
-import { TableColumnProps, TableColumnKeyFunction } from './types'
 
-import type { ForwardRefRenderFunction, TableHTMLAttributes } from 'react'
+import type { TableColumnProps, TableColumnKeyFunction } from './types'
+import type { ForwardedRef, TableHTMLAttributes } from 'react'
 
 const Box = styled.div`
   table {
@@ -48,7 +46,7 @@ export type TableProps = TableHTMLAttributes<any> & {
   pageIndex?: number
   perPage?: number
 }
-const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps> = (
+function TableWithRef(
   {
     columns,
     data,
@@ -60,15 +58,13 @@ const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps> = (
     pageIndex,
     perPage = 10,
     ...props
-  },
-  ref,
-) => {
-  const [controlledPageIndex, setControlledPageIndex] = React.useState<number>(pageIndex || 0)
-  const [sortedData, setSortedData] = React.useState<Common.Collection>(
-    sort(data, defaultSortedKey, defaultSortedKeyIsDesc),
-  )
-  const [sortedKey, setSortedKey] = React.useState<string | TableColumnKeyFunction | undefined>(defaultSortedKey)
-  const [sortedKeyOrder, setSortedKeyOrder] = React.useState<Common.SortOrder>(getSortOrder(defaultSortedKeyIsDesc))
+  }: TableProps,
+  ref: ForwardedRef<HTMLTableElement>,
+) {
+  const [controlledPageIndex, setControlledPageIndex] = useState<number>(pageIndex || 0)
+  const [sortedData, setSortedData] = useState<Common.Collection>(sort(data, defaultSortedKey, defaultSortedKeyIsDesc))
+  const [sortedKey, setSortedKey] = useState<string | TableColumnKeyFunction | undefined>(defaultSortedKey)
+  const [sortedKeyOrder, setSortedKeyOrder] = useState<Common.SortOrder>(getSortOrder(defaultSortedKeyIsDesc))
 
   const isEmpty = data.length === 0
   const controlledPageCount = pageCount || Math.ceil(data.length / perPage)
@@ -94,7 +90,7 @@ const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps> = (
     setSortedData(sort(data, key, isDesc))
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (sortedKey === null) {
       setSortedData(data)
 
@@ -104,7 +100,7 @@ const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps> = (
     setSortedData(sort(data, defaultSortedKey, sortedKeyOrder === SORT_ORDER.DESC))
   }, [data])
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (defaultSortedKey === undefined) {
       return
     }
@@ -154,18 +150,6 @@ const TableWithRef: ForwardRefRenderFunction<HTMLTableElement, TableProps> = (
   )
 }
 
-export const Table = React.forwardRef(TableWithRef)
+export const Table = forwardRef(TableWithRef)
 
 Table.displayName = 'Table'
-
-Table.propTypes = {
-  columns: BetterPropTypes.arrayOf(ColumnPropType.isRequired).isRequired,
-  data: BetterPropTypes.arrayOf(BetterPropTypes.any.isRequired).isRequired,
-  defaultSortedKey: BetterPropTypes.string.isOptionalButNotNull,
-  defaultSortedKeyIsDesc: BetterPropTypes.bool.isOptionalButNotNull,
-  isLoading: BetterPropTypes.bool.isOptionalButNotNull,
-  // onPageChange: BetterPropTypes.func.isOptionalButNotNull,
-  pageCount: BetterPropTypes.number.isOptionalButNotNull,
-  pageIndex: BetterPropTypes.number.isOptionalButNotNull,
-  perPage: BetterPropTypes.number.isOptionalButNotNull,
-}

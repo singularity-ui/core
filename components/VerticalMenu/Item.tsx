@@ -1,5 +1,4 @@
-import BetterPropTypes from 'better-prop-types'
-import React from 'react'
+import { forwardRef } from 'react'
 import styled from 'styled-components'
 
 import type { ForwardedRef, HTMLAttributes, ReactElement } from 'react'
@@ -127,12 +126,6 @@ function ItemWithRef(
   )
 }
 
-export const Item = React.forwardRef(ItemWithRef)
+export const Item = forwardRef(ItemWithRef)
 
 Item.displayName = 'Item'
-
-Item.propTypes = {
-  href: BetterPropTypes.string.isOptionalButNotNull,
-  isActive: BetterPropTypes.bool.isOptionalButNotNull,
-  isDark: BetterPropTypes.bool.isOptionalButNotNull,
-}

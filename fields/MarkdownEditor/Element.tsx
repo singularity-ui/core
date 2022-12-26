@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 import type { CustomElement } from './types'
-import type { FunctionComponent } from 'react'
 
 const InlineChromiumBugfixBox = styled.span`
   font-size: 0;
@@ -21,7 +20,7 @@ export type ElementProps = {
   children: any
   element: CustomElement
 }
-export const Element: FunctionComponent<ElementProps> = ({ attributes, children, element }) => {
+export function Element({ attributes, children, element }: ElementProps) {
   switch (element.type) {
     case 'block_quote':
       return <blockquote {...attributes}>{children}</blockquote>

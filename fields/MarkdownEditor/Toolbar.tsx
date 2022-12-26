@@ -12,8 +12,6 @@ import { LinkButtonGroup } from './LinkButtonGroup'
 import { MarkButton } from './MarkButton'
 import { ToolbarBlockList } from './ToolbarBlockList'
 
-import type { FunctionComponent } from 'react'
-
 const DEFAULT_FORMATS = [
   MarkdownEditorFormat.STRONG,
   MarkdownEditorFormat.EM,
@@ -52,33 +50,35 @@ const Separator = styled.div`
 export type ToolbarProps = {
   formats?: Array<MarkdownEditorFormat>
 }
-export const Toolbar: FunctionComponent<ToolbarProps> = ({ formats = DEFAULT_FORMATS }) => (
-  <Box>
-    <ToolbarBlockList formats={formats} />
+export function Toolbar({ formats = DEFAULT_FORMATS }: ToolbarProps) {
+  return (
+    <Box>
+      <ToolbarBlockList formats={formats} />
 
-    <Separator />
+      <Separator />
 
-    {formats.includes(MarkdownEditorFormat.STRONG) && (
-      <MarkButton format={MarkdownEditorFormat.STRONG} Icon={MaterialFormatBold} />
-    )}
-    {formats.includes(MarkdownEditorFormat.EM) && (
-      <MarkButton format={MarkdownEditorFormat.EM} Icon={MaterialFormatItalic} />
-    )}
-    {formats.includes(MarkdownEditorFormat.CODE) && (
-      <MarkButton format={MarkdownEditorFormat.CODE} Icon={MaterialCode} />
-    )}
+      {formats.includes(MarkdownEditorFormat.STRONG) && (
+        <MarkButton format={MarkdownEditorFormat.STRONG} Icon={MaterialFormatBold} />
+      )}
+      {formats.includes(MarkdownEditorFormat.EM) && (
+        <MarkButton format={MarkdownEditorFormat.EM} Icon={MaterialFormatItalic} />
+      )}
+      {formats.includes(MarkdownEditorFormat.CODE) && (
+        <MarkButton format={MarkdownEditorFormat.CODE} Icon={MaterialCode} />
+      )}
 
-    <Separator />
+      <Separator />
 
-    {formats.includes(MarkdownEditorFormat.UL) && (
-      <BlockButton format={MarkdownEditorFormat.UL} Icon={MaterialFormatListBulleted} />
-    )}
-    {formats.includes(MarkdownEditorFormat.OL) && (
-      <BlockButton format={MarkdownEditorFormat.OL} Icon={MaterialFormatListNumbered} />
-    )}
+      {formats.includes(MarkdownEditorFormat.UL) && (
+        <BlockButton format={MarkdownEditorFormat.UL} Icon={MaterialFormatListBulleted} />
+      )}
+      {formats.includes(MarkdownEditorFormat.OL) && (
+        <BlockButton format={MarkdownEditorFormat.OL} Icon={MaterialFormatListNumbered} />
+      )}
 
-    <Separator />
+      <Separator />
 
-    {formats.includes(MarkdownEditorFormat.A) && <LinkButtonGroup />}
-  </Box>
-)
+      {formats.includes(MarkdownEditorFormat.A) && <LinkButtonGroup />}
+    </Box>
+  )
+}

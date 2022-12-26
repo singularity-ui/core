@@ -1,4 +1,3 @@
-import React from 'react'
 import { useSlate } from 'slate-react'
 
 import { Button } from './Button'
@@ -11,7 +10,7 @@ export type BlockButtonProps = {
   Icon: FunctionComponent
   format: MarkdownEditorFormat
 }
-export const BlockButton: FunctionComponent<BlockButtonProps> = ({ format, Icon }) => {
+export function BlockButton({ format, Icon }: BlockButtonProps) {
   const editor = useSlate()
 
   const isActive = isBlockActive(editor, format)

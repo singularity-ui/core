@@ -1,12 +1,11 @@
 /* eslint-disable react/require-default-props */
 
-import BetterPropTypes from 'better-prop-types'
-import React from 'react'
+import { forwardRef } from 'react'
 import styled from 'styled-components'
 
-import { ACCENT, ACCENTS, SIZE, SIZES } from '../common/constants'
+import { ACCENT, SIZE } from '../common/constants'
 
-import type { ButtonHTMLAttributes, ForwardRefRenderFunction } from 'react'
+import type { ButtonHTMLAttributes, ForwardedRef } from 'react'
 
 const StyledButton = styled.button<{
   accent: Common.Accent
@@ -43,20 +42,17 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   accent?: Common.Accent
   size?: Common.Size
 }
-export const ButtonWithRef: ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = (
+export function ButtonWithRef(
   { accent = ACCENT.PRIMARY, children, size = SIZE.MEDIUM, type = 'button', ...props }: ButtonProps,
-  ref,
-) => (
-  <StyledButton ref={ref} accent={accent} size={size} type={type} {...props}>
-    {children}
-  </StyledButton>
-)
-
-export const Button = React.forwardRef(ButtonWithRef)
-
-Button.displayName = 'Button'
-
-Button.propTypes = {
-  accent: BetterPropTypes.oneOf(ACCENTS).isOptionalButNotNull,
-  size: BetterPropTypes.oneOf(SIZES).isOptionalButNotNull,
+  ref: ForwardedRef<HTMLButtonElement>,
+) {
+  return (
+    <StyledButton ref={ref} accent={accent} size={size} type={type} {...props}>
+      {children}
+    </StyledButton>
+  )
 }
+
+ButtonWithRef.displayName = 'Button'
+
+export const Button = forwardRef(ButtonWithRef)

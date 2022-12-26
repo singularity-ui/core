@@ -1,5 +1,3 @@
-import BetterPropTypes from 'better-prop-types'
-import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
 
 import { Lane } from './Lane'
@@ -26,36 +24,33 @@ const LaneBox = styled.div<{
   padding-right: ${p => p.theme.padding.layout.medium};
 `
 
-export const Tasker = Object.assign<
-  FunctionComponent<{
-    data: Array<{
-      label: string
-      tasks: FunctionComponent[]
-    }>
-  }>,
-  any
->(
-  ({ data, ...props }) => {
-    const laneCount = data.length
-    const laneWidth = Math.round((10000 * 100) / laneCount) / 10000
+export function BareTasker({
+  data,
+  ...props
+}: {
+  data: Array<{
+    label: string
+    tasks: any[]
+  }>
+}) {
+  const laneCount = data.length
+  const laneWidth = Math.round((10000 * 100) / laneCount) / 10000
 
-    return (
-      <Box {...props}>
-        {data.map((dataLane, laneIndex) => (
-          // TODO Stop using index as key in lanes list
-          // eslint-disable-next-line react/no-array-index-key
-          <LaneBox key={String(laneIndex)} width={laneWidth}>
-            <Lane label={dataLane.label} tasks={dataLane.tasks} />
-          </LaneBox>
-        ))}
-      </Box>
-    )
-  },
-  {
-    Task,
-  },
-)
-
-Tasker.propTypes = {
-  data: BetterPropTypes.arrayOf(BetterPropTypes.shape(Lane.propTypes)).isRequired,
+  return (
+    <Box {...props}>
+      {data.map((dataLane, laneIndex) => (
+        // TODO Stop using index as key in lanes list
+        // eslint-disable-next-line react/no-array-index-key
+        <LaneBox key={String(laneIndex)} width={laneWidth}>
+          <Lane label={dataLane.label} tasks={dataLane.tasks} />
+        </LaneBox>
+      ))}
+    </Box>
+  )
 }
+
+BareTasker.displayName = 'Tasker'
+
+export const Tasker = Object.assign(BareTasker, {
+  Task,
+})

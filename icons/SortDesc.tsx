@@ -1,6 +1,6 @@
-import React, { HTMLAttributes } from 'react'
-
 import { Icon, IconProps } from './Icon'
+
+import type { HTMLAttributes } from 'react'
 
 /**
  * @see https://iconmonstr.com/sort-14-svg/
@@ -12,7 +12,3 @@ const SortDescSvg = (props: HTMLAttributes<SVGElement>) => (
 )
 
 export const SortDesc = (props: IconProps) => <Icon as={SortDescSvg} {...props} />
-
-SortDesc.propTypes = {
-  ...Icon.propTypes,
-}
