@@ -61,4 +61,5 @@ const getConfig = input => {
   }
 }
 
-module.exports = ['./index.ts', './fields/Select.tsx'].map(getConfig)
+// eslint-disable-next-line import/no-default-export
+export default ['./index.ts', './fields/Select.tsx'].map(getConfig)
