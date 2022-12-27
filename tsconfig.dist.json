@@ -8,8 +8,6 @@
     "node_modules/*",
     "scripts/*",
     "storybook-static/*",
-    "rollup.config.icons.js",
-    "rollup.config.js",
     "stories/*",
     "**/*.test.ts"
   ]

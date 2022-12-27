@@ -20,14 +20,5 @@
     "target": "ES2022"
   },
   "include": ["**/*.js", "**/*.jsx", "**/*.mjs", "**/*.ts", "**/*.tsx"],
-  "exclude": [
-    ".storybook/*",
-    "dist/*",
-    "node_modules/*",
-    "scripts/*",
-    "storybook-static/*",
-    "postcss.config.js",
-    "rollup.config.icons.js",
-    "rollup.config.js"
-  ]
+  "exclude": [".storybook/*", "dist/*", "node_modules/*", "scripts/*", "storybook-static/*"]
 }
