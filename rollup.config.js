@@ -9,7 +9,6 @@ const getConfig = input => {
 
   return {
     external: [
-      'better-prop-types',
       'ramda',
       'remark-parse',
       'remark-slate',
