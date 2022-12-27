@@ -20,5 +20,5 @@
     "target": "ES2022"
   },
   "include": ["**/*.js", "**/*.jsx", "**/*.mjs", "**/*.ts", "**/*.tsx"],
-  "exclude": [".storybook/*", "dist/*", "node_modules/*", "scripts/*", "storybook-static/*"]
+  "exclude": [".storybook/*", "dist/*", "examples/*", "node_modules/*", "scripts/*", "storybook-static/*"]
 }

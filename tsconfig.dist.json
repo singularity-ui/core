@@ -4,6 +4,7 @@
   "exclude": [
     ".storybook/*",
     "dist/*",
+    "examples/*",
     "icons/material/*",
     "node_modules/*",
     "scripts/*",
