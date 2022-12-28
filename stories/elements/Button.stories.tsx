@@ -1,8 +1,9 @@
 import React from 'react'
 
-import { Button, SUI } from '../..'
+import { Button } from '../../src'
+import { Accent, ACCENTS, Size, SIZES } from '../../src/constants'
 
-import type { ButtonProps } from '../..'
+import type { ButtonProps } from '../../src'
 
 export default {
   title: 'Elements/Button',
@@ -10,11 +11,11 @@ export default {
 
   argTypes: {
     accent: {
-      options: SUI.ACCENTS,
+      options: ACCENTS,
       control: { type: 'inline-radio' },
     },
     size: {
-      options: SUI.SIZES,
+      options: SIZES,
       control: { type: 'inline-radio' },
     },
     type: {
@@ -24,9 +25,9 @@ export default {
   },
 
   args: {
-    accent: SUI.ACCENT.PRIMARY,
+    accent: Accent.PRIMARY,
     disabled: false,
-    size: SUI.SIZE.MEDIUM,
+    size: Size.MEDIUM,
     type: 'button',
   },
 }

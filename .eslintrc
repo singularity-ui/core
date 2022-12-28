@@ -9,15 +9,7 @@
     "extraFileExtensions": [".mjs"],
     "project": "./tsconfig.json"
   },
-  "ignorePatterns": [
-    "/dist/",
-    "/examples/",
-    "/scripts/",
-    "/storybook-static/",
-    "postcss.config.js",
-    "rollup.config.icons.js",
-    "rollup.config.js"
-  ],
+  "ignorePatterns": ["/dist/", "/examples/", "/scripts/", "/storybook-static/", "rollup.config.js"],
   "rules": {
     "no-console": ["error", { "allow": ["warn", "error"] }],
     "no-underscore-dangle": "off",

@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { Button, Field, SUI, TextInput } from '../..'
+import { Button, Field, TextInput } from '../../src'
+import { Size, SIZES } from '../../src/constants'
 
 export default {
   title: 'Elements/Field',
@@ -8,13 +9,13 @@ export default {
 
   argTypes: {
     size: {
-      options: SUI.SIZES,
+      options: SIZES,
       control: { type: 'inline-radio' },
     },
   },
 
   args: {
-    size: SUI.SIZE.MEDIUM,
+    size: Size.MEDIUM,
   },
 }
 

@@ -1,8 +1,8 @@
 import DumDum from 'dumdum'
 import React from 'react'
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 
-import { Tasker as SuiTasker } from '../..'
+import { Tasker as SuiTasker } from '../../src'
 
 const dumdum = DumDum.create()
 

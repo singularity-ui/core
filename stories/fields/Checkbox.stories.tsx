@@ -1,8 +1,9 @@
 import React from 'react'
 
-import { Checkbox, SUI } from '../..'
+import { Checkbox } from '../../src'
+import { Size, SIZES } from '../../src/constants'
 
-import type { CheckboxProps } from '../..'
+import type { CheckboxProps } from '../../src'
 
 export default {
   title: 'Fields/Checkbox',
@@ -13,7 +14,7 @@ export default {
       control: { type: 'boolean' },
     },
     size: {
-      options: SUI.SIZES,
+      options: SIZES,
       control: { type: 'inline-radio' },
     },
   },
@@ -22,7 +23,7 @@ export default {
     defaultChecked: false,
     disabled: false,
     label: 'Check it!',
-    size: SUI.SIZE.MEDIUM,
+    size: Size.MEDIUM,
   },
 }
 

@@ -1,9 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 
-import { Card } from '../..'
+import { Card } from '../../src'
 
-import type { CardProps } from '../..'
+import type { CardProps } from '../../src'
 
 const Box = styled.div`
   max-width: 30rem;

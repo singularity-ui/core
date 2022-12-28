@@ -1,9 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 
-import { Textarea, SUI } from '../..'
+import { Textarea } from '../../src'
+import { Size, SIZES } from '../../src/constants'
 
-import type { TextareaProps } from '../..'
+import type { TextareaProps } from '../../src'
 
 const Box = styled.div`
   width: 30rem;
@@ -15,7 +16,7 @@ export default {
 
   argTypes: {
     size: {
-      options: SUI.SIZES,
+      options: SIZES,
       control: { type: 'inline-radio' },
     },
   },
@@ -28,7 +29,7 @@ export default {
     isAutoResizing: true,
     label: '',
     placeholder: 'A simple textarea',
-    size: SUI.SIZE.MEDIUM,
+    size: Size.MEDIUM,
   },
 }
 

@@ -2,9 +2,9 @@ import Jabber from 'jabber'
 import React from 'react'
 import { Edit, Trash, UserCheck, UserX } from 'react-feather'
 
-import { SUI, Table } from '../..'
+import { Accent, Table } from '../../src'
 
-import type { TableColumnProps, TableProps } from '../..'
+import type { TableColumnProps, TableProps } from '../../src'
 
 const getRandomTags = () => new Array(Math.round(Math.random() * 3)).fill(null).map((_, index) => `Tag ${index + 1}`)
 const jabber = new Jabber()
@@ -59,12 +59,12 @@ const COLUMNS: TableColumnProps[] = [
     type: 'action',
     // eslint-disable-next-line no-alert
     action: id => window.alert(`Edit user account with id=${id}.`),
-    accent: SUI.ACCENT.SECONDARY,
+    accent: Accent.SECONDARY,
     Icon: Edit,
     key: 'edit',
   },
   {
-    accent: 'danger',
+    accent: Accent.DANGER,
     // eslint-disable-next-line no-alert
     action: id => window.alert(`Delete user account with id=${id}.`),
     Icon: Trash,

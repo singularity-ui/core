@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Dialog as SuiDialog, Button, Card } from '../..'
+import { Dialog as SuiDialog, Button, Card, Accent } from '../../src'
 
 export default {
   title: 'Components/Dialog',
@@ -30,7 +30,7 @@ export const Dialog = () => {
           by clicking outside.
         </p>
 
-        <Button accent="primary" onClick={() => setIsOpen(true)} style={{ marginTop: '1rem' }}>
+        <Button accent={Accent.PRIMARY} onClick={() => setIsOpen(true)} style={{ marginTop: '1rem' }}>
           Open dialog
         </Button>
       </Card>
@@ -46,10 +46,10 @@ export const Dialog = () => {
       </SuiDialog.Body>
 
       <SuiDialog.Action>
-        <Button accent="secondary" onClick={() => setIsOpen(false)}>
+        <Button accent={Accent.SECONDARY} onClick={() => setIsOpen(false)}>
           Cancel
         </Button>
-        <Button accent="danger">Delete</Button>
+        <Button accent={Accent.DANGER}>Delete</Button>
       </SuiDialog.Action>
     </SuiDialog>
   )

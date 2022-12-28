@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { MarkdownEditor } from '../..'
 // @ts-ignore
 import exampleMarkdown from '../../public/documents/example.md'
+import { MarkdownEditor } from '../../src'
 
-import type { MarkdownEditorProps } from '../..'
+import type { MarkdownEditorProps } from '../../src'
 
 export default {
   title: 'Fields/Markdown Editor',

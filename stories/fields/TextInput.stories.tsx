@@ -1,9 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 
-import { TextInput, SUI } from '../..'
+import { TextInput } from '../../src'
+import { Size, SIZES } from '../../src/constants'
 
-import type { TextInputProps } from '../..'
+import type { TextInputProps } from '../../src'
 
 const Box = styled.div`
   max-width: 30rem;
@@ -15,7 +16,7 @@ export default {
 
   argTypes: {
     size: {
-      options: SUI.SIZES,
+      options: SIZES,
       control: { type: 'inline-radio' },
     },
   },
@@ -27,7 +28,7 @@ export default {
     helper: '',
     label: '',
     placeholder: 'A simple text input',
-    size: SUI.SIZE.MEDIUM,
+    size: Size.MEDIUM,
   },
 }
 

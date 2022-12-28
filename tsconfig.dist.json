@@ -1,15 +1,11 @@
 {
   "extends": ".",
-  "include": ["**/*.js", "**/*.jsx", "**/*.mjs", "**/*.ts", "**/*.tsx"],
-  "exclude": [
-    ".storybook/*",
-    "dist/*",
-    "examples/*",
-    "icons/material/*",
-    "node_modules/*",
-    "scripts/*",
-    "storybook-static/*",
-    "stories/*",
-    "**/*.test.ts"
-  ]
+  "compilerOptions": {
+    "emitDeclarationOnly": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "sourceMap": false
+  },
+  "exclude": ["**/*.test.ts"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/env.d.ts"]
 }

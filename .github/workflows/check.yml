@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           cache: yarn
@@ -25,7 +25,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           cache: yarn
@@ -35,23 +35,23 @@ jobs:
       - name: Type
         run: yarn test:type
 
-  # test_unit:
-  #   name: Unit Test
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v3
-  #     - name: Setup Node.js
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         cache: yarn
-  #         node-version: 18
-  #     - name: Install
-  #       run: yarn
-  #     - name: Test
-  #       run: yarn test:unit --coverage
-  #     - name: Upload coverage
-  #       run: yarn codecov
+  test_unit:
+    name: Unit Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          cache: yarn
+          node-version: 18
+      - name: Install
+        run: yarn
+      - name: Test
+        run: yarn test:unit --coverage
+      - name: Upload coverage
+        run: yarn codecov
 
   build:
     name: Build
@@ -59,12 +59,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           cache: yarn
           node-version: 18
+      - name: Setup npm
+        run: npm i -g npm
       - name: Install
         run: yarn
       - name: Build
-        run: yarn build
+        run: make test-build
