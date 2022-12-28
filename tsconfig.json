@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "esModuleInterop": true,
     "declaration": true,
     "declarationDir": "./dist",
+    "declarationMap": true,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
     "importsNotUsedAsValues": "error",
     "isolatedModules": true,
     "jsx": "react-jsx",
@@ -12,13 +14,16 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "noEmit": true,
+    "noEmitOnError": true,
     "noImplicitAny": true,
     "outDir": "./dist",
     "resolveJsonModule": true,
+    "rootDir": ".",
     "skipLibCheck": true,
+    "sourceMap": true,
     "strict": true,
     "target": "ES2022"
   },
-  "include": ["**/*.js", "**/*.jsx", "**/*.mjs", "**/*.ts", "**/*.tsx"],
-  "exclude": [".storybook/*", "dist/*", "node_modules/*", "scripts/*", "storybook-static/*"]
+  "exclude": ["dist/*", "examples/*", "node_modules/*", "scripts/*", "storybook-static/*"],
+  "include": ["**/*.js", "**/*.jsx", "**/*.mjs", "**/*.ts", "**/*.tsx", "src/env.d.ts"]
 }

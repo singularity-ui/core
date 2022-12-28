@@ -1,9 +1,16 @@
 /* eslint-env node */
 
 module.exports = {
-  addons: ['@storybook/addon-essentials', '@storybook/addon-a11y', 'storybook-addon-performance'],
+  addons: [
+    'storybook-addon-swc',
+    '@storybook/addon-essentials',
+    '@storybook/addon-a11y',
+    'storybook-addon-performance',
+  ],
   core: {
-    builder: 'webpack5',
+    builder: {
+      name: 'webpack5',
+    },
   },
   staticDirs: ['../public'],
   stories: ['../stories/**/*.stories.mdx', '../stories/**/*.stories.@(js|jsx|ts|tsx)'],

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Modal, Button, Card, TextInput, Field } from '../..'
+import { Modal, Button, Card, TextInput, Field, Accent } from '../../src'
 
 export default {
   title: 'Components/Modal',
@@ -19,7 +19,7 @@ export const _Modal = () => {
       <Card style={{ maxWidth: '32rem' }}>
         <p>A Modal can be closed by clicking outside.</p>
 
-        <Button accent="primary" onClick={() => setIsOpen(true)} style={{ marginTop: '1rem' }}>
+        <Button accent={Accent.PRIMARY} onClick={() => setIsOpen(true)} style={{ marginTop: '1rem' }}>
           Open Modal
         </Button>
       </Card>

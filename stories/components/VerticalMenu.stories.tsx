@@ -1,9 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 
-import { VerticalMenu } from '../..'
+import { VerticalMenu } from '../../src'
 
-import type { VerticalMenuProps } from '../..'
+import type { VerticalMenuProps } from '../../src'
 
 const ITEM = {
   DASHBOARD: 'DASHBOARD',

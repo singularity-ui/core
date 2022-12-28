@@ -1,0 +1,36 @@
+{
+  "name": "@singularity/core__with-next",
+  "description": "A @singularity/core example with Next.js.",
+  "version": "0.0.0",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": "18",
+    "npm": "9"
+  },
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@fontsource/poppins": "^4.0.0",
+    "@singularity/core": "../../dist",
+    "formik": "^2.0.0",
+    "next": "^13.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-is": "^18.0.0",
+    "styled-components": "^v6.0.0-beta.8"
+  },
+  "devDependencies": {
+    "@ivangabriele/prettier-config": "^3.0.0",
+    "@ivangabriele/tsconfig-next": "^1.0.0",
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "prettier": "^2.0.0",
+    "typescript": "^4.0.0"
+  },
+  "prettier": "@ivangabriele/prettier-config"
+}

@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { Table } from '../..'
+import { Table } from '../../src'
 
-import type { TableColumnProps } from '../..'
+import type { TableColumnProps } from '../../src'
 
 const COLUMNS: TableColumnProps[] = [
   {

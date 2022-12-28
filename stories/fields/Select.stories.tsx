@@ -1,9 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 
-import { Select, SUI } from '../..'
+import { Select } from '../../src'
+import { Size, SIZES } from '../../src/constants'
 
-import type { SelectProps } from '../..'
+import type { SelectProps } from '../../src'
 
 const Box = styled.div`
   max-width: 30rem;
@@ -15,7 +16,7 @@ export default {
 
   argTypes: {
     size: {
-      options: SUI.SIZES,
+      options: SIZES,
       control: { type: 'inline-radio' },
     },
   },
@@ -35,7 +36,7 @@ export default {
       { value: '44', label: 'XL' },
     ],
     placeholder: 'Pick your size',
-    size: SUI.SIZE.MEDIUM,
+    size: Size.MEDIUM,
   },
 }
 

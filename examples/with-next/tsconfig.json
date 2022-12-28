@@ -1,0 +1,15 @@
+{
+  "extends": "./node_modules/@ivangabriele/tsconfig-next/tsconfig.json",
+  "compilerOptions": {
+    "incremental": true,
+    // Don't include these 2 props (`baseUrl` & `paths`) values in your project,
+    // they're only used for internal build in E2E tests
+    "baseUrl": ".",
+    "paths": {
+      "@singularity/core": ["node_modules/@singularity/core"],
+      "@singularity/core/*": ["node_modules/@singularity/core/*"]
+    }
+  },
+  "exclude": ["node_modules"],
+  "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts"]
+}

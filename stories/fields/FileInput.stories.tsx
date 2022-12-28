@@ -1,8 +1,9 @@
 import React from 'react'
 
-import { FileInput, SUI } from '../..'
+import { FileInput } from '../../src'
+import { Size, SIZES } from '../../src/constants'
 
-import type { FileInputProps } from '../..'
+import type { FileInputProps } from '../../src'
 
 export default {
   title: 'Fields/File Input',
@@ -10,7 +11,7 @@ export default {
 
   argTypes: {
     size: {
-      options: SUI.SIZES,
+      options: SIZES,
       control: { type: 'inline-radio' },
     },
   },
@@ -21,7 +22,7 @@ export default {
     helper: '',
     label: '',
     placeholder: 'Click or drag and drop a file…',
-    size: SUI.SIZE.MEDIUM,
+    size: Size.MEDIUM,
   },
 }
 

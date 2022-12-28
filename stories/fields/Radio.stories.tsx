@@ -1,8 +1,9 @@
 import React from 'react'
 
-import { Radio, SUI } from '../..'
+import { Radio } from '../../src'
+import { Size, SIZES } from '../../src/constants'
 
-import type { RadioProps } from '../..'
+import type { RadioProps } from '../../src'
 
 export default {
   title: 'Fields/Radio',
@@ -13,7 +14,7 @@ export default {
       control: { type: 'boolean' },
     },
     size: {
-      options: SUI.SIZES,
+      options: SIZES,
       control: { type: 'inline-radio' },
     },
   },
@@ -23,7 +24,7 @@ export default {
     disabled: false,
     label: 'Choice A',
     letter: 'A',
-    size: SUI.SIZE.MEDIUM,
+    size: Size.MEDIUM,
   },
 }
 

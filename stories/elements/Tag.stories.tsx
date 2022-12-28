@@ -1,8 +1,9 @@
 import React from 'react'
 
-import { SUI, Tag } from '../..'
+import { Tag } from '../../src'
+import { Accent, ACCENTS, Size, SIZES } from '../../src/constants'
 
-import type { TagProps } from '../..'
+import type { TagProps } from '../../src'
 
 export default {
   title: 'Elements/Tag',
@@ -10,18 +11,18 @@ export default {
 
   argTypes: {
     accent: {
-      options: SUI.ACCENTS,
+      options: ACCENTS,
       control: { type: 'inline-radio' },
     },
     size: {
-      options: SUI.SIZES,
+      options: SIZES,
       control: { type: 'inline-radio' },
     },
   },
 
   args: {
-    accent: SUI.ACCENT.PRIMARY,
-    size: SUI.SIZE.MEDIUM,
+    accent: Accent.PRIMARY,
+    size: Size.MEDIUM,
   },
 }
 

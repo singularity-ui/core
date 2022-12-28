@@ -1,8 +1,0 @@
-{
-  "extends": "./tsconfig.dist",
-  "compilerOptions": {
-    "declaration": false,
-    "declarationDir": null,
-    "outDir": "./dist/fields"
-  }
-}
