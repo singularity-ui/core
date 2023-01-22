@@ -76,7 +76,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-sort-keys-fix", "npm:1.1.2"],\
             ["eslint-plugin-typescript-sort-keys", "virtual:1c88b77d684dee6e7cfa1ad736d03c6acf1964c64834bef302f1d0a2e437b3129f77a93b54f4a71786d3039a0c25c5a3c7beda35275b5d09700fd4f87fa33ebf#npm:2.1.0"],\
             ["esm-path", "npm:1.0.1"],\
-            ["gh-pages", "npm:4.0.0"],\
+            ["gh-pages", "npm:5.0.0"],\
             ["husky", "npm:8.0.2"],\
             ["jabber", "npm:1.4.0"],\
             ["jest", "virtual:1c88b77d684dee6e7cfa1ad736d03c6acf1964c64834bef302f1d0a2e437b3129f77a93b54f4a71786d3039a0c25c5a3c7beda35275b5d09700fd4f87fa33ebf#npm:29.3.1"],\
@@ -7868,7 +7868,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-sort-keys-fix", "npm:1.1.2"],\
             ["eslint-plugin-typescript-sort-keys", "virtual:1c88b77d684dee6e7cfa1ad736d03c6acf1964c64834bef302f1d0a2e437b3129f77a93b54f4a71786d3039a0c25c5a3c7beda35275b5d09700fd4f87fa33ebf#npm:2.1.0"],\
             ["esm-path", "npm:1.0.1"],\
-            ["gh-pages", "npm:4.0.0"],\
+            ["gh-pages", "npm:5.0.0"],\
             ["husky", "npm:8.0.2"],\
             ["jabber", "npm:1.4.0"],\
             ["jest", "virtual:1c88b77d684dee6e7cfa1ad736d03c6acf1964c64834bef302f1d0a2e437b3129f77a93b54f4a71786d3039a0c25c5a3c7beda35275b5d09700fd4f87fa33ebf#npm:29.3.1"],\
@@ -13126,11 +13126,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:2.6.3", {\
-          "packageLocation": "./.yarn/cache/async-npm-2.6.3-2de4150248-5e5561ff8f.zip/node_modules/async/",\
+        ["npm:3.2.4", {\
+          "packageLocation": "./.yarn/cache/async-npm-3.2.4-aba13508f9-43d07459a4.zip/node_modules/async/",\
           "packageDependencies": [\
-            ["async", "npm:2.6.3"],\
-            ["lodash", "npm:4.17.21"]\
+            ["async", "npm:3.2.4"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -17008,10 +17007,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["email-addresses", [\
-        ["npm:3.1.0", {\
-          "packageLocation": "./.yarn/cache/email-addresses-npm-3.1.0-332eec577b-e911985f09.zip/node_modules/email-addresses/",\
+        ["npm:5.0.0", {\
+          "packageLocation": "./.yarn/cache/email-addresses-npm-5.0.0-218d2e9289-e58a510e9c.zip/node_modules/email-addresses/",\
           "packageDependencies": [\
-            ["email-addresses", "npm:3.1.0"]\
+            ["email-addresses", "npm:5.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -19329,13 +19328,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["gh-pages", [\
-        ["npm:4.0.0", {\
-          "packageLocation": "./.yarn/cache/gh-pages-npm-4.0.0-1490bfc5d9-255648eb27.zip/node_modules/gh-pages/",\
+        ["npm:5.0.0", {\
+          "packageLocation": "./.yarn/cache/gh-pages-npm-5.0.0-85e52a94f0-d766aef02d.zip/node_modules/gh-pages/",\
           "packageDependencies": [\
-            ["gh-pages", "npm:4.0.0"],\
-            ["async", "npm:2.6.3"],\
+            ["gh-pages", "npm:5.0.0"],\
+            ["async", "npm:3.2.4"],\
             ["commander", "npm:2.20.3"],\
-            ["email-addresses", "npm:3.1.0"],\
+            ["email-addresses", "npm:5.0.0"],\
             ["filenamify", "npm:4.3.0"],\
             ["find-cache-dir", "npm:3.3.2"],\
             ["fs-extra", "npm:8.1.0"],\
