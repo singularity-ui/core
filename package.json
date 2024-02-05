@@ -42,7 +42,7 @@
     "@commitlint/config-conventional": "17.3.0",
     "@fontsource/poppins": "4.5.10",
     "@ivangabriele/commitlint-config": "1.0.6",
-    "@ivangabriele/eslint-config-typescript-react": "5.0.0",
+    "@ivangabriele/eslint-config-typescript-react": "8.0.1",
     "@ivangabriele/prettier-config": "3.1.0",
     "@ivangabriele/semantic-release-config-dist": "2.1.0",
     "@rollup/plugin-commonjs": "24.0.0",
