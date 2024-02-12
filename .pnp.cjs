@@ -33,7 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@commitlint/cli", "npm:17.3.0"],\
             ["@commitlint/config-conventional", "npm:17.3.0"],\
             ["@fontsource/poppins", "npm:4.5.10"],\
-            ["@ivangabriele/commitlint-config", "virtual:1c88b77d684dee6e7cfa1ad736d03c6acf1964c64834bef302f1d0a2e437b3129f77a93b54f4a71786d3039a0c25c5a3c7beda35275b5d09700fd4f87fa33ebf#npm:1.0.6"],\
+            ["@ivangabriele/commitlint-config", "virtual:1c88b77d684dee6e7cfa1ad736d03c6acf1964c64834bef302f1d0a2e437b3129f77a93b54f4a71786d3039a0c25c5a3c7beda35275b5d09700fd4f87fa33ebf#npm:2.0.3"],\
             ["@ivangabriele/eslint-config-typescript-react", "virtual:1c88b77d684dee6e7cfa1ad736d03c6acf1964c64834bef302f1d0a2e437b3129f77a93b54f4a71786d3039a0c25c5a3c7beda35275b5d09700fd4f87fa33ebf#npm:5.0.0"],\
             ["@ivangabriele/prettier-config", "virtual:1c88b77d684dee6e7cfa1ad736d03c6acf1964c64834bef302f1d0a2e437b3129f77a93b54f4a71786d3039a0c25c5a3c7beda35275b5d09700fd4f87fa33ebf#npm:3.1.0"],\
             ["@ivangabriele/semantic-release-config-dist", "npm:2.1.0"],\
@@ -5473,6 +5473,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["conventional-changelog-conventionalcommits", "npm:5.0.0"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:18.6.0", {\
+          "packageLocation": "./.yarn/cache/@commitlint-config-conventional-npm-18.6.0-de9e741038-96f96966ef.zip/node_modules/@commitlint/config-conventional/",\
+          "packageDependencies": [\
+            ["@commitlint/config-conventional", "npm:18.6.0"],\
+            ["conventional-changelog-conventionalcommits", "npm:7.0.2"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["@commitlint/config-validator", [\
@@ -6004,29 +6012,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@ivangabriele/commitlint-config", [\
-        ["npm:1.0.6", {\
-          "packageLocation": "./.yarn/cache/@ivangabriele-commitlint-config-npm-1.0.6-4af68fa65d-e7710bbb53.zip/node_modules/@ivangabriele/commitlint-config/",\
+        ["npm:2.0.3", {\
+          "packageLocation": "./.yarn/cache/@ivangabriele-commitlint-config-npm-2.0.3-5f612d8faa-610e38f603.zip/node_modules/@ivangabriele/commitlint-config/",\
           "packageDependencies": [\
-            ["@ivangabriele/commitlint-config", "npm:1.0.6"]\
+            ["@ivangabriele/commitlint-config", "npm:2.0.3"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:1c88b77d684dee6e7cfa1ad736d03c6acf1964c64834bef302f1d0a2e437b3129f77a93b54f4a71786d3039a0c25c5a3c7beda35275b5d09700fd4f87fa33ebf#npm:1.0.6", {\
-          "packageLocation": "./.yarn/__virtual__/@ivangabriele-commitlint-config-virtual-dd404c3b5b/0/cache/@ivangabriele-commitlint-config-npm-1.0.6-4af68fa65d-e7710bbb53.zip/node_modules/@ivangabriele/commitlint-config/",\
+        ["virtual:1c88b77d684dee6e7cfa1ad736d03c6acf1964c64834bef302f1d0a2e437b3129f77a93b54f4a71786d3039a0c25c5a3c7beda35275b5d09700fd4f87fa33ebf#npm:2.0.3", {\
+          "packageLocation": "./.yarn/__virtual__/@ivangabriele-commitlint-config-virtual-b6dc807d37/0/cache/@ivangabriele-commitlint-config-npm-2.0.3-5f612d8faa-610e38f603.zip/node_modules/@ivangabriele/commitlint-config/",\
           "packageDependencies": [\
-            ["@ivangabriele/commitlint-config", "virtual:1c88b77d684dee6e7cfa1ad736d03c6acf1964c64834bef302f1d0a2e437b3129f77a93b54f4a71786d3039a0c25c5a3c7beda35275b5d09700fd4f87fa33ebf#npm:1.0.6"],\
+            ["@ivangabriele/commitlint-config", "virtual:1c88b77d684dee6e7cfa1ad736d03c6acf1964c64834bef302f1d0a2e437b3129f77a93b54f4a71786d3039a0c25c5a3c7beda35275b5d09700fd4f87fa33ebf#npm:2.0.3"],\
             ["@commitlint/cli", "npm:17.3.0"],\
-            ["@commitlint/config-conventional", "npm:17.3.0"],\
+            ["@commitlint/config-conventional", "npm:18.6.0"],\
             ["@types/commitlint__cli", null],\
-            ["@types/commitlint__config-conventional", null],\
             ["@types/husky", null],\
             ["husky", "npm:8.0.2"]\
           ],\
           "packagePeers": [\
             "@commitlint/cli",\
-            "@commitlint/config-conventional",\
             "@types/commitlint__cli",\
-            "@types/commitlint__config-conventional",\
             "@types/husky",\
             "husky"\
           ],\
@@ -7825,7 +7830,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@commitlint/cli", "npm:17.3.0"],\
             ["@commitlint/config-conventional", "npm:17.3.0"],\
             ["@fontsource/poppins", "npm:4.5.10"],\
-            ["@ivangabriele/commitlint-config", "virtual:1c88b77d684dee6e7cfa1ad736d03c6acf1964c64834bef302f1d0a2e437b3129f77a93b54f4a71786d3039a0c25c5a3c7beda35275b5d09700fd4f87fa33ebf#npm:1.0.6"],\
+            ["@ivangabriele/commitlint-config", "virtual:1c88b77d684dee6e7cfa1ad736d03c6acf1964c64834bef302f1d0a2e437b3129f77a93b54f4a71786d3039a0c25c5a3c7beda35275b5d09700fd4f87fa33ebf#npm:2.0.3"],\
             ["@ivangabriele/eslint-config-typescript-react", "virtual:1c88b77d684dee6e7cfa1ad736d03c6acf1964c64834bef302f1d0a2e437b3129f77a93b54f4a71786d3039a0c25c5a3c7beda35275b5d09700fd4f87fa33ebf#npm:5.0.0"],\
             ["@ivangabriele/prettier-config", "virtual:1c88b77d684dee6e7cfa1ad736d03c6acf1964c64834bef302f1d0a2e437b3129f77a93b54f4a71786d3039a0c25c5a3c7beda35275b5d09700fd4f87fa33ebf#npm:3.1.0"],\
             ["@ivangabriele/semantic-release-config-dist", "npm:2.1.0"],\
@@ -15438,6 +15443,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["compare-func", "npm:2.0.0"],\
             ["lodash", "npm:4.17.21"],\
             ["q", "npm:1.5.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:7.0.2", {\
+          "packageLocation": "./.yarn/cache/conventional-changelog-conventionalcommits-npm-7.0.2-f878f86efe-e17ac5970a.zip/node_modules/conventional-changelog-conventionalcommits/",\
+          "packageDependencies": [\
+            ["conventional-changelog-conventionalcommits", "npm:7.0.2"],\
+            ["compare-func", "npm:2.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
