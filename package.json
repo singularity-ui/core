@@ -6,7 +6,7 @@
   "private": true,
   "main": "./index.ts",
   "engines": {
-    "node": "18"
+    "node": "24"
   },
   "scripts": {
     "build": "rm -Rf ./dist && rollup -c && yarn build:copy && yarn build:package && yarn build:clean",
@@ -57,7 +57,7 @@
     "@testing-library/jest-dom": "5.16.5",
     "@types/jabber": "1.2.0",
     "@types/jest": "29.2.4",
-    "@types/node": "18.11.18",
+    "@types/node": "24.9.2",
     "@types/ramda": "0.28.20",
     "@types/react": "18.0.26",
     "@types/sha1": "1.1.3",
