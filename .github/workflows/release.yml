@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           cache: yarn
-          node-version: 18
+          node-version: 24
       - name: Install
         run: yarn install --frozen-lockfile
       - name: Build
@@ -49,7 +49,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           cache: yarn
-          node-version: 18
+          node-version: 24
       - name: Install
         run: yarn install --frozen-lockfile
       - name: Build
