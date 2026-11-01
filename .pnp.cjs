@@ -49,7 +49,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@types/jabber", "npm:1.2.0"],\
             ["@types/jest", "npm:29.2.4"],\
-            ["@types/node", "npm:18.11.18"],\
+            ["@types/node", "npm:26.6.6"],\
             ["@types/ramda", "npm:0.28.20"],\
             ["@types/react", "npm:18.0.26"],\
             ["@types/sha1", "npm:1.1.3"],\
@@ -7841,7 +7841,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@types/jabber", "npm:1.2.0"],\
             ["@types/jest", "npm:29.2.4"],\
-            ["@types/node", "npm:18.11.18"],\
+            ["@types/node", "npm:26.6.6"],\
             ["@types/ramda", "npm:0.28.20"],\
             ["@types/react", "npm:18.0.26"],\
             ["@types/sha1", "npm:1.1.3"],\
@@ -11082,10 +11082,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:18.11.18", {\
-          "packageLocation": "./.yarn/cache/@types-node-npm-18.11.18-d61e8a4a20-03f17f9480.zip/node_modules/@types/node/",\
+        ["npm:26.6.6", {\
+          "packageLocation": "./.yarn/cache/@types-node-npm-26.6.6-a217a0974b-e937cc3f41.zip/node_modules/@types/node/",\
           "packageDependencies": [\
-            ["@types/node", "npm:18.11.18"]\
+            ["@types/node", "npm:26.6.6"],\
+            ["undici-types", "npm:8.9.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -32146,6 +32147,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["has-bigints", "npm:1.0.2"],\
             ["has-symbols", "npm:1.0.3"],\
             ["which-boxed-primitive", "npm:1.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["undici-types", [\
+        ["npm:8.9.0", {\
+          "packageLocation": "./.yarn/cache/undici-types-npm-8.9.0-c5953f392d-78c081bf59.zip/node_modules/undici-types/",\
+          "packageDependencies": [\
+            ["undici-types", "npm:8.9.0"]\
           ],\
           "linkType": "HARD"\
         }]\
